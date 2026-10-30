@@ -211,7 +211,32 @@ input:not([type=checkbox]):not([type=file]):focus,select:focus,textarea:focus{bo
 .stat.a-indigo{--stat-accent:var(--a-indigo)}.stat.a-indigo .num{color:var(--ink-indigo)}
 .stat.a-amber{--stat-accent:var(--a-amber)}.stat.a-amber .num{color:var(--ink-amber)}
 .section-gap{margin-top:1.25rem}
-@media (prefers-reduced-motion:reduce){.card:hover,.stat:hover,.welcome:hover{transform:none}}
+/* Hover: motion plus a light-blue border and glow on everything clickable or boxed inside the dashboards,
+   matching the main site's header. --ring is the border colour; --glow-sm the tight glow for small items. */
+:root{--ring:#7dd3fc;--glow-sm:0 8px 24px -6px rgba(14,165,233,.5),0 0 0 3px rgba(14,165,233,.12)}
+[data-theme=dark]{--ring:#0369a1;--glow-sm:0 8px 24px -6px rgba(56,189,248,.4),0 0 0 3px rgba(56,189,248,.15)}
+.card:hover,.stat:hover,.welcome:hover{border-color:var(--ring);box-shadow:var(--hover-glow),0 0 0 3px rgba(14,165,233,.12)}
+.btn-ghost:hover,.btn-danger:hover{border-color:var(--ring);box-shadow:var(--glow-sm)}
+.btn-danger:hover{border-color:currentColor}
+.btn-primary{border-color:transparent}
+.btn-primary:hover{border-color:var(--ring);box-shadow:var(--glow-sm),0 12px 28px -10px rgba(3,105,161,.45)}
+.chip:hover{border-color:var(--ring);box-shadow:var(--glow-sm)}
+.tab{border-radius:12px 12px 0 0;transition:color .2s ease,background-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.tab:hover{color:var(--text);background:var(--glass);box-shadow:0 -1px 0 1px var(--ring) inset,var(--glow-sm);transform:translateY(-2px)}
+.list > li{border-radius:14px;transition:background-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.list > li:hover{background:var(--accent-soft);box-shadow:0 0 0 1px var(--ring),var(--glow-sm);transform:translateY(-2px);border-top-color:transparent}
+.list > li:hover + li{border-top-color:transparent}
+.card .list > li{padding-left:.6rem;padding-right:.6rem;margin:0 -.6rem}
+.med,.tile,.qr-box,.alert-box,fieldset.coding{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.med:hover,.tile:hover,fieldset.coding:hover{transform:translateY(-3px);border-color:var(--ring);box-shadow:var(--glow-sm)}
+.qr-box:hover{border-color:var(--ring);box-shadow:var(--glow-sm)}
+tbody tr{transition:background-color .2s ease}
+tbody tr:hover{background:var(--accent-soft)}
+details.card > summary{border-radius:10px;transition:color .2s ease}
+details.card > summary:hover{color:var(--accent)}
+.brand{transition:transform .2s ease,text-shadow .2s ease}
+.brand:hover{transform:translateY(-1px);text-shadow:0 0 18px var(--glow)}
+@media (prefers-reduced-motion:reduce){.card:hover,.stat:hover,.welcome:hover,.tab:hover,.list > li:hover,.med:hover,.tile:hover,fieldset.coding:hover,.brand:hover{transform:none}}
 @media print{.card,.stat,.welcome{box-shadow:none!important;transform:none!important;background:#fff!important}.stats,.welcome .avatar{display:none}}
 /* Clinical summary */
 :root{--t-namaste:#ecfdf5;--t-namaste-line:#a7f3d0;--t-who:#eff6ff;--t-who-line:#bfdbfe;--t-bio:#fffbeb;--t-bio-line:#fde68a}
