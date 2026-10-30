@@ -61,6 +61,44 @@ main .ring-slate-200 {
   --tw-ring-color: var(--border);
 }
 
+/* Hover motion: boxes lift and pick up a soft blue glow; fields glow under the pointer. */
+main :is(.rounded-xl, .rounded-2xl, .rounded-3xl).bg-white:not(input, select, textarea, [role="listbox"]),
+.glass-card {
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease,
+    border-color 250ms ease;
+}
+@media (hover: hover) {
+  main :is(.rounded-2xl, .rounded-3xl).bg-white:not(input, select, textarea, [role="listbox"]):hover,
+  .glass-card:hover {
+    transform: translateY(-4px);
+    border-color: #bae6fd;
+    box-shadow:
+      0 24px 60px -18px rgb(14 165 233 / 0.45),
+      0 0 0 1px rgb(125 211 252 / 0.55);
+  }
+  .dark main :is(.rounded-2xl, .rounded-3xl).bg-white:not(input, select, textarea, [role="listbox"]):hover,
+  .dark .glass-card:hover {
+    border-color: #1e4a6b;
+    box-shadow:
+      0 24px 60px -18px rgb(56 189 248 / 0.35),
+      0 0 0 1px rgb(56 189 248 / 0.45);
+  }
+  main :is(input:not([type="checkbox"], [type="radio"], [type="file"]), select, textarea):not(:focus):hover {
+    border-color: #7dd3fc;
+    box-shadow:
+      0 0 0 4px rgb(14 165 233 / 0.12),
+      0 10px 30px -12px rgb(14 165 233 / 0.35);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  main :is(.rounded-2xl, .rounded-3xl).bg-white:hover,
+  .glass-card:hover {
+    transform: none !important;
+  }
+}
+
 /* Page titles and section headings on every page share the landing page's hover glow. */
 @media (hover: hover) {
   main h1,

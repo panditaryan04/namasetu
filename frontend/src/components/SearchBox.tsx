@@ -40,7 +40,7 @@ export function SearchBox() {
   };
 
   return (
-    <div className="rounded-3xl border border-med-border bg-white/80 p-5 text-left shadow-glass backdrop-blur-xl dark:bg-slate-900/70 sm:p-8">
+    <div className="glass-card rounded-3xl border border-med-border bg-white/80 p-5 text-left shadow-glass backdrop-blur-xl dark:bg-slate-900/70 sm:p-8">
       <div
         role="tablist"
         aria-label="Discipline"

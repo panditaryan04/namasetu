@@ -180,6 +180,39 @@ tbody.ins-visit + tbody.ins-visit tr:first-child td{border-top:2px solid var(--b
 @media print{.ins-collapsed tbody.ins-extra{display:table-row-group}[data-action=ins-more]{display:none}}
 fieldset.coding{border:1px solid var(--border);border-radius:14px;padding:.25rem 1rem 1rem;margin:1rem 0 0}
 fieldset.coding legend{font-weight:650;padding:0 .4rem}
+/* Dashboards: welcome panel, stat tiles, colour accents per box, hover motion. Accent text colours are the
+   700 steps of each hue (AA on the light glass); dark mode uses the 300 steps. */
+:root{--a-sky:linear-gradient(90deg,#0ea5e9,#38bdf8);--a-teal:linear-gradient(90deg,#14b8a6,#5eead4);--a-violet:linear-gradient(90deg,#8b5cf6,#c4b5fd);--a-indigo:linear-gradient(90deg,#6366f1,#a5b4fc);--a-amber:linear-gradient(90deg,#f59e0b,#fcd34d);--ink-sky:#0369a1;--ink-teal:#0f766e;--ink-violet:#6d28d9;--ink-indigo:#4338ca;--ink-amber:#92400e;--hover-glow:0 24px 60px -18px rgba(14,165,233,.45),0 0 0 1px rgba(125,211,252,.55)}
+[data-theme=dark]{--ink-sky:#7dd3fc;--ink-teal:#5eead4;--ink-violet:#c4b5fd;--ink-indigo:#a5b4fc;--ink-amber:#fcd34d;--hover-glow:0 24px 60px -18px rgba(56,189,248,.35),0 0 0 1px rgba(56,189,248,.45)}
+.card{--card-accent:var(--grad);background:var(--card-accent) top/100% 4px no-repeat,var(--glass);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.card.a-sky{--card-accent:var(--a-sky)}.card.a-teal{--card-accent:var(--a-teal)}.card.a-violet{--card-accent:var(--a-violet)}.card.a-indigo{--card-accent:var(--a-indigo)}.card.a-amber{--card-accent:var(--a-amber)}
+.card > h2::before,.card > .row h2::before{content:"";flex:none;width:.7rem;height:.7rem;border-radius:4px;background:var(--card-accent);margin-right:.15rem}
+.card > .row h2{display:flex;align-items:center;gap:.5rem}
+.card:hover{transform:translateY(-4px);box-shadow:var(--hover-glow);border-color:#bae6fd}
+[data-theme=dark] .card:hover{border-color:#1e4a6b}
+input:not([type=checkbox]):not([type=file]):hover,select:hover,textarea:hover{border-color:#7dd3fc;box-shadow:0 0 0 4px rgba(14,165,233,.12),0 10px 30px -12px rgba(14,165,233,.35)}
+input:not([type=checkbox]):not([type=file]):focus,select:focus,textarea:focus{border-color:#0ea5e9;box-shadow:0 0 0 4px rgba(14,165,233,.25),0 10px 30px -12px rgba(14,165,233,.4)}
+.welcome{display:flex;flex-wrap:wrap;align-items:center;gap:1.1rem 1.4rem;padding:1.5rem 1.75rem;margin:0 0 1.25rem;border-radius:28px;border:1px solid var(--border);background:linear-gradient(120deg,rgba(224,242,254,.9),rgba(237,233,254,.75) 55%,rgba(204,251,241,.85));box-shadow:var(--shadow);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);transition:transform .25s ease,box-shadow .25s ease}
+[data-theme=dark] .welcome{background:linear-gradient(120deg,rgba(12,42,63,.85),rgba(46,16,101,.55) 55%,rgba(17,48,45,.8))}
+.welcome:hover{transform:translateY(-3px);box-shadow:var(--hover-glow)}
+.welcome h1{margin:0}
+.welcome .who{flex:1;min-width:14rem}
+.welcome .note{flex-basis:100%;margin:0;font-size:.92rem;color:var(--muted)}
+.avatar{flex:none;width:64px;height:64px;border-radius:20px;display:grid;place-items:center;background:var(--grad);color:#fff;font:800 1.35rem/1 "Plus Jakarta Sans Variable",system-ui,sans-serif;box-shadow:0 12px 28px -10px rgba(3,105,161,.55)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin:0 0 1.5rem}
+.stat{position:relative;padding:1rem 1.15rem;border-radius:20px;border:1px solid var(--border);background:var(--glass);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);box-shadow:var(--shadow);transition:transform .25s ease,box-shadow .25s ease}
+.stat::after{content:"";position:absolute;left:1.15rem;right:1.15rem;bottom:0;height:3px;border-radius:3px 3px 0 0;background:var(--stat-accent,var(--grad))}
+.stat:hover{transform:translateY(-4px);box-shadow:var(--hover-glow)}
+.stat .num{display:block;font:800 1.75rem/1.15 "Plus Jakarta Sans Variable",system-ui,sans-serif;letter-spacing:-.02em}
+.stat .lbl{display:block;font-size:.85rem;color:var(--muted);margin-top:.15rem}
+.stat.a-sky{--stat-accent:var(--a-sky)}.stat.a-sky .num{color:var(--ink-sky)}
+.stat.a-teal{--stat-accent:var(--a-teal)}.stat.a-teal .num{color:var(--ink-teal)}
+.stat.a-violet{--stat-accent:var(--a-violet)}.stat.a-violet .num{color:var(--ink-violet)}
+.stat.a-indigo{--stat-accent:var(--a-indigo)}.stat.a-indigo .num{color:var(--ink-indigo)}
+.stat.a-amber{--stat-accent:var(--a-amber)}.stat.a-amber .num{color:var(--ink-amber)}
+.section-gap{margin-top:1.25rem}
+@media (prefers-reduced-motion:reduce){.card:hover,.stat:hover,.welcome:hover{transform:none}}
+@media print{.card,.stat,.welcome{box-shadow:none!important;transform:none!important;background:#fff!important}.stats,.welcome .avatar{display:none}}
 /* Clinical summary */
 :root{--t-namaste:#ecfdf5;--t-namaste-line:#a7f3d0;--t-who:#eff6ff;--t-who-line:#bfdbfe;--t-bio:#fffbeb;--t-bio-line:#fde68a}
 [data-theme=dark]{--t-namaste:#0b2a20;--t-namaste-line:#14532d;--t-who:#0c1d33;--t-who-line:#1e3a8a;--t-bio:#2a2108;--t-bio-line:#78350f}
@@ -693,7 +726,7 @@ fieldset.coding legend{font-weight:650;padding:0 .4rem}
     }).join('')}</tbody>`).join('');
     const more = visits.length > SHOWN
       ? `<button class="btn btn-ghost btn-sm" data-action="ins-more" aria-expanded="false">Show all ${visits.length} visits</button>` : '';
-    return `<section class="card ins-collapsed" id="${id}" aria-labelledby="h-${id}"><h2 id="h-${id}">Insurance</h2>
+    return `<section class="card a-violet ins-collapsed" id="${id}" aria-labelledby="h-${id}"><h2 id="h-${id}">Insurance</h2>
       ${policyLine(p)}
       ${all.length ? `<p class="ins-counts">${resultCounts(all)}</p>
       <div class="table-wrap"><table class="ins-table"><thead><tr><th>Visit</th><th>Entry</th><th>Code</th><th>Result</th></tr></thead>${body}</table></div>${more}` : empty('No coded entries yet.')}
@@ -719,7 +752,7 @@ fieldset.coding legend{font-weight:650;padding:0 .4rem}
         <td>${status ? `<span class="badge badge-${status === 'Active' ? 'eligible' : 'not-eligible'}">${status}</span>` : '—'}</td>
         <td>${results.length ? resultCounts(results) : '<span class="small muted">No coded entries here</span>'}</td></tr>`;
     }).join('');
-    return `<section class="card" aria-labelledby="h-hins"><h2 id="h-hins">Insurance</h2>
+    return `<section class="card a-violet" aria-labelledby="h-hins"><h2 id="h-hins">Insurance</h2>
       <p class="small muted">Policy status and claim eligibility for entries made at ${esc(h.short)}. Diagnoses, codes and treatments are not shown.</p>
       <div class="table-wrap" style="margin-top:.5rem"><table class="ins-table"><thead><tr><th>Patient</th><th>Insurer</th><th>Policy</th><th>Eligibility at ${esc(h.short)}</th></tr></thead>
       <tbody>${rows}</tbody></table></div>
@@ -831,7 +864,7 @@ fieldset.coding legend{font-weight:650;padding:0 .4rem}
         <td class="small">${indication}</td>
         <td>${screenCell}</td></tr>`;
     }).join('');
-    return `<section class="card" aria-labelledby="h-csmeds"><h2 id="h-csmeds">Current medicines &amp; active chemical salts <span class="small muted" style="font-weight:400">from the prescription history</span></h2>
+    return `<section class="card a-sky" aria-labelledby="h-csmeds"><h2 id="h-csmeds">Current medicines &amp; active chemical salts <span class="small muted" style="font-weight:400">from the prescription history</span></h2>
       ${active.length ? `<div class="table-wrap"><table class="cs-table"><thead><tr><th>Brand / formulation</th><th>Active chemical salt</th><th>Regimen</th><th>Domain</th><th>Clinical indication</th><th>Interaction screen</th></tr></thead><tbody>${rows}</tbody></table></div>
       <p class="small muted" style="margin-top:.5rem">Regimen as prescribed in the record. Herb–drug alerts come from NamaSetu's cited interaction dataset. *Absence of data is not proof of safety.</p>` : empty('No current medicines.')}</section>`;
   }
@@ -865,7 +898,7 @@ fieldset.coding legend{font-weight:650;padding:0 .4rem}
 
   function selectedDiagnosisCard(p, st, canEdit) {
     const f = st.data ? st.data.formulations : [];
-    return `<section class="card" aria-labelledby="h-sdx"><h2 id="h-sdx">Selected diagnosis</h2>
+    return `<section class="card a-teal" aria-labelledby="h-sdx"><h2 id="h-sdx">Selected diagnosis</h2>
       <dl class="kv"><dt>AYUSH (NAMASTE)</dt><dd>${p.ayushDx ? `${esc(p.ayushDx.display)} <span class="mono">${esc(p.ayushDx.code)}</span>` : '<span class="muted">Not recorded</span>'}</dd>
       <dt>ICD</dt><dd>${esc(p.diagnosis)}${p.dxCode && p.dxCode.code ? ` <span class="mono">${esc(p.dxCode.code)}</span>` : ''}</dd></dl>
       ${canEdit ? `<label>${p.ayushDx ? 'Change' : 'Add'} AYUSH diagnosis<span class="hint">Search NAMASTE in English, IAST or Devanagari</span>
@@ -897,7 +930,7 @@ fieldset.coding legend{font-weight:650;padding:0 .4rem}
         <p class="small muted" style="margin-top:.5rem">${c.tm2.code.startsWith('SAMPLE-') ? 'SAMPLE — illustrative, not official codes. ' : ''}Datasets: ${esc(st.data.map.dataset_releases.join(', '))}</p>`;
       }
     }
-    return `<section class="card" aria-labelledby="h-xw"><div class="row"><div><h2 id="h-xw" style="margin:0">Interoperability cross-walk</h2><p class="small muted">Three-way mapping across AYUSH and WHO terminology</p></div>${chip}</div>${inner}</section>`;
+    return `<section class="card a-indigo" aria-labelledby="h-xw"><div class="row"><div><h2 id="h-xw" style="margin:0">Interoperability cross-walk</h2><p class="small muted">Three-way mapping across AYUSH and WHO terminology</p></div>${chip}</div>${inner}</section>`;
   }
 
   function clinicalSummaryInner(p, canEdit) {
@@ -932,13 +965,13 @@ fieldset.coding legend{font-weight:650;padding:0 .4rem}
   const homeHash = () => (session ? `#/${session.role}` : '#/');
 
   function profileCard(p) {
-    return `<section class="card" id="p-profile" aria-labelledby="h-profile"><h2 id="h-profile">Profile</h2>
+    return `<section class="card a-sky" id="p-profile" aria-labelledby="h-profile"><h2 id="h-profile">Profile</h2>
       <dl class="kv"><dt>Name</dt><dd>${esc(p.name)}</dd><dt>Age</dt><dd>${p.age}</dd><dt>Gender</dt><dd>${esc(p.gender)}</dd>
       <dt>ABHA ID</dt><dd>${esc(p.abha)}</dd><dt>Blood group</dt><dd>${esc(p.blood)}</dd>
       <dt>Allergies</dt><dd>${p.allergies.length ? p.allergies.map(esc).join(', ') : 'None recorded'}</dd>
       <dt>Hospitals visited</dt><dd>${hospitalsVisited(p).map((h) => `${esc(h.short)} (${esc(h.name)})`).join('<br>')}</dd></dl></section>`;
   }
-  const diagnosisCard = (p) => `<section class="card" aria-labelledby="h-dx"><h2 id="h-dx">Current diagnosis</h2><p style="font-size:1.15rem;font-weight:650">${esc(p.diagnosis)}</p>${p.dxCode ? `<p class="code-line">${esc(codingLabel(p.dxCode))}</p>` : ''}</section>`;
+  const diagnosisCard = (p) => `<section class="card a-teal" aria-labelledby="h-dx"><h2 id="h-dx">Current diagnosis</h2><p style="font-size:1.15rem;font-weight:650">${esc(p.diagnosis)}</p>${p.dxCode ? `<p class="code-line">${esc(codingLabel(p.dxCode))}</p>` : ''}</section>`;
 
   function sideEffects(m) {
     const s = m.se;
@@ -958,16 +991,16 @@ fieldset.coding legend{font-weight:650;padding:0 .4rem}
     </article>`;
   }
   function newMedsCard(list) {
-    return `<section class="card" aria-labelledby="h-new"><h2 id="h-new">Newly prescribed <span class="tag tag-new">New</span></h2>
+    return `<section class="card a-teal" aria-labelledby="h-new"><h2 id="h-new">Newly prescribed <span class="tag tag-new">New</span></h2>
       ${list.length ? list.map((m) => `<p><strong>${esc(m.brand)}</strong> (${esc(composition(m))}) · ${fmtDate(m.start)} · ${esc(DOCTOR[m.doctorId].name)}, ${esc(HOSPITALS[m.hospitalId].short)}</p>`).join('') : empty('No new medicines in the last 30 days.')}</section>`;
   }
   function medsCard(active, opts = {}) {
-    return `<section class="card" id="p-meds" aria-labelledby="h-meds"><h2 id="h-meds">Current medicines</h2>
+    return `<section class="card a-teal" id="p-meds" aria-labelledby="h-meds"><h2 id="h-meds">Current medicines</h2>
       ${active.length ? active.map((m) => medCard(m, opts)).join('') : empty('No current medicines.')}</section>`;
   }
   function timelineCard(p) {
     const items = [...p.history].sort((a, b) => b.date - a.date);
-    return `<section class="card" id="p-history" aria-labelledby="h-history"><h2 id="h-history">History across hospitals</h2>
+    return `<section class="card a-indigo" id="p-history" aria-labelledby="h-history"><h2 id="h-history">History across hospitals</h2>
       <p class="small muted">Every entry shows the hospital and doctor that created it.</p>
       ${items.length ? `<ol class="timeline">${items.map((h) => `<li>
         <p class="small muted">${fmtDate(h.date)} · <span class="tag">${esc(h.type)}</span> ${hospTag(h.hospitalId)}</p>
@@ -990,7 +1023,7 @@ fieldset.coding legend{font-weight:650;padding:0 .4rem}
         <p class="form-error" role="alert" hidden></p>
         <div class="form-actions"><button class="btn btn-primary">Upload report</button></div>
       </form>` : '<p class="small muted">Read-only: reports can be viewed and downloaded, not changed.</p>';
-    return `<section class="card" id="p-reports" aria-labelledby="h-reports"><h2 id="h-reports">Reports</h2>
+    return `<section class="card a-violet" id="p-reports" aria-labelledby="h-reports"><h2 id="h-reports">Reports</h2>
       ${rows.length ? `<ul class="list">${rows.map((r) => `<li>
         <p><strong>${esc(r.type)}</strong> · ${fmtDate(r.date)}</p>
         <p class="small muted">${esc(r.lab)} · ${esc(r.fileName)}${r.uploadedBy === 'patient' ? ' · uploaded by patient' : ''}</p>
@@ -1059,6 +1092,14 @@ fieldset.coding legend{font-weight:650;padding:0 .4rem}
   const hospitalDoctors = (h) => DOCTORS.filter((d) => d.hospitalId === h.id);
   const patientNamesOf = (d) => [...PATIENTS.values()].filter((p) => p.assigned.includes(d.id)).map((p) => p.name).sort();
 
+  // Dashboard header: initials, eyebrow, name, one line of context and an optional note.
+  const initials = (name) => name.replace(/^Dr\.?\s+/i, '').split(/\s+/).slice(0, 2).map((w) => w[0] || '').join('').toUpperCase();
+  const welcome = ({ eyebrow, title, sub = '', note = '', mark, action = '' }) => `<div class="welcome"><div class="avatar" aria-hidden="true">${esc(mark ?? initials(title))}</div>
+      <div class="who"><p class="eyebrow">${eyebrow}</p><h1>${esc(title)}</h1>${sub ? `<p class="muted" style="margin:.2rem 0 0">${sub}</p>` : ''}</div>${action}
+      ${note ? `<p class="note">${note}</p>` : ''}</div>`;
+  // Summary tiles; every number is computed from the records on this page.
+  const stats = (items) => `<div class="stats" role="list" aria-label="Summary">${items.map(([n, label, accent]) => `<div class="stat a-${accent}" role="listitem"><span class="num">${esc(String(n))}</span><span class="lbl">${esc(label)}</span></div>`).join('')}</div>`;
+
   function viewHospital() {
     const h = currentHospital();
     const docs = hospitalDoctors(h);
@@ -1066,18 +1107,26 @@ fieldset.coding legend{font-weight:650;padding:0 .4rem}
       .map((p) => ({ name: p.name, docs: docs.filter((d) => p.assigned.includes(d.id)) }))
       .filter((r) => r.docs.length)
       .sort((a, b) => a.name.localeCompare(b.name));
-    return `<div class="page-head"><div><p class="eyebrow">Hospital dashboard · ${esc(h.short)}</p><h1>${esc(h.name)}</h1></div></div>
-      <div class="banner info small">This dashboard shows your hospital, your doctors, the names of their patients and their insurance status. Diagnoses and other medical details stay in the patient's ABHA record.</div>
+    const here = [...PATIENTS.values()].filter((p) => docs.some((d) => p.assigned.includes(d.id)));
+    const activePolicies = here.filter((p) => p.policy && policyStatusOn(p.policy, now()) === 'Active').length;
+    return `${welcome({ eyebrow: `Hospital dashboard · ${esc(h.short)}`, title: h.name, sub: esc(h.address),
+        note: "This dashboard shows your hospital, your doctors, the names of their patients and their insurance status. Diagnoses and other medical details stay in the patient's ABHA record." })}
+      ${stats([[rows.length, 'Patients', 'sky'], [docs.length, 'Doctors', 'teal'], [activePolicies, 'Active insurance policies', 'violet'], [h.beds, 'Beds', 'indigo']])}
       <div class="grid grid-2">
-        <div class="stack">
-          <section class="card" aria-labelledby="h-pts"><h2 id="h-pts">Patients (${rows.length})</h2>
+          <section class="card a-sky" aria-labelledby="h-pts"><h2 id="h-pts">Patients (${rows.length})</h2>
             <label>Search patients or doctors<input data-filter="hosp" placeholder="Patient or doctor name" autocomplete="off"></label>
             <div class="table-wrap" style="margin-top:.75rem"><table><thead><tr><th>Patient</th><th>Doctor</th><th>Speciality</th></tr></thead><tbody id="hosp-rows">
             ${rows.map((r) => `<tr data-search="${esc((r.name + ' ' + r.docs.map((d) => d.name).join(' ')).toLowerCase())}"><td><strong>${esc(r.name)}</strong></td>
               <td>${r.docs.map((d) => `<a class="link" href="#/hospital/doctor/${d.id}">${esc(d.name)}</a>`).join('<br>')}</td><td>${r.docs.map((d) => esc(d.spec)).join('<br>')}</td></tr>`).join('')}
             </tbody></table></div><p class="empty" id="hosp-empty" hidden>No patient or doctor matches that search.</p></section>
-          ${hospitalInsuranceCard(h, [...PATIENTS.values()].filter((p) => docs.some((d) => p.assigned.includes(d.id))).sort((a, b) => a.name.localeCompare(b.name)))}
-          <section class="card" aria-labelledby="h-add"><h2 id="h-add">Add new patient</h2>
+          <section class="card a-teal" aria-labelledby="h-docs"><h2 id="h-docs">Doctors (${docs.length})</h2>
+            <ul class="list">${docs.map((d) => { const names = patientNamesOf(d); return `<li><div class="row">
+              <div><p><strong>${esc(d.name)}</strong> · ${esc(d.spec)}</p><p class="small muted">HPR ID ${esc(d.hprId)} · ${names.length} patient${names.length === 1 ? '' : 's'}</p></div>
+              <a class="btn btn-ghost btn-sm" href="#/hospital/doctor/${d.id}">View details<span class="visually-hidden"> of ${esc(d.name)}</span></a></div></li>`; }).join('')}</ul></section>
+      </div>
+      <div class="section-gap">${hospitalInsuranceCard(h, [...here].sort((a, b) => a.name.localeCompare(b.name)))}</div>
+      <div class="grid grid-2 section-gap">
+          <section class="card a-indigo" aria-labelledby="h-add"><h2 id="h-add">Add new patient</h2>
             <p class="small muted">Registers the patient under their ABHA ID and assigns a doctor. The diagnosis is saved to the patient's record for the doctor and the patient. It is not shown on this dashboard.</p>
             <form data-form="register" novalidate>
               <div class="row2"><label>Full name<input name="name" autocomplete="off" required></label>
@@ -1091,16 +1140,9 @@ fieldset.coding legend{font-weight:650;padding:0 .4rem}
                 <label>ICD code<span class="hint">Optional, e.g. E11 or N39.0</span><input name="code" autocomplete="off"></label></div>
               <p class="form-error" role="alert" hidden></p>
               <div class="form-actions"><button class="btn btn-primary">Register patient</button></div></form></section>
-        </div>
-        <div class="stack">
-          <section class="card" aria-labelledby="h-docs"><h2 id="h-docs">Doctors (${docs.length})</h2>
-            <ul class="list">${docs.map((d) => { const names = patientNamesOf(d); return `<li><div class="row">
-              <div><p><strong>${esc(d.name)}</strong> · ${esc(d.spec)}</p><p class="small muted">HPR ID ${esc(d.hprId)} · ${names.length} patient${names.length === 1 ? '' : 's'}</p></div>
-              <a class="btn btn-ghost btn-sm" href="#/hospital/doctor/${d.id}">View details<span class="visually-hidden"> of ${esc(d.name)}</span></a></div></li>`; }).join('')}</ul></section>
-          <section class="card" aria-labelledby="h-hosp"><h2 id="h-hosp">Hospital profile</h2>
+          <section class="card a-sky" aria-labelledby="h-hosp"><h2 id="h-hosp">Hospital profile</h2>
             <dl class="kv"><dt>Name</dt><dd>${esc(h.name)}</dd><dt>Registration ID</dt><dd>${esc(h.regId)}</dd><dt>Address</dt><dd>${esc(h.address)}</dd>
             <dt>Contact</dt><dd>${esc(h.contact)}</dd><dt>Departments</dt><dd>${h.departments.map(esc).join(', ')}</dd><dt>Beds</dt><dd>${h.beds}</dd></dl></section>
-        </div>
       </div>`;
   }
 
@@ -1114,11 +1156,11 @@ fieldset.coding legend{font-weight:650;padding:0 .4rem}
     return `<p><a class="link" href="#/hospital">← Back to dashboard</a></p>
       <div class="page-head"><div><p class="eyebrow">Doctor details · ${esc(h.short)}</p><h1>${esc(d.name)}</h1><p class="muted">${esc(d.spec)} · ${esc(h.name)}</p></div></div>
       <div class="grid grid-2">
-        <section class="card" aria-labelledby="h-dd"><h2 id="h-dd">Details</h2>
+        <section class="card a-sky" aria-labelledby="h-dd"><h2 id="h-dd">Details</h2>
           <dl class="kv"><dt>Name</dt><dd>${esc(d.name)}</dd><dt>Speciality</dt><dd>${esc(d.spec)}</dd><dt>HPR ID</dt><dd>${esc(d.hprId)}</dd><dt>ABHA ID</dt><dd>${esc(d.abha)}</dd>
           <dt>Hospital</dt><dd>${esc(h.name)}</dd><dt>Room</dt><dd>${esc(d.room)}</dd><dt>OPD days</dt><dd>${esc(d.opd)}</dd><dt>Phone</dt><dd>${esc(d.phone)}</dd>
           <dt>Email</dt><dd>${esc(d.email)}</dd><dt>With hospital since</dt><dd>${d.joined}</dd></dl></section>
-        <section class="card" aria-labelledby="h-dp"><h2 id="h-dp">Patients (${names.length})</h2><p class="small muted">Names only.</p>
+        <section class="card a-teal" aria-labelledby="h-dp"><h2 id="h-dp">Patients (${names.length})</h2><p class="small muted">Names only.</p>
           ${names.length ? `<ul class="list">${names.map((n) => `<li>${esc(n)}</li>`).join('')}</ul>` : empty('No patients assigned.')}</section>
       </div>`;
   }
@@ -1131,24 +1173,32 @@ fieldset.coding legend{font-weight:650;padding:0 .4rem}
          <p class="small muted">Token (also shown as text for doctors who type it in):</p><code class="token">${esc(p.qrToken)}</code>`
       : '<div class="banner warn">No active QR token. Doctors cannot use a QR code to open your record until you generate a new one.</div>';
     const sections = [['p-summary', 'Clinical summary'], ['p-profile', 'Profile'], ['p-meds', 'Medicines'], ['p-insurance', 'Insurance'], ['p-history', 'History'], ['p-qr', 'QR code'], ['p-reports', 'Reports'], ['p-log', 'Access log']];
-    return `<div class="page-head"><div><p class="eyebrow">Patient dashboard</p><h1>${esc(p.name)}</h1><p class="muted">ABHA ID ${esc(p.abha)} · your record travels with you to every hospital.</p></div></div>
+    return `${welcome({ eyebrow: 'Patient dashboard', title: p.name, sub: `ABHA ID ${esc(p.abha)} · your record travels with you to every hospital.` })}
+      ${stats([[active.length, 'Active medicines', 'sky'], [hospitalsVisited(p).length, 'Hospitals visited', 'teal'], [p.reports.length, 'Reports', 'violet'], [p.accessLog.length, 'Times a doctor opened your record', 'indigo']])}
       <nav class="chips no-print" aria-label="Jump to section">${sections.map(([id, l]) => `<button class="chip" data-action="jump" data-target="${id}">${l}</button>`).join('')}</nav>
       <h2 class="visually-hidden">Clinical summary</h2>
       ${clinicalSummary(p, false)}
-      <div class="grid grid-2" style="margin-top:1.25rem">
-        <div class="stack">${profileCard(p)}${diagnosisCard(p)}${newMedsCard(active.filter(isNewMed))}${medsCard(active)}${insuranceCard(p)}${timelineCard(p)}</div>
+      <div class="grid grid-2 section-gap">
+        <div class="stack">${profileCard(p)}${diagnosisCard(p)}${newMedsCard(active.filter(isNewMed))}</div>
         <div class="stack">
-          <section class="card" id="p-qr" aria-labelledby="h-qr"><h2 id="h-qr">Your QR code</h2>
+          <section class="card a-sky" id="p-qr" aria-labelledby="h-qr"><h2 id="h-qr">Your QR code</h2>
             <p class="small muted">The code holds only a random reference token, never medical data. A doctor must sign in to use it, and gets 30 minutes of read-only access. Every use appears in your access log.</p>
             ${qr}
             <div class="form-actions"><button class="btn btn-primary" data-action="qr-regenerate">${p.qrToken ? 'Regenerate token' : 'Generate new token'}</button>
             ${p.qrToken ? '<button class="btn btn-danger" data-action="qr-revoke">Revoke token</button>' : ''}</div>
             <p class="small muted">Regenerating or revoking stops the old token working immediately.</p></section>
-          ${reportsCard(p, { owner: true })}
-          <section class="card" id="p-log" aria-labelledby="h-log"><h2 id="h-log">Access log</h2><p class="small muted">Every time a doctor opened your record.</p>
+        </div></div>
+      <div class="grid grid-2 section-gap">
+        <div class="stack">${medsCard(active)}</div>
+        <div class="stack">${reportsCard(p, { owner: true })}</div></div>
+      <div class="grid grid-2 section-gap">
+        <div class="stack">${insuranceCard(p)}</div>
+        <div class="stack">
+          <section class="card a-indigo" id="p-log" aria-labelledby="h-log"><h2 id="h-log">Access log</h2><p class="small muted">Every time a doctor opened your record.</p>
             ${p.accessLog.length ? `<div class="table-wrap"><table><thead><tr><th>When</th><th>Doctor</th><th>Hospital</th><th>Method</th></tr></thead><tbody>
             ${p.accessLog.map((l) => `<tr><td>${fmtDateTime(l.time)}</td><td>${esc(DOCTOR[l.doctorId].name)}</td><td>${esc(HOSPITALS[l.hospitalId].short)}</td><td>${esc(l.method)}${l.detail ? `<br><span class="small muted">${esc(l.detail)}</span>` : ''}</td></tr>`).join('')}</tbody></table></div>` : empty('No doctor has opened your record yet.')}</section>
-        </div></div>`;
+        </div></div>
+      <div class="section-gap">${timelineCard(p)}</div>`;
   }
 
   function viewDoctor() {
@@ -1158,17 +1208,20 @@ fieldset.coding legend{font-weight:650;padding:0 .4rem}
     const latest = new Map();
     for (const g of grants) if (g.doctorId === doc.id && !PATIENTS.get(g.abha).assigned.includes(doc.id)) latest.set(g.abha, g);
     const shared = [...latest.values()].sort((a, b) => b.expiresAt - a.expiresAt);
-    return `<div class="page-head"><div><p class="eyebrow">Doctor dashboard · ${esc(h.short)}</p><h1>${esc(doc.name)}</h1><p class="muted">${esc(doc.spec)} · ${esc(h.name)}</p></div></div>
+    const liveShared = shared.filter((g) => g.expiresAt > now()).length;
+    const activeRx = mine.reduce((n, p) => n + p.meds.filter((m) => m.status === 'active' && m.doctorId === doc.id).length, 0);
+    return `${welcome({ eyebrow: `Doctor dashboard · ${esc(h.short)}`, title: doc.name, sub: `${esc(doc.spec)} · ${esc(h.name)}` })}
+      ${stats([[mine.length, 'My patients', 'sky'], [liveShared, 'Temporary access (QR / consent)', 'teal'], [activeRx, 'Active prescriptions by me', 'violet'], [mine.reduce((n, p) => n + p.reports.length, 0), 'Reports on my patients', 'indigo']])}
       <div class="grid grid-2">
         <div class="stack">
-          <section class="card" aria-labelledby="h-mine"><h2 id="h-mine">My patients (${mine.length})</h2>
+          <section class="card a-sky" aria-labelledby="h-mine"><h2 id="h-mine">My patients (${mine.length})</h2>
             <label>Search my patients<input data-filter="mine" placeholder="Name, ABHA ID or diagnosis" autocomplete="off"></label>
             <ul class="list" id="mine-list" style="margin-top:.75rem">${mine.map((p) => `<li data-search="${esc((p.name + ' ' + p.abha + ' ' + p.diagnosis).toLowerCase())}"><div class="row">
               <div><p><strong>${esc(p.name)}</strong> · ${p.age} · ${esc(p.gender)}</p><p class="small muted">${esc(p.abha)} · ${esc(p.diagnosis)}</p></div>
               <a class="btn btn-ghost btn-sm" href="#/doctor/patient/${esc(p.abha)}">Open<span class="visually-hidden"> ${esc(p.name)}</span></a></div></li>`).join('')}</ul>
             <p class="empty" id="mine-empty" hidden>No patient matches that search.</p>
             ${mine.length ? '' : empty('No patients assigned yet.')}</section>
-          <section class="card" aria-labelledby="h-shared"><h2 id="h-shared">Patients via QR / consent</h2>
+          <section class="card a-teal" aria-labelledby="h-shared"><h2 id="h-shared">Patients via QR / consent</h2>
             <p class="small muted">Temporary, read-only access. It ends after 30 minutes unless you add a visit or prescription, which makes the patient yours.</p>
             ${shared.length ? `<ul class="list">${shared.map((g) => { const p = PATIENTS.get(g.abha); const live = g.expiresAt > now(); return `<li><div class="row">
               <div><p><strong>${esc(p.name)}</strong> <span class="tag">${esc(g.method)}</span></p>
@@ -1179,19 +1232,17 @@ fieldset.coding legend{font-weight:650;padding:0 .4rem}
             <dt>Departments</dt><dd>${h.departments.map(esc).join(', ')}</dd><dt>Beds</dt><dd>${h.beds}</dd></dl></details>
         </div>
         <div class="stack">
-          <section class="card" aria-labelledby="h-scan"><h2 id="h-scan">Scan QR / Enter token</h2><p class="small"><strong>Access is logged.</strong></p>
+          <section class="card a-sky" aria-labelledby="h-scan"><h2 id="h-scan">Scan QR / Enter token</h2><p class="small"><strong>Access is logged.</strong></p>
             <form data-form="token" novalidate><label>Patient token<span class="hint">Type or paste the token printed under the patient's QR code</span><input name="token" autocomplete="off" placeholder="NSQR-…" required></label>
             <p class="form-error" role="alert" hidden></p><div class="form-actions"><button class="btn btn-primary">Verify token</button></div></form></section>
-          <section class="card" aria-labelledby="h-consent"><h2 id="h-consent">Open with patient consent</h2>
+          <section class="card a-teal" aria-labelledby="h-consent"><h2 id="h-consent">Open with patient consent</h2>
             <p class="small muted">The patient reads out the one-time code sent to their phone. Access is logged.</p>
             <form data-form="consent" novalidate><label>Patient ABHA ID<input name="abha" inputmode="numeric" placeholder="XX-XXXX-XXXX-XXXX" autocomplete="off" required></label>
             <label>Patient consent OTP<span class="hint">Demo OTP: ${DEMO_OTP}</span><input name="otp" inputmode="numeric" maxlength="6" autocomplete="off" required></label>
             <p class="form-error" role="alert" hidden></p><div class="form-actions"><button class="btn btn-primary">Open record</button></div></form></section>
-          <section class="card" aria-labelledby="h-check"><h2 id="h-check">Check ABHA ID</h2>
-            <p class="small muted">Checks the format and whether the ID is registered. No medical data is shown.</p>
-            <form data-form="check" novalidate><label>ABHA ID<input name="abha" inputmode="numeric" placeholder="XX-XXXX-XXXX-XXXX" autocomplete="off" required></label>
-            <div class="form-actions"><button class="btn btn-ghost">Check</button></div></form><div id="check-result" aria-live="polite"></div></section>
-          <section class="card" aria-labelledby="h-elig"><h2 id="h-elig">Check insurance eligibility</h2>
+        </div></div>
+      <div class="grid grid-2 section-gap">
+          <section class="card a-violet" aria-labelledby="h-elig"><h2 id="h-elig">Check insurance eligibility</h2>
             <p class="small muted">Uses the same rules as the patient record. Checks for a patient are logged in their access log.</p>
             <form data-form="elig" novalidate>${icdDatalist()}
               <label>System<select name="system"><option value="ICD">ICD (modern medicine)</option><option value="AYUSH">AYUSH treatment</option></select></label>
@@ -1201,7 +1252,12 @@ fieldset.coding legend{font-weight:650;padding:0 .4rem}
                 ${[...PATIENTS.values()].filter((p) => access(doc, p)).map((p) => `<option value="${esc(p.abha)}">${esc(p.name)} (${esc(p.abha)})</option>`).join('')}</select></label>
               <p class="form-error" role="alert" hidden></p><div class="form-actions"><button class="btn btn-ghost">Check eligibility</button></div></form>
             <div id="elig-result" aria-live="polite"></div></section>
-          <section class="card no-print" aria-labelledby="h-clock"><h2 id="h-clock">Demo clock</h2>
+        <div class="stack">
+          <section class="card a-indigo" aria-labelledby="h-check"><h2 id="h-check">Check ABHA ID</h2>
+            <p class="small muted">Checks the format and whether the ID is registered. No medical data is shown.</p>
+            <form data-form="check" novalidate><label>ABHA ID<input name="abha" inputmode="numeric" placeholder="XX-XXXX-XXXX-XXXX" autocomplete="off" required></label>
+            <div class="form-actions"><button class="btn btn-ghost">Check</button></div></form><div id="check-result" aria-live="polite"></div></section>
+          <section class="card a-amber no-print" aria-labelledby="h-clock"><h2 id="h-clock">Demo clock</h2>
             <p class="small muted">For reviewers: move time forward to see 30-minute access expire. ${clockOffset ? `Clock is ahead by ${Math.round(clockOffset / MIN)} min.` : 'Clock shows real time.'}</p>
             <div class="form-actions"><button class="btn btn-ghost btn-sm" data-action="clock" data-min="31">Advance 31 minutes</button>${clockOffset ? '<button class="btn btn-ghost btn-sm" data-action="clock" data-min="0">Reset clock</button>' : ''}</div></section>
         </div></div>`;
@@ -1222,8 +1278,8 @@ fieldset.coding legend{font-weight:650;padding:0 .4rem}
       : `<div class="banner warn">Temporary access via <strong>${esc(acc.grant.method)}</strong>: history and reports are read-only until <strong>${fmtTime(acc.grant.expiresAt)}</strong> (<span data-countdown="${acc.grant.expiresAt}">${Math.ceil((acc.grant.expiresAt - now()) / MIN)} min left</span>). This visit is logged. Adding a visit or prescription links this patient to you and ${esc(HOSPITALS[doc.hospitalId].short)}.</div>`;
     const t = (id, label, href) => `<a class="tab" href="${href}"${tab === id ? ' aria-current="page"' : ''}>${label}</a>`;
     return `<p class="no-print"><a class="link" href="#/doctor">← Back to dashboard</a></p>
-      <div class="page-head"><div><p class="eyebrow">Patient record</p><h1>${esc(p.name)}</h1><p class="muted">ABHA ID ${esc(p.abha)}</p></div>
-        <a class="btn btn-primary" href="#/doctor/report/${esc(p.abha)}">Generate Final Report</a></div>
+      ${welcome({ eyebrow: 'Patient record', title: p.name, sub: `ABHA ID ${esc(p.abha)} · ${p.age} · ${esc(p.gender)}`,
+        action: `<a class="btn btn-primary" href="#/doctor/report/${esc(p.abha)}">Generate Final Report</a>` })}
       ${banner}
       <nav class="tabs no-print" aria-label="Patient record sections">${t('record', 'Record', `#/doctor/patient/${esc(p.abha)}`)}${t('summary', 'Clinical summary', `#/doctor/summary/${esc(p.abha)}`)}${t('insurance', 'Insurance', `#/doctor/insurance/${esc(p.abha)}`)}</nav>`;
   }
@@ -1261,17 +1317,17 @@ fieldset.coding legend{font-weight:650;padding:0 .4rem}
     return `${recordHead(p, doc, acc, 'record')}${icdDatalist()}
       <div class="grid grid-2">
         <div class="stack">${profileCard(p)}${diagnosisCard(p)}
-          ${warnings.length ? `<section class="card" aria-labelledby="h-warn"><h2 id="h-warn">Medicine warnings</h2><div class="banner warn" style="margin:0"><ul class="warn-list">${warnings.map((w) => `<li>${esc(w)}</li>`).join('')}</ul></div></section>` : ''}
+          ${warnings.length ? `<section class="card a-amber" aria-labelledby="h-warn"><h2 id="h-warn">Medicine warnings</h2><div class="banner warn" style="margin:0"><ul class="warn-list">${warnings.map((w) => `<li>${esc(w)}</li>`).join('')}</ul></div></section>` : ''}
           ${newMedsCard(active.filter(isNewMed))}${medsCard(active, { stop: assigned, abha: p.abha })}${timelineCard(p)}</div>
         <div class="stack">
-          <section class="card" aria-labelledby="h-note"><h2 id="h-note">Add visit, diagnosis, treatment or note</h2>
+          <section class="card a-indigo" aria-labelledby="h-note"><h2 id="h-note">Add visit, diagnosis, treatment or note</h2>
             <form data-form="note" data-abha="${esc(p.abha)}" novalidate>
               <label>Entry type<select name="kind"><option>Visit</option><option>Diagnosis</option><option>Treatment</option><option>Note</option></select></label>
               <label>New diagnosis<span class="hint">Required for a diagnosis entry; replaces the current diagnosis</span><input name="diagnosis" autocomplete="off"></label>
               <label>Notes<textarea name="text" required></textarea></label>
               ${codingFields(p, { kind: 'note' })}
               <p class="form-error" role="alert" hidden></p><div class="form-actions"><button class="btn btn-primary">Save entry</button></div></form></section>
-          <section class="card" aria-labelledby="h-rx"><h2 id="h-rx">Add prescription</h2>
+          <section class="card a-teal" aria-labelledby="h-rx"><h2 id="h-rx">Add prescription</h2>
             <form data-form="prescribe" data-abha="${esc(p.abha)}" novalidate>${brands}
               <label>Brand name<span class="hint">Pick from the list to fill in the salt automatically</span><input name="brand" list="brands" autocomplete="off" required></label>
               <label>Salt / composition<span class="hint">e.g. Ibuprofen 400 mg + Paracetamol 325 mg</span><input name="salt" autocomplete="off" required></label>
