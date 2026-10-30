@@ -1,0 +1,81 @@
+{
+  "resourceType": "Condition",
+  "id": "ec5b7f9bade34842a3880585aec9c023",
+  "meta": {
+    "tag": [
+      {
+        "system": "http://localhost:8000/fhir/CodeSystem/namasetu-tags",
+        "code": "sample-data",
+        "display": "SAMPLE — illustrative, not official"
+      }
+    ]
+  },
+  "clinicalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "active"
+      }
+    ]
+  },
+  "verificationStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+        "code": "confirmed"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code": "encounter-diagnosis"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://localhost:8000/fhir/CodeSystem/namaste",
+        "version": "SAMPLE-1",
+        "code": "SAMPLE-AYU-0001",
+        "display": "Amavata"
+      },
+      {
+        "system": "http://localhost:8000/fhir/CodeSystem/icd11-mms-sample",
+        "code": "SAMPLE-TM2-0111",
+        "display": "Ama-vata joint disorder"
+      },
+      {
+        "system": "http://localhost:8000/fhir/CodeSystem/icd11-mms-sample",
+        "code": "SAMPLE-BIO-0001",
+        "display": "Rheumatoid arthritis"
+      }
+    ],
+    "text": "Amavata"
+  },
+  "subject": {
+    "reference": "Patient/abha-91TEST00000001",
+    "identifier": {
+      "system": "https://healthid.ndhm.gov.in",
+      "value": "91-TEST-0000-0001"
+    },
+    "display": "Test Patient (SYNTHETIC)"
+  },
+  "recordedDate": "2026-10-30",
+  "encounter": {
+    "reference": "Encounter/enc-test-1"
+  },
+  "note": [
+    {
+      "text": "TM2 basis: approved mapping 1 v1 (official-crosswalk); biomedical link from who-index (relatedto; supports claims, insurer decides)."
+    }
+  ],
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Condition: Amavata [SAMPLE-AYU-0001 Amavata, SAMPLE-TM2-0111 Ama-vata joint disorder, SAMPLE-BIO-0001 Rheumatoid arthritis]</p></div>"
+  }
+}

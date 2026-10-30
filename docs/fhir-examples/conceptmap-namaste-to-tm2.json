@@ -1,0 +1,535 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "namaste-to-tm2",
+  "url": "http://localhost:8000/fhir/ConceptMap/namaste-to-tm2",
+  "name": "NamasteToTm2",
+  "title": "NAMASTE to ICD-11 TM2 (SAMPLE)",
+  "status": "active",
+  "experimental": true,
+  "publisher": "Team Byte Strong",
+  "description": "Built only from clinician-approved / official mappings. SAMPLE — illustrative, not official.",
+  "sourceCanonical": "http://localhost:8000/fhir/ValueSet/namaste-ayurveda",
+  "group": [
+    {
+      "source": "http://localhost:8000/fhir/CodeSystem/namaste",
+      "target": "http://localhost:8000/fhir/CodeSystem/icd11-mms-sample",
+      "element": [
+        {
+          "code": "SAMPLE-AYU-0001",
+          "display": "Amavata",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0111",
+              "display": "Ama-vata joint disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 1 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0002",
+          "display": "Sandhivata",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0112",
+              "display": "Degenerative joint disorder (TM2)",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 2 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0003",
+          "display": "Vatarakta",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0113",
+              "display": "Vata-rakta disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 3 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0004",
+          "display": "Gridhrasi",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0114",
+              "display": "Radiating leg pain disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 4 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0005",
+          "display": "Katishula",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0115",
+              "display": "Lumbar pain disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 5 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0008",
+          "display": "Manyastambha",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0116",
+              "display": "Neck stiffness disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 6 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0009",
+          "display": "Amlapitta",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0131",
+              "display": "Sour-bile disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 7 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0010",
+          "display": "Grahani",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0132",
+              "display": "Grahani disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 8 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0011",
+          "display": "Atisara",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0133",
+              "display": "Diarrhoea disorder (TM2)",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 9 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0013",
+          "display": "Ajirna",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0135",
+              "display": "Indigestion disorder (TM2)",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 10 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0015",
+          "display": "Anaha",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0137",
+              "display": "Abdominal distension disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 11 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0016",
+          "display": "Krimi",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0138",
+              "display": "Worm infestation disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 12 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0017",
+          "display": "Kasa",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0141",
+              "display": "Cough disorder (TM2)",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 13 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0018",
+          "display": "Tamaka Shvasa",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0143",
+              "display": "Wheezing breathlessness disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 14 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0020",
+          "display": "Hikka",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0145",
+              "display": "Hiccup disorder (TM2)",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 15 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0021",
+          "display": "Rajayakshma",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0146",
+              "display": "Consumptive wasting disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 16 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0022",
+          "display": "Mutrakrichchhra",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0151",
+              "display": "Painful urination disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 17 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0023",
+          "display": "Ashmari",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0152",
+              "display": "Urinary stone disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 18 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0024",
+          "display": "Mutraghata",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0153",
+              "display": "Urinary retention disorder (TM2)",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 19 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0026",
+          "display": "Vicharchika",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0162",
+              "display": "Itchy weeping skin disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 20 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0027",
+          "display": "Shvitra",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0163",
+              "display": "White patch skin disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 21 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0028",
+          "display": "Shitapitta",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0164",
+              "display": "Wheal disorder (TM2)",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 22 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0029",
+          "display": "Visarpa",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0165",
+              "display": "Spreading skin inflammation disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 23 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0030",
+          "display": "Pandu",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0171",
+              "display": "Pallor disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 24 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0032",
+          "display": "Raktapitta",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0173",
+              "display": "Bleeding disorder (TM2)",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 25 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0033",
+          "display": "Unmada",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0181",
+              "display": "Mental derangement disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 26 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0034",
+          "display": "Apasmara",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0123",
+              "display": "Seizure disorder (TM2)",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 27 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0035",
+          "display": "Anidra",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0182",
+              "display": "Sleeplessness disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 28 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0036",
+          "display": "Kashtartava",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0191",
+              "display": "Painful menstruation disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 29 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0037",
+          "display": "Shvetapradara",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0192",
+              "display": "White vaginal discharge disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 30 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0038",
+          "display": "Asrigdara",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0193",
+              "display": "Excessive menstrual bleeding disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 31 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0039",
+          "display": "Jvara",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0201",
+              "display": "Fever disorder (TM2)",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 32 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0040",
+          "display": "Vataja Jvara",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0201",
+              "display": "Fever disorder (TM2)",
+              "equivalence": "wider",
+              "comment": "Approved by official-crosswalk (mapping 33 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0041",
+          "display": "Pittaja Jvara",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0201",
+              "display": "Fever disorder (TM2)",
+              "equivalence": "wider",
+              "comment": "Approved by official-crosswalk (mapping 34 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0043",
+          "display": "Prameha",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0211",
+              "display": "Prameha disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 35 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0045",
+          "display": "Sthaulya",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0213",
+              "display": "Obesity disorder (TM2)",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 36 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0046",
+          "display": "Galaganda",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0214",
+              "display": "Neck swelling disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 37 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-0048",
+          "display": "Ardhavabhedaka",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0222",
+              "display": "Hemicrania disorder",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 38 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-P01",
+          "display": "Vatavriddhi",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0511",
+              "display": "Vata pattern (TM2)",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 39 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-P02",
+          "display": "Pittavriddhi",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0512",
+              "display": "Pitta pattern (TM2)",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 40 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-P03",
+          "display": "Kaphavriddhi",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0513",
+              "display": "Kapha pattern (TM2)",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 41 v1)"
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-AYU-P05",
+          "display": "Agnimandya",
+          "target": [
+            {
+              "code": "SAMPLE-TM2-0522",
+              "display": "Diminished agni pattern",
+              "equivalence": "equivalent",
+              "comment": "Approved by official-crosswalk (mapping 42 v1)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "targetCanonical": "http://localhost:8000/fhir/ValueSet/icd11-tm2",
+  "version": "1",
+  "date": "2026-10-30T12:04:01+00:00",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2026-10-30T12:04:01+00:00"
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>ConceptMap: NAMASTE to ICD-11 TM2 (SAMPLE)</p></div>"
+  }
+}

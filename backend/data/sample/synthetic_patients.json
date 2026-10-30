@@ -1,0 +1,820 @@
+{
+ "_label": "SYNTHETIC patients for demonstration only. Fake names and TEST ABHA-like identifiers; not real people.",
+ "patients": [
+  {
+   "id": "test-patient-01",
+   "display": "Test Patient 01 (SYNTHETIC) - diabetes",
+   "abha_number": "91-TEST-0100-0000",
+   "bundle": {
+    "resourceType": "Bundle",
+    "id": "history-test-patient-01",
+    "type": "collection",
+    "entry": [
+     {
+      "fullUrl": "urn:uuid:test-patient-01",
+      "resource": {
+       "resourceType": "Patient",
+       "id": "test-patient-01",
+       "identifier": [
+        {
+         "system": "https://healthid.ndhm.gov.in",
+         "value": "91-TEST-0100-0000"
+        }
+       ],
+       "name": [
+        {
+         "text": "Test Patient 01 (SYNTHETIC) - diabetes"
+        }
+       ]
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:enc-01-a",
+      "resource": {
+       "resourceType": "Encounter",
+       "id": "enc-01-a",
+       "status": "finished",
+       "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-01"
+       },
+       "period": {
+        "start": "2025-02-01"
+       }
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:test-patient-01-ms-1",
+      "resource": {
+       "resourceType": "MedicationStatement",
+       "id": "test-patient-01-ms-1",
+       "status": "active",
+       "medicationCodeableConcept": {
+        "text": "Tab Glycomet 500 BD"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-01"
+       },
+       "context": {
+        "reference": "Encounter/enc-01-a"
+       },
+       "effectivePeriod": {
+        "start": "2025-02-01"
+       },
+       "dateAsserted": "2025-02-01"
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:test-patient-01-ms-2",
+      "resource": {
+       "resourceType": "MedicationStatement",
+       "id": "test-patient-01-ms-2",
+       "status": "active",
+       "medicationCodeableConcept": {
+        "text": "Amaryl 1 OD"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-01"
+       },
+       "context": {
+        "reference": "Encounter/enc-01-a"
+       },
+       "effectivePeriod": {
+        "start": "2025-02-01"
+       },
+       "dateAsserted": "2025-02-01"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "test-patient-02",
+   "display": "Test Patient 02 (SYNTHETIC) - anaemia",
+   "abha_number": "91-TEST-0200-0000",
+   "bundle": {
+    "resourceType": "Bundle",
+    "id": "history-test-patient-02",
+    "type": "collection",
+    "entry": [
+     {
+      "fullUrl": "urn:uuid:test-patient-02",
+      "resource": {
+       "resourceType": "Patient",
+       "id": "test-patient-02",
+       "identifier": [
+        {
+         "system": "https://healthid.ndhm.gov.in",
+         "value": "91-TEST-0200-0000"
+        }
+       ],
+       "name": [
+        {
+         "text": "Test Patient 02 (SYNTHETIC) - anaemia"
+        }
+       ]
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:enc-02-a",
+      "resource": {
+       "resourceType": "Encounter",
+       "id": "enc-02-a",
+       "status": "finished",
+       "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-02"
+       },
+       "period": {
+        "start": "2025-06-10"
+       }
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:test-patient-02-ms-1",
+      "resource": {
+       "resourceType": "MedicationStatement",
+       "id": "test-patient-02-ms-1",
+       "status": "active",
+       "medicationCodeableConcept": {
+        "text": "Ferrous sulphate + Folic acid tablet"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-02"
+       },
+       "context": {
+        "reference": "Encounter/enc-02-a"
+       },
+       "effectivePeriod": {
+        "start": "2025-06-10"
+       },
+       "dateAsserted": "2025-06-10"
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:enc-02-b",
+      "resource": {
+       "resourceType": "Encounter",
+       "id": "enc-02-b",
+       "status": "finished",
+       "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-02"
+       },
+       "period": {
+        "start": "2026-01-15"
+       }
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:test-patient-02-ms-2",
+      "resource": {
+       "resourceType": "MedicationStatement",
+       "id": "test-patient-02-ms-2",
+       "status": "active",
+       "medicationCodeableConcept": {
+        "text": "Pan 40 OD before food"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-02"
+       },
+       "context": {
+        "reference": "Encounter/enc-02-b"
+       },
+       "effectivePeriod": {
+        "start": "2026-01-15"
+       },
+       "dateAsserted": "2026-01-15"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "test-patient-03",
+   "display": "Test Patient 03 (SYNTHETIC) - rheumatoid arthritis",
+   "abha_number": "91-TEST-0300-0000",
+   "bundle": {
+    "resourceType": "Bundle",
+    "id": "history-test-patient-03",
+    "type": "collection",
+    "entry": [
+     {
+      "fullUrl": "urn:uuid:test-patient-03",
+      "resource": {
+       "resourceType": "Patient",
+       "id": "test-patient-03",
+       "identifier": [
+        {
+         "system": "https://healthid.ndhm.gov.in",
+         "value": "91-TEST-0300-0000"
+        }
+       ],
+       "name": [
+        {
+         "text": "Test Patient 03 (SYNTHETIC) - rheumatoid arthritis"
+        }
+       ]
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:enc-03-a",
+      "resource": {
+       "resourceType": "Encounter",
+       "id": "enc-03-a",
+       "status": "finished",
+       "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-03"
+       },
+       "period": {
+        "start": "2024-11-05"
+       }
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:test-patient-03-ms-1",
+      "resource": {
+       "resourceType": "MedicationStatement",
+       "id": "test-patient-03-ms-1",
+       "status": "active",
+       "medicationCodeableConcept": {
+        "text": "Folitrax 2.5"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-03"
+       },
+       "context": {
+        "reference": "Encounter/enc-03-a"
+       },
+       "effectivePeriod": {
+        "start": "2024-11-05"
+       },
+       "dateAsserted": "2024-11-05"
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:test-patient-03-ms-2",
+      "resource": {
+       "resourceType": "MedicationStatement",
+       "id": "test-patient-03-ms-2",
+       "status": "stopped",
+       "medicationCodeableConcept": {
+        "text": "Brufen 400 TDS"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-03"
+       },
+       "context": {
+        "reference": "Encounter/enc-03-a"
+       },
+       "effectivePeriod": {
+        "start": "2024-11-05",
+        "end": "2025-01-10"
+       },
+       "dateAsserted": "2024-11-05"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "test-patient-04",
+   "display": "Test Patient 04 (SYNTHETIC) - hypertension",
+   "abha_number": "91-TEST-0400-0000",
+   "bundle": {
+    "resourceType": "Bundle",
+    "id": "history-test-patient-04",
+    "type": "collection",
+    "entry": [
+     {
+      "fullUrl": "urn:uuid:test-patient-04",
+      "resource": {
+       "resourceType": "Patient",
+       "id": "test-patient-04",
+       "identifier": [
+        {
+         "system": "https://healthid.ndhm.gov.in",
+         "value": "91-TEST-0400-0000"
+        }
+       ],
+       "name": [
+        {
+         "text": "Test Patient 04 (SYNTHETIC) - hypertension"
+        }
+       ]
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:enc-04-a",
+      "resource": {
+       "resourceType": "Encounter",
+       "id": "enc-04-a",
+       "status": "finished",
+       "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-04"
+       },
+       "period": {
+        "start": "2025-08-20"
+       }
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:test-patient-04-ms-1",
+      "resource": {
+       "resourceType": "MedicationStatement",
+       "id": "test-patient-04-ms-1",
+       "status": "active",
+       "medicationCodeableConcept": {
+        "text": "Tab Hydrochlorothiazide 12.5 mg OD"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-04"
+       },
+       "context": {
+        "reference": "Encounter/enc-04-a"
+       },
+       "effectivePeriod": {
+        "start": "2025-08-20"
+       },
+       "dateAsserted": "2025-08-20"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "test-patient-05",
+   "display": "Test Patient 05 (SYNTHETIC) - fever",
+   "abha_number": "91-TEST-0500-0000",
+   "bundle": {
+    "resourceType": "Bundle",
+    "id": "history-test-patient-05",
+    "type": "collection",
+    "entry": [
+     {
+      "fullUrl": "urn:uuid:test-patient-05",
+      "resource": {
+       "resourceType": "Patient",
+       "id": "test-patient-05",
+       "identifier": [
+        {
+         "system": "https://healthid.ndhm.gov.in",
+         "value": "91-TEST-0500-0000"
+        }
+       ],
+       "name": [
+        {
+         "text": "Test Patient 05 (SYNTHETIC) - fever"
+        }
+       ]
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:enc-05-a",
+      "resource": {
+       "resourceType": "Encounter",
+       "id": "enc-05-a",
+       "status": "finished",
+       "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-05"
+       },
+       "period": {
+        "start": "2026-10-25"
+       }
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:test-patient-05-ms-1",
+      "resource": {
+       "resourceType": "MedicationStatement",
+       "id": "test-patient-05-ms-1",
+       "status": "active",
+       "medicationCodeableConcept": {
+        "text": "Crocin 500"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-05"
+       },
+       "context": {
+        "reference": "Encounter/enc-05-a"
+       },
+       "effectivePeriod": {
+        "start": "2026-10-25"
+       },
+       "dateAsserted": "2026-10-25"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "test-patient-06",
+   "display": "Test Patient 06 (SYNTHETIC) - stopped diabetes medicine",
+   "abha_number": "91-TEST-0600-0000",
+   "bundle": {
+    "resourceType": "Bundle",
+    "id": "history-test-patient-06",
+    "type": "collection",
+    "entry": [
+     {
+      "fullUrl": "urn:uuid:test-patient-06",
+      "resource": {
+       "resourceType": "Patient",
+       "id": "test-patient-06",
+       "identifier": [
+        {
+         "system": "https://healthid.ndhm.gov.in",
+         "value": "91-TEST-0600-0000"
+        }
+       ],
+       "name": [
+        {
+         "text": "Test Patient 06 (SYNTHETIC) - stopped diabetes medicine"
+        }
+       ]
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:enc-06-a",
+      "resource": {
+       "resourceType": "Encounter",
+       "id": "enc-06-a",
+       "status": "finished",
+       "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-06"
+       },
+       "period": {
+        "start": "2023-03-01"
+       }
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:test-patient-06-ms-1",
+      "resource": {
+       "resourceType": "MedicationStatement",
+       "id": "test-patient-06-ms-1",
+       "status": "stopped",
+       "medicationCodeableConcept": {
+        "text": "Glycomet 500"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-06"
+       },
+       "context": {
+        "reference": "Encounter/enc-06-a"
+       },
+       "effectivePeriod": {
+        "start": "2023-03-01",
+        "end": "2024-06-30"
+       },
+       "dateAsserted": "2023-03-01"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "test-patient-07",
+   "display": "Test Patient 07 (SYNTHETIC) - unrecognised entries",
+   "abha_number": "91-TEST-0700-0000",
+   "bundle": {
+    "resourceType": "Bundle",
+    "id": "history-test-patient-07",
+    "type": "collection",
+    "entry": [
+     {
+      "fullUrl": "urn:uuid:test-patient-07",
+      "resource": {
+       "resourceType": "Patient",
+       "id": "test-patient-07",
+       "identifier": [
+        {
+         "system": "https://healthid.ndhm.gov.in",
+         "value": "91-TEST-0700-0000"
+        }
+       ],
+       "name": [
+        {
+         "text": "Test Patient 07 (SYNTHETIC) - unrecognised entries"
+        }
+       ]
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:enc-07-a",
+      "resource": {
+       "resourceType": "Encounter",
+       "id": "enc-07-a",
+       "status": "finished",
+       "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-07"
+       },
+       "period": {
+        "start": "2026-05-02"
+       }
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:test-patient-07-ms-1",
+      "resource": {
+       "resourceType": "MedicationStatement",
+       "id": "test-patient-07-ms-1",
+       "status": "active",
+       "medicationCodeableConcept": {
+        "text": "Ashwagandha churna"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-07"
+       },
+       "context": {
+        "reference": "Encounter/enc-07-a"
+       },
+       "effectivePeriod": {
+        "start": "2026-05-02"
+       },
+       "dateAsserted": "2026-05-02"
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:test-patient-07-ms-2",
+      "resource": {
+       "resourceType": "MedicationStatement",
+       "id": "test-patient-07-ms-2",
+       "status": "active",
+       "medicationCodeableConcept": {
+        "text": "Syp Xyzol 5 ml TDS"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-07"
+       },
+       "context": {
+        "reference": "Encounter/enc-07-a"
+       },
+       "effectivePeriod": {
+        "start": "2026-05-02"
+       },
+       "dateAsserted": "2026-05-02"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "test-patient-08",
+   "display": "Test Patient 08 (SYNTHETIC) - Ayush only",
+   "abha_number": "91-TEST-0800-0000",
+   "bundle": {
+    "resourceType": "Bundle",
+    "id": "history-test-patient-08",
+    "type": "collection",
+    "entry": [
+     {
+      "fullUrl": "urn:uuid:test-patient-08",
+      "resource": {
+       "resourceType": "Patient",
+       "id": "test-patient-08",
+       "identifier": [
+        {
+         "system": "https://healthid.ndhm.gov.in",
+         "value": "91-TEST-0800-0000"
+        }
+       ],
+       "name": [
+        {
+         "text": "Test Patient 08 (SYNTHETIC) - Ayush only"
+        }
+       ]
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:enc-08-a",
+      "resource": {
+       "resourceType": "Encounter",
+       "id": "enc-08-a",
+       "status": "finished",
+       "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-08"
+       },
+       "period": {
+        "start": "2026-02-11"
+       }
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:test-patient-08-ms-1",
+      "resource": {
+       "resourceType": "MedicationStatement",
+       "id": "test-patient-08-ms-1",
+       "status": "active",
+       "medicationCodeableConcept": {
+        "text": "Triphala churna"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-08"
+       },
+       "context": {
+        "reference": "Encounter/enc-08-a"
+       },
+       "effectivePeriod": {
+        "start": "2026-02-11"
+       },
+       "dateAsserted": "2026-02-11"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "test-patient-09",
+   "display": "Test Patient 09 (SYNTHETIC) - migraine",
+   "abha_number": "91-TEST-0900-0000",
+   "bundle": {
+    "resourceType": "Bundle",
+    "id": "history-test-patient-09",
+    "type": "collection",
+    "entry": [
+     {
+      "fullUrl": "urn:uuid:test-patient-09",
+      "resource": {
+       "resourceType": "Patient",
+       "id": "test-patient-09",
+       "identifier": [
+        {
+         "system": "https://healthid.ndhm.gov.in",
+         "value": "91-TEST-0900-0000"
+        }
+       ],
+       "name": [
+        {
+         "text": "Test Patient 09 (SYNTHETIC) - migraine"
+        }
+       ]
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:enc-09-a",
+      "resource": {
+       "resourceType": "Encounter",
+       "id": "enc-09-a",
+       "status": "finished",
+       "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-09"
+       },
+       "period": {
+        "start": "2026-04-04"
+       }
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:test-patient-09-ms-1",
+      "resource": {
+       "resourceType": "MedicationStatement",
+       "id": "test-patient-09-ms-1",
+       "status": "active",
+       "medicationCodeableConcept": {
+        "text": "Suminat 50"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-09"
+       },
+       "context": {
+        "reference": "Encounter/enc-09-a"
+       },
+       "effectivePeriod": {
+        "start": "2026-04-04"
+       },
+       "dateAsserted": "2026-04-04"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "test-patient-10",
+   "display": "Test Patient 10 (SYNTHETIC) - methotrexate with PPI",
+   "abha_number": "91-TEST-1000-0000",
+   "bundle": {
+    "resourceType": "Bundle",
+    "id": "history-test-patient-10",
+    "type": "collection",
+    "entry": [
+     {
+      "fullUrl": "urn:uuid:test-patient-10",
+      "resource": {
+       "resourceType": "Patient",
+       "id": "test-patient-10",
+       "identifier": [
+        {
+         "system": "https://healthid.ndhm.gov.in",
+         "value": "91-TEST-1000-0000"
+        }
+       ],
+       "name": [
+        {
+         "text": "Test Patient 10 (SYNTHETIC) - methotrexate with PPI"
+        }
+       ]
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:enc-10-a",
+      "resource": {
+       "resourceType": "Encounter",
+       "id": "enc-10-a",
+       "status": "finished",
+       "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-10"
+       },
+       "period": {
+        "start": "2025-09-09"
+       }
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:test-patient-10-ms-1",
+      "resource": {
+       "resourceType": "MedicationStatement",
+       "id": "test-patient-10-ms-1",
+       "status": "active",
+       "medicationCodeableConcept": {
+        "text": "Methotrexate 2.5 mg tablet"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-10"
+       },
+       "context": {
+        "reference": "Encounter/enc-10-a"
+       },
+       "effectivePeriod": {
+        "start": "2025-09-09"
+       },
+       "dateAsserted": "2025-09-09"
+      }
+     },
+     {
+      "fullUrl": "urn:uuid:test-patient-10-ms-2",
+      "resource": {
+       "resourceType": "MedicationStatement",
+       "id": "test-patient-10-ms-2",
+       "status": "active",
+       "medicationCodeableConcept": {
+        "text": "Pan 40"
+       },
+       "subject": {
+        "reference": "Patient/test-patient-10"
+       },
+       "context": {
+        "reference": "Encounter/enc-10-a"
+       },
+       "effectivePeriod": {
+        "start": "2025-09-09"
+       },
+       "dateAsserted": "2025-09-09"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

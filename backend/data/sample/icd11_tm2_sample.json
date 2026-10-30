@@ -1,0 +1,93 @@
+{
+  "_label": "SAMPLE — illustrative, not official. Codes use the SAMPLE- prefix and are NOT WHO ICD-11 codes. Biomedical links marked who-index are illustrative stand-ins for WHO-published linkages.",
+  "release": "SAMPLE-1",
+  "linearization": "mms",
+  "entities": [
+    {"code": "SAMPLE-TM2-0000", "title": "Traditional medicine conditions – Module 2", "class_kind": "chapter", "parent": null, "definition": "SAMPLE root of the Traditional Medicine Module 2 hierarchy."},
+
+    {"code": "SAMPLE-TM2-0100", "title": "Ayurveda disorders (TM2)", "class_kind": "block", "parent": "SAMPLE-TM2-0000"},
+    {"code": "SAMPLE-TM2-0110", "title": "Joint and musculoskeletal disorders (TM2)", "class_kind": "block", "parent": "SAMPLE-TM2-0100"},
+    {"code": "SAMPLE-TM2-0111", "title": "Ama-vata joint disorder", "parent": "SAMPLE-TM2-0110", "definition": "Joint disorder in which ama and vitiated vata lodge in the joints, causing pain, swelling and stiffness.", "index_terms": ["Amavata", "ama vata"], "bio_links": [{"code": "SAMPLE-BIO-0001", "relationship": "relatedto", "source": "who-index"}]},
+    {"code": "SAMPLE-TM2-0112", "title": "Degenerative joint disorder (TM2)", "parent": "SAMPLE-TM2-0110", "definition": "Vata disorder of the joints with pain on movement, crepitus and reduced range of motion.", "index_terms": ["Sandhivata", "sandhigata vata"], "bio_links": [{"code": "SAMPLE-BIO-0002", "relationship": "relatedto", "source": "who-index"}]},
+    {"code": "SAMPLE-TM2-0113", "title": "Vata-rakta disorder", "parent": "SAMPLE-TM2-0110", "definition": "Disorder of vata and rakta beginning in the small joints of the feet, with burning pain and swelling.", "index_terms": ["Vatarakta"], "bio_links": [{"code": "SAMPLE-BIO-0003", "relationship": "relatedto", "source": "who-index"}]},
+    {"code": "SAMPLE-TM2-0114", "title": "Radiating leg pain disorder", "parent": "SAMPLE-TM2-0110", "definition": "Pain radiating from the buttock down the back of the leg, with stiffness.", "index_terms": ["Gridhrasi"]},
+    {"code": "SAMPLE-TM2-0115", "title": "Lumbar pain disorder", "parent": "SAMPLE-TM2-0110", "definition": "Pain and stiffness in the lumbar region.", "index_terms": ["low back pain"]},
+    {"code": "SAMPLE-TM2-0116", "title": "Neck stiffness disorder", "parent": "SAMPLE-TM2-0110", "definition": "Stiffness of the neck with restricted movement."},
+
+    {"code": "SAMPLE-TM2-0120", "title": "Nervous system disorders (TM2)", "class_kind": "block", "parent": "SAMPLE-TM2-0100"},
+    {"code": "SAMPLE-TM2-0121", "title": "Hemiplegia disorder (TM2)", "parent": "SAMPLE-TM2-0120", "definition": "Loss of motor function of one side of the body.", "index_terms": ["Pakshaghata", "paksha vadha"]},
+    {"code": "SAMPLE-TM2-0122", "title": "Facial deviation disorder", "parent": "SAMPLE-TM2-0120", "definition": "Deviation of one half of the face with difficulty in closing the eye.", "index_terms": ["Ardita"]},
+    {"code": "SAMPLE-TM2-0123", "title": "Seizure disorder (TM2)", "parent": "SAMPLE-TM2-0120", "definition": "Recurrent episodes of loss of consciousness with abnormal body movements.", "index_terms": ["Apasmara"]},
+
+    {"code": "SAMPLE-TM2-0130", "title": "Digestive system disorders (TM2)", "class_kind": "block", "parent": "SAMPLE-TM2-0100"},
+    {"code": "SAMPLE-TM2-0131", "title": "Sour-bile disorder", "parent": "SAMPLE-TM2-0130", "definition": "Disorder of increased sour pitta with heartburn, sour eructation and nausea.", "index_terms": ["Amlapitta", "hyperacidity"]},
+    {"code": "SAMPLE-TM2-0132", "title": "Grahani disorder", "parent": "SAMPLE-TM2-0130", "definition": "Disorder of weak digestive fire with irregular bowel habit, alternating loose and hard stools.", "index_terms": ["grahani roga"]},
+    {"code": "SAMPLE-TM2-0133", "title": "Diarrhoea disorder (TM2)", "parent": "SAMPLE-TM2-0130", "definition": "Frequent passage of loose stools.", "index_terms": ["Atisara"]},
+    {"code": "SAMPLE-TM2-0134", "title": "Haemorrhoid disorder (TM2)", "parent": "SAMPLE-TM2-0130", "definition": "Mass in the anal canal obstructing defaecation, sometimes bleeding.", "index_terms": ["Arsha", "piles"]},
+    {"code": "SAMPLE-TM2-0135", "title": "Indigestion disorder (TM2)", "parent": "SAMPLE-TM2-0130", "definition": "Food is not properly digested, with heaviness and belching.", "index_terms": ["Ajirna"]},
+    {"code": "SAMPLE-TM2-0136", "title": "Vomiting disorder (TM2)", "parent": "SAMPLE-TM2-0130", "definition": "Forceful expulsion of stomach contents through the mouth."},
+    {"code": "SAMPLE-TM2-0137", "title": "Abdominal distension disorder", "parent": "SAMPLE-TM2-0130", "definition": "Distension of the abdomen with retention of faeces and flatus."},
+    {"code": "SAMPLE-TM2-0138", "title": "Worm infestation disorder", "parent": "SAMPLE-TM2-0130", "definition": "Infestation of the bowel by worms.", "index_terms": ["krimi roga"]},
+    {"code": "SAMPLE-TM2-0139", "title": "Constipation disorder (TM2)", "parent": "SAMPLE-TM2-0130", "definition": "Infrequent or difficult passage of hard stools.", "index_terms": ["Vibandha"]},
+
+    {"code": "SAMPLE-TM2-0140", "title": "Respiratory system disorders (TM2)", "class_kind": "block", "parent": "SAMPLE-TM2-0100"},
+    {"code": "SAMPLE-TM2-0141", "title": "Cough disorder (TM2)", "parent": "SAMPLE-TM2-0140", "definition": "Forceful expulsion of air from the respiratory passage with a characteristic sound.", "index_terms": ["Kasa"]},
+    {"code": "SAMPLE-TM2-0142", "title": "Breathlessness disorder (TM2)", "parent": "SAMPLE-TM2-0140", "definition": "Difficult or laboured breathing.", "index_terms": ["Shvasa", "shvasa roga"]},
+    {"code": "SAMPLE-TM2-0143", "title": "Wheezing breathlessness disorder", "parent": "SAMPLE-TM2-0142", "definition": "Episodic breathlessness with wheeze, aggravated at night and by cold.", "index_terms": ["Tamaka shvasa"]},
+    {"code": "SAMPLE-TM2-0144", "title": "Nasal catarrh disorder", "parent": "SAMPLE-TM2-0140", "definition": "Nasal discharge with sneezing and heaviness of the head.", "index_terms": ["Pratishyaya"]},
+    {"code": "SAMPLE-TM2-0145", "title": "Hiccup disorder (TM2)", "parent": "SAMPLE-TM2-0140", "definition": "Repeated involuntary hiccups."},
+    {"code": "SAMPLE-TM2-0146", "title": "Consumptive wasting disorder", "parent": "SAMPLE-TM2-0140", "definition": "Progressive depletion of body tissues with cough and weakness.", "index_terms": ["Rajayakshma"]},
+
+    {"code": "SAMPLE-TM2-0150", "title": "Urinary system disorders (TM2)", "class_kind": "block", "parent": "SAMPLE-TM2-0100"},
+    {"code": "SAMPLE-TM2-0151", "title": "Painful urination disorder", "parent": "SAMPLE-TM2-0150", "definition": "Difficult and painful passage of urine.", "index_terms": ["Mutrakrichchhra"]},
+    {"code": "SAMPLE-TM2-0152", "title": "Urinary stone disorder", "parent": "SAMPLE-TM2-0150", "definition": "Formation of stones in the urinary tract.", "index_terms": ["Ashmari"]},
+    {"code": "SAMPLE-TM2-0153", "title": "Urinary retention disorder (TM2)", "parent": "SAMPLE-TM2-0150", "definition": "Obstruction to the outflow of urine."},
+
+    {"code": "SAMPLE-TM2-0160", "title": "Skin disorders (TM2)", "class_kind": "block", "parent": "SAMPLE-TM2-0100"},
+    {"code": "SAMPLE-TM2-0161", "title": "Scaly skin disorder", "parent": "SAMPLE-TM2-0160", "definition": "Large dry patches of skin with scales resembling those of a fish.", "index_terms": ["Ekakushtha"], "bio_links": [{"code": "SAMPLE-BIO-0005", "relationship": "relatedto", "source": "who-index"}]},
+    {"code": "SAMPLE-TM2-0162", "title": "Itchy weeping skin disorder", "parent": "SAMPLE-TM2-0160", "definition": "Itchy eruption with oozing and dark discolouration.", "index_terms": ["Vicharchika"]},
+    {"code": "SAMPLE-TM2-0163", "title": "White patch skin disorder", "parent": "SAMPLE-TM2-0160", "definition": "White depigmented patches of skin.", "index_terms": ["Shvitra"], "bio_links": [{"code": "SAMPLE-BIO-0006", "relationship": "relatedto", "source": "who-index"}]},
+    {"code": "SAMPLE-TM2-0164", "title": "Wheal disorder (TM2)", "parent": "SAMPLE-TM2-0160", "definition": "Sudden itchy wheals on the skin.", "index_terms": ["Sheetapitta"]},
+    {"code": "SAMPLE-TM2-0165", "title": "Spreading skin inflammation disorder", "parent": "SAMPLE-TM2-0160", "definition": "Rapidly spreading inflammation of the skin."},
+
+    {"code": "SAMPLE-TM2-0170", "title": "Blood and hepatobiliary disorders (TM2)", "class_kind": "block", "parent": "SAMPLE-TM2-0100"},
+    {"code": "SAMPLE-TM2-0171", "title": "Pallor disorder", "parent": "SAMPLE-TM2-0170", "definition": "Pallor of the body with weakness and breathlessness on exertion.", "index_terms": ["Pandu roga"]},
+    {"code": "SAMPLE-TM2-0172", "title": "Jaundice disorder (TM2)", "parent": "SAMPLE-TM2-0170", "definition": "Yellow discolouration of the eyes, skin and urine.", "index_terms": ["Kamala"]},
+    {"code": "SAMPLE-TM2-0173", "title": "Bleeding disorder (TM2)", "parent": "SAMPLE-TM2-0170", "definition": "Bleeding from the body orifices due to vitiated pitta.", "index_terms": ["Raktapitta"]},
+    {"code": "SAMPLE-TM2-0174", "title": "Oedema disorder (TM2)", "parent": "SAMPLE-TM2-0170", "definition": "Swelling of a part or the whole of the body.", "index_terms": ["Shotha", "shopha"]},
+
+    {"code": "SAMPLE-TM2-0180", "title": "Mental and behavioural disorders (TM2)", "class_kind": "block", "parent": "SAMPLE-TM2-0100"},
+    {"code": "SAMPLE-TM2-0181", "title": "Mental derangement disorder", "parent": "SAMPLE-TM2-0180", "definition": "Derangement of mind, intellect, memory and conduct.", "index_terms": ["Unmada"]},
+    {"code": "SAMPLE-TM2-0182", "title": "Sleeplessness disorder", "parent": "SAMPLE-TM2-0180", "definition": "Difficulty in initiating or maintaining sleep.", "index_terms": ["Anidra", "nidranasha"]},
+    {"code": "SAMPLE-TM2-0183", "title": "Dizziness disorder (TM2)", "parent": "SAMPLE-TM2-0180", "definition": "Sensation of whirling and unsteadiness.", "index_terms": ["Bhrama"]},
+
+    {"code": "SAMPLE-TM2-0190", "title": "Female reproductive disorders (TM2)", "class_kind": "block", "parent": "SAMPLE-TM2-0100"},
+    {"code": "SAMPLE-TM2-0191", "title": "Painful menstruation disorder", "parent": "SAMPLE-TM2-0190", "definition": "Pain during menstruation.", "index_terms": ["Kashtartava"], "bio_links": [{"code": "SAMPLE-BIO-0016", "relationship": "relatedto", "source": "who-index"}]},
+    {"code": "SAMPLE-TM2-0192", "title": "White vaginal discharge disorder", "parent": "SAMPLE-TM2-0190", "definition": "Abnormal white discharge per vaginum.", "index_terms": ["Shveta pradara"]},
+    {"code": "SAMPLE-TM2-0193", "title": "Excessive menstrual bleeding disorder", "parent": "SAMPLE-TM2-0190", "definition": "Excessive or prolonged menstrual bleeding.", "index_terms": ["Asrigdara", "raktapradara"]},
+
+    {"code": "SAMPLE-TM2-0200", "title": "Fever disorders (TM2)", "class_kind": "block", "parent": "SAMPLE-TM2-0100"},
+    {"code": "SAMPLE-TM2-0201", "title": "Fever disorder (TM2)", "parent": "SAMPLE-TM2-0200", "definition": "Raised body temperature with discomfort of body and mind.", "index_terms": ["Jvara", "jwara"]},
+
+    {"code": "SAMPLE-TM2-0210", "title": "Metabolic and endocrine disorders (TM2)", "class_kind": "block", "parent": "SAMPLE-TM2-0100"},
+    {"code": "SAMPLE-TM2-0211", "title": "Prameha disorder", "parent": "SAMPLE-TM2-0210", "definition": "Group of disorders with excessive and turbid urination.", "index_terms": ["Prameha"]},
+    {"code": "SAMPLE-TM2-0212", "title": "Sweet urine disorder", "parent": "SAMPLE-TM2-0211", "definition": "Prameha in which the urine is sweet like honey.", "index_terms": ["Madhumeha"], "bio_links": [{"code": "SAMPLE-BIO-0009", "relationship": "relatedto", "source": "who-index"}]},
+    {"code": "SAMPLE-TM2-0213", "title": "Obesity disorder (TM2)", "parent": "SAMPLE-TM2-0210", "definition": "Excessive accumulation of fat in the body.", "index_terms": ["Sthaulya", "medoroga"]},
+    {"code": "SAMPLE-TM2-0214", "title": "Neck swelling disorder", "parent": "SAMPLE-TM2-0210", "definition": "Swelling in the front of the neck.", "index_terms": ["Galaganda"]},
+
+    {"code": "SAMPLE-TM2-0220", "title": "Head disorders (TM2)", "class_kind": "block", "parent": "SAMPLE-TM2-0100"},
+    {"code": "SAMPLE-TM2-0221", "title": "Headache disorder (TM2)", "parent": "SAMPLE-TM2-0220", "definition": "Pain in the head.", "index_terms": ["Shirashula", "shiroroga"]},
+    {"code": "SAMPLE-TM2-0222", "title": "Hemicrania disorder", "parent": "SAMPLE-TM2-0221", "definition": "Paroxysmal pain in one half of the head.", "index_terms": ["Ardhavabhedaka"], "bio_links": [{"code": "SAMPLE-BIO-0012", "relationship": "relatedto", "source": "who-index"}]},
+    {"code": "SAMPLE-TM2-0223", "title": "Toothache disorder (TM2)", "parent": "SAMPLE-TM2-0220", "definition": "Pain in the teeth.", "index_terms": ["Dantashula"]},
+
+    {"code": "SAMPLE-TM2-0500", "title": "Ayurveda patterns (TM2)", "class_kind": "block", "parent": "SAMPLE-TM2-0000"},
+    {"code": "SAMPLE-TM2-0510", "title": "Dosha patterns (TM2)", "class_kind": "block", "parent": "SAMPLE-TM2-0500"},
+    {"code": "SAMPLE-TM2-0511", "title": "Vata pattern (TM2)", "parent": "SAMPLE-TM2-0510", "definition": "Pattern of increased vata with dryness, roughness, pain and constipation.", "index_terms": ["vata vriddhi", "aggravated vata"]},
+    {"code": "SAMPLE-TM2-0512", "title": "Pitta pattern (TM2)", "parent": "SAMPLE-TM2-0510", "definition": "Pattern of increased pitta with burning, thirst and yellowish discolouration.", "index_terms": ["pitta vriddhi", "aggravated pitta"]},
+    {"code": "SAMPLE-TM2-0513", "title": "Kapha pattern (TM2)", "parent": "SAMPLE-TM2-0510", "definition": "Pattern of increased kapha with heaviness, lethargy and excess mucus.", "index_terms": ["kapha vriddhi", "aggravated kapha"]},
+    {"code": "SAMPLE-TM2-0514", "title": "Vata-pitta pattern (TM2)", "parent": "SAMPLE-TM2-0510", "definition": "Combined pattern of increased vata and pitta.", "index_terms": ["vata pitta"]},
+    {"code": "SAMPLE-TM2-0520", "title": "Ama and agni patterns (TM2)", "class_kind": "block", "parent": "SAMPLE-TM2-0500"},
+    {"code": "SAMPLE-TM2-0521", "title": "Ama pattern (TM2)", "parent": "SAMPLE-TM2-0520", "definition": "Pattern in which the doshas are associated with ama, with heaviness, coated tongue and anorexia.", "index_terms": ["sama dosha", "ama"]},
+    {"code": "SAMPLE-TM2-0522", "title": "Diminished agni pattern", "parent": "SAMPLE-TM2-0520", "definition": "Pattern of weak digestive fire with poor appetite and slow digestion.", "index_terms": ["Agnimandya", "mandagni"]}
+  ]
+}

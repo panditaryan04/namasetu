@@ -1,0 +1,2908 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "icd11-mms-sample",
+  "url": "http://localhost:8000/fhir/CodeSystem/icd11-mms-sample",
+  "version": "SAMPLE-1",
+  "name": "ICD11MMSSample",
+  "title": "ICD-11 MMS — TM2 and biomedicine (SAMPLE stand-in)",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-10-30T12:04:01+00:00",
+  "publisher": "Team Byte Strong",
+  "description": "SAMPLE — illustrative, not official. Codes prefixed SAMPLE- are not real NAMASTE or WHO codes. Stand-in for http://id.who.int/icd/release/11/mms in offline/mock mode.",
+  "caseSensitive": true,
+  "hierarchyMeaning": "is-a",
+  "content": "complete",
+  "count": 105,
+  "property": [
+    {
+      "code": "parent",
+      "uri": "http://hl7.org/fhir/concept-properties#parent",
+      "type": "code",
+      "description": "Parent concept in the hierarchy"
+    },
+    {
+      "code": "entity-type",
+      "type": "string",
+      "description": "disorder | pattern | category"
+    },
+    {
+      "code": "discipline",
+      "type": "string",
+      "description": "ayurveda | siddha | unani | biomedicine"
+    },
+    {
+      "code": "module",
+      "type": "string",
+      "description": "ICD-11 module: tm2 | biomedicine (ICD-11 only)"
+    }
+  ],
+  "concept": [
+    {
+      "code": "SAMPLE-BIO-0001",
+      "display": "Rheumatoid arthritis",
+      "definition": "Chronic inflammatory disease of synovial joints.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "rheumatoid arthritis, unspecified"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-BIO-C15"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-0002",
+      "display": "Osteoarthritis",
+      "definition": "Degenerative disease of synovial joints.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "degenerative joint disease"
+        },
+        {
+          "language": "en",
+          "value": "osteoarthrosis"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-BIO-C15"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-0003",
+      "display": "Gout",
+      "definition": "Inflammatory arthritis associated with urate crystal deposition.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "gouty arthritis"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-BIO-C15"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-0004",
+      "display": "Low back pain",
+      "definition": "Pain localised to the lumbar region.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "lumbago"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-BIO-C15"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-0005",
+      "display": "Psoriasis",
+      "definition": "Chronic inflammatory skin disease with scaly plaques.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "psoriasis vulgaris"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-BIO-C14"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-0006",
+      "display": "Vitiligo",
+      "definition": "Acquired loss of skin pigmentation.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "leukoderma"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-BIO-C14"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-0007",
+      "display": "Atopic eczema",
+      "definition": "Chronic itchy inflammatory skin disease.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "atopic dermatitis"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-BIO-C14"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-0008",
+      "display": "Urticaria",
+      "definition": "Transient itchy wheals of the skin.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "hives"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-BIO-C14"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-0009",
+      "display": "Type 2 diabetes mellitus",
+      "definition": "Diabetes due to insulin resistance with relative insulin deficiency.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "diabetes mellitus type 2"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-BIO-C05"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-0010",
+      "display": "Obesity",
+      "definition": "Excessive fat accumulation that presents a risk to health.",
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-BIO-C05"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-0011",
+      "display": "Goitre",
+      "definition": "Enlargement of the thyroid gland.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "thyroid enlargement"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-BIO-C05"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-0012",
+      "display": "Migraine",
+      "definition": "Recurrent headache disorder, often unilateral and pulsating.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "hemicrania"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-BIO-C08"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-0013",
+      "display": "Epilepsy",
+      "definition": "Enduring predisposition to generate epileptic seizures.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "seizure disorder"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-BIO-C08"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-0014",
+      "display": "Bell palsy",
+      "definition": "Acute idiopathic facial nerve palsy.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "facial palsy"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-BIO-C08"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-0015",
+      "display": "Insomnia",
+      "definition": "Persistent difficulty with sleep initiation or maintenance.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "sleeplessness"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-BIO-C07"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-0016",
+      "display": "Primary dysmenorrhoea",
+      "definition": "Painful menstruation without pelvic pathology.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "painful menstruation"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-BIO-C16"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-0017",
+      "display": "Iron deficiency anaemia",
+      "definition": "Anaemia due to insufficient iron.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "anaemia"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-BIO-C03"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-0018",
+      "display": "Asthma",
+      "definition": "Chronic inflammatory airway disease with variable airflow obstruction.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "bronchial asthma"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-BIO-C12"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-0019",
+      "display": "Gastro-oesophageal reflux disease",
+      "definition": "Reflux of gastric contents causing symptoms or complications.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "acid reflux"
+        },
+        {
+          "language": "en",
+          "value": "GERD"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-BIO-C13"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-0020",
+      "display": "Irritable bowel syndrome",
+      "definition": "Functional bowel disorder with abdominal pain and altered bowel habit.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "IBS"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-BIO-C13"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-0021",
+      "display": "Haemorrhoids",
+      "definition": "Symptomatic enlargement of anal vascular cushions.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "piles"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-BIO-C13"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-0022",
+      "display": "Urolithiasis",
+      "definition": "Calculi in the urinary tract.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "urinary calculus"
+        },
+        {
+          "language": "en",
+          "value": "kidney stone"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-BIO-C16"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-0023",
+      "display": "Sciatica",
+      "definition": "Pain along the distribution of the sciatic nerve.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "sciatic pain"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-BIO-C15"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-C03",
+      "display": "Diseases of the blood or blood-forming organs",
+      "property": [
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-C05",
+      "display": "Endocrine, nutritional or metabolic diseases",
+      "property": [
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-C07",
+      "display": "Sleep-wake disorders",
+      "property": [
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-C08",
+      "display": "Diseases of the nervous system",
+      "property": [
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-C12",
+      "display": "Diseases of the respiratory system",
+      "property": [
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-C13",
+      "display": "Diseases of the digestive system",
+      "property": [
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-C14",
+      "display": "Diseases of the skin",
+      "property": [
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-C15",
+      "display": "Diseases of the musculoskeletal system or connective tissue",
+      "property": [
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-BIO-C16",
+      "display": "Diseases of the genitourinary system",
+      "property": [
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "biomedicine"
+        },
+        {
+          "code": "module",
+          "valueString": "biomedicine"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0000",
+      "display": "Traditional medicine conditions – Module 2",
+      "definition": "SAMPLE root of the Traditional Medicine Module 2 hierarchy.",
+      "property": [
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0100",
+      "display": "Ayurveda disorders (TM2)",
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0000"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0110",
+      "display": "Joint and musculoskeletal disorders (TM2)",
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0100"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0111",
+      "display": "Ama-vata joint disorder",
+      "definition": "Joint disorder in which ama and vitiated vata lodge in the joints, causing pain, swelling and stiffness.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Amavata"
+        },
+        {
+          "language": "en",
+          "value": "ama vata"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0110"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0112",
+      "display": "Degenerative joint disorder (TM2)",
+      "definition": "Vata disorder of the joints with pain on movement, crepitus and reduced range of motion.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Sandhivata"
+        },
+        {
+          "language": "en",
+          "value": "sandhigata vata"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0110"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0113",
+      "display": "Vata-rakta disorder",
+      "definition": "Disorder of vata and rakta beginning in the small joints of the feet, with burning pain and swelling.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Vatarakta"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0110"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0114",
+      "display": "Radiating leg pain disorder",
+      "definition": "Pain radiating from the buttock down the back of the leg, with stiffness.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Gridhrasi"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0110"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0115",
+      "display": "Lumbar pain disorder",
+      "definition": "Pain and stiffness in the lumbar region.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "low back pain"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0110"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0116",
+      "display": "Neck stiffness disorder",
+      "definition": "Stiffness of the neck with restricted movement.",
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0110"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0120",
+      "display": "Nervous system disorders (TM2)",
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0100"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0121",
+      "display": "Hemiplegia disorder (TM2)",
+      "definition": "Loss of motor function of one side of the body.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Pakshaghata"
+        },
+        {
+          "language": "en",
+          "value": "paksha vadha"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0120"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0122",
+      "display": "Facial deviation disorder",
+      "definition": "Deviation of one half of the face with difficulty in closing the eye.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Ardita"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0120"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0123",
+      "display": "Seizure disorder (TM2)",
+      "definition": "Recurrent episodes of loss of consciousness with abnormal body movements.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Apasmara"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0120"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0130",
+      "display": "Digestive system disorders (TM2)",
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0100"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0131",
+      "display": "Sour-bile disorder",
+      "definition": "Disorder of increased sour pitta with heartburn, sour eructation and nausea.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Amlapitta"
+        },
+        {
+          "language": "en",
+          "value": "hyperacidity"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0130"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0132",
+      "display": "Grahani disorder",
+      "definition": "Disorder of weak digestive fire with irregular bowel habit, alternating loose and hard stools.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "grahani roga"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0130"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0133",
+      "display": "Diarrhoea disorder (TM2)",
+      "definition": "Frequent passage of loose stools.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Atisara"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0130"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0134",
+      "display": "Haemorrhoid disorder (TM2)",
+      "definition": "Mass in the anal canal obstructing defaecation, sometimes bleeding.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Arsha"
+        },
+        {
+          "language": "en",
+          "value": "piles"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0130"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0135",
+      "display": "Indigestion disorder (TM2)",
+      "definition": "Food is not properly digested, with heaviness and belching.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Ajirna"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0130"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0136",
+      "display": "Vomiting disorder (TM2)",
+      "definition": "Forceful expulsion of stomach contents through the mouth.",
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0130"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0137",
+      "display": "Abdominal distension disorder",
+      "definition": "Distension of the abdomen with retention of faeces and flatus.",
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0130"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0138",
+      "display": "Worm infestation disorder",
+      "definition": "Infestation of the bowel by worms.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "krimi roga"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0130"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0139",
+      "display": "Constipation disorder (TM2)",
+      "definition": "Infrequent or difficult passage of hard stools.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Vibandha"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0130"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0140",
+      "display": "Respiratory system disorders (TM2)",
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0100"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0141",
+      "display": "Cough disorder (TM2)",
+      "definition": "Forceful expulsion of air from the respiratory passage with a characteristic sound.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Kasa"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0140"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0142",
+      "display": "Breathlessness disorder (TM2)",
+      "definition": "Difficult or laboured breathing.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Shvasa"
+        },
+        {
+          "language": "en",
+          "value": "shvasa roga"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0140"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0143",
+      "display": "Wheezing breathlessness disorder",
+      "definition": "Episodic breathlessness with wheeze, aggravated at night and by cold.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Tamaka shvasa"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0142"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0144",
+      "display": "Nasal catarrh disorder",
+      "definition": "Nasal discharge with sneezing and heaviness of the head.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Pratishyaya"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0140"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0145",
+      "display": "Hiccup disorder (TM2)",
+      "definition": "Repeated involuntary hiccups.",
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0140"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0146",
+      "display": "Consumptive wasting disorder",
+      "definition": "Progressive depletion of body tissues with cough and weakness.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Rajayakshma"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0140"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0150",
+      "display": "Urinary system disorders (TM2)",
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0100"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0151",
+      "display": "Painful urination disorder",
+      "definition": "Difficult and painful passage of urine.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Mutrakrichchhra"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0150"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0152",
+      "display": "Urinary stone disorder",
+      "definition": "Formation of stones in the urinary tract.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Ashmari"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0150"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0153",
+      "display": "Urinary retention disorder (TM2)",
+      "definition": "Obstruction to the outflow of urine.",
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0150"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0160",
+      "display": "Skin disorders (TM2)",
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0100"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0161",
+      "display": "Scaly skin disorder",
+      "definition": "Large dry patches of skin with scales resembling those of a fish.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Ekakushtha"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0160"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0162",
+      "display": "Itchy weeping skin disorder",
+      "definition": "Itchy eruption with oozing and dark discolouration.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Vicharchika"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0160"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0163",
+      "display": "White patch skin disorder",
+      "definition": "White depigmented patches of skin.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Shvitra"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0160"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0164",
+      "display": "Wheal disorder (TM2)",
+      "definition": "Sudden itchy wheals on the skin.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Sheetapitta"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0160"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0165",
+      "display": "Spreading skin inflammation disorder",
+      "definition": "Rapidly spreading inflammation of the skin.",
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0160"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0170",
+      "display": "Blood and hepatobiliary disorders (TM2)",
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0100"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0171",
+      "display": "Pallor disorder",
+      "definition": "Pallor of the body with weakness and breathlessness on exertion.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Pandu roga"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0170"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0172",
+      "display": "Jaundice disorder (TM2)",
+      "definition": "Yellow discolouration of the eyes, skin and urine.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Kamala"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0170"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0173",
+      "display": "Bleeding disorder (TM2)",
+      "definition": "Bleeding from the body orifices due to vitiated pitta.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Raktapitta"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0170"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0174",
+      "display": "Oedema disorder (TM2)",
+      "definition": "Swelling of a part or the whole of the body.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Shotha"
+        },
+        {
+          "language": "en",
+          "value": "shopha"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0170"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0180",
+      "display": "Mental and behavioural disorders (TM2)",
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0100"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0181",
+      "display": "Mental derangement disorder",
+      "definition": "Derangement of mind, intellect, memory and conduct.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Unmada"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0180"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0182",
+      "display": "Sleeplessness disorder",
+      "definition": "Difficulty in initiating or maintaining sleep.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Anidra"
+        },
+        {
+          "language": "en",
+          "value": "nidranasha"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0180"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0183",
+      "display": "Dizziness disorder (TM2)",
+      "definition": "Sensation of whirling and unsteadiness.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Bhrama"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0180"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0190",
+      "display": "Female reproductive disorders (TM2)",
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0100"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0191",
+      "display": "Painful menstruation disorder",
+      "definition": "Pain during menstruation.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Kashtartava"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0190"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0192",
+      "display": "White vaginal discharge disorder",
+      "definition": "Abnormal white discharge per vaginum.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Shveta pradara"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0190"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0193",
+      "display": "Excessive menstrual bleeding disorder",
+      "definition": "Excessive or prolonged menstrual bleeding.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Asrigdara"
+        },
+        {
+          "language": "en",
+          "value": "raktapradara"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0190"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0200",
+      "display": "Fever disorders (TM2)",
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0100"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0201",
+      "display": "Fever disorder (TM2)",
+      "definition": "Raised body temperature with discomfort of body and mind.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Jvara"
+        },
+        {
+          "language": "en",
+          "value": "jwara"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0200"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0210",
+      "display": "Metabolic and endocrine disorders (TM2)",
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0100"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0211",
+      "display": "Prameha disorder",
+      "definition": "Group of disorders with excessive and turbid urination.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Prameha"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0210"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0212",
+      "display": "Sweet urine disorder",
+      "definition": "Prameha in which the urine is sweet like honey.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Madhumeha"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0211"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0213",
+      "display": "Obesity disorder (TM2)",
+      "definition": "Excessive accumulation of fat in the body.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Sthaulya"
+        },
+        {
+          "language": "en",
+          "value": "medoroga"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0210"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0214",
+      "display": "Neck swelling disorder",
+      "definition": "Swelling in the front of the neck.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Galaganda"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0210"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0220",
+      "display": "Head disorders (TM2)",
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0100"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0221",
+      "display": "Headache disorder (TM2)",
+      "definition": "Pain in the head.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Shirashula"
+        },
+        {
+          "language": "en",
+          "value": "shiroroga"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0220"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0222",
+      "display": "Hemicrania disorder",
+      "definition": "Paroxysmal pain in one half of the head.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Ardhavabhedaka"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0221"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0223",
+      "display": "Toothache disorder (TM2)",
+      "definition": "Pain in the teeth.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Dantashula"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0220"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0500",
+      "display": "Ayurveda patterns (TM2)",
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0000"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0510",
+      "display": "Dosha patterns (TM2)",
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0500"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0511",
+      "display": "Vata pattern (TM2)",
+      "definition": "Pattern of increased vata with dryness, roughness, pain and constipation.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "vata vriddhi"
+        },
+        {
+          "language": "en",
+          "value": "aggravated vata"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0510"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "pattern"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0512",
+      "display": "Pitta pattern (TM2)",
+      "definition": "Pattern of increased pitta with burning, thirst and yellowish discolouration.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "pitta vriddhi"
+        },
+        {
+          "language": "en",
+          "value": "aggravated pitta"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0510"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "pattern"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0513",
+      "display": "Kapha pattern (TM2)",
+      "definition": "Pattern of increased kapha with heaviness, lethargy and excess mucus.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "kapha vriddhi"
+        },
+        {
+          "language": "en",
+          "value": "aggravated kapha"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0510"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "pattern"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0514",
+      "display": "Vata-pitta pattern (TM2)",
+      "definition": "Combined pattern of increased vata and pitta.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "vata pitta"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0510"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "pattern"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0520",
+      "display": "Ama and agni patterns (TM2)",
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0500"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0521",
+      "display": "Ama pattern (TM2)",
+      "definition": "Pattern in which the doshas are associated with ama, with heaviness, coated tongue and anorexia.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "sama dosha"
+        },
+        {
+          "language": "en",
+          "value": "ama"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0520"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "pattern"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-TM2-0522",
+      "display": "Diminished agni pattern",
+      "definition": "Pattern of weak digestive fire with poor appetite and slow digestion.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Agnimandya"
+        },
+        {
+          "language": "en",
+          "value": "mandagni"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-TM2-0520"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "pattern"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        },
+        {
+          "code": "module",
+          "valueString": "tm2"
+        }
+      ]
+    }
+  ],
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>CodeSystem: ICD-11 MMS — TM2 and biomedicine (SAMPLE stand-in)</p></div>"
+  }
+}

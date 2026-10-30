@@ -1,0 +1,11 @@
+{
+  "resourceType": "OperationOutcome",
+  "id": "37ed5f663c34488ba73f8b25552a98bc",
+  "issue": [
+    {
+      "severity": "error",
+      "code": "code-invalid",
+      "diagnostics": "code 'SAMPLE-AYU-9999' not found in http://localhost:8000/fhir/CodeSystem/namaste"
+    }
+  ]
+}

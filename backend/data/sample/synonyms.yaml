@@ -1,0 +1,322 @@
+# SAMPLE — illustrative, not official.
+# Clinician / coder synonym dictionary for NAMASTE concepts. Keys are NAMASTE codes.
+# Scripts: english (glosses), iast (diacritic romanisation), devanagari, hinglish (informal romanisations).
+version: SAMPLE-1
+label: "SAMPLE — illustrative, not official"
+
+# Sanskrit root terms used to split unspaced compounds (samāsa), e.g. "amlapitta" -> amla + pitta.
+# Romanised in the same folded form the normaliser produces (built in Milestone 3).
+roots:
+  - ama
+  - amla
+  - vata
+  - pitta
+  - kapha
+  - rakta
+  - sandhi
+  - shotha
+  - jvara
+  - shula
+  - kasa
+  - shvasa
+  - prameha
+  - madhu
+  - meha
+  - mutra
+  - krichchhra
+  - kushtha
+  - shira
+  - kati
+  - manya
+  - stambha
+  - paksha
+  - aghata
+  - agni
+  - mandya
+  - vriddhi
+  - dosha
+  - pradara
+  - shveta
+  - artava
+  - kashta
+  - tamaka
+  - raja
+  - yakshma
+  - shita
+  - eka
+  - ardha
+  - avabhedaka
+  - gala
+  - ganda
+  - nidra
+  - grahani
+  - atisara
+  - ajirna
+  - roga
+
+concepts:
+  SAMPLE-AYU-0001:  # Amavata
+    english: [rheumatism with ama, rheumatoid-like arthritis]
+    iast: [Āmavāta]
+    devanagari: [आमवात]
+    hinglish: [aamvaat, amvaat, aamavaata]
+  SAMPLE-AYU-0002:  # Sandhivata
+    english: [degenerative joint disease, joint vata]
+    iast: [Sandhivāta, Sandhigata Vāta]
+    devanagari: [संधिवात, सन्धिवात, सन्धिगत वात]
+    hinglish: [sandhivaat, sandhi vaat, sandhigat vaat]
+  SAMPLE-AYU-0003:  # Vatarakta
+    english: [gout-like joint disease]
+    iast: [Vātarakta, Vātaśoṇita]
+    devanagari: [वातरक्त, वातशोणित]
+    hinglish: [vaatrakt, vatrakt]
+  SAMPLE-AYU-0004:  # Gridhrasi
+    english: [sciatic pain, sciatica-like pain]
+    iast: [Gṛdhrasī]
+    devanagari: [गृध्रसी]
+    hinglish: [gridhrasi, gridhrasee, gradhrasi]
+  SAMPLE-AYU-0005:  # Katishula
+    english: [low back pain, lumbar pain, backache]
+    iast: [Kaṭīśūla, Kaṭigraha]
+    devanagari: [कटीशूल, कटिग्रह]
+    hinglish: [kati shool, katishool, kamar dard]
+  SAMPLE-AYU-0006:  # Pakshaghata
+    english: [hemiplegia, paralysis of one side]
+    iast: [Pakṣāghāta, Pakṣavadha]
+    devanagari: [पक्षाघात, पक्षवध]
+    hinglish: [pakshaghaat, lakwa]
+  SAMPLE-AYU-0007:  # Ardita
+    english: [facial palsy, facial paralysis]
+    iast: [Ardita]
+    devanagari: [अर्दित]
+    hinglish: [ardit, muh ka lakwa]
+  SAMPLE-AYU-0008:  # Manyastambha
+    english: [neck stiffness, stiff neck]
+    iast: [Manyāstambha]
+    devanagari: [मन्यास्तम्भ]
+    hinglish: [manyastambh, gardan jakdan]
+  SAMPLE-AYU-0009:  # Amlapitta
+    english: [hyperacidity, acid dyspepsia, heartburn]
+    iast: [Amlapitta]
+    devanagari: [अम्लपित्त]
+    hinglish: [amlapitt, amla pitt, acidity]
+  SAMPLE-AYU-0010:  # Grahani
+    english: [malabsorption, irritable bowel]
+    iast: [Grahaṇī, Grahaṇī Roga]
+    devanagari: [ग्रहणी, ग्रहणी रोग]
+    hinglish: [grahni, sangrahani]
+  SAMPLE-AYU-0011:  # Atisara
+    english: [diarrhoea, diarrhea, loose stools]
+    iast: [Atisāra]
+    devanagari: [अतिसार]
+    hinglish: [atisaar, dast]
+  SAMPLE-AYU-0012:  # Arsha
+    english: [haemorrhoids, hemorrhoids, piles]
+    iast: [Arśa, Arśas]
+    devanagari: [अर्श, अर्शस्]
+    hinglish: [arsh, bawaseer, bavasir]
+  SAMPLE-AYU-0013:  # Ajirna
+    english: [indigestion, dyspepsia]
+    iast: [Ajīrṇa]
+    devanagari: [अजीर्ण]
+    hinglish: [ajeern, ajirn, badhazmi]
+  SAMPLE-AYU-0014:  # Chhardi
+    english: [vomiting, emesis]
+    iast: [Chardi]
+    devanagari: [छर्दि]
+    hinglish: [chhardi, chardi, ulti]
+  SAMPLE-AYU-0015:  # Anaha
+    english: [abdominal distension, bloating with constipation]
+    iast: [Ānāha]
+    devanagari: [आनाह]
+    hinglish: [aanah, anaah, pet phoolna]
+  SAMPLE-AYU-0016:  # Krimi
+    english: [worm infestation, helminthiasis]
+    iast: [Kṛmi, Kṛmi Roga]
+    devanagari: [कृमि, कृमि रोग]
+    hinglish: [krimi, kriminash, pet ke keede]
+  SAMPLE-AYU-0017:  # Kasa
+    english: [cough]
+    iast: [Kāsa]
+    devanagari: [कास]
+    hinglish: [kaas, khansi]
+  SAMPLE-AYU-0018:  # Tamaka Shvasa
+    english: [bronchial asthma, wheezing breathlessness]
+    iast: [Tamaka Śvāsa, Tamakaśvāsa]
+    devanagari: [तमक श्वास, तमकश्वास]
+    hinglish: [tamak shwas, tamak swas, dama]
+  SAMPLE-AYU-0019:  # Pratishyaya
+    english: [coryza, common cold, rhinitis]
+    iast: [Pratiśyāya]
+    devanagari: [प्रतिश्याय]
+    hinglish: [pratishyay, zukam, jukam]
+  SAMPLE-AYU-0020:  # Hikka
+    english: [hiccup, hiccough]
+    iast: [Hikkā]
+    devanagari: [हिक्का]
+    hinglish: [hikka, hichki]
+  SAMPLE-AYU-0021:  # Rajayakshma
+    english: [consumption, wasting disease]
+    iast: [Rājayakṣmā, Śoṣa]
+    devanagari: [राजयक्ष्मा, शोष]
+    hinglish: [rajyakshma, rajayakshma, kshay rog]
+  SAMPLE-AYU-0022:  # Mutrakrichchhra
+    english: [dysuria, painful urination]
+    iast: [Mūtrakṛcchra]
+    devanagari: [मूत्रकृच्छ्र]
+    hinglish: [mutrakrichh, mootrakrichha, peshab mein jalan]
+  SAMPLE-AYU-0023:  # Ashmari
+    english: [urinary calculus, kidney stone, urolithiasis]
+    iast: [Aśmarī]
+    devanagari: [अश्मरी]
+    hinglish: [ashmari, pathri]
+  SAMPLE-AYU-0024:  # Mutraghata
+    english: [urinary retention, urinary obstruction]
+    iast: [Mūtrāghāta]
+    devanagari: [मूत्राघात]
+    hinglish: [mutraghat, mootraghaat]
+  SAMPLE-AYU-0025:  # Ekakushtha
+    english: [psoriasis-like skin disease, scaly skin disease]
+    iast: [Ekakuṣṭha]
+    devanagari: [एककुष्ठ]
+    hinglish: [ekkushth, ek kushtha]
+  SAMPLE-AYU-0026:  # Vicharchika
+    english: [eczema-like skin disease, weeping eczema]
+    iast: [Vicarcikā]
+    devanagari: [विचर्चिका]
+    hinglish: [vicharchika, vicharchka]
+  SAMPLE-AYU-0027:  # Shvitra
+    english: [vitiligo, leucoderma, white patches]
+    iast: [Śvitra]
+    devanagari: [श्वित्र]
+    hinglish: [shvitra, switra, safed daag]
+  SAMPLE-AYU-0028:  # Shitapitta
+    english: [urticaria, hives]
+    iast: [Śītapitta]
+    devanagari: [शीतपित्त]
+    hinglish: [sheetpitt, shitpitta, pitti uchhalna]
+  SAMPLE-AYU-0029:  # Visarpa
+    english: [erysipelas-like inflammation, spreading skin inflammation]
+    iast: [Visarpa]
+    devanagari: [विसर्प]
+    hinglish: [visarp]
+  SAMPLE-AYU-0030:  # Pandu
+    english: [anaemia-like pallor, pallor]
+    iast: [Pāṇḍu, Pāṇḍu Roga]
+    devanagari: [पाण्डु, पाण्डु रोग]
+    hinglish: [paandu, pandu rog, khoon ki kami]
+  SAMPLE-AYU-0031:  # Kamala
+    english: [jaundice, icterus]
+    iast: [Kāmalā]
+    devanagari: [कामला]
+    hinglish: [kaamla, piliya]
+  SAMPLE-AYU-0032:  # Raktapitta
+    english: [bleeding disorder, haemorrhagic disorder]
+    iast: [Raktapitta]
+    devanagari: [रक्तपित्त]
+    hinglish: [raktpitt, rakta pitta]
+  SAMPLE-AYU-0033:  # Unmada
+    english: [psychosis-like disorder, insanity]
+    iast: [Unmāda]
+    devanagari: [उन्माद]
+    hinglish: [unmaad, unmad]
+  SAMPLE-AYU-0034:  # Apasmara
+    english: [epilepsy-like disorder, seizures]
+    iast: [Apasmāra]
+    devanagari: [अपस्मार]
+    hinglish: [apasmaar, mirgi]
+  SAMPLE-AYU-0035:  # Anidra
+    english: [insomnia, sleeplessness]
+    iast: [Anidrā, Nidrānāśa]
+    devanagari: [अनिद्रा, निद्रानाश]
+    hinglish: [anidraa, neend na aana]
+  SAMPLE-AYU-0036:  # Kashtartava
+    english: [dysmenorrhoea, dysmenorrhea, painful periods]
+    iast: [Kaṣṭārtava]
+    devanagari: [कष्टार्तव]
+    hinglish: [kashtartav, kasht artav]
+  SAMPLE-AYU-0037:  # Shvetapradara
+    english: [leucorrhoea, leukorrhea, white discharge]
+    iast: [Śvetapradara]
+    devanagari: [श्वेतप्रदर]
+    hinglish: [shwet pradar, safed pani]
+  SAMPLE-AYU-0038:  # Asrigdara
+    english: [menorrhagia, heavy menstrual bleeding]
+    iast: [Asṛgdara, Raktapradara]
+    devanagari: [असृग्दर, रक्तप्रदर]
+    hinglish: [asrigdar, rakt pradar]
+  SAMPLE-AYU-0039:  # Jvara
+    english: [fever, pyrexia]
+    iast: [Jvara]
+    devanagari: [ज्वर]
+    hinglish: [jwar, jwara, bukhar]
+  SAMPLE-AYU-0040:  # Vataja Jvara
+    english: [vata-type fever]
+    iast: [Vātaja Jvara, Vātajvara]
+    devanagari: [वातज ज्वर, वातज्वर]
+    hinglish: [vaataj jwar, vatajwar]
+  SAMPLE-AYU-0041:  # Pittaja Jvara
+    english: [pitta-type fever]
+    iast: [Pittaja Jvara, Pittajvara]
+    devanagari: [पित्तज ज्वर, पित्तज्वर]
+    hinglish: [pittaj jwar, pittajwar]
+  SAMPLE-AYU-0042:  # Kaphaja Jvara
+    english: [kapha-type fever]
+    iast: [Kaphaja Jvara, Kaphajvara]
+    devanagari: [कफज ज्वर, कफज्वर]
+    hinglish: [kaphaj jwar, kafaj jwar]
+  SAMPLE-AYU-0043:  # Prameha
+    english: [polyuric disorder, urinary disorders]
+    iast: [Prameha]
+    devanagari: [प्रमेह]
+    hinglish: [prameh, parmeh]
+  SAMPLE-AYU-0044:  # Madhumeha
+    english: [diabetes-like disorder, honey urine]
+    iast: [Madhumeha]
+    devanagari: [मधुमेह]
+    hinglish: [madhumeh, sugar ki bimari]
+  SAMPLE-AYU-0045:  # Sthaulya
+    english: [obesity, overweight]
+    iast: [Sthaulya, Medoroga]
+    devanagari: [स्थौल्य, मेदोरोग]
+    hinglish: [sthoulya, motapa]
+  SAMPLE-AYU-0046:  # Galaganda
+    english: [goitre, goiter, neck swelling]
+    iast: [Galagaṇḍa]
+    devanagari: [गलगण्ड]
+    hinglish: [galgand, ghenga]
+  SAMPLE-AYU-0047:  # Shirahshula
+    english: [headache, cephalalgia]
+    iast: [Śiraḥśūla, Śiroruk]
+    devanagari: [शिरःशूल, शिरोरुक्]
+    hinglish: [shirshool, sir dard]
+  SAMPLE-AYU-0048:  # Ardhavabhedaka
+    english: [migraine-like hemicrania, one-sided headache]
+    iast: [Ardhāvabhedaka]
+    devanagari: [अर्धावभेदक]
+    hinglish: [ardhavbhedak, aadhasisi]
+  SAMPLE-AYU-P01:  # Vatavriddhi
+    english: [aggravated vata, increased vata]
+    iast: [Vātavṛddhi, Vātaprakopa]
+    devanagari: [वातवृद्धि, वातप्रकोप]
+    hinglish: [vaat vriddhi, vat prakop]
+  SAMPLE-AYU-P02:  # Pittavriddhi
+    english: [aggravated pitta, increased pitta]
+    iast: [Pittavṛddhi, Pittaprakopa]
+    devanagari: [पित्तवृद्धि, पित्तप्रकोप]
+    hinglish: [pitt vriddhi, pitt prakop]
+  SAMPLE-AYU-P03:  # Kaphavriddhi
+    english: [aggravated kapha, increased kapha]
+    iast: [Kaphavṛddhi, Kaphaprakopa]
+    devanagari: [कफवृद्धि, कफप्रकोप]
+    hinglish: [kaf vriddhi, kapha prakop]
+  SAMPLE-AYU-P04:  # Sama Dosha
+    english: [dosha with ama, ama state]
+    iast: [Sāma Doṣa, Sāmāvasthā]
+    devanagari: [साम दोष, सामावस्था]
+    hinglish: [saam dosh, sama dosh]
+  SAMPLE-AYU-P05:  # Agnimandya
+    english: [diminished digestive fire, poor digestion, low appetite]
+    iast: [Agnimāndya, Mandāgni]
+    devanagari: [अग्निमान्द्य, मन्दाग्नि]
+    hinglish: [agnimandya, mandagni, bhookh na lagna]

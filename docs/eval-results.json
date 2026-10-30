@@ -1,0 +1,878 @@
+{
+ "summary": {
+  "test_queries": 11,
+  "hybrid_top1": 1.0,
+  "hybrid_top5": 1.0,
+  "hybrid_mrr": 1.0,
+  "high_band_precision": 1.0,
+  "review_queue_rate": 0.0,
+  "exact_top1": 0.9091,
+  "ece": 0.0009,
+  "safety_failures": 0,
+  "fhir_resources": 165,
+  "fhir_errors": 0,
+  "brand_typo_accuracy": 1.0,
+  "brand_false_resolutions": 0,
+  "line_resolution_accuracy": 1.0,
+  "interaction_precision": 1.0,
+  "interaction_recall": 1.0,
+  "semantic_method": "weighted-lexical-overlap",
+  "is_sample": true
+ },
+ "results": {
+  "split": {
+   "test": 11,
+   "train": 42,
+   "note": "Stage-0 crosswalk baseline disabled for every system; the ranker never sees TEST rows."
+  },
+  "intercomparison": {
+   "semantic_method": "weighted-lexical-overlap",
+   "systems": {
+    "Exact": {
+     "queries": 11,
+     "top1": 0.9091,
+     "top1_ci95": [
+      0.6226,
+      0.9838
+     ],
+     "top5": 0.9091,
+     "mrr": 0.9091,
+     "coverage": 0.9091,
+     "failures": [
+      {
+       "query": "SAMPLE-AYU-0042",
+       "gold": "SAMPLE-TM2-0201",
+       "rank": null,
+       "top": []
+      }
+     ]
+    },
+    "Lexical": {
+     "queries": 11,
+     "top1": 1.0,
+     "top1_ci95": [
+      0.7412,
+      1.0
+     ],
+     "top5": 1.0,
+     "mrr": 1.0,
+     "coverage": 1.0,
+     "failures": []
+    },
+    "Transliteration + Lexical": {
+     "queries": 11,
+     "top1": 1.0,
+     "top1_ci95": [
+      0.7412,
+      1.0
+     ],
+     "top5": 1.0,
+     "mrr": 1.0,
+     "coverage": 1.0,
+     "failures": []
+    },
+    "Semantic": {
+     "queries": 11,
+     "top1": 1.0,
+     "top1_ci95": [
+      0.7412,
+      1.0
+     ],
+     "top5": 1.0,
+     "mrr": 1.0,
+     "coverage": 1.0,
+     "failures": []
+    },
+    "Hybrid": {
+     "queries": 11,
+     "top1": 1.0,
+     "top1_ci95": [
+      0.7412,
+      1.0
+     ],
+     "top5": 1.0,
+     "mrr": 1.0,
+     "coverage": 1.0,
+     "high_band_precision": 1.0,
+     "high_band_rate": 1.0,
+     "review_queue_rate": 0.0,
+     "no_match_rate": 0.0,
+     "top1_shown": 1.0,
+     "relationship_accuracy": 1.0,
+     "failures": []
+    }
+   }
+  },
+  "ablation": {
+   "Hybrid (all features)": {
+    "queries": 11,
+    "top1": 1.0,
+    "top1_ci95": [
+     0.7412,
+     1.0
+    ],
+    "top5": 1.0,
+    "mrr": 1.0,
+    "coverage": 1.0,
+    "high_band_precision": 1.0,
+    "high_band_rate": 1.0,
+    "review_queue_rate": 0.0,
+    "no_match_rate": 0.0,
+    "top1_shown": 1.0,
+    "relationship_accuracy": 1.0
+   },
+   "no transliteration": {
+    "queries": 11,
+    "top1": 1.0,
+    "top1_ci95": [
+     0.7412,
+     1.0
+    ],
+    "top5": 1.0,
+    "mrr": 1.0,
+    "coverage": 1.0,
+    "high_band_precision": 1.0,
+    "high_band_rate": 1.0,
+    "review_queue_rate": 0.0,
+    "no_match_rate": 0.0,
+    "top1_shown": 1.0,
+    "relationship_accuracy": 0.9091,
+    "removed": "transliteration"
+   },
+   "no hierarchy": {
+    "queries": 11,
+    "top1": 1.0,
+    "top1_ci95": [
+     0.7412,
+     1.0
+    ],
+    "top5": 1.0,
+    "mrr": 1.0,
+    "coverage": 1.0,
+    "high_band_precision": 1.0,
+    "high_band_rate": 0.9091,
+    "review_queue_rate": 0.0,
+    "no_match_rate": 0.0909,
+    "top1_shown": 0.9091,
+    "relationship_accuracy": 1.0,
+    "removed": "hierarchy"
+   },
+   "no disorder/pattern rule": {
+    "queries": 11,
+    "top1": 1.0,
+    "top1_ci95": [
+     0.7412,
+     1.0
+    ],
+    "top5": 1.0,
+    "mrr": 1.0,
+    "coverage": 1.0,
+    "high_band_precision": 1.0,
+    "high_band_rate": 1.0,
+    "review_queue_rate": 0.0,
+    "no_match_rate": 0.0,
+    "top1_shown": 1.0,
+    "relationship_accuracy": 1.0,
+    "removed": "type_rule"
+   },
+   "no semantic": {
+    "queries": 11,
+    "top1": 1.0,
+    "top1_ci95": [
+     0.7412,
+     1.0
+    ],
+    "top5": 1.0,
+    "mrr": 1.0,
+    "coverage": 1.0,
+    "high_band_precision": 1.0,
+    "high_band_rate": 1.0,
+    "review_queue_rate": 0.0,
+    "no_match_rate": 0.0,
+    "top1_shown": 1.0,
+    "relationship_accuracy": 1.0,
+    "removed": "semantic"
+   },
+   "no char n-gram": {
+    "queries": 11,
+    "top1": 1.0,
+    "top1_ci95": [
+     0.7412,
+     1.0
+    ],
+    "top5": 1.0,
+    "mrr": 1.0,
+    "coverage": 1.0,
+    "high_band_precision": 1.0,
+    "high_band_rate": 1.0,
+    "review_queue_rate": 0.0,
+    "no_match_rate": 0.0,
+    "top1_shown": 1.0,
+    "relationship_accuracy": 1.0,
+    "removed": "ngram"
+   },
+   "no root terms": {
+    "queries": 11,
+    "top1": 1.0,
+    "top1_ci95": [
+     0.7412,
+     1.0
+    ],
+    "top5": 1.0,
+    "mrr": 1.0,
+    "coverage": 1.0,
+    "high_band_precision": 1.0,
+    "high_band_rate": 1.0,
+    "review_queue_rate": 0.0,
+    "no_match_rate": 0.0,
+    "top1_shown": 1.0,
+    "relationship_accuracy": 1.0,
+    "removed": "roots"
+   }
+  },
+  "robustness": {
+   "English": {
+    "queries": 11,
+    "top1": 1.0,
+    "top1_ci95": [
+     0.7412,
+     1.0
+    ],
+    "top5": 1.0,
+    "mrr": 1.0,
+    "coverage": 1.0,
+    "high_band_precision": 1.0,
+    "high_band_rate": 1.0,
+    "review_queue_rate": 0.0,
+    "no_match_rate": 0.0,
+    "top1_shown": 1.0,
+    "relationship_accuracy": 1.0,
+    "resolved_to_correct_namaste": 1.0,
+    "resolved_to_wrong_namaste": 0.0,
+    "failures": []
+   },
+   "IAST": {
+    "queries": 11,
+    "top1": 1.0,
+    "top1_ci95": [
+     0.7412,
+     1.0
+    ],
+    "top5": 1.0,
+    "mrr": 1.0,
+    "coverage": 1.0,
+    "high_band_precision": 1.0,
+    "high_band_rate": 1.0,
+    "review_queue_rate": 0.0,
+    "no_match_rate": 0.0,
+    "top1_shown": 1.0,
+    "relationship_accuracy": 1.0,
+    "resolved_to_correct_namaste": 1.0,
+    "resolved_to_wrong_namaste": 0.0,
+    "failures": []
+   },
+   "Devanagari": {
+    "queries": 11,
+    "top1": 1.0,
+    "top1_ci95": [
+     0.7412,
+     1.0
+    ],
+    "top5": 1.0,
+    "mrr": 1.0,
+    "coverage": 1.0,
+    "high_band_precision": 1.0,
+    "high_band_rate": 1.0,
+    "review_queue_rate": 0.0,
+    "no_match_rate": 0.0,
+    "top1_shown": 1.0,
+    "relationship_accuracy": 1.0,
+    "resolved_to_correct_namaste": 1.0,
+    "resolved_to_wrong_namaste": 0.0,
+    "failures": []
+   },
+   "Hinglish": {
+    "queries": 11,
+    "top1": 1.0,
+    "top1_ci95": [
+     0.7412,
+     1.0
+    ],
+    "top5": 1.0,
+    "mrr": 1.0,
+    "coverage": 1.0,
+    "high_band_precision": 1.0,
+    "high_band_rate": 1.0,
+    "review_queue_rate": 0.0,
+    "no_match_rate": 0.0,
+    "top1_shown": 1.0,
+    "relationship_accuracy": 1.0,
+    "resolved_to_correct_namaste": 1.0,
+    "resolved_to_wrong_namaste": 0.0,
+    "failures": []
+   },
+   "Typo (1 edit)": {
+    "queries": 11,
+    "top1": 0.9091,
+    "top1_ci95": [
+     0.6226,
+     0.9838
+    ],
+    "top5": 1.0,
+    "mrr": 0.9318,
+    "coverage": 1.0,
+    "high_band_precision": 1.0,
+    "high_band_rate": 0.8182,
+    "review_queue_rate": 0.0,
+    "no_match_rate": 0.1818,
+    "top1_shown": 0.8182,
+    "relationship_accuracy": 0.9,
+    "resolved_to_correct_namaste": 0.8182,
+    "resolved_to_wrong_namaste": 0.0,
+    "failures": [
+     {
+      "query": "Ansha",
+      "gold": "SAMPLE-TM2-0134",
+      "rank": 4,
+      "top": [
+       "SAMPLE-TM2-0182",
+       "SAMPLE-TM2-0141",
+       "SAMPLE-TM2-0142"
+      ],
+      "resolved_namaste": false,
+      "resolved_wrong": false
+     }
+    ]
+   },
+   "Typo (2 edits)": {
+    "queries": 11,
+    "top1": 0.8182,
+    "top1_ci95": [
+     0.523,
+     0.9486
+    ],
+    "top5": 1.0,
+    "mrr": 0.8939,
+    "coverage": 1.0,
+    "high_band_precision": 1.0,
+    "high_band_rate": 0.8182,
+    "review_queue_rate": 0.0,
+    "no_match_rate": 0.1818,
+    "top1_shown": 0.8182,
+    "relationship_accuracy": 1.0,
+    "resolved_to_correct_namaste": 0.8182,
+    "resolved_to_wrong_namaste": 0.0,
+    "failures": [
+     {
+      "query": "Ahsa",
+      "gold": "SAMPLE-TM2-0134",
+      "rank": 3,
+      "top": [
+       "SAMPLE-TM2-0141",
+       "SAMPLE-TM2-0142",
+       "SAMPLE-TM2-0134"
+      ],
+      "resolved_namaste": false,
+      "resolved_wrong": false
+     },
+     {
+      "query": "Kaeaia",
+      "gold": "SAMPLE-TM2-0172",
+      "rank": 2,
+      "top": [
+       "SAMPLE-TM2-0141",
+       "SAMPLE-TM2-0172",
+       "SAMPLE-TM2-0222"
+      ],
+      "resolved_namaste": false,
+      "resolved_wrong": false
+     }
+    ]
+   }
+  },
+  "robustness_all_gold": {
+   "English": {
+    "queries": 53,
+    "top1": 1.0,
+    "top1_ci95": [
+     0.9324,
+     1.0
+    ],
+    "top5": 1.0,
+    "mrr": 1.0,
+    "coverage": 1.0,
+    "high_band_precision": 1.0,
+    "high_band_rate": 1.0,
+    "review_queue_rate": 0.0,
+    "no_match_rate": 0.0,
+    "top1_shown": 1.0,
+    "relationship_accuracy": 1.0,
+    "resolved_to_correct_namaste": 1.0,
+    "resolved_to_wrong_namaste": 0.0,
+    "failures": []
+   },
+   "IAST": {
+    "queries": 53,
+    "top1": 1.0,
+    "top1_ci95": [
+     0.9324,
+     1.0
+    ],
+    "top5": 1.0,
+    "mrr": 1.0,
+    "coverage": 1.0,
+    "high_band_precision": 1.0,
+    "high_band_rate": 1.0,
+    "review_queue_rate": 0.0,
+    "no_match_rate": 0.0,
+    "top1_shown": 1.0,
+    "relationship_accuracy": 1.0,
+    "resolved_to_correct_namaste": 1.0,
+    "resolved_to_wrong_namaste": 0.0,
+    "failures": []
+   },
+   "Devanagari": {
+    "queries": 53,
+    "top1": 1.0,
+    "top1_ci95": [
+     0.9324,
+     1.0
+    ],
+    "top5": 1.0,
+    "mrr": 1.0,
+    "coverage": 1.0,
+    "high_band_precision": 1.0,
+    "high_band_rate": 1.0,
+    "review_queue_rate": 0.0,
+    "no_match_rate": 0.0,
+    "top1_shown": 1.0,
+    "relationship_accuracy": 1.0,
+    "resolved_to_correct_namaste": 1.0,
+    "resolved_to_wrong_namaste": 0.0,
+    "failures": []
+   },
+   "Hinglish": {
+    "queries": 53,
+    "top1": 1.0,
+    "top1_ci95": [
+     0.9324,
+     1.0
+    ],
+    "top5": 1.0,
+    "mrr": 1.0,
+    "coverage": 1.0,
+    "high_band_precision": 1.0,
+    "high_band_rate": 1.0,
+    "review_queue_rate": 0.0,
+    "no_match_rate": 0.0,
+    "top1_shown": 1.0,
+    "relationship_accuracy": 1.0,
+    "resolved_to_correct_namaste": 1.0,
+    "resolved_to_wrong_namaste": 0.0,
+    "failures": []
+   },
+   "Typo (1 edit)": {
+    "queries": 53,
+    "top1": 0.9434,
+    "top1_ci95": [
+     0.8463,
+     0.9806
+    ],
+    "top5": 1.0,
+    "mrr": 0.967,
+    "coverage": 1.0,
+    "high_band_precision": 1.0,
+    "high_band_rate": 0.8491,
+    "review_queue_rate": 0.0,
+    "no_match_rate": 0.1509,
+    "top1_shown": 0.8491,
+    "relationship_accuracy": 0.9,
+    "resolved_to_correct_namaste": 0.8491,
+    "resolved_to_wrong_namaste": 0.0,
+    "failures": [
+     {
+      "query": "Amavaa",
+      "gold": "SAMPLE-TM2-0111",
+      "rank": 2,
+      "top": [
+       "SAMPLE-TM2-0521",
+       "SAMPLE-TM2-0111",
+       "SAMPLE-TM2-0191"
+      ],
+      "resolved_namaste": false,
+      "resolved_wrong": false
+     },
+     {
+      "query": "Ansha",
+      "gold": "SAMPLE-TM2-0134",
+      "rank": 4,
+      "top": [
+       "SAMPLE-TM2-0182",
+       "SAMPLE-TM2-0141",
+       "SAMPLE-TM2-0142"
+      ],
+      "resolved_namaste": false,
+      "resolved_wrong": false
+     },
+     {
+      "query": "Jvtra",
+      "gold": "SAMPLE-TM2-0201",
+      "rank": 2,
+      "top": [
+       "SAMPLE-TM2-0163",
+       "SAMPLE-TM2-0201",
+       "SAMPLE-TM2-0151"
+      ],
+      "resolved_namaste": false,
+      "resolved_wrong": false
+     }
+    ]
+   },
+   "Typo (2 edits)": {
+    "queries": 53,
+    "top1": 0.9057,
+    "top1_ci95": [
+     0.7975,
+     0.959
+    ],
+    "top5": 0.9623,
+    "mrr": 0.9285,
+    "coverage": 1.0,
+    "high_band_precision": 1.0,
+    "high_band_rate": 0.6981,
+    "review_queue_rate": 0.0,
+    "no_match_rate": 0.3019,
+    "top1_shown": 0.6981,
+    "relationship_accuracy": 0.7708,
+    "resolved_to_correct_namaste": 0.6981,
+    "resolved_to_wrong_namaste": 0.0,
+    "failures": [
+     {
+      "query": "Ahsa",
+      "gold": "SAMPLE-TM2-0134",
+      "rank": 3,
+      "top": [
+       "SAMPLE-TM2-0141",
+       "SAMPLE-TM2-0142",
+       "SAMPLE-TM2-0134"
+      ],
+      "resolved_namaste": false,
+      "resolved_wrong": false
+     },
+     {
+      "query": "Anaa",
+      "gold": "SAMPLE-TM2-0137",
+      "rank": 45,
+      "top": [
+       "SAMPLE-TM2-0182",
+       "SAMPLE-TM2-0135",
+       "SAMPLE-TM2-0521"
+      ],
+      "resolved_namaste": false,
+      "resolved_wrong": false
+     },
+     {
+      "query": "Vusapra",
+      "gold": "SAMPLE-TM2-0165",
+      "rank": 46,
+      "top": [
+       "SAMPLE-TM2-0193",
+       "SAMPLE-TM2-0192",
+       "SAMPLE-TM2-0201"
+      ],
+      "resolved_namaste": false,
+      "resolved_wrong": false
+     },
+     {
+      "query": "Kaeaia",
+      "gold": "SAMPLE-TM2-0172",
+      "rank": 2,
+      "top": [
+       "SAMPLE-TM2-0141",
+       "SAMPLE-TM2-0172",
+       "SAMPLE-TM2-0222"
+      ],
+      "resolved_namaste": false,
+      "resolved_wrong": false
+     },
+     {
+      "query": "Khavriddhi",
+      "gold": "SAMPLE-TM2-0513",
+      "rank": 3,
+      "top": [
+       "SAMPLE-TM2-0511",
+       "SAMPLE-TM2-0512",
+       "SAMPLE-TM2-0513"
+      ],
+      "resolved_namaste": false,
+      "resolved_wrong": false
+     }
+    ]
+   }
+  },
+  "calibration": {
+   "thresholds": {
+    "high": 0.5,
+    "low": 0.45,
+    "source": "calibrated"
+   },
+   "threshold_method": "precision>=0.95 at coverage>=0.25, CV top-1 incl. 42 absent-answer queries; floor 0.5",
+   "train_cv_reliability": [
+    {
+     "lower": 0.0,
+     "upper": 0.1,
+     "count": 2309,
+     "mean_predicted": 0.0003,
+     "observed": 0.0
+    },
+    {
+     "lower": 0.4,
+     "upper": 0.5,
+     "count": 1,
+     "mean_predicted": 0.4763,
+     "observed": 0.0
+    },
+    {
+     "lower": 0.5,
+     "upper": 0.6,
+     "count": 1,
+     "mean_predicted": 0.5449,
+     "observed": 1.0
+    },
+    {
+     "lower": 0.7,
+     "upper": 0.8,
+     "count": 1,
+     "mean_predicted": 0.7406,
+     "observed": 1.0
+    },
+    {
+     "lower": 0.9,
+     "upper": 1.0,
+     "count": 40,
+     "mean_predicted": 0.9897,
+     "observed": 1.0
+    }
+   ],
+   "test_reliability": [
+    {
+     "lower": 0.0,
+     "upper": 0.1,
+     "count": 605,
+     "mean_predicted": 0.0002,
+     "observed": 0.0
+    },
+    {
+     "lower": 0.6,
+     "upper": 0.7,
+     "count": 1,
+     "mean_predicted": 0.6274,
+     "observed": 1.0
+    },
+    {
+     "lower": 0.9,
+     "upper": 1.0,
+     "count": 10,
+     "mean_predicted": 0.9911,
+     "observed": 1.0
+    }
+   ],
+   "test_pairs": 616,
+   "test_expected_calibration_error": 0.0009,
+   "brier_score": 0.00023
+  },
+  "safety": {
+   "checks": {
+    "codes_outside_dataset": 0,
+    "low_or_unapproved_in_conceptmap": 0,
+    "below_high_band_emitted_without_review": 0,
+    "unapproved_bio_link_in_condition": 0,
+    "unapproved_link_shown_as_approved": 0,
+    "biomedical_link_not_relatedto": 0,
+    "medication_without_citation": 0,
+    "medication_without_disclaimer": 0,
+    "medication_link_without_citation": 0,
+    "medication_link_not_human_approved": 0,
+    "dose_fields_in_openapi": 0,
+    "dose_fields_in_fhir_medication": 0,
+    "alert_without_citation": 0,
+    "alert_without_severity": 0,
+    "no_interaction_without_caveat": 0,
+    "fhir_conformance_errors": 0,
+    "labelled_cases_alerts_without_citation": 0,
+    "labelled_cases_no_interaction_without_dataset_caveat": 0
+   },
+   "ok": true,
+   "examples": {},
+   "scope": {
+    "namaste_concepts_mapped": 53,
+    "approved_mappings": 42,
+    "conditions_built": 42,
+    "below_high_attempts": 212,
+    "medications": 35,
+    "interaction_checks": 350
+   },
+   "fhir_conformance": {
+    "CodeSystem": {
+     "resources": 2,
+     "errors": 0,
+     "warnings": 0
+    },
+    "ValueSet": {
+     "resources": 4,
+     "errors": 0,
+     "warnings": 0
+    },
+    "ConceptMap": {
+     "resources": 2,
+     "errors": 0,
+     "warnings": 0
+    },
+    "Condition": {
+     "resources": 42,
+     "errors": 0,
+     "warnings": 0
+    },
+    "Medication": {
+     "resources": 35,
+     "errors": 0,
+     "warnings": 0
+    },
+    "MedicationKnowledge": {
+     "resources": 35,
+     "errors": 0,
+     "warnings": 0
+    },
+    "DetectedIssue": {
+     "resources": 45,
+     "errors": 0,
+     "warnings": 0
+    }
+   }
+  },
+  "medication": {
+   "brands": {
+    "exact": {
+     "cases": 15,
+     "accuracy": 1.0
+    },
+    "case / dosage form": {
+     "cases": 30,
+     "accuracy": 1.0
+    },
+    "typo (1 edit)": {
+     "cases": 13,
+     "accuracy": 1.0
+    },
+    "not in catalogue": {
+     "cases": 7,
+     "false_resolutions": 0,
+     "examples": []
+    },
+    "failures": []
+   },
+   "ingredient_names": {
+    "groups": {
+     "Ayush ingredient: Devanagari": {
+      "cases": 34,
+      "accuracy": 1.0
+     },
+     "Ayush ingredient: Devanagari (variant)": {
+      "cases": 19,
+      "accuracy": 1.0
+     },
+     "Ayush ingredient: IAST": {
+      "cases": 34,
+      "accuracy": 1.0
+     },
+     "Ayush ingredient: botanical": {
+      "cases": 29,
+      "accuracy": 1.0
+     },
+     "Ayush ingredient: canonical": {
+      "cases": 34,
+      "accuracy": 1.0
+     },
+     "Ayush ingredient: common / Hinglish": {
+      "cases": 53,
+      "accuracy": 1.0
+     },
+     "Salt: Devanagari": {
+      "cases": 3,
+      "accuracy": 1.0
+     },
+     "Salt: canonical": {
+      "cases": 17,
+      "accuracy": 1.0
+     },
+     "Salt: synonym": {
+      "cases": 10,
+      "accuracy": 1.0
+     }
+    },
+    "shared_names": [
+     "tinospora cordifolia"
+    ],
+    "failures": []
+   },
+   "line_resolution": {
+    "cases": 22,
+    "correct": 22,
+    "accuracy": 1.0,
+    "failures": []
+   },
+   "interactions": {
+    "cases": 21,
+    "true_positives": 23,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "by_kind": {
+     "duplicate": {
+      "true_positives": 7,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0
+     },
+     "interaction": {
+      "true_positives": 16,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0
+     }
+    },
+    "safety": {
+     "alerts_without_citation": 0,
+     "no_interaction_without_dataset_caveat": 0
+    },
+    "failures": []
+   }
+  },
+  "timings_s": {
+   "intercomparison": 1.24,
+   "ablation": 2.78,
+   "robustness": 0.78,
+   "robustness_all_gold": 2.4,
+   "calibration": 0.06,
+   "safety": 2.32,
+   "brands": 0.0,
+   "ingredient_names": 0.0,
+   "line_resolution": 0.01,
+   "interactions": 0.03
+  }
+ },
+ "dataset_releases": [
+  "gold@SAMPLE-1",
+  "icd11@SAMPLE-1",
+  "interactions@SAMPLE-1",
+  "medications@SAMPLE-1",
+  "namaste@SAMPLE-1",
+  "synonyms@SAMPLE-1"
+ ],
+ "model_version": "ranker@1.0.0",
+ "safety_ok": true,
+ "duration_s": 10.64
+}

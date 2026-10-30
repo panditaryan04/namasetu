@@ -1,0 +1,22 @@
+medication_code,generic_name,salt,strength,dosage_form,route,therapeutic_class,schedule,nlem,source_title,source_edition,source_page
+SAMPLE-MED-B001,Paracetamol 500 mg tablet,Paracetamol,500 mg,tablet,oral,Analgesic / antipyretic,,true,National List of Essential Medicines (SAMPLE transcription),SAMPLE,verify against source
+SAMPLE-MED-B017,Paracetamol 650 mg tablet,Paracetamol,650 mg,tablet,oral,Analgesic / antipyretic,,false,CDSCO approved drug list (SAMPLE transcription),SAMPLE,verify against source
+SAMPLE-MED-B002,Ibuprofen 400 mg tablet,Ibuprofen,400 mg,tablet,oral,NSAID,H,true,National List of Essential Medicines (SAMPLE transcription),SAMPLE,verify against source
+SAMPLE-MED-B003,Ibuprofen + Paracetamol tablet,Ibuprofen,400 mg,tablet,oral,NSAID combination,H,false,CDSCO approved drug list (SAMPLE transcription),SAMPLE,verify against source
+SAMPLE-MED-B003,Ibuprofen + Paracetamol tablet,Paracetamol,325 mg,tablet,oral,NSAID combination,H,false,CDSCO approved drug list (SAMPLE transcription),SAMPLE,verify against source
+SAMPLE-MED-B004,Methotrexate 2.5 mg tablet,Methotrexate,2.5 mg,tablet,oral,DMARD,H,true,National List of Essential Medicines (SAMPLE transcription),SAMPLE,verify against source
+SAMPLE-MED-B005,Allopurinol 100 mg tablet,Allopurinol,100 mg,tablet,oral,Xanthine oxidase inhibitor,H,true,National List of Essential Medicines (SAMPLE transcription),SAMPLE,verify against source
+SAMPLE-MED-B006,Colchicine 0.5 mg tablet,Colchicine,0.5 mg,tablet,oral,Anti-gout,H,false,CDSCO approved drug list (SAMPLE transcription),SAMPLE,verify against source
+SAMPLE-MED-B007,Metformin hydrochloride 500 mg tablet,Metformin hydrochloride,500 mg,tablet,oral,Biguanide,H,true,National List of Essential Medicines (SAMPLE transcription),SAMPLE,verify against source
+SAMPLE-MED-B008,Glimepiride 1 mg tablet,Glimepiride,1 mg,tablet,oral,Sulfonylurea,H,false,CDSCO approved drug list (SAMPLE transcription),SAMPLE,verify against source
+SAMPLE-MED-B009,Sumatriptan 50 mg tablet,Sumatriptan succinate,50 mg,tablet,oral,Triptan,H,false,CDSCO approved drug list (SAMPLE transcription),SAMPLE,verify against source
+SAMPLE-MED-B010,Pantoprazole 40 mg gastro-resistant tablet,Pantoprazole sodium,40 mg,gastro-resistant tablet,oral,Proton pump inhibitor,H,true,National List of Essential Medicines (SAMPLE transcription),SAMPLE,verify against source
+SAMPLE-MED-B011,Clobetasol propionate 0.05% cream,Clobetasol propionate,0.05% w/w,cream,topical,Topical corticosteroid,H,false,CDSCO approved drug list (SAMPLE transcription),SAMPLE,verify against source
+SAMPLE-MED-B012,Tacrolimus 0.1% ointment,Tacrolimus,0.1% w/w,ointment,topical,Topical calcineurin inhibitor,H,false,CDSCO approved drug list (SAMPLE transcription),SAMPLE,verify against source
+SAMPLE-MED-B013,Mefenamic acid 250 mg capsule,Mefenamic acid,250 mg,capsule,oral,NSAID,H,false,CDSCO approved drug list (SAMPLE transcription),SAMPLE,verify against source
+SAMPLE-MED-B014,Mefenamic acid + Dicyclomine tablet,Mefenamic acid,250 mg,tablet,oral,NSAID + antispasmodic,H,false,CDSCO approved drug list (SAMPLE transcription),SAMPLE,verify against source
+SAMPLE-MED-B014,Mefenamic acid + Dicyclomine tablet,Dicyclomine hydrochloride,10 mg,tablet,oral,NSAID + antispasmodic,H,false,CDSCO approved drug list (SAMPLE transcription),SAMPLE,verify against source
+SAMPLE-MED-B015,Cholecalciferol 60000 IU capsule,Cholecalciferol,"60,000 IU",soft gelatin capsule,oral,Vitamin D,,false,CDSCO approved drug list (SAMPLE transcription),SAMPLE,verify against source
+SAMPLE-MED-B016,Ferrous sulphate + Folic acid tablet,Ferrous sulphate,200 mg,tablet,oral,Haematinic,,true,National List of Essential Medicines (SAMPLE transcription),SAMPLE,verify against source
+SAMPLE-MED-B016,Ferrous sulphate + Folic acid tablet,Folic acid,0.5 mg,tablet,oral,Haematinic,,true,National List of Essential Medicines (SAMPLE transcription),SAMPLE,verify against source
+SAMPLE-MED-B018,Hydrochlorothiazide 12.5 mg tablet,Hydrochlorothiazide,12.5 mg,tablet,oral,Thiazide diuretic,H,true,National List of Essential Medicines (SAMPLE transcription),SAMPLE,verify against source

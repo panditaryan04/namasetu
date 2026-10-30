@@ -1,0 +1,65 @@
+NAMC_ID,NAMC_CODE,NAMC_term,NAMC_term_diacritical,NAMC_term_DEVANAGARI,Short_definition,Long_definition,Ontology_branches,Name_English,Parent_code,Entity_type
+1,SAMPLE-AYU-G01,Vatavyadhi,Vātavyādhi,वातव्याधि,Group of disorders caused predominantly by vitiated vata.,,Vyadhi,Disorders of vata,,category
+2,SAMPLE-AYU-G02,Mahasrotovikara,Mahāsrotovikāra,महास्रोतोविकार,Group of disorders of the gastrointestinal channel.,,Vyadhi,Digestive channel disorders,,category
+3,SAMPLE-AYU-G03,Pranavahasrotovikara,Prāṇavahasrotovikāra,प्राणवहस्रोतोविकार,Group of disorders of the respiratory channel.,,Vyadhi,Respiratory channel disorders,,category
+4,SAMPLE-AYU-G04,Mutravahasrotovikara,Mūtravahasrotovikāra,मूत्रवहस्रोतोविकार,Group of disorders of the urinary channel.,,Vyadhi,Urinary channel disorders,,category
+5,SAMPLE-AYU-G05,Tvagvikara,Tvagvikāra,त्वग्विकार,Group of disorders of the skin.,,Vyadhi,Skin disorders,,category
+6,SAMPLE-AYU-G06,Raktavahasrotovikara,Raktavahasrotovikāra,रक्तवहस्रोतोविकार,Group of disorders of the blood-carrying channel.,,Vyadhi,Blood channel disorders,,category
+7,SAMPLE-AYU-G07,Manovahasrotovikara,Manovahasrotovikāra,मनोवहस्रोतोविकार,Group of disorders of the mind-carrying channel.,,Vyadhi,Mental disorders,,category
+8,SAMPLE-AYU-G08,Artavavahasrotovikara,Ārtavavahasrotovikāra,आर्तववहस्रोतोविकार,Group of disorders of the menstrual channel.,,Vyadhi,Menstrual disorders,,category
+9,SAMPLE-AYU-G09,Medovahasrotovikara,Medovahasrotovikāra,मेदोवहस्रोतोविकार,Group of disorders of the fat-carrying channel.,,Vyadhi,Metabolic disorders,,category
+10,SAMPLE-AYU-G10,Doshavikriti,Doṣavikṛti,दोषविकृति,Group of patterns of dosha imbalance.,,Vikriti,Dosha imbalance patterns,,category
+11,SAMPLE-AYU-G11,Shiroroga,Śiroroga,शिरोरोग,Group of disorders of the head.,,Vyadhi,Head disorders,,category
+12,SAMPLE-AYU-0001,Amavata,Āmavāta,आमवात,"Disease in which vitiated vata carries ama to the joints, producing pain, swelling and stiffness.",,Vyadhi > Vatavyadhi,Rheumatism with ama,SAMPLE-AYU-G01,disorder
+13,SAMPLE-AYU-0002,Sandhivata,Sandhivāta,संधिवात,"Vata disorder localised in the joints, with pain on movement and crepitus.",,Vyadhi > Vatavyadhi,Degenerative joint disease,SAMPLE-AYU-G01,disorder
+14,SAMPLE-AYU-0003,Vatarakta,Vātarakta,वातरक्त,"Disease of vitiated vata and rakta, beginning in the small joints of the feet.",,Vyadhi > Vatavyadhi,Gout-like joint disease,SAMPLE-AYU-G01,disorder
+15,SAMPLE-AYU-0004,Gridhrasi,Gṛdhrasī,गृध्रसी,"Pain radiating from the buttock along the back of the thigh and leg.",,Vyadhi > Vatavyadhi,Sciatic pain,SAMPLE-AYU-G01,disorder
+16,SAMPLE-AYU-0005,Katishula,Kaṭīśūla,कटीशूल,Pain in the lumbar region.,,Vyadhi > Vatavyadhi,Low back pain,SAMPLE-AYU-G01,disorder
+17,SAMPLE-AYU-0006,Pakshaghata,Pakṣāghāta,पक्षाघात,Loss of function of one half of the body.,,Vyadhi > Vatavyadhi,Hemiplegia,SAMPLE-AYU-G01,disorder
+18,SAMPLE-AYU-0007,Ardita,Ardita,अर्दित,Deviation of one half of the face.,,Vyadhi > Vatavyadhi,Facial palsy,SAMPLE-AYU-G01,disorder
+19,SAMPLE-AYU-0008,Manyastambha,Manyāstambha,मन्यास्तम्भ,Stiffness and restricted movement of the neck.,,Vyadhi > Vatavyadhi,Neck stiffness,SAMPLE-AYU-G01,disorder
+20,SAMPLE-AYU-0009,Amlapitta,Amlapitta,अम्लपित्त,"Disorder of pitta with sour belching, heartburn and nausea.",,Vyadhi > Mahasrotovikara,Hyperacidity,SAMPLE-AYU-G02,disorder
+21,SAMPLE-AYU-0010,Grahani,Grahaṇī,ग्रहणी,"Disorder of the grahani with alternating loose and hard stools, due to weak agni.",,Vyadhi > Mahasrotovikara,Malabsorption disorder,SAMPLE-AYU-G02,disorder
+22,SAMPLE-AYU-0011,Atisara,Atisāra,अतिसार,Frequent passage of loose watery stools.,,Vyadhi > Mahasrotovikara,Diarrhoea,SAMPLE-AYU-G02,disorder
+23,SAMPLE-AYU-0012,Arsha,Arśa,अर्श,Fleshy growths in the anal canal that obstruct the passage.,,Vyadhi > Mahasrotovikara,Haemorrhoids,SAMPLE-AYU-G02,disorder
+24,SAMPLE-AYU-0013,Ajirna,Ajīrṇa,अजीर्ण,Incomplete digestion of ingested food.,,Vyadhi > Mahasrotovikara,Indigestion,SAMPLE-AYU-G02,disorder
+25,SAMPLE-AYU-0014,Chhardi,Chardi,छर्दि,Expulsion of stomach contents through the mouth.,,Vyadhi > Mahasrotovikara,Vomiting,SAMPLE-AYU-G02,disorder
+26,SAMPLE-AYU-0015,Anaha,Ānāha,आनाह,Distension of the abdomen with obstruction of faeces and flatus.,,Vyadhi > Mahasrotovikara,Abdominal distension,SAMPLE-AYU-G02,disorder
+27,SAMPLE-AYU-0016,Krimi,Kṛmi,कृमि,Infestation by worms.,,Vyadhi > Mahasrotovikara,Worm infestation,SAMPLE-AYU-G02,disorder
+28,SAMPLE-AYU-0017,Kasa,Kāsa,कास,Expulsion of air from the respiratory passage with a characteristic sound.,,Vyadhi > Pranavahasrotovikara,Cough,SAMPLE-AYU-G03,disorder
+29,SAMPLE-AYU-0018,Tamaka Shvasa,Tamaka Śvāsa,तमक श्वास,"Episodic breathlessness with wheeze, worse at night and in cold weather.",,Vyadhi > Pranavahasrotovikara,Bronchial asthma-like breathlessness,SAMPLE-AYU-G03,disorder
+30,SAMPLE-AYU-0019,Pratishyaya,Pratiśyāya,प्रतिश्याय,Nasal discharge with sneezing and heaviness of the head.,,Vyadhi > Pranavahasrotovikara,Coryza,SAMPLE-AYU-G03,disorder
+31,SAMPLE-AYU-0020,Hikka,Hikkā,हिक्का,Repeated involuntary spasm of the diaphragm with a characteristic sound.,,Vyadhi > Pranavahasrotovikara,Hiccup,SAMPLE-AYU-G03,disorder
+32,SAMPLE-AYU-0021,Rajayakshma,Rājayakṣmā,राजयक्ष्मा,Progressive wasting of the body tissues.,,Vyadhi > Pranavahasrotovikara,Consumptive wasting disease,SAMPLE-AYU-G03,disorder
+33,SAMPLE-AYU-0022,Mutrakrichchhra,Mūtrakṛcchra,मूत्रकृच्छ्र,Painful and difficult urination.,,Vyadhi > Mutravahasrotovikara,Dysuria,SAMPLE-AYU-G04,disorder
+34,SAMPLE-AYU-0023,Ashmari,Aśmarī,अश्मरी,Stone formation in the urinary tract.,,Vyadhi > Mutravahasrotovikara,Urinary calculus,SAMPLE-AYU-G04,disorder
+35,SAMPLE-AYU-0024,Mutraghata,Mūtrāghāta,मूत्राघात,Obstruction to the flow of urine.,,Vyadhi > Mutravahasrotovikara,Urinary retention,SAMPLE-AYU-G04,disorder
+36,SAMPLE-AYU-0025,Ekakushtha,Ekakuṣṭha,एककुष्ठ,"Skin disease with large, dry, scaly patches resembling fish scales.",,Vyadhi > Tvagvikara,Psoriasis-like skin disease,SAMPLE-AYU-G05,disorder
+37,SAMPLE-AYU-0026,Vicharchika,Vicarcikā,विचर्चिका,"Itchy skin eruption with discharge and dark discolouration.",,Vyadhi > Tvagvikara,Eczema-like skin disease,SAMPLE-AYU-G05,disorder
+38,SAMPLE-AYU-0027,Shvitra,Śvitra,श्वित्र,White depigmented patches of the skin.,,Vyadhi > Tvagvikara,Vitiligo-like depigmentation,SAMPLE-AYU-G05,disorder
+39,SAMPLE-AYU-0028,Shitapitta,Śītapitta,शीतपित्त,"Sudden itchy wheals on the skin, often after exposure to cold wind.",,Vyadhi > Tvagvikara,Urticaria,SAMPLE-AYU-G05,disorder
+40,SAMPLE-AYU-0029,Visarpa,Visarpa,विसर्प,Rapidly spreading inflammation of the skin.,,Vyadhi > Tvagvikara,Spreading skin inflammation,SAMPLE-AYU-G05,disorder
+41,SAMPLE-AYU-0030,Pandu,Pāṇḍu,पाण्डु,Pallor of the skin with fatigue due to depletion of rakta.,,Vyadhi > Raktavahasrotovikara,Anaemia-like pallor,SAMPLE-AYU-G06,disorder
+42,SAMPLE-AYU-0031,Kamala,Kāmalā,कामला,"Yellow discolouration of the eyes, skin and urine.",,Vyadhi > Raktavahasrotovikara,Jaundice,SAMPLE-AYU-G06,disorder
+43,SAMPLE-AYU-0032,Raktapitta,Raktapitta,रक्तपित्त,Bleeding from the upper or lower passages due to vitiated pitta.,,Vyadhi > Raktavahasrotovikara,Bleeding disorder,SAMPLE-AYU-G06,disorder
+44,SAMPLE-AYU-0033,Unmada,Unmāda,उन्माद,"Derangement of mind, intellect and behaviour.",,Vyadhi > Manovahasrotovikara,Psychosis-like disorder,SAMPLE-AYU-G07,disorder
+45,SAMPLE-AYU-0034,Apasmara,Apasmāra,अपस्मार,Episodic loss of consciousness with abnormal movements.,,Vyadhi > Manovahasrotovikara,Epilepsy-like disorder,SAMPLE-AYU-G07,disorder
+46,SAMPLE-AYU-0035,Anidra,Anidrā,अनिद्रा,Inability to obtain adequate sleep.,,Vyadhi > Manovahasrotovikara,Insomnia,SAMPLE-AYU-G07,disorder
+47,SAMPLE-AYU-0036,Kashtartava,Kaṣṭārtava,कष्टार्तव,Painful menstruation.,,Vyadhi > Artavavahasrotovikara,Dysmenorrhoea,SAMPLE-AYU-G08,disorder
+48,SAMPLE-AYU-0037,Shvetapradara,Śvetapradara,श्वेतप्रदर,White discharge per vaginum.,,Vyadhi > Artavavahasrotovikara,Leucorrhoea,SAMPLE-AYU-G08,disorder
+49,SAMPLE-AYU-0038,Asrigdara,Asṛgdara,असृग्दर,Excessive or prolonged menstrual bleeding.,,Vyadhi > Artavavahasrotovikara,Menorrhagia,SAMPLE-AYU-G08,disorder
+50,SAMPLE-AYU-0039,Jvara,Jvara,ज्वर,Raised body temperature with discomfort of body and mind.,,Vyadhi,Fever,,disorder
+51,SAMPLE-AYU-0040,Vataja Jvara,Vātaja Jvara,वातज ज्वर,"Fever of vata type, with irregular onset, body ache and dryness.",,Vyadhi > Jvara,Vata-type fever,SAMPLE-AYU-0039,disorder
+52,SAMPLE-AYU-0041,Pittaja Jvara,Pittaja Jvara,पित्तज ज्वर,"Fever of pitta type, with high temperature, burning and thirst.",,Vyadhi > Jvara,Pitta-type fever,SAMPLE-AYU-0039,disorder
+53,SAMPLE-AYU-0042,Kaphaja Jvara,Kaphaja Jvara,कफज ज्वर,"Fever of kapha type, with heaviness, mild temperature and loss of appetite.",,Vyadhi > Jvara,Kapha-type fever,SAMPLE-AYU-0039,disorder
+54,SAMPLE-AYU-0043,Prameha,Prameha,प्रमेह,Group of disorders with excessive and turbid urination.,,Vyadhi > Medovahasrotovikara,Polyuric disorder,SAMPLE-AYU-G09,disorder
+55,SAMPLE-AYU-0044,Madhumeha,Madhumeha,मधुमेह,Type of prameha in which the urine is sweet like honey.,,Vyadhi > Medovahasrotovikara > Prameha,Diabetes-like disorder,SAMPLE-AYU-0043,disorder
+56,SAMPLE-AYU-0045,Sthaulya,Sthaulya,स्थौल्य,Excessive accumulation of meda (fat) in the body.,,Vyadhi > Medovahasrotovikara,Obesity,SAMPLE-AYU-G09,disorder
+57,SAMPLE-AYU-0046,Galaganda,Galagaṇḍa,गलगण्ड,Swelling in the front of the neck.,,Vyadhi,Goitre,,disorder
+58,SAMPLE-AYU-0047,Shirahshula,Śiraḥśūla,शिरःशूल,Pain in the head.,,Vyadhi > Shiroroga,Headache,SAMPLE-AYU-G11,disorder
+59,SAMPLE-AYU-0048,Ardhavabhedaka,Ardhāvabhedaka,अर्धावभेदक,Paroxysmal pain in one half of the head.,,Vyadhi > Shiroroga,Migraine-like hemicrania,SAMPLE-AYU-G11,disorder
+60,SAMPLE-AYU-P01,Vatavriddhi,Vātavṛddhi,वातवृद्धि,"Pattern of increased vata, with dryness, roughness, pain and constipation.",,Vikriti > Doshavikriti,Aggravated vata pattern,SAMPLE-AYU-G10,pattern
+61,SAMPLE-AYU-P02,Pittavriddhi,Pittavṛddhi,पित्तवृद्धि,"Pattern of increased pitta, with burning, yellowish discolouration and thirst.",,Vikriti > Doshavikriti,Aggravated pitta pattern,SAMPLE-AYU-G10,pattern
+62,SAMPLE-AYU-P03,Kaphavriddhi,Kaphavṛddhi,कफवृद्धि,"Pattern of increased kapha, with heaviness, lethargy and excess mucus.",,Vikriti > Doshavikriti,Aggravated kapha pattern,SAMPLE-AYU-G10,pattern
+63,SAMPLE-AYU-P04,Sama Dosha,Sāma Doṣa,साम दोष,"Pattern in which the doshas are associated with ama, with heaviness, coated tongue and anorexia.",,Vikriti > Doshavikriti,Dosha with ama pattern,SAMPLE-AYU-G10,pattern
+64,SAMPLE-AYU-P05,Agnimandya,Agnimāndya,अग्निमान्द्य,"Pattern of diminished digestive fire, with poor appetite and slow digestion.",,Vikriti > Doshavikriti,Diminished digestive fire pattern,SAMPLE-AYU-G10,pattern

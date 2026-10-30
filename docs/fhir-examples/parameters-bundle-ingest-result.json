@@ -1,0 +1,74 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "outcome",
+      "resource": {
+        "resourceType": "OperationOutcome",
+        "id": "abc02869cf6e4df5b4a2b4868776589f",
+        "issue": [
+          {
+            "severity": "information",
+            "code": "informational",
+            "diagnostics": "added TM2 SAMPLE-TM2-0131 from approved mapping 7 (equivalent)",
+            "expression": [
+              "Bundle.entry[1].resource.code"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "return",
+      "resource": {
+        "resourceType": "Bundle",
+        "id": "example-encounter-problem-list",
+        "type": "collection",
+        "entry": [
+          {
+            "fullUrl": "http://localhost:8000/fhir/Patient/test-patient-1",
+            "resource": {
+              "resourceType": "Patient",
+              "id": "test-patient-1",
+              "identifier": [
+                {
+                  "system": "https://healthid.ndhm.gov.in",
+                  "value": "91-TEST-0000-0001"
+                }
+              ],
+              "name": [
+                {
+                  "text": "Test Patient (SYNTHETIC)"
+                }
+              ]
+            }
+          },
+          {
+            "fullUrl": "http://localhost:8000/fhir/Condition/problem-1",
+            "resource": {
+              "resourceType": "Condition",
+              "id": "problem-1",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://localhost:8000/fhir/CodeSystem/namaste",
+                    "code": "SAMPLE-AYU-0009",
+                    "display": "Amlapitta"
+                  },
+                  {
+                    "system": "http://localhost:8000/fhir/CodeSystem/icd11-mms-sample",
+                    "code": "SAMPLE-TM2-0131",
+                    "display": "Sour-bile disorder"
+                  }
+                ]
+              },
+              "subject": {
+                "reference": "Patient/test-patient-1"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

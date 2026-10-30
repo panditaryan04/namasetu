@@ -1,0 +1,68 @@
+{
+  "resourceType": "ValueSet",
+  "id": "namaste-ayurveda",
+  "url": "http://localhost:8000/fhir/ValueSet/namaste-ayurveda",
+  "version": "SAMPLE-1",
+  "name": "NamasteAyurveda",
+  "title": "NAMASTE Ayurveda diagnoses (SAMPLE)",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-10-30T12:04:01+00:00",
+  "publisher": "Team Byte Strong",
+  "description": "SAMPLE — illustrative, not official. Codes prefixed SAMPLE- are not real NAMASTE or WHO codes. All non-grouping codes with discipline = ayurveda.",
+  "expansion": {
+    "identifier": "urn:uuid:44c19b08-c499-48e3-9f6c-8eb7c10dab2f",
+    "timestamp": "2026-10-30T12:04:01+00:00",
+    "total": 25,
+    "offset": 0,
+    "parameter": [
+      {
+        "name": "filter",
+        "valueString": "आमवात"
+      },
+      {
+        "name": "count",
+        "valueInteger": 5
+      },
+      {
+        "name": "offset",
+        "valueInteger": 0
+      },
+      {
+        "name": "used-codesystem",
+        "valueUri": "http://localhost:8000/fhir/CodeSystem/namaste|SAMPLE-1"
+      }
+    ],
+    "contains": [
+      {
+        "system": "http://localhost:8000/fhir/CodeSystem/namaste",
+        "code": "SAMPLE-AYU-0001",
+        "display": "Amavata"
+      },
+      {
+        "system": "http://localhost:8000/fhir/CodeSystem/namaste",
+        "code": "SAMPLE-AYU-P04",
+        "display": "Sama Dosha"
+      },
+      {
+        "system": "http://localhost:8000/fhir/CodeSystem/namaste",
+        "code": "SAMPLE-AYU-0009",
+        "display": "Amlapitta"
+      },
+      {
+        "system": "http://localhost:8000/fhir/CodeSystem/namaste",
+        "code": "SAMPLE-AYU-0018",
+        "display": "Tamaka Shvasa"
+      },
+      {
+        "system": "http://localhost:8000/fhir/CodeSystem/namaste",
+        "code": "SAMPLE-AYU-0040",
+        "display": "Vataja Jvara"
+      }
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>ValueSet: NAMASTE Ayurveda diagnoses (SAMPLE)</p></div>"
+  }
+}

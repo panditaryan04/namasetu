@@ -1,0 +1,23 @@
+# Runtime dependencies (pinned). NLP/FHIR/medication packages are added in the milestones that use them.
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+pydantic-settings==2.7.1
+sqlalchemy==2.0.36
+alembic==1.14.0
+psycopg[binary]==3.2.3
+redis==5.2.1
+celery==5.4.0
+httpx==0.28.1
+pyyaml==6.0.2
+openpyxl==3.1.5
+rapidfuzz==3.14.6
+indic-transliteration==2.3.82
+scikit-learn==1.9.1
+numpy==2.5.4
+fhir.resources==8.3.0
+fhir-core==1.1.12
+pyjwt==2.10.1
+bcrypt==4.2.1
+python-multipart==0.0.20
+reportlab==4.2.5

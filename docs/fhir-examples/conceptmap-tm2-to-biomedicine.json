@@ -1,0 +1,126 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "tm2-to-biomedicine",
+  "url": "http://localhost:8000/fhir/ConceptMap/tm2-to-biomedicine",
+  "name": "Tm2ToBiomedicine",
+  "title": "ICD-11 TM2 to ICD-11 biomedicine (SAMPLE)",
+  "status": "active",
+  "experimental": true,
+  "publisher": "Team Byte Strong",
+  "description": "Built only from clinician-approved / official mappings. SAMPLE — illustrative, not official.",
+  "sourceCanonical": "http://localhost:8000/fhir/ValueSet/icd11-tm2",
+  "group": [
+    {
+      "source": "http://localhost:8000/fhir/CodeSystem/icd11-mms-sample",
+      "target": "http://localhost:8000/fhir/CodeSystem/icd11-mms-sample",
+      "element": [
+        {
+          "code": "SAMPLE-TM2-0111",
+          "display": "Ama-vata joint disorder",
+          "target": [
+            {
+              "code": "SAMPLE-BIO-0001",
+              "display": "Rheumatoid arthritis",
+              "equivalence": "relatedto",
+              "comment": "Source: who-index. Supports claim workflows; not a diagnosis equivalence."
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-TM2-0112",
+          "display": "Degenerative joint disorder (TM2)",
+          "target": [
+            {
+              "code": "SAMPLE-BIO-0002",
+              "display": "Osteoarthritis",
+              "equivalence": "relatedto",
+              "comment": "Source: who-index. Supports claim workflows; not a diagnosis equivalence."
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-TM2-0113",
+          "display": "Vata-rakta disorder",
+          "target": [
+            {
+              "code": "SAMPLE-BIO-0003",
+              "display": "Gout",
+              "equivalence": "relatedto",
+              "comment": "Source: who-index. Supports claim workflows; not a diagnosis equivalence."
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-TM2-0161",
+          "display": "Scaly skin disorder",
+          "target": [
+            {
+              "code": "SAMPLE-BIO-0005",
+              "display": "Psoriasis",
+              "equivalence": "relatedto",
+              "comment": "Source: who-index. Supports claim workflows; not a diagnosis equivalence."
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-TM2-0163",
+          "display": "White patch skin disorder",
+          "target": [
+            {
+              "code": "SAMPLE-BIO-0006",
+              "display": "Vitiligo",
+              "equivalence": "relatedto",
+              "comment": "Source: who-index. Supports claim workflows; not a diagnosis equivalence."
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-TM2-0191",
+          "display": "Painful menstruation disorder",
+          "target": [
+            {
+              "code": "SAMPLE-BIO-0016",
+              "display": "Primary dysmenorrhoea",
+              "equivalence": "relatedto",
+              "comment": "Source: who-index. Supports claim workflows; not a diagnosis equivalence."
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-TM2-0212",
+          "display": "Sweet urine disorder",
+          "target": [
+            {
+              "code": "SAMPLE-BIO-0009",
+              "display": "Type 2 diabetes mellitus",
+              "equivalence": "relatedto",
+              "comment": "Source: who-index. Supports claim workflows; not a diagnosis equivalence."
+            }
+          ]
+        },
+        {
+          "code": "SAMPLE-TM2-0222",
+          "display": "Hemicrania disorder",
+          "target": [
+            {
+              "code": "SAMPLE-BIO-0012",
+              "display": "Migraine",
+              "equivalence": "relatedto",
+              "comment": "Source: who-index. Supports claim workflows; not a diagnosis equivalence."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "version": "1",
+  "date": "2026-10-30T12:04:01+00:00",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2026-10-30T12:04:01+00:00"
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>ConceptMap: ICD-11 TM2 to ICD-11 biomedicine (SAMPLE)</p></div>"
+  }
+}

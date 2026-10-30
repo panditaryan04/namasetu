@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "id": "namaste-ayurveda",
+  "url": "http://localhost:8000/fhir/ValueSet/namaste-ayurveda",
+  "version": "SAMPLE-1",
+  "name": "NamasteAyurveda",
+  "title": "NAMASTE Ayurveda diagnoses (SAMPLE)",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-10-30T12:04:01+00:00",
+  "publisher": "Team Byte Strong",
+  "description": "SAMPLE — illustrative, not official. Codes prefixed SAMPLE- are not real NAMASTE or WHO codes. All non-grouping codes with discipline = ayurveda.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://localhost:8000/fhir/CodeSystem/namaste",
+        "filter": [
+          {
+            "property": "discipline",
+            "op": "=",
+            "value": "ayurveda"
+          }
+        ]
+      }
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>ValueSet: NAMASTE Ayurveda diagnoses (SAMPLE)</p></div>"
+  }
+}

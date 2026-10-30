@@ -1,0 +1,91 @@
+{
+  "resourceType": "MedicationKnowledge",
+  "id": "SAMPLE-MED-B001",
+  "meta": {
+    "tag": [
+      {
+        "system": "http://localhost:8000/fhir/CodeSystem/namasetu-tags",
+        "code": "sample-data",
+        "display": "SAMPLE — illustrative, not official"
+      }
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://localhost:8000/fhir/CodeSystem/namasetu-medication",
+        "code": "SAMPLE-MED-B001",
+        "display": "Paracetamol 500 mg tablet"
+      }
+    ],
+    "text": "Paracetamol 500 mg tablet"
+  },
+  "status": "active",
+  "doseForm": {
+    "text": "tablet"
+  },
+  "ingredient": [
+    {
+      "itemCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+            "code": "1",
+            "display": "Paracetamol"
+          }
+        ],
+        "text": "Paracetamol"
+      },
+      "isActive": true,
+      "strength": {
+        "numerator": {
+          "value": 500,
+          "unit": "mg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg"
+        },
+        "denominator": {
+          "value": 1,
+          "unit": "tablet"
+        }
+      }
+    }
+  ],
+  "synonym": [
+    "Calpol 500",
+    "Crocin"
+  ],
+  "intendedRoute": [
+    {
+      "text": "oral"
+    }
+  ],
+  "administrationGuidelines": [
+    {
+      "indicationCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://localhost:8000/fhir/CodeSystem/icd11-mms-sample",
+            "code": "SAMPLE-BIO-0002",
+            "display": "Osteoarthritis"
+          }
+        ]
+      }
+    },
+    {
+      "indicationCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://localhost:8000/fhir/CodeSystem/icd11-mms-sample",
+            "code": "SAMPLE-BIO-0012",
+            "display": "Migraine"
+          }
+        ]
+      }
+    }
+  ],
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>MedicationKnowledge: SAMPLE-MED-B001</p></div>"
+  }
+}

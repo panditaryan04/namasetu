@@ -1,0 +1,89 @@
+{
+  "resourceType": "Bundle",
+  "id": "23d2a42f1d024f768007ebc119576e01",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "http://localhost:8000/fhir/MedicationStatement/pm-14",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "pm-14",
+        "contained": [
+          {
+            "resourceType": "Medication",
+            "id": "m1",
+            "code": {
+              "text": "Methotrexate 2.5 mg tablet"
+            },
+            "ingredient": [
+              {
+                "itemCodeableConcept": {
+                  "text": "Methotrexate"
+                }
+              }
+            ]
+          }
+        ],
+        "status": "active",
+        "medicationReference": {
+          "reference": "#m1"
+        },
+        "subject": {
+          "reference": "Patient/test-patient-10"
+        },
+        "note": [
+          {
+            "text": "Resolved as product"
+          }
+        ],
+        "effectivePeriod": {
+          "start": "2025-09-09"
+        },
+        "context": {
+          "reference": "Encounter/enc-10-a"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://localhost:8000/fhir/MedicationStatement/pm-15",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "pm-15",
+        "contained": [
+          {
+            "resourceType": "Medication",
+            "id": "m1",
+            "code": {
+              "text": "Pan 40"
+            },
+            "ingredient": [
+              {
+                "itemCodeableConcept": {
+                  "text": "Pantoprazole"
+                }
+              }
+            ]
+          }
+        ],
+        "status": "active",
+        "medicationReference": {
+          "reference": "#m1"
+        },
+        "subject": {
+          "reference": "Patient/test-patient-10"
+        },
+        "note": [
+          {
+            "text": "Resolved as brand"
+          }
+        ],
+        "effectivePeriod": {
+          "start": "2025-09-09"
+        },
+        "context": {
+          "reference": "Encounter/enc-10-a"
+        }
+      }
+    }
+  ]
+}

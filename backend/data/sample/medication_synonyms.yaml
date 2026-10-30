@@ -1,0 +1,65 @@
+# SAMPLE — illustrative, not official.
+# Canonical ingredients with their names in every script. Keys are canonical names.
+# kinds: salt (biomedical active ingredient), herb, mineral (processed metal / mineral; triggers the supervision badge),
+# other (excipient-like ingredients such as sugar or salt printed in a formulation).
+version: SAMPLE-1
+label: "SAMPLE — illustrative, not official"
+
+salts:
+  Paracetamol: {synonyms: [Acetaminophen], devanagari: [पैरासिटामोल]}
+  Ibuprofen: {devanagari: [आइबुप्रोफेन]}
+  Methotrexate: {}
+  Allopurinol: {}
+  Colchicine: {}
+  Metformin: {devanagari: [मेटफॉर्मिन]}
+  Glimepiride: {}
+  Sumatriptan: {}
+  Pantoprazole: {}
+  Clobetasol: {}
+  Tacrolimus: {}
+  Mefenamic acid: {synonyms: [Mefenamate]}
+  Dicyclomine: {synonyms: [Dicycloverine]}
+  Cholecalciferol: {synonyms: [Vitamin D3, Colecalciferol]}
+  Ferrous sulphate: {synonyms: [Ferrous sulfate]}
+  Folic acid: {synonyms: [Folate, Vitamin B9]}
+  Hydrochlorothiazide: {synonyms: [HCTZ, Hydrochlorthiazide]}
+
+herbs:
+  Haritaki: {botanical: [Terminalia chebula], common: [Harad, Chebulic myrobalan], iast: [Harītakī], devanagari: [हरीतकी, हरड़]}
+  Bibhitaki: {botanical: [Terminalia bellirica], common: [Baheda, Belleric myrobalan], iast: [Bibhītakī], devanagari: [बिभीतकी, बहेड़ा]}
+  Amalaki: {botanical: [Phyllanthus emblica, Emblica officinalis], common: [Amla, Indian gooseberry], iast: [Āmalakī], devanagari: [आमलकी, आंवला]}
+  Shunthi: {botanical: [Zingiber officinale], common: [Dry ginger, Saunth], iast: [Śuṇṭhī], devanagari: [शुण्ठी, सोंठ]}
+  Maricha: {botanical: [Piper nigrum], common: [Black pepper, Kali mirch], iast: [Marica], devanagari: [मरिच, काली मिर्च]}
+  Pippali: {botanical: [Piper longum], common: [Long pepper, Pipal], iast: [Pippalī], devanagari: [पिप्पली]}
+  Ela: {botanical: [Elettaria cardamomum], common: [Cardamom, Elaichi], iast: [Elā], devanagari: [एला, इलायची]}
+  Tvak: {botanical: [Cinnamomum zeylanicum, Cinnamomum verum], common: [Cinnamon, Dalchini], iast: [Tvak], devanagari: [त्वक्, दालचीनी]}
+  Vamshalochana: {botanical: [Bambusa arundinacea], common: [Bamboo manna, Banslochan], iast: [Vaṃśalocana], devanagari: [वंशलोचन]}
+  Talisa: {botanical: [Abies webbiana], common: [Talispatra], iast: [Tālīsa], devanagari: [तालीस]}
+  Musta: {botanical: [Cyperus rotundus], common: [Nagarmotha], iast: [Mustā], devanagari: [मुस्ता, नागरमोथा]}
+  Vidanga: {botanical: [Embelia ribes], common: [Vaividang], iast: [Viḍaṅga], devanagari: [विडङ्ग, वायविडंग]}
+  Patra: {botanical: [Cinnamomum tamala], common: [Tejpatta, Indian bay leaf], iast: [Patra], devanagari: [पत्र, तेजपत्ता]}
+  Lavanga: {botanical: [Syzygium aromaticum], common: [Clove, Laung], iast: [Lavaṅga], devanagari: [लवङ्ग, लौंग]}
+  Trivrit: {botanical: [Operculina turpethum], common: [Nishoth, Turpeth], iast: [Trivṛt], devanagari: [त्रिवृत्, निशोथ]}
+  Chitraka: {botanical: [Plumbago zeylanica], common: [Chitrak], iast: [Citraka], devanagari: [चित्रक]}
+  Haridra: {botanical: [Curcuma longa], common: [Turmeric, Haldi], iast: [Haridrā], devanagari: [हरिद्रा, हल्दी]}
+  Ashwagandha: {botanical: [Withania somnifera], common: [Winter cherry, Asgandh], iast: [Aśvagandhā], devanagari: [अश्वगन्धा, अश्वगंधा]}
+  Guduchi: {botanical: [Tinospora cordifolia], common: [Giloy], iast: [Guḍūcī], devanagari: [गुडूची, गिलोय]}
+  Guduchi satva: {botanical: [Tinospora cordifolia], common: [Giloy satva], iast: [Guḍūcī sattva], devanagari: [गुडूची सत्त्व]}
+  Shallaki: {botanical: [Boswellia serrata], common: [Indian frankincense, Salai guggul], iast: [Śallakī], devanagari: [शल्लकी]}
+  Guggulu: {botanical: [Commiphora wightii, Commiphora mukul], common: [Indian bdellium, Guggul], iast: [Guggulu], devanagari: [गुग्गुलु, गुग्गुल]}
+  Yashtimadhu: {botanical: [Glycyrrhiza glabra], common: [Liquorice, Licorice, Mulethi], iast: [Yaṣṭimadhu], devanagari: [यष्टिमधु, मुलेठी]}
+  Gokshura: {botanical: [Tribulus terrestris], common: [Gokhru], iast: [Gokṣura], devanagari: [गोक्षुर, गोखरू]}
+  Varuna: {botanical: [Crataeva nurvala], common: [Barna], iast: [Varuṇa], devanagari: [वरुण]}
+  Bakuchi: {botanical: [Psoralea corylifolia], common: [Babchi], iast: [Bākucī], devanagari: [बाकुची, बावची]}
+
+minerals:
+  Mukta shukti bhasma: {common: [Processed pearl oyster shell], iast: [Muktāśukti bhasma], devanagari: [मुक्ताशुक्ति भस्म]}
+  Pravala bhasma: {common: [Processed coral], iast: [Pravāla bhasma], devanagari: [प्रवाल भस्म]}
+  Kapardika bhasma: {common: [Processed cowrie shell], iast: [Kapardikā bhasma], devanagari: [कपर्दिका भस्म]}
+  Shankha bhasma: {common: [Processed conch shell], iast: [Śaṅkha bhasma], devanagari: [शङ्ख भस्म]}
+  Svarna gairika: {common: [Purified red ochre], iast: [Svarṇa gairika], devanagari: [स्वर्ण गैरिक]}
+  Lauha bhasma: {common: [Processed iron], iast: [Lauha bhasma], devanagari: [लौह भस्म]}
+
+other:
+  Sharkara: {common: [Sugar], iast: [Śarkarā], devanagari: [शर्करा]}
+  Vida lavana: {common: [Black salt, Bida namak], iast: [Viḍa lavaṇa], devanagari: [विड लवण]}

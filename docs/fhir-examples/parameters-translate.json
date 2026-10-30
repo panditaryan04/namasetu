@@ -1,0 +1,30 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "result",
+      "valueBoolean": true
+    },
+    {
+      "name": "match",
+      "part": [
+        {
+          "name": "equivalence",
+          "valueCode": "equivalent"
+        },
+        {
+          "name": "concept",
+          "valueCoding": {
+            "system": "http://localhost:8000/fhir/CodeSystem/icd11-mms-sample",
+            "code": "SAMPLE-TM2-0111",
+            "display": "Ama-vata joint disorder"
+          }
+        },
+        {
+          "name": "source",
+          "valueUri": "http://localhost:8000/fhir/ConceptMap/namaste-to-tm2|1"
+        }
+      ]
+    }
+  ]
+}

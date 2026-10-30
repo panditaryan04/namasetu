@@ -1,0 +1,72 @@
+{
+  "resourceType": "AuditEvent",
+  "id": "35",
+  "type": {
+    "system": "http://terminology.hl7.org/CodeSystem/audit-event-type",
+    "code": "rest",
+    "display": "RESTful Operation"
+  },
+  "subtype": [
+    {
+      "system": "http://localhost:8000/fhir/CodeSystem/namasetu-audit-action",
+      "code": "interaction_check"
+    }
+  ],
+  "action": "E",
+  "recorded": "2026-10-30T12:04:01.530215+00:00",
+  "outcome": "0",
+  "agent": [
+    {
+      "who": {
+        "display": "clinician"
+      },
+      "requestor": true,
+      "role": [
+        {
+          "text": "clinician"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "site": "NamaSetu",
+    "observer": {
+      "display": "NamaSetu terminology service"
+    }
+  },
+  "entity": [
+    {
+      "what": {
+        "display": "Patient/test-patient-01"
+      },
+      "detail": [
+        {
+          "type": "ledger-hash",
+          "valueString": "d850ce14a5a86973d4960959145947d268c4240c570bcc3ffdcadacb30893b9f"
+        },
+        {
+          "type": "ledger-prev-hash",
+          "valueString": "bc02f4a08ea7198a5051f9867417a2b69a20c16d4ceae16fa2f9723e9ed0a86a"
+        },
+        {
+          "type": "request-id",
+          "valueString": "b4120f9a3bc542ba886960f225f8e2f5"
+        }
+      ]
+    }
+  ],
+  "purposeOfEvent": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+          "code": "TREAT"
+        }
+      ]
+    }
+  ],
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>AuditEvent interaction_check: Patient/test-patient-01</p></div>"
+  }
+}

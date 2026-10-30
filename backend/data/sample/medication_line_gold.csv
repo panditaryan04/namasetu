@@ -1,0 +1,23 @@
+line,expected_kind,expected
+Tab Glycomet 500 BD,brand,SAMPLE-MED-B007
+Amaryl 1 OD,brand,SAMPLE-MED-B008
+Crocin 500,brand,SAMPLE-MED-B001
+Crokin,brand,SAMPLE-MED-B001
+Dolo 650 SOS,brand,SAMPLE-MED-B017
+Tab Combiflm,brand,SAMPLE-MED-B003
+Pan 40 OD before food,brand,SAMPLE-MED-B010
+Meftal Spas,brand,SAMPLE-MED-B014
+Paracetamol 650 after food,product,SAMPLE-MED-B017
+Methotrexate 2.5 mg tablet,product,SAMPLE-MED-B004
+Tab Hydrochlorothiazide 12.5 mg OD,product,SAMPLE-MED-B018
+Ferrous sulphate + Folic acid tablet,product,SAMPLE-MED-B016
+Tab Metformin 500mg BD,salt,Metformin
+HCTZ 12.5,salt,Hydrochlorothiazide
+Acetaminophen,salt,Paracetamol
+Ashwagandha churna,formulation,SAMPLE-MED-S001
+Triphala churna,formulation,SAMPLE-MED-A001
+सितोपलादि चूर्ण,formulation,SAMPLE-MED-A003
+Mulethi churna,herb,Yashtimadhu
+Haldi powder with milk at night,herb,Haridra
+Syp Xyzol 5 ml TDS,unresolved,
+Cap Zzzmax 10 mg,unresolved,

@@ -1,0 +1,643 @@
+{
+  "resourceType": "Bundle",
+  "id": "764cfbc0e33a4d049e28589eace81928",
+  "type": "searchset",
+  "total": 3,
+  "link": [
+    {
+      "relation": "self",
+      "url": "http://testserver/fhir/MedicationKnowledge?condition=http%3A%2F%2Flocalhost%3A8000%2Ffhir%2FCodeSystem%2Fnamaste%7CSAMPLE-AYU-0009"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "http://localhost:8000/fhir/MedicationKnowledge/SAMPLE-MED-A005",
+      "resource": {
+        "resourceType": "MedicationKnowledge",
+        "id": "SAMPLE-MED-A005",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://localhost:8000/fhir/CodeSystem/namasetu-tags",
+              "code": "sample-data",
+              "display": "SAMPLE — illustrative, not official"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://localhost:8000/fhir/CodeSystem/namasetu-medication",
+              "code": "SAMPLE-MED-A005",
+              "display": "Avipattikara Churna"
+            }
+          ],
+          "text": "Avipattikara Churna"
+        },
+        "status": "active",
+        "doseForm": {
+          "text": "churna"
+        },
+        "ingredient": [
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+                  "code": "21",
+                  "display": "Shunthi"
+                }
+              ],
+              "text": "Shunthi (Zingiber officinale)"
+            },
+            "isActive": true,
+            "strength": {
+              "numerator": {
+                "value": 1,
+                "unit": "part"
+              },
+              "denominator": {
+                "value": 132,
+                "unit": "part"
+              }
+            }
+          },
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+                  "code": "22",
+                  "display": "Maricha"
+                }
+              ],
+              "text": "Maricha (Piper nigrum)"
+            },
+            "isActive": true,
+            "strength": {
+              "numerator": {
+                "value": 1,
+                "unit": "part"
+              },
+              "denominator": {
+                "value": 132,
+                "unit": "part"
+              }
+            }
+          },
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+                  "code": "23",
+                  "display": "Pippali"
+                }
+              ],
+              "text": "Pippali (Piper longum)"
+            },
+            "isActive": true,
+            "strength": {
+              "numerator": {
+                "value": 1,
+                "unit": "part"
+              },
+              "denominator": {
+                "value": 132,
+                "unit": "part"
+              }
+            }
+          },
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+                  "code": "18",
+                  "display": "Haritaki"
+                }
+              ],
+              "text": "Haritaki (Terminalia chebula)"
+            },
+            "isActive": true,
+            "strength": {
+              "numerator": {
+                "value": 1,
+                "unit": "part"
+              },
+              "denominator": {
+                "value": 132,
+                "unit": "part"
+              }
+            }
+          },
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+                  "code": "19",
+                  "display": "Bibhitaki"
+                }
+              ],
+              "text": "Bibhitaki (Terminalia bellirica)"
+            },
+            "isActive": true,
+            "strength": {
+              "numerator": {
+                "value": 1,
+                "unit": "part"
+              },
+              "denominator": {
+                "value": 132,
+                "unit": "part"
+              }
+            }
+          },
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+                  "code": "20",
+                  "display": "Amalaki"
+                }
+              ],
+              "text": "Amalaki (Phyllanthus emblica)"
+            },
+            "isActive": true,
+            "strength": {
+              "numerator": {
+                "value": 1,
+                "unit": "part"
+              },
+              "denominator": {
+                "value": 132,
+                "unit": "part"
+              }
+            }
+          },
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+                  "code": "28",
+                  "display": "Musta"
+                }
+              ],
+              "text": "Musta (Cyperus rotundus)"
+            },
+            "isActive": true,
+            "strength": {
+              "numerator": {
+                "value": 1,
+                "unit": "part"
+              },
+              "denominator": {
+                "value": 132,
+                "unit": "part"
+              }
+            }
+          },
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+                  "code": "51",
+                  "display": "Vida lavana"
+                }
+              ],
+              "text": "Vida lavana"
+            },
+            "isActive": false,
+            "strength": {
+              "numerator": {
+                "value": 1,
+                "unit": "part"
+              },
+              "denominator": {
+                "value": 132,
+                "unit": "part"
+              }
+            }
+          },
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+                  "code": "29",
+                  "display": "Vidanga"
+                }
+              ],
+              "text": "Vidanga (Embelia ribes)"
+            },
+            "isActive": true,
+            "strength": {
+              "numerator": {
+                "value": 1,
+                "unit": "part"
+              },
+              "denominator": {
+                "value": 132,
+                "unit": "part"
+              }
+            }
+          },
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+                  "code": "24",
+                  "display": "Ela"
+                }
+              ],
+              "text": "Ela (Elettaria cardamomum)"
+            },
+            "isActive": true,
+            "strength": {
+              "numerator": {
+                "value": 1,
+                "unit": "part"
+              },
+              "denominator": {
+                "value": 132,
+                "unit": "part"
+              }
+            }
+          },
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+                  "code": "30",
+                  "display": "Patra"
+                }
+              ],
+              "text": "Patra (Cinnamomum tamala)"
+            },
+            "isActive": true,
+            "strength": {
+              "numerator": {
+                "value": 1,
+                "unit": "part"
+              },
+              "denominator": {
+                "value": 132,
+                "unit": "part"
+              }
+            }
+          },
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+                  "code": "31",
+                  "display": "Lavanga"
+                }
+              ],
+              "text": "Lavanga (Syzygium aromaticum)"
+            },
+            "isActive": true,
+            "strength": {
+              "numerator": {
+                "value": 11,
+                "unit": "part"
+              },
+              "denominator": {
+                "value": 132,
+                "unit": "part"
+              }
+            }
+          },
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+                  "code": "32",
+                  "display": "Trivrit"
+                }
+              ],
+              "text": "Trivrit (Operculina turpethum)"
+            },
+            "isActive": true,
+            "strength": {
+              "numerator": {
+                "value": 44,
+                "unit": "part"
+              },
+              "denominator": {
+                "value": 132,
+                "unit": "part"
+              }
+            }
+          },
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+                  "code": "50",
+                  "display": "Sharkara"
+                }
+              ],
+              "text": "Sharkara"
+            },
+            "isActive": false,
+            "strength": {
+              "numerator": {
+                "value": 66,
+                "unit": "part"
+              },
+              "denominator": {
+                "value": 132,
+                "unit": "part"
+              }
+            }
+          }
+        ],
+        "administrationGuidelines": [
+          {
+            "indicationCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://localhost:8000/fhir/CodeSystem/namaste",
+                  "code": "SAMPLE-AYU-0009",
+                  "display": "Amlapitta"
+                }
+              ]
+            }
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>MedicationKnowledge: SAMPLE-MED-A005</p></div>"
+        }
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://localhost:8000/fhir/MedicationKnowledge/SAMPLE-MED-A006",
+      "resource": {
+        "resourceType": "MedicationKnowledge",
+        "id": "SAMPLE-MED-A006",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://localhost:8000/fhir/CodeSystem/namasetu-tags",
+              "code": "sample-data",
+              "display": "SAMPLE — illustrative, not official"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://localhost:8000/fhir/CodeSystem/namasetu-medication",
+              "code": "SAMPLE-MED-A006",
+              "display": "Kamadugha Rasa"
+            }
+          ],
+          "text": "Kamadugha Rasa"
+        },
+        "status": "active",
+        "doseForm": {
+          "text": "vati"
+        },
+        "ingredient": [
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+                  "code": "44",
+                  "display": "Mukta shukti bhasma"
+                }
+              ],
+              "text": "Mukta shukti bhasma"
+            },
+            "isActive": true,
+            "strength": {
+              "numerator": {
+                "value": 1,
+                "unit": "part"
+              },
+              "denominator": {
+                "value": 6,
+                "unit": "part"
+              }
+            }
+          },
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+                  "code": "45",
+                  "display": "Pravala bhasma"
+                }
+              ],
+              "text": "Pravala bhasma"
+            },
+            "isActive": true,
+            "strength": {
+              "numerator": {
+                "value": 1,
+                "unit": "part"
+              },
+              "denominator": {
+                "value": 6,
+                "unit": "part"
+              }
+            }
+          },
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+                  "code": "46",
+                  "display": "Kapardika bhasma"
+                }
+              ],
+              "text": "Kapardika bhasma"
+            },
+            "isActive": true,
+            "strength": {
+              "numerator": {
+                "value": 1,
+                "unit": "part"
+              },
+              "denominator": {
+                "value": 6,
+                "unit": "part"
+              }
+            }
+          },
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+                  "code": "47",
+                  "display": "Shankha bhasma"
+                }
+              ],
+              "text": "Shankha bhasma"
+            },
+            "isActive": true,
+            "strength": {
+              "numerator": {
+                "value": 1,
+                "unit": "part"
+              },
+              "denominator": {
+                "value": 6,
+                "unit": "part"
+              }
+            }
+          },
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+                  "code": "48",
+                  "display": "Svarna gairika"
+                }
+              ],
+              "text": "Svarna gairika"
+            },
+            "isActive": true,
+            "strength": {
+              "numerator": {
+                "value": 1,
+                "unit": "part"
+              },
+              "denominator": {
+                "value": 6,
+                "unit": "part"
+              }
+            }
+          },
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+                  "code": "37",
+                  "display": "Guduchi satva"
+                }
+              ],
+              "text": "Guduchi satva (Tinospora cordifolia)"
+            },
+            "isActive": true,
+            "strength": {
+              "numerator": {
+                "value": 1,
+                "unit": "part"
+              },
+              "denominator": {
+                "value": 6,
+                "unit": "part"
+              }
+            }
+          }
+        ],
+        "administrationGuidelines": [
+          {
+            "indicationCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://localhost:8000/fhir/CodeSystem/namaste",
+                  "code": "SAMPLE-AYU-0009",
+                  "display": "Amlapitta"
+                }
+              ]
+            }
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>MedicationKnowledge: SAMPLE-MED-A006</p></div>"
+        }
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://localhost:8000/fhir/MedicationKnowledge/SAMPLE-MED-S006",
+      "resource": {
+        "resourceType": "MedicationKnowledge",
+        "id": "SAMPLE-MED-S006",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://localhost:8000/fhir/CodeSystem/namasetu-tags",
+              "code": "sample-data",
+              "display": "SAMPLE — illustrative, not official"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://localhost:8000/fhir/CodeSystem/namasetu-medication",
+              "code": "SAMPLE-MED-S006",
+              "display": "Yashtimadhu"
+            }
+          ],
+          "text": "Yashtimadhu"
+        },
+        "status": "active",
+        "doseForm": {
+          "text": "churna"
+        },
+        "ingredient": [
+          {
+            "itemCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+                  "code": "40",
+                  "display": "Yashtimadhu"
+                }
+              ],
+              "text": "Yashtimadhu (Glycyrrhiza glabra)"
+            },
+            "isActive": true
+          }
+        ],
+        "administrationGuidelines": [
+          {
+            "indicationCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://localhost:8000/fhir/CodeSystem/namaste",
+                  "code": "SAMPLE-AYU-0009",
+                  "display": "Amlapitta"
+                }
+              ]
+            }
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>MedicationKnowledge: SAMPLE-MED-S006</p></div>"
+        }
+      },
+      "search": {
+        "mode": "match"
+      }
+    }
+  ]
+}

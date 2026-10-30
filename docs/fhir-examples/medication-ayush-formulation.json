@@ -1,0 +1,217 @@
+{
+  "resourceType": "Medication",
+  "id": "SAMPLE-MED-A004",
+  "meta": {
+    "tag": [
+      {
+        "system": "http://localhost:8000/fhir/CodeSystem/namasetu-tags",
+        "code": "sample-data",
+        "display": "SAMPLE — illustrative, not official"
+      }
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://localhost:8000/fhir/CodeSystem/namasetu-medication",
+        "code": "SAMPLE-MED-A004",
+        "display": "Talisadi Churna"
+      }
+    ],
+    "text": "Talisadi Churna"
+  },
+  "status": "active",
+  "form": {
+    "text": "churna"
+  },
+  "ingredient": [
+    {
+      "itemCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+            "code": "27",
+            "display": "Talisa"
+          }
+        ],
+        "text": "Talisa (Abies webbiana)"
+      },
+      "isActive": true,
+      "strength": {
+        "numerator": {
+          "value": 1,
+          "unit": "part"
+        },
+        "denominator": {
+          "value": 48,
+          "unit": "part"
+        }
+      }
+    },
+    {
+      "itemCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+            "code": "22",
+            "display": "Maricha"
+          }
+        ],
+        "text": "Maricha (Piper nigrum)"
+      },
+      "isActive": true,
+      "strength": {
+        "numerator": {
+          "value": 2,
+          "unit": "part"
+        },
+        "denominator": {
+          "value": 48,
+          "unit": "part"
+        }
+      }
+    },
+    {
+      "itemCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+            "code": "21",
+            "display": "Shunthi"
+          }
+        ],
+        "text": "Shunthi (Zingiber officinale)"
+      },
+      "isActive": true,
+      "strength": {
+        "numerator": {
+          "value": 3,
+          "unit": "part"
+        },
+        "denominator": {
+          "value": 48,
+          "unit": "part"
+        }
+      }
+    },
+    {
+      "itemCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+            "code": "23",
+            "display": "Pippali"
+          }
+        ],
+        "text": "Pippali (Piper longum)"
+      },
+      "isActive": true,
+      "strength": {
+        "numerator": {
+          "value": 4,
+          "unit": "part"
+        },
+        "denominator": {
+          "value": 48,
+          "unit": "part"
+        }
+      }
+    },
+    {
+      "itemCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+            "code": "26",
+            "display": "Vamshalochana"
+          }
+        ],
+        "text": "Vamshalochana (Bambusa arundinacea)"
+      },
+      "isActive": true,
+      "strength": {
+        "numerator": {
+          "value": 5,
+          "unit": "part"
+        },
+        "denominator": {
+          "value": 48,
+          "unit": "part"
+        }
+      }
+    },
+    {
+      "itemCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+            "code": "24",
+            "display": "Ela"
+          }
+        ],
+        "text": "Ela (Elettaria cardamomum)"
+      },
+      "isActive": true,
+      "strength": {
+        "numerator": {
+          "value": 0.5,
+          "unit": "part"
+        },
+        "denominator": {
+          "value": 48,
+          "unit": "part"
+        }
+      }
+    },
+    {
+      "itemCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+            "code": "25",
+            "display": "Tvak"
+          }
+        ],
+        "text": "Tvak (Cinnamomum zeylanicum)"
+      },
+      "isActive": true,
+      "strength": {
+        "numerator": {
+          "value": 0.5,
+          "unit": "part"
+        },
+        "denominator": {
+          "value": 48,
+          "unit": "part"
+        }
+      }
+    },
+    {
+      "itemCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+            "code": "50",
+            "display": "Sharkara"
+          }
+        ],
+        "text": "Sharkara"
+      },
+      "isActive": false,
+      "strength": {
+        "numerator": {
+          "value": 32,
+          "unit": "part"
+        },
+        "denominator": {
+          "value": 48,
+          "unit": "part"
+        }
+      }
+    }
+  ],
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medication: SAMPLE-MED-A004</p></div>"
+  }
+}

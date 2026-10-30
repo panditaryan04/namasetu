@@ -1,0 +1,100 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: namasetu
+          POSTGRES_PASSWORD: namasetu
+          POSTGRES_DB: namasetu
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U namasetu" --health-interval 5s --health-timeout 3s --health-retries 20
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: backend/requirements*.txt
+      - run: pip install -r requirements-dev.txt
+      - name: Lint
+        run: |
+          ruff check .
+          black --check .
+      - name: Type-check
+        run: mypy app scripts
+      - name: Embedded seed is in sync with sample files
+        run: python scripts/build_embedded_db.py --check
+      - name: Test (unit + SQLite API + Postgres integration)
+        env:
+          TEST_POSTGRES_URL: postgresql+psycopg://namasetu:namasetu@localhost:5432/postgres
+        run: pytest --cov=app --cov-report=term-missing --cov-report=xml
+      - name: Evaluation safety gate (fails if any safety check is non-zero)
+        run: python scripts/run_eval.py --check
+      - name: Local-mode smoke test (SQLite, no Docker)
+        env:
+          DATABASE_URL: sqlite:///./data/ci.db
+          REDIS_URL: ""
+        run: |
+          alembic upgrade head
+          python -m app.db.seed
+          uvicorn app.main:app --port 8001 &
+          python scripts/smoke_test.py --base-url http://127.0.0.1:8001 --wait 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: backend-coverage
+          path: backend/coverage.xml
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run format:check
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+
+  docker-smoke:
+    needs: [backend, frontend]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and start stack
+        run: docker compose up --build -d --wait
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install httpx==0.28.1
+      - name: Smoke test
+        run: python backend/scripts/smoke_test.py --base-url http://localhost:8000 --frontend-url http://localhost:5173
+      - name: Logs on failure
+        if: failure()
+        run: docker compose logs --tail=200
+      - if: always()
+        run: docker compose down -v

@@ -1,0 +1,92 @@
+name: namasetu
+
+x-api-env: &api-env
+  APP_ENV: ${APP_ENV:-development}
+  DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-namasetu}:${POSTGRES_PASSWORD:-namasetu}@postgres:5432/${POSTGRES_DB:-namasetu}
+  REDIS_URL: redis://redis:6379/0
+  FRONTEND_ORIGIN: ${FRONTEND_ORIGIN:-http://localhost:5173}
+  PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-http://localhost:8000}
+  LOG_LEVEL: ${LOG_LEVEL:-INFO}
+  SEMANTIC_MODE: ${SEMANTIC_MODE:-off}
+  ICD11_MODE: ${ICD11_MODE:-auto}
+  ICD_CLIENT_ID: ${ICD_CLIENT_ID:-}
+  ICD_CLIENT_SECRET: ${ICD_CLIENT_SECRET:-}
+  ABHA_MODE: ${ABHA_MODE:-mock}
+  ABHA_CLIENT_ID: ${ABHA_CLIENT_ID:-}
+  ABHA_CLIENT_SECRET: ${ABHA_CLIENT_SECRET:-}
+  JWT_SECRET: ${JWT_SECRET:-dev-only-insecure-jwt-secret}
+  # The only proxy whose X-Forwarded-For is trusted: the frontend's nginx, pinned to this address below.
+  # (Not the whole network: direct calls to the published :8000 arrive from the Docker gateway.)
+  FORWARDED_ALLOW_IPS: ${FORWARDED_ALLOW_IPS:-172.30.0.10}
+  DEMO_ADMIN_PASSWORD: ${DEMO_ADMIN_PASSWORD:-}
+  DEMO_CLINICIAN_PASSWORD: ${DEMO_CLINICIAN_PASSWORD:-}
+  DEMO_CODER_PASSWORD: ${DEMO_CODER_PASSWORD:-}
+  DEMO_VIEWER_PASSWORD: ${DEMO_VIEWER_PASSWORD:-}
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-namasetu}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-namasetu}
+      POSTGRES_DB: ${POSTGRES_DB:-namasetu}
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5432}:5432"  # localhost only, for integration tests and psql
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./backend/app/db/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  api:
+    build: ./backend
+    command: ["sh", "scripts/entrypoint.sh"]
+    environment: *api-env
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+
+  worker:
+    build: ./backend
+    command: ["celery", "-A", "app.workers.celery_app:celery_app", "worker", "--loglevel=INFO", "--concurrency=2"]
+    environment: *api-env
+    healthcheck:
+      test: ["CMD", "celery", "-A", "app.workers.celery_app:celery_app", "inspect", "ping", "--timeout", "5"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      api: { condition: service_healthy }  # api runs migrations + seed first
+      redis: { condition: service_healthy }
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    networks:
+      default:
+        ipv4_address: 172.30.0.10
+    depends_on:
+      api: { condition: service_healthy }
+
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: 172.30.0.0/24
+
+volumes:
+  pgdata:

@@ -1,0 +1,87 @@
+{
+  "version": "ranker@1.0.0",
+  "features": [
+    "exact",
+    "lexical",
+    "ngram",
+    "transliteration",
+    "semantic",
+    "hierarchy",
+    "root_overlap",
+    "ancestor_match"
+  ],
+  "weights": [
+    4.126442,
+    0.380535,
+    3.628263,
+    3.89797,
+    2.210709,
+    2.286217,
+    2.752975,
+    2.717523
+  ],
+  "intercept": -9.310661,
+  "thresholds": {
+    "high": 0.5,
+    "low": 0.45,
+    "source": "calibrated"
+  },
+  "calibration": [
+    {
+      "lower": 0.0,
+      "upper": 0.1,
+      "count": 2309,
+      "mean_predicted": 0.0003,
+      "observed": 0.0
+    },
+    {
+      "lower": 0.4,
+      "upper": 0.5,
+      "count": 1,
+      "mean_predicted": 0.4763,
+      "observed": 0.0
+    },
+    {
+      "lower": 0.5,
+      "upper": 0.6,
+      "count": 1,
+      "mean_predicted": 0.5449,
+      "observed": 1.0
+    },
+    {
+      "lower": 0.7,
+      "upper": 0.8,
+      "count": 1,
+      "mean_predicted": 0.7406,
+      "observed": 1.0
+    },
+    {
+      "lower": 0.9,
+      "upper": 1.0,
+      "count": 40,
+      "mean_predicted": 0.9897,
+      "observed": 1.0
+    }
+  ],
+  "training": {
+    "queries": 42,
+    "pairs": 2352,
+    "positives": 42,
+    "cv_top1": 1.0,
+    "cv_top5": 1.0,
+    "high_precision": 1.0,
+    "high_coverage": 1.0,
+    "absent_answer_suppressed": 0.9762,
+    "regularization_c": 10.0,
+    "threshold_method": "precision>=0.95 at coverage>=0.25, CV top-1 incl. 42 absent-answer queries; floor 0.5"
+  },
+  "dataset_releases": [
+    "namaste@SAMPLE-1",
+    "icd11@SAMPLE-1",
+    "synonyms@SAMPLE-1",
+    "gold@SAMPLE-1"
+  ],
+  "semantic_method": "weighted-lexical-overlap",
+  "disabled_stages": [],
+  "trained_at": "2026-10-30T13:15:06+00:00"
+}

@@ -1,0 +1,148 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "namasetu",
+  "status": "active",
+  "date": "2026-10-30T12:04:01+00:00",
+  "publisher": "Team Byte Strong",
+  "kind": "instance",
+  "software": {
+    "name": "NamaSetu",
+    "version": "0.2.0"
+  },
+  "implementation": {
+    "description": "NamaSetu terminology service",
+    "url": "http://localhost:8000/fhir"
+  },
+  "fhirVersion": "4.0.1",
+  "format": [
+    "json"
+  ],
+  "rest": [
+    {
+      "mode": "server",
+      "resource": [
+        {
+          "type": "CodeSystem",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            }
+          ],
+          "operation": [
+            {
+              "name": "lookup",
+              "definition": "http://hl7.org/fhir/OperationDefinition/CodeSystem-lookup"
+            },
+            {
+              "name": "validate-code",
+              "definition": "http://hl7.org/fhir/OperationDefinition/CodeSystem-validate-code"
+            }
+          ]
+        },
+        {
+          "type": "ValueSet",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            }
+          ],
+          "operation": [
+            {
+              "name": "expand",
+              "definition": "http://hl7.org/fhir/OperationDefinition/ValueSet-expand"
+            },
+            {
+              "name": "validate-code",
+              "definition": "http://hl7.org/fhir/OperationDefinition/ValueSet-validate-code"
+            }
+          ]
+        },
+        {
+          "type": "ConceptMap",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            }
+          ],
+          "operation": [
+            {
+              "name": "translate",
+              "definition": "http://hl7.org/fhir/OperationDefinition/ConceptMap-translate"
+            }
+          ]
+        },
+        {
+          "type": "Condition",
+          "operation": [
+            {
+              "name": "build",
+              "definition": "http://localhost:8000/fhir/OperationDefinition/Condition-build"
+            }
+          ]
+        },
+        {
+          "type": "Bundle",
+          "interaction": [
+            {
+              "code": "create"
+            }
+          ]
+        },
+        {
+          "type": "AuditEvent",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            }
+          ]
+        },
+        {
+          "type": "Provenance",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            }
+          ]
+        },
+        {
+          "type": "Medication",
+          "interaction": [
+            {
+              "code": "read"
+            }
+          ]
+        },
+        {
+          "type": "MedicationKnowledge",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>CapabilityStatement: namasetu</p></div>"
+  }
+}

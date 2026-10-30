@@ -1,0 +1,63 @@
+{
+  "resourceType": "Provenance",
+  "id": "48aa404ebd6b40e8b6bf42d66dc66350",
+  "target": [
+    {
+      "reference": "ConceptMap/namaste-to-tm2/_history/1"
+    }
+  ],
+  "recorded": "2026-10-30T12:04:01+00:00",
+  "activity": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-DataOperation",
+        "code": "CREATE"
+      }
+    ],
+    "text": "publish"
+  },
+  "agent": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "author"
+          }
+        ]
+      },
+      "who": {
+        "display": "system"
+      }
+    }
+  ],
+  "entity": [
+    {
+      "role": "source",
+      "what": {
+        "display": "namaste@SAMPLE-1"
+      }
+    },
+    {
+      "role": "source",
+      "what": {
+        "display": "icd11@SAMPLE-1"
+      }
+    },
+    {
+      "role": "source",
+      "what": {
+        "display": "synonyms@SAMPLE-1"
+      }
+    }
+  ],
+  "reason": [
+    {
+      "text": "Content changed: 42 source codes"
+    }
+  ],
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Provenance (publish) for ConceptMap/namaste-to-tm2/_history/1</p></div>"
+  }
+}

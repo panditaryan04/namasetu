@@ -1,0 +1,22 @@
+patient_id,candidate_code,as_of,expected_alerts,note
+test-patient-01,SAMPLE-MED-A008,2026-10-30,interaction:Curcumin|Glimepiride;interaction:Curcumin|Metformin,multi-hop formulation > herb > constituent
+test-patient-01,SAMPLE-MED-S002,2026-10-30,interaction:Guduchi|Glimepiride,herb x salt
+test-patient-02,SAMPLE-MED-A006,2026-10-30,interaction:Calcium carbonate|Ferrous sulphate,bhasma > mineral constituent
+test-patient-02,SAMPLE-MED-A007,2026-10-30,interaction:Iron oxide|Ferrous sulphate;interaction:Tannins (chebulagic acid)|Ferrous sulphate;interaction:Tannins (emblicanin)|Ferrous sulphate,"multi-hop, several herbs"
+test-patient-03,SAMPLE-MED-B014,2026-10-30,interaction:Methotrexate|Mefenamic acid,drug-drug; stopped Brufen must not alert
+test-patient-03,SAMPLE-MED-B003,2026-10-30,interaction:Methotrexate|Ibuprofen,candidate contains ibuprofen
+test-patient-03,SAMPLE-MED-B001,2026-10-30,,true negative
+test-patient-04,SAMPLE-MED-S006,2026-10-30,interaction:Glycyrrhizin|Hydrochlorothiazide,liquorice x thiazide
+test-patient-05,SAMPLE-MED-B003,2026-10-30,duplicate:Paracetamol,duplicate active salt
+test-patient-06,SAMPLE-MED-A008,2026-10-30,,time window: metformin stopped in 2024
+test-patient-08,SAMPLE-MED-B016,2026-10-30,interaction:Tannins (chebulagic acid)|Ferrous sulphate;interaction:Tannins (emblicanin)|Ferrous sulphate,herb constituents x new salt
+test-patient-09,SAMPLE-MED-B001,2026-10-30,,no interaction in dataset
+test-patient-10,SAMPLE-MED-B002,2026-10-30,interaction:Methotrexate|Ibuprofen,drug-drug major
+test-patient-10,SAMPLE-MED-S002,2026-10-30,,true negative
+test-patient-05,SAMPLE-MED-B017,2026-10-30,duplicate:Paracetamol,"duplicate salt, different brand and strength"
+test-patient-05,SAMPLE-MED-B001,2026-10-30,duplicate:Paracetamol,duplicate salt via same product
+test-patient-10,SAMPLE-MED-B004,2026-10-30,duplicate:Methotrexate;interaction:Methotrexate|Pantoprazole,duplicate salt plus active PPI
+test-patient-01,SAMPLE-MED-B007,2026-10-30,duplicate:Metformin,"duplicate salt; history recorded by brand (Glycomet), salt form differs"
+test-patient-06,SAMPLE-MED-B007,2026-10-30,,stopped metformin must not raise a duplicate
+test-patient-02,SAMPLE-MED-B016,2026-10-30,duplicate:Ferrous sulphate;duplicate:Folic acid;interaction:Ferrous sulphate|Pantoprazole,two duplicate salts in one combination
+test-patient-03,SAMPLE-MED-B002,2026-10-30,interaction:Methotrexate|Ibuprofen,stopped Brufen (ibuprofen) must not raise a duplicate

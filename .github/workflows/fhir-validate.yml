@@ -1,0 +1,47 @@
+name: FHIR validation
+
+# Regenerates docs/fhir-examples from a freshly seeded API and validates them with the official
+# HL7 FHIR Validator (FHIR 4.0.1), with the NRCeS ABDM IG (ndhm.in) loaded. Fails on any error.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths: ["backend/**", "docs/fhir-examples/**", ".github/workflows/fhir-validate.yml"]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    env:
+      DATABASE_URL: sqlite:///./data/fhir.db
+      REDIS_URL: ""
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: backend/requirements*.txt
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - run: pip install -r requirements.txt
+      - name: Seed and export examples from the live API
+        run: |
+          alembic upgrade head
+          python -m app.db.seed
+          python scripts/export_fhir_examples.py
+      - name: Cache FHIR packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.fhir
+          key: fhir-packages-r4-ndhm
+      - name: HL7 Validator (R4 4.0.1 + ndhm.in)
+        run: |
+          curl -sSL -o validator_cli.jar https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar
+          java -Xmx3g -jar validator_cli.jar ../docs/fhir-examples -version 4.0.1 -tx n/a -ig ndhm.in -output validation.json || true
+          python scripts/check_fhir_validation.py validation.json

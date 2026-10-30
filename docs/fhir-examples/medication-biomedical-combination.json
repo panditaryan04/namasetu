@@ -1,0 +1,83 @@
+{
+  "resourceType": "Medication",
+  "id": "SAMPLE-MED-B003",
+  "meta": {
+    "tag": [
+      {
+        "system": "http://localhost:8000/fhir/CodeSystem/namasetu-tags",
+        "code": "sample-data",
+        "display": "SAMPLE — illustrative, not official"
+      }
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://localhost:8000/fhir/CodeSystem/namasetu-medication",
+        "code": "SAMPLE-MED-B003",
+        "display": "Ibuprofen + Paracetamol tablet"
+      }
+    ],
+    "text": "Ibuprofen + Paracetamol tablet"
+  },
+  "status": "active",
+  "form": {
+    "text": "tablet"
+  },
+  "ingredient": [
+    {
+      "itemCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+            "code": "2",
+            "display": "Ibuprofen"
+          }
+        ],
+        "text": "Ibuprofen"
+      },
+      "isActive": true,
+      "strength": {
+        "numerator": {
+          "value": 400,
+          "unit": "mg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg"
+        },
+        "denominator": {
+          "value": 1,
+          "unit": "tablet"
+        }
+      }
+    },
+    {
+      "itemCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://localhost:8000/fhir/CodeSystem/namasetu-ingredient",
+            "code": "1",
+            "display": "Paracetamol"
+          }
+        ],
+        "text": "Paracetamol"
+      },
+      "isActive": true,
+      "strength": {
+        "numerator": {
+          "value": 325,
+          "unit": "mg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg"
+        },
+        "denominator": {
+          "value": 1,
+          "unit": "tablet"
+        }
+      }
+    }
+  ],
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medication: SAMPLE-MED-B003</p></div>"
+  }
+}

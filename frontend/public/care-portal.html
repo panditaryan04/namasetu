@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NamaSetu Care Portal (demo, fictional data)</title>
+<link rel="icon" href="/favicon.svg">
+<!-- The only external dependency: qrcodejs, pinned to 1.0.0 with a subresource-integrity hash. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+        integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+:root{color-scheme:light;--bg:#f6f8f9;--surface:#fff;--text:#14212b;--muted:#4b5b67;--border:#dbe3e7;--accent:#0f766e;--accent-strong:#115e59;--accent-soft:#e7f4f2;--on-accent:#fff;--warn-bg:#fff6e5;--warn-ink:#73450a;--warn-line:#e9b45a;--err-bg:#fdeded;--err-ink:#9b1c1c;--ok-bg:#e9f6ef;--ok-ink:#14532d;--radius:18px}
+[data-theme=dark]{color-scheme:dark;--bg:#0c1316;--surface:#141f23;--text:#e6eef1;--muted:#a6b5bd;--border:#2a3a40;--accent:#2dd4bf;--accent-strong:#5eead4;--accent-soft:#11302d;--on-accent:#032420;--warn-bg:#2f240e;--warn-ink:#fcd58a;--warn-line:#7a5b1e;--err-bg:#3a1517;--err-ink:#fca5a5;--ok-bg:#11301f;--ok-ink:#86efac}
+*{box-sizing:border-box}
+html{font-size:112.5%}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif;line-height:1.55;background:var(--bg);color:var(--text);display:flex;flex-direction:column;min-height:100vh}
+h1,h2,h3{line-height:1.25;margin:0 0 .5rem}
+h1{font-size:1.9rem;letter-spacing:-.01em}
+h2{font-size:1.25rem}
+h3{font-size:1.05rem}
+p{margin:.4rem 0}
+a{color:var(--accent-strong)}
+[data-theme=dark] a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.25rem;width:100%}
+.skip{position:absolute;left:-999px;top:.5rem;z-index:10}
+.skip:focus{left:.5rem}
+.topbar{background:var(--surface);border-bottom:1px solid var(--border)}
+.topbar .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.25rem;padding-top:.8rem;padding-bottom:.8rem}
+.brand{font-weight:800;font-size:1.15rem;text-decoration:none;color:var(--text)}
+.brand span{color:var(--accent-strong)}
+[data-theme=dark] .brand span{color:var(--accent)}
+.demo-tag{font-size:.75rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:.2rem .6rem;border-radius:999px;background:var(--warn-bg);color:var(--warn-ink);border:1px solid var(--warn-line)}
+.session{margin-left:auto;display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;font-size:.9rem}
+main{flex:1;padding:2rem 0 3rem}
+main:focus,h1[tabindex="-1"]:focus,section[tabindex="-1"]:focus{outline:none}
+.site-footer{border-top:1px solid var(--border);padding:1.25rem 0;font-size:.85rem;color:var(--muted);text-align:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;min-height:48px;padding:.6rem 1.2rem;border-radius:12px;font:inherit;font-weight:650;cursor:pointer;border:2px solid transparent;text-decoration:none;line-height:1.2}
+.btn-primary{background:var(--accent);color:var(--on-accent)}
+.btn-primary:hover{background:var(--accent-strong)}
+.btn-ghost{background:transparent;color:var(--text);border-color:var(--border)}
+.btn-ghost:hover{border-color:var(--accent)}
+.btn-danger{background:transparent;color:var(--err-ink);border-color:currentColor}
+.btn-sm{min-height:40px;padding:.35rem .8rem;font-size:.9rem}
+.btn-block{width:100%}
+.link{font-weight:600}
+.eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 .3rem}
+.lead{font-size:1.1rem;color:var(--muted);max-width:46rem}
+.muted{color:var(--muted)}
+.small{font-size:.88rem}
+.hero{padding:1rem 0 1.5rem}
+.grid{display:grid;gap:1.25rem}
+.cards3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+@media(min-width:900px){.grid-2{grid-template-columns:minmax(0,1.45fr) minmax(0,1fr)}}
+.stack{display:grid;gap:1.25rem;align-content:start}
+.grid > *,.stack > *{min-width:0}
+dl.kv dd{overflow-wrap:anywhere}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem 1.5rem}
+.card > h2{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem}
+.portal{display:flex;flex-direction:column;gap:.6rem}
+.portal .btn{margin-top:auto}
+.page-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:1.25rem}
+.narrow{max-width:520px;margin:0 auto}
+.banner{border-radius:14px;padding:.9rem 1.1rem;margin:0 0 1.25rem;border:1px solid var(--border);background:var(--surface)}
+.banner.ok{background:var(--ok-bg);color:var(--ok-ink);border-color:transparent}
+.banner.warn{background:var(--warn-bg);color:var(--warn-ink);border-color:var(--warn-line)}
+.banner.err{background:var(--err-bg);color:var(--err-ink);border-color:transparent}
+.banner.info{background:var(--accent-soft)}
+#flash:empty{display:none}
+label{display:block;font-weight:650;margin-top:1rem}
+input,select,textarea{display:block;width:100%;margin-top:.35rem;font:inherit;padding:.7rem .8rem;border:1.5px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text)}
+input[type=checkbox]{display:inline-block;width:1.2rem;height:1.2rem;margin:0 .5rem 0 0;vertical-align:-.2rem}
+input[aria-invalid=true],select[aria-invalid=true],textarea[aria-invalid=true]{border-color:var(--err-ink)}
+textarea{min-height:5.5rem;resize:vertical}
+.hint{display:block;font-size:.85rem;color:var(--muted);font-weight:400;margin-top:.2rem}
+.form-error{background:var(--err-bg);color:var(--err-ink);border-radius:10px;padding:.6rem .8rem;margin-top:1rem}
+.form-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.25rem}
+.row2{display:grid;gap:0 1rem}
+@media(min-width:620px){.row2{grid-template-columns:1fr 1fr}}
+.tag{display:inline-block;padding:.1rem .6rem;border-radius:999px;font-size:.78rem;font-weight:650;border:1px solid var(--border);color:var(--muted);white-space:nowrap;vertical-align:.1rem}
+.tag-new{background:var(--accent);color:var(--on-accent);border-color:transparent}
+.tag-strong{color:var(--text)}
+dl.kv{display:grid;grid-template-columns:max-content 1fr;gap:.35rem 1.1rem;margin:.5rem 0 0}
+dl.kv dt{color:var(--muted)}
+dl.kv dd{margin:0;font-weight:600}
+.list{list-style:none;margin:0;padding:0}
+.list > li{padding:.85rem 0;border-top:1px solid var(--border)}
+.list > li:first-child{border-top:0}
+.row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem 1rem}
+.med{border:1px solid var(--border);border-radius:14px;padding:1rem 1.1rem;margin-top:.9rem}
+.med.is-new{border-color:var(--accent);box-shadow:inset 5px 0 0 var(--accent)}
+.med .salt{font-weight:650}
+.med .meta{font-size:.88rem;color:var(--muted)}
+details summary{cursor:pointer;font-weight:650;padding:.3rem 0}
+.se h4{margin:.6rem 0 .1rem;font-size:.92rem}
+.se ul{margin:.1rem 0;padding-left:1.2rem}
+.timeline{list-style:none;margin:.75rem 0 0;padding:0 0 0 1.1rem;border-left:2px solid var(--border)}
+.timeline li{position:relative;padding:0 0 1.2rem .9rem}
+.timeline li::before{content:"";position:absolute;left:-1.62rem;top:.45rem;width:.8rem;height:.8rem;border-radius:50%;background:var(--surface);border:3px solid var(--accent)}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{text-align:left;padding:.55rem .5rem;border-bottom:1px solid var(--border);vertical-align:top}
+th{font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.25rem}
+.chip{font:inherit;font-size:.9rem;font-weight:600;padding:.45rem .9rem;border-radius:999px;border:1.5px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;min-height:40px}
+.qr-box{display:flex;justify-content:center;padding:1rem;background:#fff;border-radius:14px;border:1px solid var(--border);margin:.75rem 0}
+code.token{display:block;word-break:break-all;font-size:.9rem;padding:.6rem .8rem;border-radius:10px;background:var(--bg);border:1px solid var(--border)}
+.empty{color:var(--muted);padding:.75rem 0}
+.creds{margin-top:2rem}
+.creds summary{font-size:1.05rem}
+.creds h3{margin-top:1.25rem}
+dialog{border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);color:var(--text);padding:0;width:min(920px,94vw);max-height:90vh}
+dialog::backdrop{background:rgba(0,0,0,.5)}
+.dialog-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 1.25rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--surface)}
+.dialog-body{padding:1.25rem;overflow:auto}
+.dialog-body img{max-width:100%;height:auto;display:block;margin:0 auto}
+.dialog-body iframe{width:100%;height:70vh;border:0}
+.report h2{margin-top:1.5rem;font-size:1.1rem;border-bottom:2px solid var(--border);padding-bottom:.3rem}
+.report-grid{display:grid;gap:1rem}
+@media(min-width:700px){.report-grid{grid-template-columns:1fr 1fr}}
+.sig{margin-top:2.5rem}
+.warn-list{margin:.3rem 0;padding-left:1.2rem}
+.badge{display:inline-flex;align-items:center;gap:.35rem;padding:.2rem .75rem;border-radius:999px;font-size:.88rem;font-weight:700;border:1.5px solid currentColor}
+.badge-eligible{background:var(--ok-bg);color:var(--ok-ink)}
+.badge-not-eligible{background:var(--err-bg);color:var(--err-ink)}
+.badge-review{background:var(--warn-bg);color:var(--warn-ink)}
+.elig{margin:.5rem 0 .25rem}
+.elig .reason{font-size:.9rem;margin:.3rem 0 0}
+.code-line{font-size:.9rem;color:var(--muted);margin:.2rem 0}
+.tabs{display:flex;flex-wrap:wrap;gap:.25rem;border-bottom:2px solid var(--border);margin:0 0 1.25rem}
+.tab{padding:.65rem 1.1rem;font-weight:650;text-decoration:none;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-2px}
+a.tab{color:var(--muted)}
+.tab[aria-current=page]{color:var(--text);border-bottom-color:var(--accent)}
+.policy-line{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem .6rem;margin:.25rem 0 .5rem;font-size:.92rem}
+.ins-counts{display:flex;flex-wrap:wrap;gap:.4rem;margin:.5rem 0 .75rem}
+.ins-table td{vertical-align:top}
+.ins-table td.code-line{font-size:.85rem;margin:0}
+.ins-table .badge,.ins-counts .badge{font-size:.78rem;padding:.1rem .55rem}
+.ins-table .reason{margin-top:.2rem;color:var(--muted)}
+tbody.ins-visit + tbody.ins-visit tr:first-child td{border-top:2px solid var(--border)}
+.ins-collapsed tbody.ins-extra{display:none}
+@media print{.ins-collapsed tbody.ins-extra{display:table-row-group}[data-action=ins-more]{display:none}}
+fieldset.coding{border:1px solid var(--border);border-radius:14px;padding:.25rem 1rem 1rem;margin:1rem 0 0}
+fieldset.coding legend{font-weight:650;padding:0 .4rem}
+/* Clinical summary */
+:root{--t-namaste:#ecfdf5;--t-namaste-line:#a7f3d0;--t-who:#eff6ff;--t-who-line:#bfdbfe;--t-bio:#fffbeb;--t-bio-line:#fde68a}
+[data-theme=dark]{--t-namaste:#0b2a20;--t-namaste-line:#14532d;--t-who:#0c1d33;--t-who-line:#1e3a8a;--t-bio:#2a2108;--t-bio-line:#78350f}
+.cs-grid2{display:grid;gap:1.25rem}
+@media(min-width:900px){.cs-grid2{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.tiles{display:grid;gap:.75rem;margin-top:1rem}
+@media(min-width:760px){.tiles{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.tile{border-radius:14px;padding:1rem;border:1px solid}
+.tile .code{font-family:ui-monospace,Consolas,monospace;font-size:1.25rem;font-weight:800;margin:.2rem 0;overflow-wrap:anywhere}
+.tile-namaste{background:var(--t-namaste);border-color:var(--t-namaste-line)}
+.tile-who{background:var(--t-who);border-color:var(--t-who-line)}
+.tile-bio{background:var(--t-bio);border-color:var(--t-bio-line)}
+.salt-chip{display:inline-block;margin:0 .25rem .25rem 0;padding:.05rem .55rem;border-radius:999px;font-family:ui-monospace,Consolas,monospace;font-size:.8rem;border:1px solid var(--ok-ink);color:var(--ok-ink)}
+.sev{display:inline-block;padding:.1rem .55rem;border-radius:8px;font-size:.78rem;font-weight:700;border:1.5px solid currentColor;text-transform:uppercase}
+.sev-major{background:var(--err-bg);color:var(--err-ink)}
+.sev-moderate{background:var(--warn-bg);color:var(--warn-ink)}
+.sev-minor{color:var(--muted)}
+.alert-box.major{background:var(--err-bg);border-color:var(--err-ink)}
+.alert-box.moderate{background:var(--warn-bg);border-color:var(--warn-line)}
+.mono{font-family:ui-monospace,Consolas,monospace;font-size:.8rem;overflow-wrap:anywhere}
+.cs-table td{vertical-align:top}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media print{
+  :root,[data-theme=dark]{--bg:#fff;--surface:#fff;--text:#000;--muted:#333;--border:#999;--accent:#0f766e;--accent-strong:#0f766e;--warn-bg:#fff;--warn-ink:#000;--warn-line:#999}
+  html{font-size:11pt}
+  .topbar,.site-footer,.no-print,#flash{display:none!important}
+  body{background:#fff}
+  main{padding:0}
+  .report{border:0!important;padding:0!important}
+  .tag-new{background:#fff;color:#000;border-color:#000}
+  @page{margin:14mm}
+}
+</style>
+</head>
+<body>
+<button class="skip btn btn-primary" data-action="skip">Skip to content</button>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#/">Nama<span>Setu</span> Care Portal</a>
+    <span class="demo-tag">Demo · fictional data</span>
+    <div class="session" id="session"></div>
+    <a class="btn btn-ghost btn-sm" href="/">← NamaSetu</a>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+  <div class="wrap">
+    <div id="flash" role="status" aria-live="polite"></div>
+    <div id="app"></div>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Demo only, not for real medical use.</strong> Every person, hospital, ABHA ID, record and report here is fictional.</p>
+    <p><a href="/">Back to NamaSetu</a></p>
+  </div>
+</footer>
+<dialog id="viewer" aria-labelledby="viewer-title">
+  <div class="dialog-head"><h2 id="viewer-title">Preview</h2><button class="btn btn-ghost btn-sm" data-action="close-viewer">Close</button></div>
+  <div class="dialog-body" id="viewer-body"></div>
+</dialog>
+
+<script>
+// Everything lives inside this closure: no state or function is reachable from the browser console.
+(() => {
+  'use strict';
+
+  /* ---------- constants and small helpers ---------- */
+  const MIN = 60e3, DAY = 864e5;
+  const IDLE_LIMIT = 10 * MIN;        // session timeout after 10 minutes without activity
+  const ACCESS_WINDOW = 30 * MIN;     // QR / consent access lasts 30 minutes
+  const NEW_WINDOW = 30 * DAY;        // a medicine is shown as "New" for 30 days
+  const DEMO_OTP = '123456';
+  const ABHA_RE = /^\d{2}-\d{4}-\d{4}-\d{4}$/;
+  const MAX_UPLOAD = 5 * 1024 * 1024;
+
+  let clockOffset = 0;                // demo clock: lets a reviewer test the 30-minute expiry
+  const now = () => Date.now() + clockOffset;
+  const loadedAt = Date.now();
+  const daysAgo = (d) => loadedAt - d * DAY;
+
+  const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const fmtDate = (t) => new Date(t).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+  const fmtTime = (t) => new Date(t).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
+  const fmtDateTime = (t) => `${fmtDate(t)}, ${fmtTime(t)}`;
+  const pad = (n) => String(n).padStart(2, '0');
+  const isoDay = (t) => { const d = new Date(t); return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; };
+  let seq = 0;
+  const uid = (p) => `${p}${(++seq).toString(36)}`;
+  const randomToken = () => {
+    const b = new Uint8Array(16);
+    crypto.getRandomValues(b);
+    return 'NSQR-' + Array.from(b, (x) => x.toString(16).padStart(2, '0')).join('').toUpperCase().match(/.{4}/g).join('-');
+  };
+  const normAbha = (v) => {
+    const s = String(v || '').trim();
+    const digits = s.replace(/\D/g, '');
+    return /^[\d\s-]+$/.test(s) && digits.length === 14 ? `${digits.slice(0, 2)}-${digits.slice(2, 6)}-${digits.slice(6, 10)}-${digits.slice(10)}` : s;
+  };
+
+  /* ---------- fictional data ---------- */
+  const HOSPITALS = {
+    A: { id: 'A', short: 'Hospital A', name: 'Sunrise General Hospital', regId: 'HFR-DEMO-A-1001', password: 'HospitalA@123',
+      address: 'Plot 12, Sector 34-A, Chandigarh 160022 (fictional)', contact: '+91 172 000 0101 · help@sunrise.example',
+      departments: ['General Medicine', 'Endocrinology', 'Cardiology', 'Rheumatology', 'AYUSH wing (Ayurveda, Yoga)', 'Emergency'], beds: 220 },
+    B: { id: 'B', short: 'Hospital B', name: 'Riverside Community Hospital', regId: 'HFR-DEMO-B-2001', password: 'HospitalB@123',
+      address: '14 Mall Road, Ludhiana 141001 (fictional)', contact: '+91 161 000 0202 · care@riverside.example',
+      departments: ['General Medicine', 'Pulmonology', 'Paediatrics', 'Emergency'], beds: 140 },
+  };
+
+  const DOCTORS = [
+    { id: 'dA1', name: 'Dr. Anjali Mehta', spec: 'Endocrinology', hospitalId: 'A', hprId: 'HPR-DEMO-1101', abha: '99-7001-1101-0001', password: 'DoctorA1@123' },
+    { id: 'dA2', name: 'Dr. Rohan Iyer', spec: 'Cardiology', hospitalId: 'A', hprId: 'HPR-DEMO-1102', abha: '99-7001-1102-0002', password: 'DoctorA2@123' },
+    { id: 'dA3', name: 'Dr. Sanjay Gupta', spec: 'Rheumatology', hospitalId: 'A', hprId: 'HPR-DEMO-1103', abha: '99-7001-1103-0003', password: 'DoctorA3@123' },
+    { id: 'dB1', name: 'Dr. Vikram Rao', spec: 'General Medicine', hospitalId: 'B', hprId: 'HPR-DEMO-2101', abha: '99-7002-2101-0004', password: 'DoctorB1@123' },
+    { id: 'dB2', name: 'Dr. Farhan Qureshi', spec: 'Pulmonology', hospitalId: 'B', hprId: 'HPR-DEMO-2102', abha: '99-7002-2102-0005', password: 'DoctorB2@123' },
+    { id: 'dB3', name: 'Dr. Neha Kapoor', spec: 'General Medicine', hospitalId: 'B', hprId: 'HPR-DEMO-2103', abha: '99-7002-2103-0006', password: 'DoctorB3@123' },
+  ];
+  const DOCTOR = Object.fromEntries(DOCTORS.map((d) => [d.id, d]));
+  // Work contact details (fictional), shown on the hospital's doctor-details page.
+  [['dA1', 'OPD 4', 'Mon, Wed, Fri · 9:00–13:00', 1101], ['dA2', 'OPD 2', 'Tue, Thu, Sat · 10:00–14:00', 1102], ['dA3', 'OPD 7', 'Mon to Fri · 14:00–17:00', 1103],
+    ['dB1', 'OPD 1', 'Mon to Sat · 9:00–12:00', 2101], ['dB2', 'OPD 3', 'Tue, Thu · 9:00–13:00', 2102], ['dB3', 'OPD 5', 'Mon, Wed, Fri · 15:00–18:00', 2103]]
+    .forEach(([id, room, opd, ext]) => {
+      const d = DOCTOR[id];
+      const domain = d.hospitalId === 'A' ? 'sunrise.example' : 'riverside.example';
+      Object.assign(d, { room, opd, phone: `${HOSPITALS[d.hospitalId].contact.split(' · ')[0]} ext. ${ext}`,
+        email: `${d.name.replace('Dr. ', '').toLowerCase().replace(/\s+/g, '.')}@${domain}`, joined: 2015 + (ext % 7) });
+    });
+
+  // Demo medicine catalogue: brand -> salts and side-effect notes. Doses are entered by the prescribing doctor.
+  const se = (common, serious, contact) => ({ common, serious, contact });
+  const CAT = {
+    'Glycomet 500': { salts: [['Metformin', '500 mg']], se: se(['Nausea', 'Loose stools', 'Metallic taste'], ['Lactic acidosis (rare)'], 'you feel very weak, breathe fast or have severe stomach pain.') },
+    'Glyciphage 500': { salts: [['Metformin', '500 mg']], se: se(['Nausea', 'Loose stools'], ['Lactic acidosis (rare)'], 'you feel very weak, breathe fast or have severe stomach pain.') },
+    'Jalra 50': { salts: [['Vildagliptin', '50 mg']], se: se(['Dizziness', 'Headache'], ['Inflamed pancreas (rare)', 'Liver problems (rare)'], 'you have severe stomach pain spreading to the back, or yellow eyes or skin.') },
+    'Amlodac 5': { salts: [['Amlodipine', '5 mg']], se: se(['Ankle swelling', 'Flushing', 'Headache'], ['Fainting from low blood pressure'], 'you faint, or chest pain gets worse.') },
+    'Telma 40': { salts: [['Telmisartan', '40 mg']], se: se(['Dizziness', 'Back pain'], ['High potassium', 'Swelling of face or lips (angioedema)'], 'your face, lips or throat swell, or your heartbeat feels slow or irregular.') },
+    'Budecort 200 Inhaler': { salts: [['Budesonide', '200 mcg/puff']], se: se(['Hoarse voice', 'Throat irritation', 'Oral thrush (rinse mouth after use)'], ['Sudden wheeze after use (rare)'], 'white patches in the mouth do not clear, or breathing worsens.') },
+    'Asthalin Inhaler': { salts: [['Salbutamol', '100 mcg/puff']], se: se(['Tremor', 'Fast heartbeat', 'Headache'], ['Breathing gets worse right after use (rare)'], 'you need it more often than usual, or have chest pain.') },
+    'Montair 10': { salts: [['Montelukast', '10 mg']], se: se(['Headache', 'Stomach upset'], ['Mood or behaviour changes', 'Sleep problems'], 'you or your family notice mood or behaviour changes.') },
+    'Thyronorm 50': { salts: [['Levothyroxine', '50 mcg']], se: se(['Palpitations if the dose is too high', 'Weight change'], ['Chest pain', 'Irregular heartbeat'], 'you have chest pain, a racing heart or tremor.') },
+    'Uprise-D3 60K': { salts: [['Cholecalciferol (Vitamin D3)', '60000 IU']], se: se(['Constipation (uncommon)'], ['High calcium with overuse'], 'you have excessive thirst, confusion or vomiting.') },
+    'Niftran 100': { salts: [['Nitrofurantoin', '100 mg']], se: se(['Nausea', 'Dark yellow urine', 'Headache'], ['Lung reaction (rare)', 'Numbness in hands or feet'], 'you get a cough, breathlessness or tingling.') },
+    'Citralka Syrup': { salts: [['Disodium hydrogen citrate', '1.4 g/5 ml']], se: se(['Mild stomach upset', 'Bloating'], ['High potassium or sodium in kidney disease'], 'you have muscle weakness or swelling.') },
+    'Augmentin 625': { salts: [['Amoxicillin', '500 mg'], ['Clavulanic acid', '125 mg']], se: se(['Loose stools', 'Nausea'], ['Allergic reaction (rash, swelling)', 'Severe diarrhoea'], 'you get a rash, swelling or bloody diarrhoea.') },
+    'Folitrax 10': { salts: [['Methotrexate', '10 mg']], se: se(['Nausea', 'Mouth ulcers', 'Tiredness'], ['Low blood counts', 'Liver problems', 'Lung inflammation'], 'you have fever, sore throat, unusual bruising or a new cough.') },
+    'Folvite 5': { salts: [['Folic acid', '5 mg']], se: se(['Mild stomach upset (uncommon)'], ['Allergic reaction (rare)'], 'you get a rash or swelling.') },
+    'HCQS 200': { salts: [['Hydroxychloroquine', '200 mg']], se: se(['Nausea', 'Headache'], ['Eye (retina) damage with long use', 'Low blood sugar'], 'you notice any change in your vision.') },
+    'Brufen 400': { salts: [['Ibuprofen', '400 mg']], se: se(['Acidity', 'Nausea'], ['Stomach bleeding', 'Kidney problems'], 'you pass black stools or vomit blood.') },
+    'Combiflam': { salts: [['Ibuprofen', '400 mg'], ['Paracetamol', '325 mg']], se: se(['Acidity', 'Nausea'], ['Stomach bleeding', 'Liver harm if too much paracetamol is taken'], 'you pass black stools, vomit blood, or your eyes turn yellow.') },
+    'Dolo 650': { salts: [['Paracetamol', '650 mg']], se: se(['Nausea (rare)'], ['Liver damage in overdose'], 'your eyes or skin turn yellow.') },
+    'Pan 40': { salts: [['Pantoprazole', '40 mg']], se: se(['Headache', 'Gas'], ['Low magnesium with long use'], 'you have muscle cramps or severe diarrhoea.') },
+    'Disprin': { salts: [['Aspirin', '350 mg']], se: se(['Stomach upset'], ['Bleeding', 'Asthma attack in aspirin-sensitive people'], 'you wheeze, vomit blood or pass black stools.') },
+  };
+  // Demo ICD code list (ICD-10 and a few ICD-11 equivalents). A code is "recognised" if it, or its category, is here.
+  const ICD_CODES = {
+    E11: 'Type 2 diabetes mellitus', I10: 'Essential (primary) hypertension', J45: 'Asthma', E03: 'Hypothyroidism',
+    'N39.0': 'Urinary tract infection, site not specified', M06: 'Rheumatoid arthritis', E55: 'Vitamin D deficiency',
+    'M25.5': 'Pain in joint', R30: 'Pain while passing urine',
+    '5A11': 'Type 2 diabetes mellitus', BA00: 'Essential hypertension', CA23: 'Asthma', '5A00': 'Hypothyroidism',
+    GC08: 'Urinary tract infection, site not specified', FA20: 'Rheumatoid arthritis',
+  };
+
+  /* ================= INSURANCE_RULES: the one place to change the demo eligibility rules ================= */
+  const INSURANCE_RULES = {
+    // Which treatment systems the demo plan covers. Set AYUSH to true to cover AYUSH treatments everywhere.
+    coverage: { ICD: true, AYUSH: false },
+    ayushSystems: ['Ayurveda', 'Yoga & Naturopathy', 'Unani', 'Siddha', 'Homeopathy'],
+    icdFormats: [
+      { edition: 'ICD-10', pattern: /^[A-Z][0-9]{2}(\.[0-9A-Z]{1,4})?$/ },              // E11, N39.0
+      { edition: 'ICD-11', pattern: /^[1-9A-HJ-NP-Z][A-HJ-NP-Z][0-9][0-9A-HJ-NP-Z](\.[0-9A-HJ-NP-Z]{1,4})?$/ }, // 5A11, CA23.0
+    ],
+    recognisedIcdCodes: ICD_CODES,
+    requireRecognisedCode: true,     // a well-formed but unknown ICD code needs review
+    messages: {
+      noPolicy: 'No insurance policy on file',
+      expired: 'Not eligible: policy expired',
+      notStarted: 'Not eligible: the policy had not started on the treatment date',
+      ayushNotCovered: 'Not eligible: AYUSH treatments are not covered under this plan',
+      icdNotCovered: 'Not eligible: ICD-coded treatments are not covered under this plan',
+      eligible: 'Eligible',
+      review: 'Needs review: add a valid ICD code',
+      reviewAyush: 'Needs review: add the AYUSH treatment name',
+    },
+    note: 'Demo rules only. Actual coverage depends on the insurer\'s policy terms and applicable regulations.',
+  };
+  /* ======================================================================================================== */
+
+  const catKey = (brand) => Object.keys(CAT).find((k) => k.toLowerCase() === String(brand).trim().toLowerCase());
+
+  // Allergy groups used to flag conflicts between listed allergies and prescribed salts.
+  const ALLERGY_GROUPS = {
+    penicillin: ['penicillin', 'amoxicillin', 'ampicillin', 'cloxacillin', 'piperacillin'],
+    sulfa: ['sulfamethoxazole', 'sulfasalazine', 'sulfadiazine', 'cotrimoxazole'],
+    nsaid: ['aspirin', 'ibuprofen', 'diclofenac', 'naproxen', 'aceclofenac', 'mefenamic acid', 'ketorolac'],
+    aspirin: ['aspirin'],
+  };
+
+  const med = (brand, dose, frequency, duration, startedDaysAgo, doctorId, extra = {}) => ({
+    id: uid('m'), brand, salts: CAT[brand].salts.map(([name, strength]) => ({ name, strength })),
+    dose, frequency, duration, start: daysAgo(startedDaysAgo), doctorId, hospitalId: DOCTOR[doctorId].hospitalId,
+    status: 'active', isNew: false, se: CAT[brand].se, ...extra,
+  });
+  const ev = (d, doctorId, type, title, details, coding = {}) => ({ id: uid('h'), date: daysAgo(d), doctorId, hospitalId: DOCTOR[doctorId].hospitalId, type, title, details, ...coding });
+  // Coding attached to diagnosis / treatment / prescription entries: system "ICD" or "AYUSH" plus a code.
+  // AYUSH entries keep the AYUSH system name and use the treatment name as their code. `visit` groups entries.
+  const icd = (code, visit) => ({ system: 'ICD', code, ...(visit ? { visit } : {}) });
+  const ayush = (ayushSystem, treatment, visit) => ({ system: 'AYUSH', ayushSystem, code: treatment, ...(visit ? { visit } : {}) });
+  const noCode = (visit) => ({ system: 'ICD', code: '', ...(visit ? { visit } : {}) });
+  const policy = (insurer, number, startedDaysAgo, endsInDays, sumInsured) => ({ insurer, number, validFrom: daysAgo(startedDaysAgo), validTo: loadedAt + endsInDays * DAY, sumInsured });
+  const log = (d, doctorId, method) => ({ time: daysAgo(d), doctorId, hospitalId: DOCTOR[doctorId].hospitalId, method });
+
+  function sampleReport(title, lab, d, rows) {
+    const lines = rows.map(([k, v, ref], i) => `<text x="40" y="${200 + i * 34}" font-size="18">${esc(k)}</text><text x="330" y="${200 + i * 34}" font-size="18" font-weight="700">${esc(v)}</text><text x="500" y="${200 + i * 34}" font-size="16" fill="#555">${esc(ref)}</text>`).join('');
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="720" height="${260 + rows.length * 34}" font-family="Segoe UI, Arial, sans-serif"><rect width="100%" height="100%" fill="#fff"/><rect width="100%" height="64" fill="#0f766e"/><text x="40" y="41" font-size="22" fill="#fff" font-weight="700">${esc(lab)}</text><text x="40" y="104" font-size="24" font-weight="700">${esc(title)}</text><text x="40" y="134" font-size="16" fill="#555">Report date: ${esc(fmtDate(daysAgo(d)))}</text><text x="40" y="170" font-size="14" fill="#555">TEST</text><text x="330" y="170" font-size="14" fill="#555">RESULT</text><text x="500" y="170" font-size="14" fill="#555">REFERENCE</text>${lines}<text x="40" y="${232 + rows.length * 34}" font-size="15" fill="#b45309" font-weight="700">SAMPLE — fictional demo report, not a real result</text></svg>`;
+    return { id: uid('r'), type: title, date: daysAgo(d), lab, fileName: title.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '.svg', mime: 'image/svg+xml',
+      dataUrl: 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg), uploadedBy: 'patient', uploadedAt: daysAgo(d) };
+  }
+
+  const PATIENTS = new Map();
+  [
+    { abha: '99-1001-2001-3001', name: 'Ramesh Kumar Sharma', age: 58, gender: 'Male', blood: 'B+', allergies: ['Sulfa drugs (sulfonamides)'],
+      diagnosis: 'Type 2 diabetes mellitus', dxCode: icd('E11'), assigned: ['dA1', 'dB1'],
+      policy: policy('Suraksha Health Insurance (fictional)', 'SHI-DEMO-0001-2026', 1095, 270, 500000),
+      meds: [med('Glycomet 500', '1 tablet', 'Twice daily after meals', 'Ongoing', 410, 'dA1', icd('E11')),
+        med('Jalra 50', '1 tablet', 'Twice daily', '3 months, then review', 6, 'dB1', { isNew: true, ...icd('E11') })],
+      history: [ev(420, 'dA1', 'Diagnosis', 'Type 2 diabetes diagnosed', 'HbA1c 8.1 %. Started Glycomet 500; diet and daily walking advised.', icd('E11')),
+        ev(410, 'dA1', 'Prescription', 'Glycomet 500 prescribed', 'Metformin 500 mg, twice daily after meals.', icd('E11')),
+        ev(200, 'dA1', 'Visit', 'Diabetes follow-up', 'HbA1c 7.6 %. Continue metformin.'),
+        ev(6, 'dB1', 'Visit', 'Seen at Hospital B while travelling', 'Sugars above target (fasting 168 mg/dL).', { visit: 'v-p1-b' }),
+        ev(6, 'dB1', 'Prescription', 'Jalra 50 prescribed', 'Vildagliptin 50 mg twice daily, added to metformin.', icd('E11', 'v-p1-b'))],
+      reports: [sampleReport('HbA1c', 'Riverside Diagnostics (Hospital B lab)', 7, [['HbA1c', '7.9 %', '4.0 – 5.6 %'], ['Fasting glucose', '168 mg/dL', '70 – 100 mg/dL']]),
+        sampleReport('Lipid profile', 'Sunrise Path Lab (Hospital A lab)', 200, [['Total cholesterol', '196 mg/dL', '< 200 mg/dL'], ['LDL', '118 mg/dL', '< 100 mg/dL'], ['Triglycerides', '160 mg/dL', '< 150 mg/dL']])],
+      accessLog: [log(200, 'dA1', 'Assigned doctor'), log(6, 'dB1', 'Consent OTP')] },
+    { abha: '99-1002-2002-3002', name: 'Sunita Verma', age: 52, gender: 'Female', blood: 'O+', allergies: [],
+      diagnosis: 'Essential hypertension', dxCode: icd('I10'), assigned: ['dA2'],
+      policy: policy('Arogya Shield General (fictional)', 'ASG-DEMO-7781', 900, 400, 300000),
+      meds: [med('Amlodac 5', '1 tablet', 'Once daily, morning', 'Ongoing', 300, 'dA2', icd('I10')),
+        med('Telma 40', '1 tablet', 'Once daily, evening', '1 month, then review', 4, 'dA2', { isNew: true, ...icd('I10') })],
+      history: [ev(310, 'dA2', 'Diagnosis', 'High blood pressure diagnosed', 'BP 156/98 mmHg on three readings. Started Amlodac 5.', icd('I10')),
+        ev(120, 'dA2', 'Visit', 'BP follow-up', 'BP 142/90 mmHg. Reduce salt; continue Amlodac.'),
+        // One visit, two entries: an ICD-coded prescription and an AYUSH treatment.
+        ev(4, 'dA2', 'Prescription', 'Telma 40 added', 'BP 148/94 mmHg. Kidney function normal. Added Telmisartan 40 mg.', icd('I10', 'v-p2-3')),
+        ev(4, 'dA2', 'Treatment', 'Yoga therapy advised', 'Referred to the AYUSH wing for 12 supervised sessions of yoga and breathing exercises.', ayush('Yoga & Naturopathy', 'Yoga therapy', 'v-p2-3'))],
+      reports: [sampleReport('Kidney function test', 'Sunrise Path Lab (Hospital A lab)', 5, [['Creatinine', '0.8 mg/dL', '0.6 – 1.1 mg/dL'], ['Potassium', '4.3 mmol/L', '3.5 – 5.1 mmol/L']])],
+      accessLog: [log(120, 'dA2', 'Assigned doctor'), log(4, 'dA2', 'Assigned doctor')] },
+    { abha: '99-1003-2003-3003', name: 'Arjun Nair', age: 24, gender: 'Male', blood: 'A+', allergies: ['Aspirin / NSAIDs (worsen asthma)'],
+      diagnosis: 'Bronchial asthma (moderate, persistent)', dxCode: icd('J45'), assigned: ['dB2'],
+      // Test case: policy expired before any of the treatment dates.
+      policy: policy('Suraksha Health Insurance (fictional)', 'SHI-DEMO-0442-2023', 1030, -300, 200000),
+      meds: [med('Budecort 200 Inhaler', '2 puffs', 'Twice daily', 'Ongoing', 250, 'dB2', icd('J45')),
+        med('Asthalin Inhaler', '2 puffs', 'When needed for wheeze', 'Ongoing', 250, 'dB2', icd('J45')),
+        med('Montair 10', '1 tablet', 'Once daily at night', '3 months', 9, 'dB2', { isNew: true, ...icd('J45') })],
+      history: [ev(260, 'dB2', 'Diagnosis', 'Asthma confirmed', 'Spirometry: reversible airflow obstruction. Started Budecort and Asthalin.', icd('J45')),
+        ev(90, 'dB2', 'Visit', 'Asthma review', 'Inhaler technique checked. Symptoms controlled.'),
+        ev(9, 'dB2', 'Prescription', 'Montair 10 added', 'Night-time cough twice a week. Added Montelukast 10 mg.', icd('J45'))],
+      reports: [sampleReport('Spirometry', 'Riverside Lung Function Lab (Hospital B)', 260, [['FEV1', '68 % predicted', '> 80 %'], ['FEV1 after inhaler', '+16 %', 'reversible if > 12 %']])],
+      accessLog: [log(90, 'dB2', 'Assigned doctor')] },
+    { abha: '99-1004-2004-3004', name: 'Kavita Reddy', age: 41, gender: 'Female', blood: 'AB+', allergies: [],
+      diagnosis: 'Primary hypothyroidism', dxCode: icd('E03'), assigned: ['dA1'],
+      policy: null, // Test case: no insurance policy on file.
+      meds: [med('Thyronorm 50', '1 tablet', 'Once daily on an empty stomach', 'Ongoing', 500, 'dA1', icd('E03')),
+        med('Uprise-D3 60K', '1 sachet', 'Once a week', '8 weeks', 5, 'dA1', { isNew: true, ...icd('E55') })],
+      history: [ev(510, 'dA1', 'Diagnosis', 'Hypothyroidism diagnosed', 'TSH 9.8 mIU/L. Started Thyronorm 50.', icd('E03')),
+        ev(180, 'dA1', 'Visit', 'Thyroid follow-up', 'TSH 3.1 mIU/L. Continue the same dose.'),
+        ev(5, 'dA1', 'Prescription', 'Vitamin D added', 'Vitamin D 14 ng/mL (low). Added Uprise-D3 60K weekly for 8 weeks.', icd('E55'))],
+      reports: [sampleReport('Thyroid profile', 'Sunrise Path Lab (Hospital A lab)', 180, [['TSH', '3.1 mIU/L', '0.4 – 4.0 mIU/L'], ['Free T4', '1.2 ng/dL', '0.8 – 1.8 ng/dL']]),
+        sampleReport('Vitamin D', 'Sunrise Path Lab (Hospital A lab)', 6, [['25-OH Vitamin D', '14 ng/mL', '30 – 100 ng/mL']])],
+      accessLog: [log(180, 'dA1', 'Assigned doctor')] },
+    { abha: '99-1005-2005-3005', name: 'Priya Singh', age: 29, gender: 'Female', blood: 'B-', allergies: ['Penicillin'],
+      diagnosis: 'Uncomplicated urinary tract infection', dxCode: icd('N39.0'), assigned: ['dB3'],
+      policy: policy('Arogya Shield General (fictional)', 'ASG-DEMO-9902', 500, 230, 500000),
+      meds: [med('Niftran 100', '1 capsule', 'Twice daily after food', '5 days', 3, 'dB3', icd('N39.0')),
+        med('Citralka Syrup', '10 ml in a glass of water', 'Three times daily', '5 days', 1, 'dB3', { isNew: true, ...noCode() })],
+      history: [ev(380, 'dB3', 'Visit', 'Routine check-up', 'No complaints. Penicillin allergy recorded (rash in 2019).'),
+        ev(3, 'dB3', 'Diagnosis', 'Urinary tract infection', 'Burning while passing urine for 2 days. Urine culture sent. Started Niftran 100 (penicillin allergy noted).', icd('N39.0')),
+        // Test case: entered without a code, so it needs review.
+        ev(1, 'dB3', 'Prescription', 'Citralka added', 'Culture: E. coli sensitive to nitrofurantoin. Added Citralka for symptom relief.', noCode())],
+      reports: [sampleReport('Urine culture', 'Riverside Diagnostics (Hospital B lab)', 1, [['Organism', 'E. coli', '—'], ['Nitrofurantoin', 'Sensitive', '—'], ['Colony count', '> 10^5 CFU/mL', '< 10^3 CFU/mL']])],
+      accessLog: [log(3, 'dB3', 'Assigned doctor')] },
+    { abha: '99-1006-2006-3006', name: 'Harpreet Kaur', age: 47, gender: 'Female', blood: 'O-', allergies: [],
+      diagnosis: 'Rheumatoid arthritis', dxCode: icd('M06'), assigned: ['dA3', 'dB3'],
+      policy: policy('Navjeevan Mediclaim (fictional)', 'NJM-DEMO-3310', 1200, 160, 1000000),
+      meds: [med('Folitrax 10', '1 tablet', 'Once a week, same day each week', 'Ongoing', 350, 'dA3', icd('M06')),
+        med('Folvite 5', '1 tablet', 'Once a week, the day after Folitrax', 'Ongoing', 350, 'dA3', icd('M06')),
+        med('Combiflam', '1 tablet', 'When needed for pain, at most twice a day', '2 weeks', 20, 'dA3', icd('M06')),
+        med('Brufen 400', '1 tablet', 'Twice daily after food', '5 days', 8, 'dB3', icd('M25.5')),
+        med('HCQS 200', '1 tablet', 'Once daily after food', '3 months, then review', 3, 'dA3', { isNew: true, ...icd('M06') }),
+        med('Dolo 650', '1 tablet', 'When needed for pain', 'Stopped', 60, 'dA3', { status: 'stopped', stoppedAt: daysAgo(20), stoppedBy: 'dA3', stopReason: 'Replaced by Combiflam for the flare', ...icd('M06') })],
+      history: [ev(360, 'dA3', 'Diagnosis', 'Rheumatoid arthritis diagnosed', 'Small-joint pain and morning stiffness; RA factor positive. Started Folitrax weekly with Folvite.', icd('M06')),
+        ev(360, 'dA3', 'Prescription', 'Folitrax 10 and Folvite 5 prescribed', 'Methotrexate 10 mg weekly with folic acid 5 mg weekly.', icd('M06')),
+        ev(40, 'dA3', 'Treatment', 'Panchakarma course', 'Referred to the AYUSH wing for a 14-day Panchakarma course for joint stiffness.', ayush('Ayurveda', 'Panchakarma')),
+        ev(20, 'dA3', 'Prescription', 'Combiflam for a flare', 'Swollen wrists. Stopped Dolo 650; started Combiflam when needed.', icd('M06')),
+        ev(8, 'dB3', 'Visit', 'Seen at Hospital B for knee pain', 'Knee pain while visiting family.', { visit: 'v-p6-b' }),
+        ev(8, 'dB3', 'Prescription', 'Brufen 400 prescribed', 'Ibuprofen 400 mg twice daily for 5 days.', icd('M25.5', 'v-p6-b')),
+        ev(3, 'dA3', 'Prescription', 'HCQS 200 added', 'Disease still active. Added Hydroxychloroquine 200 mg; baseline eye check advised.', icd('M06'))],
+      reports: [sampleReport('RA factor and ESR', 'Sunrise Path Lab (Hospital A lab)', 360, [['RA factor', '64 IU/mL', '< 14 IU/mL'], ['ESR', '38 mm/hr', '< 20 mm/hr']]),
+        sampleReport('Liver function test', 'Sunrise Path Lab (Hospital A lab)', 30, [['ALT', '28 U/L', '7 – 35 U/L'], ['AST', '24 U/L', '8 – 33 U/L']])],
+      accessLog: [log(360, 'dA3', 'Assigned doctor'), log(8, 'dB3', 'QR token')] },
+  ].forEach((p) => { p.qrToken = randomToken(); PATIENTS.set(p.abha, p); });
+
+  // AYUSH (NAMASTE) diagnosis recorded alongside the ICD one: real terms from NamaSetu's NAMASTE data. The
+  // SAMPLE NAMASTE set has no term for hypertension or hypothyroidism, so those patients start without one.
+  const AYUSH_DX = {
+    '99-1001-2001-3001': { code: 'SAMPLE-AYU-0044', display: 'Madhumeha' },
+    '99-1003-2003-3003': { code: 'SAMPLE-AYU-0018', display: 'Tamaka Shvasa' },
+    '99-1005-2005-3005': { code: 'SAMPLE-AYU-0022', display: 'Mutrakrichchhra' },
+    '99-1006-2006-3006': { code: 'SAMPLE-AYU-0001', display: 'Amavata' },
+  };
+  PATIENTS.forEach((p) => { p.ayushDx = AYUSH_DX[p.abha] || null; });
+
+  /* ---------- runtime state (in memory only) ---------- */
+  let session = null;             // { role: 'patient' | 'doctor' | 'hospital', id }
+  let lastActivity = Date.now();
+  let afterLogin = null;          // a protected page to open after the doctor signs in
+  let prefill = null;             // demo credentials to fill into a login form
+  let theme = 'light'; // light by default; the header button switches to dark
+  const grants = [];              // { doctorId, abha, method, grantedAt, expiresAt }
+  let viewerUrl = null;
+
+  const ROLE_LABEL = { patient: 'Patient', doctor: 'Doctor', hospital: 'Hospital' };
+  const app = document.getElementById('app');
+  const flashBox = document.getElementById('flash');
+
+  /* ---------- access rules ---------- */
+  const currentDoctor = () => (session && session.role === 'doctor' ? DOCTOR[session.id] : null);
+  const currentPatient = () => (session && session.role === 'patient' ? PATIENTS.get(session.id) : null);
+  const currentHospital = () => (session && session.role === 'hospital' ? HOSPITALS[session.id] : null);
+  const activeGrant = (doc, abha) => grants.filter((g) => g.doctorId === doc.id && g.abha === abha && g.expiresAt > now()).pop();
+  function access(doc, p) {
+    if (!doc || !p) return null;
+    if (p.assigned.includes(doc.id)) return { kind: 'assigned' };
+    const g = activeGrant(doc, p.abha);
+    return g ? { kind: 'grant', grant: g } : null;
+  }
+  function hospitalsVisited(p) {
+    const ids = new Set([...p.history.map((h) => h.hospitalId), ...p.meds.map((m) => m.hospitalId), ...p.assigned.map((d) => DOCTOR[d].hospitalId)]);
+    return Object.values(HOSPITALS).filter((h) => ids.has(h.id));
+  }
+  function logAccess(p, doc, acc) {
+    p.accessLog.unshift({ time: now(), doctorId: doc.id, hospitalId: doc.hospitalId, method: acc.kind === 'assigned' ? 'Assigned doctor' : acc.grant.method });
+  }
+  function grantAccess(doc, p, method) {
+    grants.push({ doctorId: doc.id, abha: p.abha, method, grantedAt: now(), expiresAt: now() + ACCESS_WINDOW });
+  }
+  function linkToDoctor(doc, p) {
+    if (p.assigned.includes(doc.id)) return false;
+    p.assigned.push(doc.id);
+    return true;
+  }
+
+  /* ---------- medicine safety checks ---------- */
+  const isNewMed = (m) => m.status === 'active' && m.isNew && now() - m.start < NEW_WINDOW;
+  const saltNames = (m) => m.salts.map((s) => s.name).join(' + ');
+  const strengths = (m) => m.salts.map((s) => s.strength || '—').join(' + ');
+  const composition = (m) => m.salts.map((s) => `${s.name}${s.strength ? ' ' + s.strength : ''}`).join(' + ');
+  function parseSalts(text) {
+    return String(text).split('+').map((part) => part.trim()).filter(Boolean).map((part) => {
+      // "Name 1.4 g/5 ml": the strength starts at the first word that begins with a digit.
+      const m = part.match(/^(.+?)\s+(\d.*)$/);
+      return m ? { name: m[1].trim(), strength: m[2].trim() } : { name: part, strength: '' };
+    });
+  }
+  function allergyTerms(allergy) {
+    const a = allergy.toLowerCase();
+    const terms = [];
+    if (a.includes('penicillin')) terms.push(...ALLERGY_GROUPS.penicillin);
+    if (a.includes('sulfa') || a.includes('sulpha')) terms.push(...ALLERGY_GROUPS.sulfa);
+    if (a.includes('nsaid')) terms.push(...ALLERGY_GROUPS.nsaid);
+    if (a.includes('aspirin')) terms.push(...ALLERGY_GROUPS.aspirin);
+    if (!terms.length) terms.push(a.replace(/\(.*?\)/g, '').trim());
+    return terms.filter(Boolean);
+  }
+  function allergyHits(p, salts) {
+    const out = [];
+    for (const allergy of p.allergies) {
+      const terms = allergyTerms(allergy);
+      for (const s of salts) {
+        const n = s.name.toLowerCase();
+        if (terms.some((t) => n.includes(t) || t.includes(n))) out.push({ allergy, salt: s.name });
+      }
+    }
+    return out;
+  }
+  const medSource = (m) => `${m.brand} (${HOSPITALS[m.hospitalId].short}, ${DOCTOR[m.doctorId].name})`;
+  function medWarnings(p, meds) {
+    const warnings = [];
+    const bySalt = new Map();
+    for (const m of meds) for (const s of m.salts) {
+      const k = s.name.toLowerCase();
+      if (!bySalt.has(k)) bySalt.set(k, { name: s.name, meds: [] });
+      if (!bySalt.get(k).meds.includes(m)) bySalt.get(k).meds.push(m);
+    }
+    for (const { name, meds: ms } of bySalt.values()) {
+      if (ms.length > 1) warnings.push(`Duplicate salt: ${name} is in ${ms.map(medSource).join(' and ')}. Possible duplicate therapy.`);
+    }
+    for (const m of meds) for (const h of allergyHits(p, m.salts)) {
+      warnings.push(`Allergy conflict: ${m.brand} contains ${h.salt}; patient's listed allergy is "${h.allergy}".`);
+    }
+    return warnings;
+  }
+  function prescriptionWarnings(p, salts) {
+    const active = p.meds.filter((m) => m.status === 'active');
+    const warnings = [];
+    for (const s of salts) {
+      const dup = active.filter((m) => m.salts.some((x) => x.name.toLowerCase() === s.name.toLowerCase()));
+      if (dup.length) warnings.push(`Duplicate salt: ${s.name} is already in ${dup.map(medSource).join(' and ')}.`);
+    }
+    for (const h of allergyHits(p, salts)) warnings.push(`Allergy conflict: ${h.salt} vs the listed allergy "${h.allergy}".`);
+    return warnings;
+  }
+
+  /* ---------- insurance eligibility (all rules come from INSURANCE_RULES) ---------- */
+  const icdEdition = (code) => (INSURANCE_RULES.icdFormats.find((f) => f.pattern.test(code)) || {}).edition || null;
+  function icdDescription(code) {
+    const known = INSURANCE_RULES.recognisedIcdCodes;
+    const key = Object.keys(known).sort((a, b) => b.length - a.length).find((k) => code === k || code.startsWith(k + '.') || (k.includes('.') && code.startsWith(k)));
+    return key ? known[key] : null;
+  }
+  function codingLabel(e) {
+    if (e.system === 'AYUSH') return `AYUSH · ${e.ayushSystem || 'system not given'}: ${e.code || 'treatment not given'}`;
+    if (!e.code) return 'No code yet';
+    const ed = icdEdition(e.code);
+    return `${ed || 'ICD (invalid format)'} ${e.code} · ${icdDescription(e.code) || 'unrecognised code'}`;
+  }
+  const policyStatusOn = (pol, date) => (date > pol.validTo ? 'Expired' : date < pol.validFrom ? 'Not started' : 'Active');
+  const icdFormatError = (code) => `"${code}" is not a valid ICD code format. Use a letter and two digits with an optional decimal (E11, N39.0), or an ICD-11 code such as 5A11.`;
+
+  // The single decision function. Order: policy on file, policy valid on the treatment date, system, code.
+  function evaluateEligibility(entry, { policy: pol, date, skipPolicy = false }) {
+    const R = INSURANCE_RULES, M = R.messages;
+    const raw = String(entry.code || '').trim();
+    const code = entry.system === 'ICD' ? raw.toUpperCase() : raw;
+    const result = (eligible, reason) => ({
+      eligible, status: eligible === true ? 'eligible' : eligible === 'review' ? 'review' : 'not-eligible', reason,
+      system: entry.system, code, label: codingLabel({ ...entry, code }),
+      policyStatus: skipPolicy ? 'Not checked (no patient selected)' : pol ? policyStatusOn(pol, date) : 'No policy',
+    });
+    if (!skipPolicy) {
+      if (!pol) return result(false, M.noPolicy);
+      if (date > pol.validTo) return result(false, M.expired);
+      if (date < pol.validFrom) return result(false, M.notStarted);
+    }
+    if (entry.system === 'AYUSH') {
+      if (!R.coverage.AYUSH) return result(false, M.ayushNotCovered);
+      return code ? result(true, M.eligible) : result('review', M.reviewAyush);
+    }
+    if (entry.system === 'ICD' && icdEdition(code) && (!R.requireRecognisedCode || icdDescription(code))) {
+      return R.coverage.ICD ? result(true, M.eligible) : result(false, M.icdNotCovered);
+    }
+    return result('review', M.review);
+  }
+  const canSeeMedical = (p) => !!p && ((currentPatient() === p) || !!access(currentDoctor(), p));
+  // Eligibility of one stored entry (diagnosis, treatment or prescription). Returns null without access.
+  function checkInsuranceEligibility(patientId, entryId) {
+    const p = PATIENTS.get(patientId);
+    if (!canSeeMedical(p)) return null;
+    const e = p.history.find((x) => x.id === entryId && x.system) || p.meds.find((x) => x.id === entryId && x.system);
+    return e ? evaluateEligibility(e, { policy: p.policy, date: e.date ?? e.start }) : null;
+  }
+  const insuranceEntries = (p) => p.history.filter((e) => e.system).sort((a, b) => b.date - a.date);
+  function logEligibility(p, doc, detail) {
+    p.accessLog.unshift({ time: now(), doctorId: doc.id, hospitalId: doc.hospitalId, method: 'Insurance eligibility check', detail });
+  }
+  const BADGE_TEXT = { eligible: ['✓', 'Eligible'], 'not-eligible': ['✕', 'Not eligible'], review: ['!', 'Needs review'] };
+  const badge = (r) => `<span class="badge badge-${r.status}"><span aria-hidden="true">${BADGE_TEXT[r.status][0]}</span>${BADGE_TEXT[r.status][1]}</span>`;
+  const eligBlock = (r) => `<div class="elig">${badge(r)}<p class="reason">${esc(r.reason)}</p></div>`;
+  const resultText = (r) => `${r.label} → ${BADGE_TEXT[r.status][1]} (${r.reason})`;
+  const rupees = (n) => '₹' + Number(n).toLocaleString('en-IN');
+
+  function policyBlock(p) {
+    const pol = p.policy;
+    if (!pol) return `<div class="banner err" style="margin:.5rem 0 0">${esc(INSURANCE_RULES.messages.noPolicy)}</div>`;
+    const status = policyStatusOn(pol, now());
+    return `<dl class="kv"><dt>Insurer</dt><dd>${esc(pol.insurer)}</dd><dt>Policy number</dt><dd>${esc(pol.number)}</dd>
+      <dt>Valid</dt><dd>${fmtDate(pol.validFrom)} to ${fmtDate(pol.validTo)}</dd><dt>Sum insured</dt><dd>${rupees(pol.sumInsured)}</dd>
+      <dt>Status</dt><dd><span class="badge badge-${status === 'Active' ? 'eligible' : 'not-eligible'}">${status}</span></dd></dl>`;
+  }
+  // Counts of eligibility results, e.g. "✓ 3 eligible · ✕ 1 not eligible".
+  function resultCounts(results) {
+    const n = { eligible: 0, 'not-eligible': 0, review: 0 };
+    results.forEach((r) => { n[r.status] += 1; });
+    return ['eligible', 'not-eligible', 'review'].filter((k) => n[k])
+      .map((k) => `<span class="badge badge-${k}"><span aria-hidden="true">${BADGE_TEXT[k][0]}</span>${n[k]} ${BADGE_TEXT[k][1].toLowerCase()}</span>`).join(' ');
+  }
+  function policyLine(p) {
+    const pol = p.policy;
+    if (!pol) return `<p class="badge badge-not-eligible">${esc(INSURANCE_RULES.messages.noPolicy)}</p>`;
+    const status = policyStatusOn(pol, now());
+    return `<p class="policy-line"><strong>${esc(pol.insurer)}</strong> · ${esc(pol.number)} · ${fmtDate(pol.validFrom)} to ${fmtDate(pol.validTo)} · ${rupees(pol.sumInsured)}
+      <span class="badge badge-${status === 'Active' ? 'eligible' : 'not-eligible'}">${status}</span></p>`;
+  }
+  function insuranceCard(p, id = 'p-insurance') {
+    const groups = new Map();
+    for (const e of insuranceEntries(p)) {
+      const k = e.visit || e.id;
+      if (!groups.has(k)) groups.set(k, []);
+      groups.get(k).push(e);
+    }
+    const SHOWN = 3; // latest visits shown; the rest behind "Show all"
+    const all = [];
+    const visits = [...groups.values()];
+    const body = visits.map((list, gi) => `<tbody class="ins-visit${gi >= SHOWN ? ' ins-extra' : ''}">${list.map((e, i) => {
+      const r = checkInsuranceEligibility(p.abha, e.id);
+      all.push(r);
+      const visit = i ? '' : `<td rowspan="${list.length}" class="small">${fmtDate(e.date)}<br>${hospTag(e.hospitalId)}${list.length > 1 ? `<br><span class="muted">One visit, ${list.length} entries</span>` : ''}</td>`;
+      const why = r.reason.replace(/^(Not eligible|Needs review): /, '');
+      return `<tr class="entry">${visit}<td><strong>${esc(e.title)}</strong> <span class="small muted">· ${esc(e.type)}</span></td>
+        <td class="code-line">${codeCell(e)}</td>
+        <td>${badge(r)}${r.status === 'eligible' ? '' : `<div class="reason small">${esc(why.charAt(0).toUpperCase() + why.slice(1))}</div>`}</td></tr>`;
+    }).join('')}</tbody>`).join('');
+    const more = visits.length > SHOWN
+      ? `<button class="btn btn-ghost btn-sm" data-action="ins-more" aria-expanded="false">Show all ${visits.length} visits</button>` : '';
+    return `<section class="card ins-collapsed" id="${id}" aria-labelledby="h-${id}"><h2 id="h-${id}">Insurance</h2>
+      ${policyLine(p)}
+      ${all.length ? `<p class="ins-counts">${resultCounts(all)}</p>
+      <div class="table-wrap"><table class="ins-table"><thead><tr><th>Visit</th><th>Entry</th><th>Code</th><th>Result</th></tr></thead>${body}</table></div>${more}` : empty('No coded entries yet.')}
+      <p class="small muted" style="margin-top:.75rem">${esc(INSURANCE_RULES.note)}</p></section>`;
+  }
+  // Code column: the code on its own line, its meaning in small text underneath.
+  function codeCell(e) {
+    if (e.system === 'AYUSH') return `<strong>${esc(e.code || 'Not named')}</strong><br><span class="small muted">AYUSH · ${esc(e.ayushSystem || '')}</span>`;
+    if (!e.code) return '<span class="muted">No code yet</span>';
+    return `<strong>${esc(e.code)}</strong> <span class="small muted">${esc(icdEdition(e.code) || 'ICD')}</span><br><span class="small muted">${esc(icdDescription(e.code) || 'Unrecognised code')}</span>`;
+  }
+
+  // Hospital view: policy status and eligibility counts for entries made at THIS hospital only.
+  // No diagnosis, code, treatment or other hospital's data.
+  function hospitalInsuranceCard(h, patientsHere) {
+    const rows = patientsHere.map((p) => {
+      const results = p.history.filter((e) => e.system && e.hospitalId === h.id)
+        .map((e) => evaluateEligibility(e, { policy: p.policy, date: e.date }));
+      const pol = p.policy;
+      const status = pol ? policyStatusOn(pol, now()) : null;
+      return `<tr><td><strong>${esc(p.name)}</strong></td>
+        <td>${pol ? `${esc(pol.insurer)}<br><span class="small muted">${esc(pol.number)} · until ${fmtDate(pol.validTo)}</span>` : '<span class="muted">No policy on file</span>'}</td>
+        <td>${status ? `<span class="badge badge-${status === 'Active' ? 'eligible' : 'not-eligible'}">${status}</span>` : '—'}</td>
+        <td>${results.length ? resultCounts(results) : '<span class="small muted">No coded entries here</span>'}</td></tr>`;
+    }).join('');
+    return `<section class="card" aria-labelledby="h-hins"><h2 id="h-hins">Insurance</h2>
+      <p class="small muted">Policy status and claim eligibility for entries made at ${esc(h.short)}. Diagnoses, codes and treatments are not shown.</p>
+      <div class="table-wrap" style="margin-top:.5rem"><table class="ins-table"><thead><tr><th>Patient</th><th>Insurer</th><th>Policy</th><th>Eligibility at ${esc(h.short)}</th></tr></thead>
+      <tbody>${rows}</tbody></table></div>
+      <p class="small muted" style="margin-top:.75rem">${esc(INSURANCE_RULES.note)}</p></section>`;
+  }
+  function codingFields(p, { kind = 'prescribe', code = '' } = {}) {
+    const preview = evaluateEligibility({ system: 'ICD', code }, { policy: p.policy, date: now() });
+    return `<fieldset class="coding"${kind === 'note' ? ' hidden' : ''}><legend>Code for insurance</legend>
+      <label>System<select name="system"><option value="ICD">ICD (modern medicine)</option><option value="AYUSH">AYUSH treatment</option><option value="NONE">No code yet</option></select></label>
+      <label data-for="ICD">ICD code<span class="hint">ICD-10 like E11 or N39.0, or ICD-11 like 5A11</span><input name="code" list="icd-codes" autocomplete="off" value="${esc(code)}"></label>
+      <div data-for="AYUSH" hidden><label>AYUSH system<select name="ayushSystem">${INSURANCE_RULES.ayushSystems.map((s) => `<option>${esc(s)}</option>`).join('')}</select></label>
+        <label>Treatment name<input name="treatment" placeholder="e.g. Panchakarma" autocomplete="off"></label></div>
+      <p class="small" style="margin:1rem 0 0"><strong>Insurance eligibility (live)</strong></p><div class="elig-live" aria-live="polite">${eligBlock(preview)}</div>
+      <p class="small muted">${esc(INSURANCE_RULES.note)}</p></fieldset>`;
+  }
+  // Reads the coding fields of a form. Returns { coding } or { error, field }.
+  function readCoding(form, { lenient = false } = {}) {
+    const sys = form.elements.system.value;
+    if (sys === 'NONE') return { coding: { system: 'ICD', code: '' } };
+    if (sys === 'AYUSH') {
+      const t = val(form, 'treatment');
+      if (!t && !lenient) return { error: 'Enter the AYUSH treatment name.', field: 'treatment' };
+      return { coding: { system: 'AYUSH', ayushSystem: form.elements.ayushSystem.value, code: t } };
+    }
+    const code = val(form, 'code').toUpperCase();
+    if (!code && !lenient) return { error: 'Enter the ICD code, or choose "No code yet".', field: 'code' };
+    if (code && !icdEdition(code)) return { error: icdFormatError(code), field: 'code' };
+    return { coding: { system: 'ICD', code } };
+  }
+  const icdDatalist = () => `<datalist id="icd-codes">${Object.entries(ICD_CODES).map(([c, d]) => `<option value="${esc(c)}">${esc(d)}</option>`).join('')}</datalist>`;
+
+  /* ---------- clinical summary (codes, formulations and alerts come from the NamaSetu API) ---------- */
+  // The portal reads NamaSetu's reference endpoints with the sandbox clinician account, the same account the
+  // NamaSetu site opens with. Portal records themselves never leave the browser except the salt names screened.
+  const API = '/api';
+  const API_DEMO = { username: 'clinician', password: 'Clinician@NamaSetu1' };
+  let apiToken = null;
+  let apiSignIn = null;
+  async function api(path, body, retry = true) {
+    if (!apiToken) {
+      apiSignIn ??= fetch(`${API}/auth/login`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(API_DEMO) })
+        .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`sign-in failed (HTTP ${r.status})`))))
+        .then((j) => { apiToken = j.access_token; })
+        .finally(() => { apiSignIn = null; });
+      await apiSignIn;
+    }
+    const r = await fetch(API + path, {
+      method: body ? 'POST' : 'GET',
+      headers: { Accept: 'application/json', Authorization: `Bearer ${apiToken}`, ...(body ? { 'Content-Type': 'application/json' } : {}) },
+      body: body ? JSON.stringify(body) : undefined,
+    });
+    if (r.status === 401 && retry) { apiToken = null; return api(path, body, false); }
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    return r.json();
+  }
+
+  const SEV_RANK = { major: 0, moderate: 1, minor: 2 };
+  const REL = { equivalent: 'Equivalent', wider: 'Broader', narrower: 'Narrower', relatedto: 'Related to (not an exact equivalent)' };
+  const medLabel = (m) => `${m.brand} (${HOSPITALS[m.hospitalId].short})`;
+  const summaryKey = (p) => `${p.abha}|${(p.ayushDx || {}).code || ''}|${p.meds.filter((m) => m.status === 'active').map((m) => m.id).join(',')}`;
+  const summaryJobs = new Map(); // key -> Promise
+  const summaryDone = new Map(); // key -> { data } | { error }
+
+  function loadSummary(p) {
+    const key = summaryKey(p);
+    if (!summaryJobs.has(key)) {
+      const job = (async () => {
+        if (!p.ayushDx) return { map: null, formulations: [], screen: null };
+        const code = encodeURIComponent(p.ayushDx.code);
+        const [map, byc] = await Promise.all([
+          api('/map', { code: p.ayushDx.code, top_k: 1 }),
+          api(`/medications/by-condition?system=namaste&code=${code}`),
+        ]);
+        const formulations = byc.ayush.map((l) => ({ ...l.medication, link: l.link }));
+        const active = p.meds.filter((m) => m.status === 'active').map((m) => ({ label: medLabel(m), salts: m.salts.map((s) => s.name) }));
+        const screen = formulations.length
+          ? await api('/medications/screen', { candidate_codes: formulations.map((f) => f.code), active })
+          : null;
+        return { map, formulations, screen };
+      })();
+      job.then((data) => summaryDone.set(key, { data }), (error) => { summaryDone.set(key, { error }); summaryJobs.delete(key); });
+      summaryJobs.set(key, job);
+    }
+    return summaryJobs.get(key);
+  }
+
+  function medsSummaryTable(p, st) {
+    const active = p.meds.filter((m) => m.status === 'active');
+    const alerts = (st.data && st.data.screen && st.data.screen.alerts) || [];
+    const rows = active.map((m) => {
+      const label = medLabel(m);
+      const herb = alerts.filter((a) => a.other_medication === label).sort((a, b) => SEV_RANK[a.severity] - SEV_RANK[b.severity]);
+      const dup = active.filter((o) => o !== m && o.salts.some((s) => m.salts.some((x) => x.name.toLowerCase() === s.name.toLowerCase())));
+      const allergy = allergyHits(p, m.salts);
+      let screenCell;
+      if (herb[0]) screenCell = `<span class="sev sev-${herb[0].severity}">${esc(herb[0].severity)} herb–drug</span>${herb.length > 1 ? ` <span class="small">+${herb.length - 1}</span>` : ''}`;
+      else if (allergy.length) screenCell = '<span class="sev sev-major">Allergy conflict</span>';
+      else if (dup.length) screenCell = `<span class="sev sev-moderate">Duplicate salt</span><div class="small muted">with ${esc(dup.map((d) => d.brand).join(', '))}</div>`;
+      else if (st.status === 'loading') screenCell = '<span class="small muted">Screening…</span>';
+      else if (st.status === 'error') screenCell = '<span class="small muted">Not screened (NamaSetu API unavailable)</span>';
+      else if (!p.ayushDx || !(st.data && st.data.screen)) screenCell = '<span class="small muted">No AYUSH formulation to screen</span>';
+      else if (m.salts.some((s) => st.data.screen.unresolved_salts.includes(s.name))) screenCell = '<span class="small muted">Not screened: salt not in NamaSetu\'s catalogue</span>';
+      else screenCell = '<span class="small">No alert in loaded data*</span>';
+      const indication = m.system === 'AYUSH' ? `AYUSH · ${esc(m.code)}` : m.code ? `${esc(icdDescription(m.code) || 'Unrecognised code')} <span class="small muted">${esc(m.code)}</span>` : '<span class="muted">Not coded</span>';
+      return `<tr><td><strong>${esc(m.brand)}</strong><br><span class="small muted">${esc(HOSPITALS[m.hospitalId].short)} · ${esc(DOCTOR[m.doctorId].name)}</span></td>
+        <td>${m.salts.map((s) => `<span class="salt-chip">${esc(s.name)}</span>`).join('')}</td>
+        <td class="small">${esc(strengths(m))}<br>${esc(m.dose)}, ${esc(m.frequency)}<br><span class="muted">${esc(m.duration)}</span></td>
+        <td><span class="tag">${m.system === 'AYUSH' ? 'AYUSH' : 'Allopathy'}</span></td>
+        <td class="small">${indication}</td>
+        <td>${screenCell}</td></tr>`;
+    }).join('');
+    return `<section class="card" aria-labelledby="h-csmeds"><h2 id="h-csmeds">Current medicines &amp; active chemical salts <span class="small muted" style="font-weight:400">from the prescription history</span></h2>
+      ${active.length ? `<div class="table-wrap"><table class="cs-table"><thead><tr><th>Brand / formulation</th><th>Active chemical salt</th><th>Regimen</th><th>Domain</th><th>Clinical indication</th><th>Interaction screen</th></tr></thead><tbody>${rows}</tbody></table></div>
+      <p class="small muted" style="margin-top:.5rem">Regimen as prescribed in the record. Herb–drug alerts come from NamaSetu's cited interaction dataset. *Absence of data is not proof of safety.</p>` : empty('No current medicines.')}</section>`;
+  }
+
+  function herbDrugCard(p, st) {
+    let inner;
+    let tone = '';
+    if (!p.ayushDx) inner = '<p class="muted">No AYUSH diagnosis recorded, so no formulation to screen.</p>';
+    else if (st.status === 'loading') inner = '<p class="muted">Screening the approved formulations against current medicines…</p>';
+    else if (st.status === 'error') inner = `<p class="muted">The NamaSetu API is not reachable (${esc(st.error.message)}). The rest of the record still works.</p>`;
+    else if (!st.data.screen) inner = '<p class="muted">No approved AYUSH formulation for this diagnosis, so nothing to screen.</p>';
+    else {
+      const alerts = [...st.data.screen.alerts].sort((a, b) => SEV_RANK[a.severity] - SEV_RANK[b.severity]);
+      const top = alerts[0];
+      if (!top) inner = `<p>${esc(st.data.screen.message)}</p>`;
+      else {
+        tone = top.severity === 'major' || top.severity === 'moderate' ? ` alert-box ${top.severity}` : '';
+        inner = `<p class="small"><strong>Triggered by:</strong> ${esc(top.other_medication)}</p>
+          <p style="font-size:1.1rem;font-weight:700;margin-top:.4rem"><span class="sev sev-${top.severity}">${esc(top.severity)}</span> ${esc(top.agents.join(' × '))}</p>
+          <p>${esc(top.mechanism)}</p>
+          ${top.management_note ? `<p><strong>Clinical recommendation (from source):</strong> ${esc(top.management_note)}</p>` : ''}
+          <p class="mono">${esc(top.path)}</p>
+          <p class="small muted">Evidence: ${esc(top.evidence_level || 'not stated')} · Source: ${esc(top.citation)}${top.dataset ? ` · ${esc(top.dataset)}` : ''}</p>
+          ${alerts.length > 1 ? `<details><summary>All alerts (${alerts.length})</summary><ul class="list">${alerts.map((a) => `<li><span class="sev sev-${a.severity}">${esc(a.severity)}</span> ${esc(a.agents.join(' × '))} <span class="small muted">with ${esc(a.other_medication)}</span><br><span class="small">${esc(a.mechanism)}</span></li>`).join('')}</ul></details>` : ''}
+          <p class="small muted">${esc(st.data.screen.message)}</p>`;
+      }
+      if (st.data.screen.unresolved_salts.length) inner += `<p class="small muted">Not in NamaSetu's catalogue, so not screened: ${esc(st.data.screen.unresolved_salts.join(', '))}.</p>`;
+    }
+    return `<section class="card${tone}" aria-labelledby="h-hdi"><h2 id="h-hdi">High-priority herb–drug interaction</h2>${inner}</section>`;
+  }
+
+  function selectedDiagnosisCard(p, st, canEdit) {
+    const f = st.data ? st.data.formulations : [];
+    return `<section class="card" aria-labelledby="h-sdx"><h2 id="h-sdx">Selected diagnosis</h2>
+      <dl class="kv"><dt>AYUSH (NAMASTE)</dt><dd>${p.ayushDx ? `${esc(p.ayushDx.display)} <span class="mono">${esc(p.ayushDx.code)}</span>` : '<span class="muted">Not recorded</span>'}</dd>
+      <dt>ICD</dt><dd>${esc(p.diagnosis)}${p.dxCode && p.dxCode.code ? ` <span class="mono">${esc(p.dxCode.code)}</span>` : ''}</dd></dl>
+      ${canEdit ? `<label>${p.ayushDx ? 'Change' : 'Add'} AYUSH diagnosis<span class="hint">Search NAMASTE in English, IAST or Devanagari</span>
+        <input data-cs-search="${esc(p.abha)}" autocomplete="off" placeholder="Amavata, आमवात, Madhumeha…"></label><div class="cs-results" aria-live="polite"></div>` : ''}
+      ${p.ayushDx ? `<h3 style="margin-top:1rem">Approved AYUSH formulations screened</h3>
+        ${st.status === 'loading' ? '<p class="muted small">Loading…</p>' : f.length ? `<ul class="list">${f.map((m) => `<li><strong>${esc(m.name)}</strong> <span class="mono">${esc(m.code)}</span><br><span class="small muted">Contains ${esc(m.composition.map((c) => c.canonical_name).join(', '))} · source: ${esc(m.link.source.title)}</span></li>`).join('')}</ul>` : '<p class="muted small">None approved for this diagnosis.</p>'}
+        <p class="small"><strong>Reference only — not a prescription. Consult a qualified clinician.</strong></p>` : ''}</section>`;
+  }
+
+  function crosswalkCard(p, st) {
+    let inner;
+    let chip = '';
+    if (!p.ayushDx) inner = '<p class="muted">Record an AYUSH diagnosis to see its WHO ICD-11 mapping.</p>';
+    else if (st.status === 'loading') inner = '<p class="muted">Mapping…</p>';
+    else if (st.status === 'error') inner = '<p class="muted">The NamaSetu API is not reachable, so the mapping cannot be shown.</p>';
+    else {
+      const c = st.data.map.candidates[0];
+      if (!c) inner = `<p>${esc(st.data.map.message)}</p>`;
+      else {
+        chip = `<span class="tag tag-strong mono">Confidence ${c.confidence.toFixed(2)} · ${esc(c.band)} band</span>`;
+        const bio = c.biomedicine;
+        inner = `<div class="tiles">
+          <div class="tile tile-namaste"><p class="eyebrow">NAMASTE standard</p><p class="code">${esc((c.namaste || {}).code || '')}</p><p><strong>${esc((c.namaste || {}).display || '')}</strong></p><p class="small">${esc((st.data.map.resolved || {}).devanagari || 'Ayush terminology')}</p></div>
+          <div class="tile tile-who"><p class="eyebrow">WHO ICD-11 (TM2)</p><p class="code">${esc(c.tm2.code)}</p><p><strong>${esc(c.tm2.display)}</strong></p><p class="small">From NAMASTE: ${esc(REL[c.relationship] || c.relationship)}</p></div>
+          <div class="tile tile-bio"><p class="eyebrow">Biomedical equivalent</p>${bio.code ? `<p class="code">${esc(bio.code)}</p><p><strong>${esc(bio.display)}</strong></p><p class="small">From TM2: ${esc(REL[bio.relationship] || bio.relationship)} · ${bio.source === 'who-index' ? 'WHO index' : esc(bio.source)} · ${esc(bio.status)}</p>` : `<p class="small" style="margin-top:.6rem">${esc(bio.message || 'No approved biomedical link.')}</p>`}</div>
+        </div>
+        ${c.band !== 'high' || st.data.map.status !== 'suggested' ? '<div class="banner warn" style="margin:1rem 0 0">Needs clinician review: a mapping below the high band is never recorded without a clinician decision.</div>' : ''}
+        <div class="banner info" style="margin:1rem 0 0"><p class="eyebrow">Clinical rationale (why the engine matched)</p><p>${esc(c.reasoning)}</p></div>
+        <p class="small muted" style="margin-top:.5rem">${c.tm2.code.startsWith('SAMPLE-') ? 'SAMPLE — illustrative, not official codes. ' : ''}Datasets: ${esc(st.data.map.dataset_releases.join(', '))}</p>`;
+      }
+    }
+    return `<section class="card" aria-labelledby="h-xw"><div class="row"><div><h2 id="h-xw" style="margin:0">Interoperability cross-walk</h2><p class="small muted">Three-way mapping across AYUSH and WHO terminology</p></div>${chip}</div>${inner}</section>`;
+  }
+
+  function clinicalSummaryInner(p, canEdit) {
+    const done = summaryDone.get(summaryKey(p));
+    const st = !done ? { status: 'loading' } : done.error ? { status: 'error', error: done.error } : { status: 'ready', data: done.data };
+    return `${medsSummaryTable(p, st)}<div class="cs-grid2">${herbDrugCard(p, st)}${selectedDiagnosisCard(p, st, canEdit)}</div>${crosswalkCard(p, st)}`;
+  }
+  function clinicalSummary(p, canEdit, id = 'p-summary') {
+    return `<div id="${id}" class="stack" data-cs="${esc(p.abha)}" data-cs-edit="${canEdit ? '1' : ''}">${clinicalSummaryInner(p, canEdit)}</div>`;
+  }
+  // After a render: fetch what is missing, then refresh only the summary (forms elsewhere keep their input).
+  function hydrateSummary() {
+    const box = document.querySelector('[data-cs]');
+    if (!box) return;
+    const p = PATIENTS.get(box.dataset.cs);
+    if (!p || summaryDone.has(summaryKey(p))) return;
+    loadSummary(p).catch(() => {}).finally(() => {
+      const el = document.querySelector(`[data-cs="${CSS.escape(p.abha)}"]`);
+      if (el && canSeeMedical(p)) el.innerHTML = clinicalSummaryInner(p, !!el.dataset.csEdit);
+    });
+  }
+
+  /* ---------- shared UI pieces ---------- */
+  const hospTag = (hid) => `<span class="tag tag-strong">${esc(HOSPITALS[hid].short)}</span>`;
+  const empty = (text) => `<p class="empty">${esc(text)}</p>`;
+  const sessionName = () => {
+    if (!session) return '';
+    if (session.role === 'patient') return PATIENTS.get(session.id).name;
+    if (session.role === 'doctor') return DOCTOR[session.id].name;
+    return HOSPITALS[session.id].name;
+  };
+  const homeHash = () => (session ? `#/${session.role}` : '#/');
+
+  function profileCard(p) {
+    return `<section class="card" id="p-profile" aria-labelledby="h-profile"><h2 id="h-profile">Profile</h2>
+      <dl class="kv"><dt>Name</dt><dd>${esc(p.name)}</dd><dt>Age</dt><dd>${p.age}</dd><dt>Gender</dt><dd>${esc(p.gender)}</dd>
+      <dt>ABHA ID</dt><dd>${esc(p.abha)}</dd><dt>Blood group</dt><dd>${esc(p.blood)}</dd>
+      <dt>Allergies</dt><dd>${p.allergies.length ? p.allergies.map(esc).join(', ') : 'None recorded'}</dd>
+      <dt>Hospitals visited</dt><dd>${hospitalsVisited(p).map((h) => `${esc(h.short)} (${esc(h.name)})`).join('<br>')}</dd></dl></section>`;
+  }
+  const diagnosisCard = (p) => `<section class="card" aria-labelledby="h-dx"><h2 id="h-dx">Current diagnosis</h2><p style="font-size:1.15rem;font-weight:650">${esc(p.diagnosis)}</p>${p.dxCode ? `<p class="code-line">${esc(codingLabel(p.dxCode))}</p>` : ''}</section>`;
+
+  function sideEffects(m) {
+    const s = m.se;
+    if (!s) return '<p class="small muted">No side-effect notes in the demo catalogue. Ask the prescribing doctor.</p>';
+    const list = (xs) => (xs && xs.length ? `<ul>${xs.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : '<p class="small muted">None listed.</p>');
+    return `<div class="se"><h4>Common</h4>${list(s.common)}<h4>Serious</h4>${list(s.serious)}${s.contact ? `<h4>Contact your doctor if</h4><p>${esc(s.contact)}</p>` : ''}</div>`;
+  }
+  function medCard(m, opts = {}) {
+    const fresh = isNewMed(m);
+    return `<article class="med${fresh ? ' is-new' : ''}">
+      <div class="row"><h3 style="margin:0">${esc(m.brand)} ${fresh ? '<span class="tag tag-new">New</span>' : ''}</h3>${hospTag(m.hospitalId)}</div>
+      <p class="salt">${esc(composition(m))}</p>${m.system ? `<p class="code-line">For: ${esc(codingLabel(m))}</p>` : ''}
+      <dl class="kv"><dt>Dose</dt><dd>${esc(m.dose)}</dd><dt>Frequency</dt><dd>${esc(m.frequency)}</dd><dt>Duration</dt><dd>${esc(m.duration)}</dd></dl>
+      <p class="meta">${fresh ? 'Newly prescribed' : 'Prescribed'} on ${fmtDate(m.start)} by ${esc(DOCTOR[m.doctorId].name)}, ${esc(HOSPITALS[m.hospitalId].name)}</p>
+      <details><summary>Side effects</summary>${sideEffects(m)}</details>
+      ${opts.stop ? `<div class="form-actions"><button class="btn btn-danger btn-sm" data-action="stop-med" data-abha="${esc(opts.abha)}" data-id="${m.id}">Stop this medicine</button></div>` : ''}
+    </article>`;
+  }
+  function newMedsCard(list) {
+    return `<section class="card" aria-labelledby="h-new"><h2 id="h-new">Newly prescribed <span class="tag tag-new">New</span></h2>
+      ${list.length ? list.map((m) => `<p><strong>${esc(m.brand)}</strong> (${esc(composition(m))}) · ${fmtDate(m.start)} · ${esc(DOCTOR[m.doctorId].name)}, ${esc(HOSPITALS[m.hospitalId].short)}</p>`).join('') : empty('No new medicines in the last 30 days.')}</section>`;
+  }
+  function medsCard(active, opts = {}) {
+    return `<section class="card" id="p-meds" aria-labelledby="h-meds"><h2 id="h-meds">Current medicines</h2>
+      ${active.length ? active.map((m) => medCard(m, opts)).join('') : empty('No current medicines.')}</section>`;
+  }
+  function timelineCard(p) {
+    const items = [...p.history].sort((a, b) => b.date - a.date);
+    return `<section class="card" id="p-history" aria-labelledby="h-history"><h2 id="h-history">History across hospitals</h2>
+      <p class="small muted">Every entry shows the hospital and doctor that created it.</p>
+      ${items.length ? `<ol class="timeline">${items.map((h) => `<li>
+        <p class="small muted">${fmtDate(h.date)} · <span class="tag">${esc(h.type)}</span> ${hospTag(h.hospitalId)}</p>
+        <p><strong>${esc(h.title)}</strong></p><p>${esc(h.details)}</p>
+        ${h.system ? (() => { const r = checkInsuranceEligibility(p.abha, h.id); return `<p class="code-line">${esc(r.label)} ${badge(r)}</p>`; })() : ''}
+        <p class="small muted">${esc(DOCTOR[h.doctorId].name)}, ${esc(HOSPITALS[h.hospitalId].name)}</p>
+        ${h.snapshot ? `<button class="btn btn-ghost btn-sm" data-action="view-final" data-abha="${esc(p.abha)}" data-id="${h.id}">View final report</button>` : ''}
+      </li>`).join('')}</ol>` : empty('No history yet.')}</section>`;
+  }
+  function reportsCard(p, { owner }) {
+    const rows = [...p.reports].sort((a, b) => b.date - a.date);
+    const upload = owner ? `<form data-form="upload" class="no-print" novalidate>
+        <h3 style="margin-top:1rem">Upload a report</h3>
+        <label>File (PDF or image, up to 5 MB)<input type="file" name="file" accept="application/pdf,image/*" required></label>
+        <div class="row2">
+          <label>Report type<select name="type" required><option value="">Choose…</option>${['Blood test', 'Urine test', 'Imaging (X-ray, scan)', 'ECG', 'Discharge summary', 'Prescription', 'Other'].map((t) => `<option>${t}</option>`).join('')}</select></label>
+          <label>Report date<input type="date" name="date" max="${isoDay(Date.now())}" required></label>
+        </div>
+        <label>Lab or hospital name<input name="lab" autocomplete="off" required></label>
+        <p class="form-error" role="alert" hidden></p>
+        <div class="form-actions"><button class="btn btn-primary">Upload report</button></div>
+      </form>` : '<p class="small muted">Read-only: reports can be viewed and downloaded, not changed.</p>';
+    return `<section class="card" id="p-reports" aria-labelledby="h-reports"><h2 id="h-reports">Reports</h2>
+      ${rows.length ? `<ul class="list">${rows.map((r) => `<li>
+        <p><strong>${esc(r.type)}</strong> · ${fmtDate(r.date)}</p>
+        <p class="small muted">${esc(r.lab)} · ${esc(r.fileName)}${r.uploadedBy === 'patient' ? ' · uploaded by patient' : ''}</p>
+        <div class="form-actions" style="margin-top:.5rem">
+          <button class="btn btn-ghost btn-sm" data-action="preview-report" data-abha="${esc(p.abha)}" data-id="${r.id}">Preview</button>
+          <button class="btn btn-ghost btn-sm" data-action="download-report" data-abha="${esc(p.abha)}" data-id="${r.id}">Download</button>
+          ${owner && r.uploadedBy === 'patient' ? `<button class="btn btn-danger btn-sm" data-action="delete-report" data-id="${r.id}">Delete</button>` : ''}
+        </div></li>`).join('')}</ul>` : empty('No reports uploaded yet.')}
+      ${upload}</section>`;
+  }
+
+  const INSURANCE_CASES = {
+    '99-1001-2001-3001': 'Eligible (ICD, active policy)',
+    '99-1002-2002-3002': 'One visit with ICD (eligible) + AYUSH yoga (not eligible)',
+    '99-1003-2003-3003': 'Policy expired',
+    '99-1004-2004-3004': 'No policy on file',
+    '99-1005-2005-3005': 'Entry with no code: needs review',
+    '99-1006-2006-3006': 'AYUSH Panchakarma (not eligible) + ICD (eligible)',
+  };
+  function credentialsPanel(open = false) {
+    const use = (role, id, secret) => `<button class="btn btn-ghost btn-sm" data-action="fill" data-role="${role}" data-id="${esc(id)}" data-secret="${esc(secret)}">Use</button>`;
+    return `<details class="card creds no-print"${open ? ' open' : ''}><summary>Demo credentials (fictional)</summary>
+      <h3>Hospitals</h3><div class="table-wrap"><table><thead><tr><th>Hospital</th><th>Registration ID</th><th>Password</th><th></th></tr></thead><tbody>
+      ${Object.values(HOSPITALS).map((h) => `<tr><td>${esc(h.short)} · ${esc(h.name)}</td><td>${esc(h.regId)}</td><td>${esc(h.password)}</td><td>${use('hospital', h.regId, h.password)}</td></tr>`).join('')}</tbody></table></div>
+      <h3>Doctors <span class="small muted">(sign in with the HPR ID or the ABHA ID)</span></h3><div class="table-wrap"><table><thead><tr><th>Doctor</th><th>Hospital</th><th>HPR ID</th><th>ABHA ID</th><th>Password</th><th></th></tr></thead><tbody>
+      ${DOCTORS.map((d) => `<tr><td>${esc(d.name)}<br><span class="small muted">${esc(d.spec)}</span></td><td>${esc(HOSPITALS[d.hospitalId].short)}</td><td>${esc(d.hprId)}</td><td>${esc(d.abha)}</td><td>${esc(d.password)}</td><td>${use('doctor', d.hprId, d.password)}</td></tr>`).join('')}</tbody></table></div>
+      <h3>Patients <span class="small muted">(OTP for every patient: ${DEMO_OTP})</span></h3><div class="table-wrap"><table><thead><tr><th>Patient</th><th>ABHA ID</th><th>Hospitals visited</th><th>Insurance test case</th><th></th></tr></thead><tbody>
+      ${[...PATIENTS.values()].map((p) => `<tr><td>${esc(p.name)}</td><td>${esc(p.abha)}</td><td>${hospitalsVisited(p).map((h) => esc(h.short)).join(' + ')}</td><td class="small">${esc(INSURANCE_CASES[p.abha] || '')}</td><td>${use('patient', p.abha, DEMO_OTP)}</td></tr>`).join('')}</tbody></table></div>
+    </details>`;
+  }
+
+  /* ---------- views ---------- */
+  function viewLanding() {
+    const card = (role, title, text, how) => `<section class="card portal" aria-labelledby="pc-${role}"><h2 id="pc-${role}">${title}</h2><p class="muted">${text}</p><p class="small"><strong>Sign in with:</strong> ${how}</p><a class="btn btn-primary btn-block" href="#/login/${role}">${title} sign-in</a></section>`;
+    return `<section class="hero"><p class="eyebrow">NamaSetu Care Portal · demo</p><h1>One ABHA ID. Every hospital.</h1>
+      <p class="lead">A patient's record belongs to their ABHA ID, not to a hospital. Doctors see it when the patient is assigned to them, or for 30 minutes after the patient shares a QR token or a consent OTP. Hospitals see their doctors and patient names, never medical details.</p></section>
+      ${session ? `<div class="banner ok">Signed in as <strong>${esc(sessionName())}</strong> (${ROLE_LABEL[session.role]}). <a class="link" href="${homeHash()}">Open your dashboard</a></div>` : ''}
+      <div class="grid cards3">
+        ${card('hospital', 'Hospital', 'For hospital administrators: your hospital profile, your doctors and the names of their patients. No medical data.', 'Hospital registration ID and password')}
+        ${card('doctor', 'Doctor', 'Your patients, temporary access through a QR token or consent OTP, prescriptions and final reports.', 'ABHA ID or HPR ID and password')}
+        ${card('patient', 'Patient', 'Your own record from every hospital: medicines, side effects, history, reports, QR code and who opened your record.', 'ABHA ID and a one-time password (OTP)')}      </div>${credentialsPanel()}`;
+  }
+
+  function viewLogin(role) {
+    const fill = prefill && prefill.role === role ? prefill : null;
+    prefill = null;
+    const v = (x) => (fill ? esc(x) : '');
+    const fields = {
+      patient: `<label>ABHA ID<span class="hint">Format XX-XXXX-XXXX-XXXX</span><input name="id" inputmode="numeric" autocomplete="username" placeholder="99-1001-2001-3001" value="${v(fill && fill.id)}" required></label>
+        <label>OTP<span class="hint">Demo OTP: ${DEMO_OTP}</span><input name="secret" inputmode="numeric" autocomplete="one-time-code" maxlength="6" value="${v(fill && fill.secret)}" required></label>`,
+      doctor: `<label>ABHA ID or HPR ID<input name="id" autocomplete="username" placeholder="HPR-DEMO-1101" value="${v(fill && fill.id)}" required></label>
+        <label>Password<input name="secret" type="password" autocomplete="current-password" value="${v(fill && fill.secret)}" required></label>`,
+      hospital: `<label>Hospital registration ID<input name="id" autocomplete="username" placeholder="HFR-DEMO-A-1001" value="${v(fill && fill.id)}" required></label>
+        <label>Password<input name="secret" type="password" autocomplete="current-password" value="${v(fill && fill.secret)}" required></label>`,
+    }[role];
+    return `<div class="narrow"><p><a class="link" href="#/">← All portals</a></p>
+      <section class="card"><p class="eyebrow">${ROLE_LABEL[role]} portal</p><h1>${ROLE_LABEL[role]} sign-in</h1>
+      ${session && session.role !== role ? `<p class="small muted">You are signed in as ${esc(sessionName())}. Signing in here ends that session.</p>` : ''}
+      <form data-form="login" data-role="${role}" novalidate>${fields}
+        <p class="form-error" role="alert" hidden></p>
+        <div class="form-actions"><button class="btn btn-primary btn-block">Sign in</button></div></form></section>
+      ${credentialsPanel()}</div>`;
+  }
+
+  // Hospital pages: only this hospital's doctors and the NAMES of their patients. Never diagnoses or other medical data.
+  const hospitalDoctors = (h) => DOCTORS.filter((d) => d.hospitalId === h.id);
+  const patientNamesOf = (d) => [...PATIENTS.values()].filter((p) => p.assigned.includes(d.id)).map((p) => p.name).sort();
+
+  function viewHospital() {
+    const h = currentHospital();
+    const docs = hospitalDoctors(h);
+    const rows = [...PATIENTS.values()]
+      .map((p) => ({ name: p.name, docs: docs.filter((d) => p.assigned.includes(d.id)) }))
+      .filter((r) => r.docs.length)
+      .sort((a, b) => a.name.localeCompare(b.name));
+    return `<div class="page-head"><div><p class="eyebrow">Hospital dashboard · ${esc(h.short)}</p><h1>${esc(h.name)}</h1></div></div>
+      <div class="banner info small">This dashboard shows your hospital, your doctors, the names of their patients and their insurance status. Diagnoses and other medical details stay in the patient's ABHA record.</div>
+      <div class="grid grid-2">
+        <div class="stack">
+          <section class="card" aria-labelledby="h-pts"><h2 id="h-pts">Patients (${rows.length})</h2>
+            <label>Search patients or doctors<input data-filter="hosp" placeholder="Patient or doctor name" autocomplete="off"></label>
+            <div class="table-wrap" style="margin-top:.75rem"><table><thead><tr><th>Patient</th><th>Doctor</th><th>Speciality</th></tr></thead><tbody id="hosp-rows">
+            ${rows.map((r) => `<tr data-search="${esc((r.name + ' ' + r.docs.map((d) => d.name).join(' ')).toLowerCase())}"><td><strong>${esc(r.name)}</strong></td>
+              <td>${r.docs.map((d) => `<a class="link" href="#/hospital/doctor/${d.id}">${esc(d.name)}</a>`).join('<br>')}</td><td>${r.docs.map((d) => esc(d.spec)).join('<br>')}</td></tr>`).join('')}
+            </tbody></table></div><p class="empty" id="hosp-empty" hidden>No patient or doctor matches that search.</p></section>
+          ${hospitalInsuranceCard(h, [...PATIENTS.values()].filter((p) => docs.some((d) => p.assigned.includes(d.id))).sort((a, b) => a.name.localeCompare(b.name)))}
+          <section class="card" aria-labelledby="h-add"><h2 id="h-add">Add new patient</h2>
+            <p class="small muted">Registers the patient under their ABHA ID and assigns a doctor. The diagnosis is saved to the patient's record for the doctor and the patient. It is not shown on this dashboard.</p>
+            <form data-form="register" novalidate>
+              <div class="row2"><label>Full name<input name="name" autocomplete="off" required></label>
+                <label>ABHA ID<span class="hint">XX-XXXX-XXXX-XXXX</span><input name="abha" inputmode="numeric" autocomplete="off" required></label></div>
+              <div class="row2"><label>Age<input name="age" type="number" min="0" max="120" inputmode="numeric" required></label>
+                <label>Gender<select name="gender" required><option value="">Choose…</option><option>Female</option><option>Male</option><option>Other</option></select></label></div>
+              <div class="row2"><label>Blood group<select name="blood"><option value="">Not known</option>${['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'].map((g) => `<option>${g}</option>`).join('')}</select></label>
+                <label>Allergies<span class="hint">Comma-separated, optional</span><input name="allergies" autocomplete="off"></label></div>
+              <label>Doctor<select name="doctor" required><option value="">Choose a doctor…</option>${docs.map((d) => `<option value="${d.id}">${esc(d.name)} · ${esc(d.spec)}</option>`).join('')}</select></label>
+              <div class="row2"><label>Diagnosis<input name="diagnosis" autocomplete="off" required></label>
+                <label>ICD code<span class="hint">Optional, e.g. E11 or N39.0</span><input name="code" autocomplete="off"></label></div>
+              <p class="form-error" role="alert" hidden></p>
+              <div class="form-actions"><button class="btn btn-primary">Register patient</button></div></form></section>
+        </div>
+        <div class="stack">
+          <section class="card" aria-labelledby="h-docs"><h2 id="h-docs">Doctors (${docs.length})</h2>
+            <ul class="list">${docs.map((d) => { const names = patientNamesOf(d); return `<li><div class="row">
+              <div><p><strong>${esc(d.name)}</strong> · ${esc(d.spec)}</p><p class="small muted">HPR ID ${esc(d.hprId)} · ${names.length} patient${names.length === 1 ? '' : 's'}</p></div>
+              <a class="btn btn-ghost btn-sm" href="#/hospital/doctor/${d.id}">View details<span class="visually-hidden"> of ${esc(d.name)}</span></a></div></li>`; }).join('')}</ul></section>
+          <section class="card" aria-labelledby="h-hosp"><h2 id="h-hosp">Hospital profile</h2>
+            <dl class="kv"><dt>Name</dt><dd>${esc(h.name)}</dd><dt>Registration ID</dt><dd>${esc(h.regId)}</dd><dt>Address</dt><dd>${esc(h.address)}</dd>
+            <dt>Contact</dt><dd>${esc(h.contact)}</dd><dt>Departments</dt><dd>${h.departments.map(esc).join(', ')}</dd><dt>Beds</dt><dd>${h.beds}</dd></dl></section>
+        </div>
+      </div>`;
+  }
+
+  function viewHospitalDoctor(id) {
+    const h = currentHospital();
+    const d = DOCTOR[id];
+    // A hospital can only open its own doctors.
+    if (!d || d.hospitalId !== h.id) return `<div class="narrow"><section class="card"><h1>Doctor not found</h1><p>This doctor is not part of ${esc(h.name)}.</p>
+      <div class="form-actions"><a class="btn btn-primary" href="#/hospital">Back to dashboard</a></div></section></div>`;
+    const names = patientNamesOf(d);
+    return `<p><a class="link" href="#/hospital">← Back to dashboard</a></p>
+      <div class="page-head"><div><p class="eyebrow">Doctor details · ${esc(h.short)}</p><h1>${esc(d.name)}</h1><p class="muted">${esc(d.spec)} · ${esc(h.name)}</p></div></div>
+      <div class="grid grid-2">
+        <section class="card" aria-labelledby="h-dd"><h2 id="h-dd">Details</h2>
+          <dl class="kv"><dt>Name</dt><dd>${esc(d.name)}</dd><dt>Speciality</dt><dd>${esc(d.spec)}</dd><dt>HPR ID</dt><dd>${esc(d.hprId)}</dd><dt>ABHA ID</dt><dd>${esc(d.abha)}</dd>
+          <dt>Hospital</dt><dd>${esc(h.name)}</dd><dt>Room</dt><dd>${esc(d.room)}</dd><dt>OPD days</dt><dd>${esc(d.opd)}</dd><dt>Phone</dt><dd>${esc(d.phone)}</dd>
+          <dt>Email</dt><dd>${esc(d.email)}</dd><dt>With hospital since</dt><dd>${d.joined}</dd></dl></section>
+        <section class="card" aria-labelledby="h-dp"><h2 id="h-dp">Patients (${names.length})</h2><p class="small muted">Names only.</p>
+          ${names.length ? `<ul class="list">${names.map((n) => `<li>${esc(n)}</li>`).join('')}</ul>` : empty('No patients assigned.')}</section>
+      </div>`;
+  }
+
+  function viewPatient() {
+    const p = currentPatient();
+    const active = p.meds.filter((m) => m.status === 'active');
+    const qr = p.qrToken
+      ? `<div class="qr-box"><div id="qr" role="img" aria-label="QR code containing your patient reference token"></div></div>
+         <p class="small muted">Token (also shown as text for doctors who type it in):</p><code class="token">${esc(p.qrToken)}</code>`
+      : '<div class="banner warn">No active QR token. Doctors cannot use a QR code to open your record until you generate a new one.</div>';
+    const sections = [['p-summary', 'Clinical summary'], ['p-profile', 'Profile'], ['p-meds', 'Medicines'], ['p-insurance', 'Insurance'], ['p-history', 'History'], ['p-qr', 'QR code'], ['p-reports', 'Reports'], ['p-log', 'Access log']];
+    return `<div class="page-head"><div><p class="eyebrow">Patient dashboard</p><h1>${esc(p.name)}</h1><p class="muted">ABHA ID ${esc(p.abha)} · your record travels with you to every hospital.</p></div></div>
+      <nav class="chips no-print" aria-label="Jump to section">${sections.map(([id, l]) => `<button class="chip" data-action="jump" data-target="${id}">${l}</button>`).join('')}</nav>
+      <h2 class="visually-hidden">Clinical summary</h2>
+      ${clinicalSummary(p, false)}
+      <div class="grid grid-2" style="margin-top:1.25rem">
+        <div class="stack">${profileCard(p)}${diagnosisCard(p)}${newMedsCard(active.filter(isNewMed))}${medsCard(active)}${insuranceCard(p)}${timelineCard(p)}</div>
+        <div class="stack">
+          <section class="card" id="p-qr" aria-labelledby="h-qr"><h2 id="h-qr">Your QR code</h2>
+            <p class="small muted">The code holds only a random reference token, never medical data. A doctor must sign in to use it, and gets 30 minutes of read-only access. Every use appears in your access log.</p>
+            ${qr}
+            <div class="form-actions"><button class="btn btn-primary" data-action="qr-regenerate">${p.qrToken ? 'Regenerate token' : 'Generate new token'}</button>
+            ${p.qrToken ? '<button class="btn btn-danger" data-action="qr-revoke">Revoke token</button>' : ''}</div>
+            <p class="small muted">Regenerating or revoking stops the old token working immediately.</p></section>
+          ${reportsCard(p, { owner: true })}
+          <section class="card" id="p-log" aria-labelledby="h-log"><h2 id="h-log">Access log</h2><p class="small muted">Every time a doctor opened your record.</p>
+            ${p.accessLog.length ? `<div class="table-wrap"><table><thead><tr><th>When</th><th>Doctor</th><th>Hospital</th><th>Method</th></tr></thead><tbody>
+            ${p.accessLog.map((l) => `<tr><td>${fmtDateTime(l.time)}</td><td>${esc(DOCTOR[l.doctorId].name)}</td><td>${esc(HOSPITALS[l.hospitalId].short)}</td><td>${esc(l.method)}${l.detail ? `<br><span class="small muted">${esc(l.detail)}</span>` : ''}</td></tr>`).join('')}</tbody></table></div>` : empty('No doctor has opened your record yet.')}</section>
+        </div></div>`;
+  }
+
+  function viewDoctor() {
+    const doc = currentDoctor();
+    const h = HOSPITALS[doc.hospitalId];
+    const mine = [...PATIENTS.values()].filter((p) => p.assigned.includes(doc.id));
+    const latest = new Map();
+    for (const g of grants) if (g.doctorId === doc.id && !PATIENTS.get(g.abha).assigned.includes(doc.id)) latest.set(g.abha, g);
+    const shared = [...latest.values()].sort((a, b) => b.expiresAt - a.expiresAt);
+    return `<div class="page-head"><div><p class="eyebrow">Doctor dashboard · ${esc(h.short)}</p><h1>${esc(doc.name)}</h1><p class="muted">${esc(doc.spec)} · ${esc(h.name)}</p></div></div>
+      <div class="grid grid-2">
+        <div class="stack">
+          <section class="card" aria-labelledby="h-mine"><h2 id="h-mine">My patients (${mine.length})</h2>
+            <label>Search my patients<input data-filter="mine" placeholder="Name, ABHA ID or diagnosis" autocomplete="off"></label>
+            <ul class="list" id="mine-list" style="margin-top:.75rem">${mine.map((p) => `<li data-search="${esc((p.name + ' ' + p.abha + ' ' + p.diagnosis).toLowerCase())}"><div class="row">
+              <div><p><strong>${esc(p.name)}</strong> · ${p.age} · ${esc(p.gender)}</p><p class="small muted">${esc(p.abha)} · ${esc(p.diagnosis)}</p></div>
+              <a class="btn btn-ghost btn-sm" href="#/doctor/patient/${esc(p.abha)}">Open<span class="visually-hidden"> ${esc(p.name)}</span></a></div></li>`).join('')}</ul>
+            <p class="empty" id="mine-empty" hidden>No patient matches that search.</p>
+            ${mine.length ? '' : empty('No patients assigned yet.')}</section>
+          <section class="card" aria-labelledby="h-shared"><h2 id="h-shared">Patients via QR / consent</h2>
+            <p class="small muted">Temporary, read-only access. It ends after 30 minutes unless you add a visit or prescription, which makes the patient yours.</p>
+            ${shared.length ? `<ul class="list">${shared.map((g) => { const p = PATIENTS.get(g.abha); const live = g.expiresAt > now(); return `<li><div class="row">
+              <div><p><strong>${esc(p.name)}</strong> <span class="tag">${esc(g.method)}</span></p>
+              <p class="small muted">${live ? `Expires ${fmtTime(g.expiresAt)} · <span data-countdown="${g.expiresAt}">${Math.ceil((g.expiresAt - now()) / MIN)} min left</span>` : `Expired at ${fmtTime(g.expiresAt)}`}</p></div>
+              ${live ? `<a class="btn btn-ghost btn-sm" href="#/doctor/patient/${esc(p.abha)}">Open<span class="visually-hidden"> ${esc(p.name)}</span></a>` : '<span class="tag">Expired</span>'}</div></li>`; }).join('')}</ul>` : empty('No temporary access right now.')}</section>
+          <details class="card"><summary>My hospital (read-only)</summary>
+            <dl class="kv"><dt>Name</dt><dd>${esc(h.name)}</dd><dt>Registration ID</dt><dd>${esc(h.regId)}</dd><dt>Address</dt><dd>${esc(h.address)}</dd><dt>Contact</dt><dd>${esc(h.contact)}</dd>
+            <dt>Departments</dt><dd>${h.departments.map(esc).join(', ')}</dd><dt>Beds</dt><dd>${h.beds}</dd></dl></details>
+        </div>
+        <div class="stack">
+          <section class="card" aria-labelledby="h-scan"><h2 id="h-scan">Scan QR / Enter token</h2><p class="small"><strong>Access is logged.</strong></p>
+            <form data-form="token" novalidate><label>Patient token<span class="hint">Type or paste the token printed under the patient's QR code</span><input name="token" autocomplete="off" placeholder="NSQR-…" required></label>
+            <p class="form-error" role="alert" hidden></p><div class="form-actions"><button class="btn btn-primary">Verify token</button></div></form></section>
+          <section class="card" aria-labelledby="h-consent"><h2 id="h-consent">Open with patient consent</h2>
+            <p class="small muted">The patient reads out the one-time code sent to their phone. Access is logged.</p>
+            <form data-form="consent" novalidate><label>Patient ABHA ID<input name="abha" inputmode="numeric" placeholder="XX-XXXX-XXXX-XXXX" autocomplete="off" required></label>
+            <label>Patient consent OTP<span class="hint">Demo OTP: ${DEMO_OTP}</span><input name="otp" inputmode="numeric" maxlength="6" autocomplete="off" required></label>
+            <p class="form-error" role="alert" hidden></p><div class="form-actions"><button class="btn btn-primary">Open record</button></div></form></section>
+          <section class="card" aria-labelledby="h-check"><h2 id="h-check">Check ABHA ID</h2>
+            <p class="small muted">Checks the format and whether the ID is registered. No medical data is shown.</p>
+            <form data-form="check" novalidate><label>ABHA ID<input name="abha" inputmode="numeric" placeholder="XX-XXXX-XXXX-XXXX" autocomplete="off" required></label>
+            <div class="form-actions"><button class="btn btn-ghost">Check</button></div></form><div id="check-result" aria-live="polite"></div></section>
+          <section class="card" aria-labelledby="h-elig"><h2 id="h-elig">Check insurance eligibility</h2>
+            <p class="small muted">Uses the same rules as the patient record. Checks for a patient are logged in their access log.</p>
+            <form data-form="elig" novalidate>${icdDatalist()}
+              <label>System<select name="system"><option value="ICD">ICD (modern medicine)</option><option value="AYUSH">AYUSH treatment</option></select></label>
+              <div data-for="AYUSH" hidden><label>AYUSH system<select name="ayushSystem">${INSURANCE_RULES.ayushSystems.map((s) => `<option>${esc(s)}</option>`).join('')}</select></label></div>
+              <label>ICD code or AYUSH treatment name<input name="code" list="icd-codes" placeholder="E11, N39.0 or Panchakarma" autocomplete="off" required></label>
+              <label>Patient (optional)<span class="hint">Only patients you can open: assigned, or via QR / consent</span><select name="patient"><option value="">No patient: check the rule only</option>
+                ${[...PATIENTS.values()].filter((p) => access(doc, p)).map((p) => `<option value="${esc(p.abha)}">${esc(p.name)} (${esc(p.abha)})</option>`).join('')}</select></label>
+              <p class="form-error" role="alert" hidden></p><div class="form-actions"><button class="btn btn-ghost">Check eligibility</button></div></form>
+            <div id="elig-result" aria-live="polite"></div></section>
+          <section class="card no-print" aria-labelledby="h-clock"><h2 id="h-clock">Demo clock</h2>
+            <p class="small muted">For reviewers: move time forward to see 30-minute access expire. ${clockOffset ? `Clock is ahead by ${Math.round(clockOffset / MIN)} min.` : 'Clock shows real time.'}</p>
+            <div class="form-actions"><button class="btn btn-ghost btn-sm" data-action="clock" data-min="31">Advance 31 minutes</button>${clockOffset ? '<button class="btn btn-ghost btn-sm" data-action="clock" data-min="0">Reset clock</button>' : ''}</div></section>
+        </div></div>`;
+  }
+
+  function noAccess(abha) {
+    const doc = currentDoctor();
+    const expired = grants.filter((g) => g.doctorId === doc.id && g.abha === abha).pop();
+    return `<div class="narrow"><section class="card"><h1>No access to this record</h1>
+      ${expired ? `<div class="banner warn">Your ${esc(expired.method)} access ended at ${fmtTime(expired.expiresAt)}.</div>` : ''}
+      <p>This patient is not assigned to you. To open their record, ask them to show their QR code or to share the consent OTP sent to their phone.</p>
+      <div class="form-actions"><a class="btn btn-primary" href="#/doctor">Back to dashboard</a></div></section></div>`;
+  }
+
+  function recordHead(p, doc, acc, tab) {
+    const banner = acc.kind === 'assigned'
+      ? `<div class="banner ok">Your patient. Seen by you at ${esc(HOSPITALS[doc.hospitalId].short)}.</div>`
+      : `<div class="banner warn">Temporary access via <strong>${esc(acc.grant.method)}</strong>: history and reports are read-only until <strong>${fmtTime(acc.grant.expiresAt)}</strong> (<span data-countdown="${acc.grant.expiresAt}">${Math.ceil((acc.grant.expiresAt - now()) / MIN)} min left</span>). This visit is logged. Adding a visit or prescription links this patient to you and ${esc(HOSPITALS[doc.hospitalId].short)}.</div>`;
+    const t = (id, label, href) => `<a class="tab" href="${href}"${tab === id ? ' aria-current="page"' : ''}>${label}</a>`;
+    return `<p class="no-print"><a class="link" href="#/doctor">← Back to dashboard</a></p>
+      <div class="page-head"><div><p class="eyebrow">Patient record</p><h1>${esc(p.name)}</h1><p class="muted">ABHA ID ${esc(p.abha)}</p></div>
+        <a class="btn btn-primary" href="#/doctor/report/${esc(p.abha)}">Generate Final Report</a></div>
+      ${banner}
+      <nav class="tabs no-print" aria-label="Patient record sections">${t('record', 'Record', `#/doctor/patient/${esc(p.abha)}`)}${t('summary', 'Clinical summary', `#/doctor/summary/${esc(p.abha)}`)}${t('insurance', 'Insurance', `#/doctor/insurance/${esc(p.abha)}`)}</nav>`;
+  }
+
+  function viewDoctorSummary(abha, ctx) {
+    const doc = currentDoctor();
+    const p = PATIENTS.get(abha);
+    const acc = access(doc, p);
+    if (!acc) return noAccess(abha);
+    if (ctx.nav) logAccess(p, doc, acc); // a deep link here is an access like opening the record
+    // Any doctor with access may set the AYUSH diagnosis; temporary access stays read-only for history.
+    return `${recordHead(p, doc, acc, 'summary')}${clinicalSummary(p, true, 'd-summary')}`;
+  }
+
+  function viewDoctorInsurance(abha, ctx) {
+    const doc = currentDoctor();
+    const p = PATIENTS.get(abha);
+    const acc = access(doc, p);
+    if (!acc) return noAccess(abha);
+    if (ctx.nav) logEligibility(p, doc, `Insurance tab: ${insuranceEntries(p).length} entries checked`);
+    return `${recordHead(p, doc, acc, 'insurance')}<div class="grid grid-2"><div class="stack">${insuranceCard(p, 'd-insurance')}</div>
+      <div class="stack">${diagnosisCard(p)}</div></div>`;
+  }
+
+  function viewDoctorPatient(abha, ctx) {
+    const doc = currentDoctor();
+    const p = PATIENTS.get(abha);
+    const acc = access(doc, p);
+    if (!acc) return noAccess(abha);
+    if (ctx.nav) logAccess(p, doc, acc);
+    const active = p.meds.filter((m) => m.status === 'active');
+    const warnings = medWarnings(p, active);
+    const assigned = acc.kind === 'assigned';
+    const brands = `<datalist id="brands">${Object.keys(CAT).map((b) => `<option value="${esc(b)}">`).join('')}</datalist>`;
+    return `${recordHead(p, doc, acc, 'record')}${icdDatalist()}
+      <div class="grid grid-2">
+        <div class="stack">${profileCard(p)}${diagnosisCard(p)}
+          ${warnings.length ? `<section class="card" aria-labelledby="h-warn"><h2 id="h-warn">Medicine warnings</h2><div class="banner warn" style="margin:0"><ul class="warn-list">${warnings.map((w) => `<li>${esc(w)}</li>`).join('')}</ul></div></section>` : ''}
+          ${newMedsCard(active.filter(isNewMed))}${medsCard(active, { stop: assigned, abha: p.abha })}${timelineCard(p)}</div>
+        <div class="stack">
+          <section class="card" aria-labelledby="h-note"><h2 id="h-note">Add visit, diagnosis, treatment or note</h2>
+            <form data-form="note" data-abha="${esc(p.abha)}" novalidate>
+              <label>Entry type<select name="kind"><option>Visit</option><option>Diagnosis</option><option>Treatment</option><option>Note</option></select></label>
+              <label>New diagnosis<span class="hint">Required for a diagnosis entry; replaces the current diagnosis</span><input name="diagnosis" autocomplete="off"></label>
+              <label>Notes<textarea name="text" required></textarea></label>
+              ${codingFields(p, { kind: 'note' })}
+              <p class="form-error" role="alert" hidden></p><div class="form-actions"><button class="btn btn-primary">Save entry</button></div></form></section>
+          <section class="card" aria-labelledby="h-rx"><h2 id="h-rx">Add prescription</h2>
+            <form data-form="prescribe" data-abha="${esc(p.abha)}" novalidate>${brands}
+              <label>Brand name<span class="hint">Pick from the list to fill in the salt automatically</span><input name="brand" list="brands" autocomplete="off" required></label>
+              <label>Salt / composition<span class="hint">e.g. Ibuprofen 400 mg + Paracetamol 325 mg</span><input name="salt" autocomplete="off" required></label>
+              <div class="row2"><label>Dose<input name="dose" placeholder="1 tablet" autocomplete="off" required></label>
+              <label>Frequency<input name="frequency" placeholder="Twice daily after food" autocomplete="off" required></label></div>
+              <label>Duration<input name="duration" placeholder="5 days" autocomplete="off" required></label>
+              <label>Side-effect notes<span class="hint">Only needed for brands not in the demo list</span><input name="senote" autocomplete="off"></label>
+              ${codingFields(p, { code: p.dxCode && p.dxCode.system === 'ICD' ? p.dxCode.code : '' })}
+              <div class="rx-warnings" aria-live="polite"></div>
+              <label class="rx-ack" hidden><input type="checkbox" name="ack"> I have reviewed these warnings and still want to prescribe</label>
+              <p class="form-error" role="alert" hidden></p><div class="form-actions"><button class="btn btn-primary">Save prescription</button></div></form></section>
+          ${reportsCard(p, { owner: false })}
+        </div></div>`;
+  }
+
+  function medTable(list, { stopped = false } = {}) {
+    if (!list.length) return empty(stopped ? 'No discontinued medicines.' : 'None.');
+    const head = stopped
+      ? '<tr><th>Brand</th><th>Salt / composition</th><th>Strength</th><th>Stopped on</th><th>Stopped by</th><th>Reason</th></tr>'
+      : '<tr><th>Brand</th><th>Salt / composition</th><th>Strength</th><th>Dose</th><th>Frequency</th><th>Duration</th><th>Side-effect notes</th><th>Prescribed at</th></tr>';
+    const seNote = (m) => (m.se ? [m.se.common && m.se.common.length ? 'Common: ' + m.se.common.join(', ') + '.' : '', m.se.serious && m.se.serious.length ? 'Serious: ' + m.se.serious.join(', ') + '.' : '', m.se.contact ? 'Contact doctor if ' + m.se.contact : ''].filter(Boolean).join(' ') : '—');
+    const rows = list.map((m) => (stopped
+      ? `<tr><td>${esc(m.brand)}</td><td>${esc(saltNames(m))}</td><td>${esc(strengths(m))}</td><td>${fmtDate(m.stoppedAt)}</td><td>${esc(DOCTOR[m.stoppedBy].name)}, ${esc(HOSPITALS[DOCTOR[m.stoppedBy].hospitalId].short)}</td><td>${esc(m.stopReason || '—')}</td></tr>`
+      : `<tr><td><strong>${esc(m.brand)}</strong></td><td>${esc(saltNames(m))}</td><td>${esc(strengths(m))}</td><td>${esc(m.dose)}</td><td>${esc(m.frequency)}</td><td>${esc(m.duration)}</td><td class="small">${esc(seNote(m))}</td><td class="small">${esc(DOCTOR[m.doctorId].name)}, ${esc(HOSPITALS[m.hospitalId].short)}, ${fmtDate(m.start)}</td></tr>`)).join('');
+    return `<div class="table-wrap"><table><thead>${head}</thead><tbody>${rows}</tbody></table></div>`;
+  }
+
+  function reportHtml(p, doc, issuedAt) {
+    const h = HOSPITALS[doc.hospitalId];
+    const active = p.meds.filter((m) => m.status === 'active');
+    const warnings = medWarnings(p, active);
+    return `<p class="eyebrow">Final report · demo, fictional data</p><h1>Final report: ${esc(p.name)}</h1><p class="muted">Issued ${fmtDateTime(issuedAt)} at ${esc(h.name)}</p>
+      <div class="report-grid">
+        <div><h2>Patient</h2><dl class="kv"><dt>Name</dt><dd>${esc(p.name)}</dd><dt>Age / gender</dt><dd>${p.age} / ${esc(p.gender)}</dd><dt>ABHA ID</dt><dd>${esc(p.abha)}</dd><dt>Blood group</dt><dd>${esc(p.blood)}</dd><dt>Allergies</dt><dd>${p.allergies.length ? p.allergies.map(esc).join(', ') : 'None recorded'}</dd></dl></div>
+        <div><h2>Issued by</h2><dl class="kv"><dt>Doctor</dt><dd>${esc(doc.name)}</dd><dt>Speciality</dt><dd>${esc(doc.spec)}</dd><dt>HPR ID</dt><dd>${esc(doc.hprId)}</dd><dt>Hospital</dt><dd>${esc(h.name)}</dd><dt>Registration ID</dt><dd>${esc(h.regId)}</dd><dt>Address</dt><dd>${esc(h.address)}</dd></dl></div>
+      </div>
+      <h2>Diagnosis</h2><p style="font-weight:650">${esc(p.diagnosis)}</p>
+      <h2>Medicine safety checks</h2>
+      ${warnings.length ? `<div class="banner warn"><ul class="warn-list">${warnings.map((w) => `<li>${esc(w)}</li>`).join('')}</ul></div>` : '<p>The demo checks found no duplicate salts and no conflicts with the listed allergies. This is not a full drug-interaction check.</p>'}
+      <h2>Current medicines</h2>${medTable(active)}
+      <h2>Newly added medicines (last 30 days)</h2>${medTable(active.filter(isNewMed))}
+      <h2>Discontinued medicines</h2>${medTable(p.meds.filter((m) => m.status === 'stopped'), { stopped: true })}
+      <h2>Insurance eligibility</h2>
+      ${p.policy ? `<p>${esc(p.policy.insurer)} · policy ${esc(p.policy.number)} · valid ${fmtDate(p.policy.validFrom)} to ${fmtDate(p.policy.validTo)} · ${policyStatusOn(p.policy, issuedAt)} on the report date</p>` : `<p><strong>${esc(INSURANCE_RULES.messages.noPolicy)}</strong></p>`}
+      ${insuranceEntries(p).length ? `<div class="table-wrap"><table><thead><tr><th>Date</th><th>Entry</th><th>System</th><th>ICD code / AYUSH treatment</th><th>Result</th></tr></thead><tbody>
+      ${insuranceEntries(p).map((e) => { const r = evaluateEligibility(e, { policy: p.policy, date: e.date }); return `<tr><td>${fmtDate(e.date)}</td><td>${esc(e.type)}: ${esc(e.title)}<br><span class="small muted">${esc(HOSPITALS[e.hospitalId].short)}</span></td>
+        <td>${e.system === 'AYUSH' ? `AYUSH (${esc(e.ayushSystem)})` : esc(icdEdition(e.code) || 'ICD')}</td><td>${esc(e.code || 'No code yet')}${e.system === 'ICD' && e.code ? `<br><span class="small muted">${esc(icdDescription(e.code) || 'unrecognised code')}</span>` : ''}</td>
+        <td>${badge(r)}<br><span class="small">${esc(r.reason)}</span></td></tr>`; }).join('')}</tbody></table></div>` : empty('No coded entries.')}
+      <p class="small muted">${esc(INSURANCE_RULES.note)}</p>
+      <p class="sig">Signature: ______________________ &nbsp; ${esc(doc.name)}, ${esc(h.name)}</p>
+      <p class="small muted">Demo only, not for real medical use. All data is fictional.</p>`;
+  }
+
+  function viewReport(abha, ctx) {
+    const doc = currentDoctor();
+    const p = PATIENTS.get(abha);
+    const acc = access(doc, p);
+    if (!acc) return noAccess(abha);
+    if (ctx.nav) logEligibility(p, doc, `Final report: ${insuranceEntries(p).length} entries checked`);
+    return `<div class="no-print"><p><a class="link" href="#/doctor/patient/${esc(p.abha)}">← Back to ${esc(p.name)}</a></p>
+      <div class="form-actions" style="margin:0 0 1.25rem"><button class="btn btn-primary" data-action="print">Print / Save as PDF</button>
+      ${acc.kind === 'assigned' ? `<button class="btn btn-ghost" data-action="save-final" data-abha="${esc(p.abha)}">Save to patient timeline</button>` : '<p class="small muted">To save the report to the timeline, first add a visit or prescription so the patient is linked to you.</p>'}</div></div>
+      <article class="card report" id="final-report">${reportHtml(p, doc, now())}</article>`;
+  }
+
+  function viewVerify(token) {
+    const p = [...PATIENTS.values()].find((x) => x.qrToken && x.qrToken === token.toUpperCase());
+    if (!p) return `<div class="narrow"><section class="card"><h1>Token not valid</h1><div class="banner err">This token does not work. The patient may have revoked it or generated a new one.</div>
+      <div class="form-actions"><a class="btn btn-primary" href="#/doctor">Back to dashboard</a></div></section></div>`;
+    return `<div class="narrow"><section class="card"><p class="eyebrow">QR token check</p><h1>Verify &amp; View History</h1>
+      <p>This token belongs to a registered patient. Opening it gives you <strong>30 minutes of read-only access</strong> to their history and reports.</p>
+      <p class="small"><strong>Access is logged</strong> and the patient can see it in their access log.</p>
+      <div class="form-actions"><button class="btn btn-primary" data-action="verify-token" data-token="${esc(token.toUpperCase())}">Verify &amp; View History</button><a class="btn btn-ghost" href="#/doctor">Cancel</a></div></section></div>`;
+  }
+
+  const notFound = () => `<div class="narrow"><section class="card"><h1>Page not found</h1><p><a class="link" href="${homeHash()}">Go back</a></p></section></div>`;
+
+  /* ---------- router: every view checks the signed-in role before it renders ---------- */
+  const ROUTES = [
+    { re: /^\/?$/, view: viewLanding },
+    { re: /^\/login\/(patient|doctor|hospital)$/, view: viewLogin },
+    { re: /^\/patient$/, role: 'patient', view: viewPatient },
+    { re: /^\/hospital$/, role: 'hospital', view: viewHospital },
+    { re: /^\/hospital\/doctor\/([A-Za-z0-9]+)$/, role: 'hospital', view: viewHospitalDoctor },
+    { re: /^\/doctor$/, role: 'doctor', view: viewDoctor },
+    { re: /^\/doctor\/patient\/([\d-]+)$/, role: 'doctor', view: viewDoctorPatient },
+    { re: /^\/doctor\/report\/([\d-]+)$/, role: 'doctor', view: viewReport },
+    { re: /^\/doctor\/insurance\/([\d-]+)$/, role: 'doctor', view: viewDoctorInsurance },
+    { re: /^\/doctor\/summary\/([\d-]+)$/, role: 'doctor', view: viewDoctorSummary },
+    { re: /^\/verify\/([A-Za-z0-9-]+)$/, role: 'doctor', keep: true, view: viewVerify },
+  ];
+
+  function flash(text, kind = 'ok') {
+    flashBox.innerHTML = `<div class="banner ${kind}">${esc(text)}</div>`;
+    flashBox.dataset.keep = '1'; // survive the next page change
+  }
+  function go(hash) {
+    if (location.hash === hash) render(true);
+    else location.hash = hash;
+  }
+  function render(nav = false) {
+    if (session && Date.now() - lastActivity > IDLE_LIMIT) return endSession(true);
+    let path;
+    try { path = decodeURIComponent((location.hash || '#/').slice(1)) || '/'; } catch { path = '/404'; }
+    let route = null, params = [];
+    for (const r of ROUTES) { const m = path.match(r.re); if (m) { route = r; params = m.slice(1); break; } }
+    if (route && route.role && (!session || session.role !== route.role)) {
+      if (route.keep) afterLogin = '#' + path;
+      flash(`Please sign in as a ${ROLE_LABEL[route.role].toLowerCase()} to open that page.`, 'warn');
+      history.replaceState(null, '', `#/login/${route.role}`);
+      return render(true);
+    }
+    if (nav && !flashBox.dataset.keep) flashBox.innerHTML = '';
+    delete flashBox.dataset.keep;
+    app.innerHTML = route ? route.view(...params, { nav }) : notFound();
+    renderSession();
+    if (route && route.view === viewPatient) drawQr(currentPatient());
+    hydrateSummary();
+    if (nav) {
+      window.scrollTo(0, 0);
+      const h1 = app.querySelector('h1');
+      if (h1) { h1.tabIndex = -1; h1.focus({ preventScroll: true }); }
+    }
+  }
+  function renderSession() {
+    const box = document.getElementById('session');
+    box.innerHTML = `${session ? `<span>Signed in: <strong>${esc(sessionName())}</strong> <span class="tag">${ROLE_LABEL[session.role]}</span></span>
+      <a class="btn btn-ghost btn-sm" href="${homeHash()}">Dashboard</a><button class="btn btn-ghost btn-sm" data-action="logout">Sign out</button>` : ''}
+      <button class="btn btn-ghost btn-sm" data-action="theme" aria-pressed="${theme === 'dark'}">${theme === 'dark' ? 'Light mode' : 'Dark mode'}</button>`;
+  }
+  function endSession(timedOut) {
+    const role = session && session.role;
+    session = null;
+    afterLogin = null;
+    if (timedOut) {
+      flash('Your session timed out after 10 minutes without activity. Please sign in again.', 'warn');
+      flashBox.dataset.keep = '1';
+      history.replaceState(null, '', role ? `#/login/${role}` : '#/');
+      render(true);
+    }
+  }
+  function drawQr(p) {
+    const el = document.getElementById('qr');
+    if (!el || !p || !p.qrToken) return;
+    if (typeof window.QRCode !== 'function') {
+      el.innerHTML = '<p class="small" style="color:#333">The QR library could not load (offline?). Share the token text below instead.</p>';
+      return;
+    }
+    new window.QRCode(el, { text: p.qrToken, width: 184, height: 184, colorDark: '#000000', colorLight: '#ffffff', correctLevel: window.QRCode.CorrectLevel.M });
+    el.removeAttribute('title');
+    el.querySelectorAll('img').forEach((img) => { img.alt = ''; }); // the wrapper carries role="img" and the label
+  }
+
+  /* ---------- form handlers ---------- */
+  function formError(form, msg, field) {
+    form.querySelectorAll('[aria-invalid]').forEach((x) => x.removeAttribute('aria-invalid'));
+    const box = form.querySelector('.form-error');
+    box.textContent = msg;
+    box.hidden = false;
+    if (field && form.elements[field]) { form.elements[field].setAttribute('aria-invalid', 'true'); form.elements[field].focus(); }
+  }
+  const val = (form, name) => String(form.elements[name].value || '').trim();
+  function doctorWithAccess(abha) {
+    const doc = currentDoctor();
+    const p = PATIENTS.get(abha);
+    const acc = access(doc, p);
+    if (!acc) {
+      flash(doc ? 'Your access to this record has ended.' : 'Please sign in as a doctor.', 'warn');
+      go(doc ? '#/doctor' : '#/login/doctor');
+      return null;
+    }
+    return { doc, p, acc };
+  }
+
+  const FORMS = {
+    login(form) {
+      const role = form.dataset.role;
+      const id = val(form, 'id'), secret = val(form, 'secret');
+      if (!id) return formError(form, 'Enter your ID.', 'id');
+      if (!secret) return formError(form, role === 'patient' ? 'Enter the OTP.' : 'Enter your password.', 'secret');
+      let next = null;
+      if (role === 'patient') {
+        const abha = normAbha(id);
+        if (!ABHA_RE.test(abha)) return formError(form, 'ABHA ID must look like 12-3456-7890-1234 (14 digits).', 'id');
+        if (!PATIENTS.has(abha)) return formError(form, 'No patient record uses this ABHA ID.', 'id');
+        if (secret !== DEMO_OTP) return formError(form, 'That OTP is incorrect.', 'secret');
+        next = { role, id: abha };
+      } else if (role === 'doctor') {
+        const d = DOCTORS.find((x) => x.hprId.toLowerCase() === id.toLowerCase() || x.abha === normAbha(id));
+        if (!d || d.password !== secret) return formError(form, 'The ID or password is incorrect.', 'id');
+        next = { role, id: d.id };
+      } else {
+        const h = Object.values(HOSPITALS).find((x) => x.regId.toLowerCase() === id.toLowerCase());
+        if (!h || h.password !== secret) return formError(form, 'The registration ID or password is incorrect.', 'id');
+        next = { role, id: h.id };
+      }
+      session = next;
+      lastActivity = Date.now();
+      const target = role === 'doctor' && afterLogin ? afterLogin : `#/${role}`;
+      afterLogin = null;
+      flash(`Signed in as ${sessionName()}.`);
+      flashBox.dataset.keep = '1';
+      go(target);
+    },
+    token(form) {
+      if (!currentDoctor()) return go('#/login/doctor');
+      const t = val(form, 'token').toUpperCase();
+      if (!t) return formError(form, 'Enter the token.', 'token');
+      if (!/^[A-Z0-9-]+$/.test(t)) return formError(form, 'A token contains only letters, numbers and dashes.', 'token');
+      go(`#/verify/${t}`);
+    },
+    consent(form) {
+      const doc = currentDoctor();
+      if (!doc) return go('#/login/doctor');
+      const abha = normAbha(val(form, 'abha'));
+      if (!ABHA_RE.test(abha)) return formError(form, 'ABHA ID must look like 12-3456-7890-1234 (14 digits).', 'abha');
+      const p = PATIENTS.get(abha);
+      if (!p) return formError(form, 'No patient record uses this ABHA ID.', 'abha');
+      if (val(form, 'otp') !== DEMO_OTP) return formError(form, 'The consent OTP is incorrect. Ask the patient to read it again.', 'otp');
+      if (!p.assigned.includes(doc.id)) grantAccess(doc, p, 'Consent OTP');
+      go(`#/doctor/patient/${abha}`);
+    },
+    check(form) {
+      if (!currentDoctor()) return go('#/login/doctor');
+      const out = document.getElementById('check-result');
+      const raw = val(form, 'abha');
+      const abha = normAbha(raw);
+      form.elements.abha.removeAttribute('aria-invalid');
+      if (!ABHA_RE.test(abha)) {
+        form.elements.abha.setAttribute('aria-invalid', 'true');
+        out.innerHTML = `<div class="banner err" style="margin-top:1rem">"${esc(raw || '(empty)')}" is not a valid ABHA ID. Use the format XX-XXXX-XXXX-XXXX (14 digits).</div>`;
+        return;
+      }
+      const p = PATIENTS.get(abha);
+      out.innerHTML = p
+        ? `<div class="banner ok" style="margin-top:1rem"><strong>${esc(abha)} is registered.</strong><br>Hospitals visited: ${hospitalsVisited(p).map((h) => esc(`${h.short} (${h.name})`)).join(', ')}.<br><span class="small">Medical details stay hidden until the patient gives consent or shares their QR token.</span></div>`
+        : `<div class="banner warn" style="margin-top:1rem">${esc(abha)} has a valid format but is not registered in this system.</div>`;
+    },
+    register(form) {
+      const h = currentHospital();
+      if (!h) return go('#/login/hospital');
+      const name = val(form, 'name').replace(/\s+/g, ' ');
+      const abha = normAbha(val(form, 'abha'));
+      const age = Number(val(form, 'age'));
+      const doc = DOCTOR[val(form, 'doctor')];
+      const dx = val(form, 'diagnosis');
+      const code = val(form, 'code').toUpperCase();
+      if (name.length < 2 || !/^[\p{L} .'-]+$/u.test(name)) return formError(form, 'Enter the patient\'s full name (letters only).', 'name');
+      if (!ABHA_RE.test(abha)) return formError(form, 'ABHA ID must look like 12-3456-7890-1234 (14 digits).', 'abha');
+      // ABHA IDs are portable: an existing record is never re-created or re-assigned from here.
+      if (PATIENTS.has(abha)) return formError(form, 'A record with this ABHA ID already exists. The patient can share a QR token or consent OTP with your doctor instead.', 'abha');
+      if (!val(form, 'age') || !Number.isInteger(age) || age < 0 || age > 120) return formError(form, 'Enter an age between 0 and 120.', 'age');
+      if (!val(form, 'gender')) return formError(form, 'Choose a gender.', 'gender');
+      if (!doc || doc.hospitalId !== h.id) return formError(form, 'Choose one of your hospital\'s doctors.', 'doctor');
+      if (!dx) return formError(form, 'Enter the diagnosis.', 'diagnosis');
+      if (code && !icdEdition(code)) return formError(form, icdFormatError(code), 'code');
+      const coding = code ? icd(code) : noCode();
+      PATIENTS.set(abha, {
+        abha, name, age, gender: val(form, 'gender'), blood: val(form, 'blood') || 'Not known',
+        allergies: val(form, 'allergies').split(',').map((s) => s.trim()).filter(Boolean),
+        diagnosis: dx, dxCode: { ...coding }, assigned: [doc.id], policy: null, meds: [], reports: [], accessLog: [], qrToken: randomToken(),
+        history: [{ id: uid('h'), date: now(), doctorId: doc.id, hospitalId: h.id, type: 'Diagnosis', title: `Registered with diagnosis: ${dx}`,
+          details: `Registered by the ${h.short} desk and assigned to ${doc.name}.`, ...coding }],
+      });
+      flash(`${name} is registered and assigned to ${doc.name}. They can sign in with ABHA ID ${abha} (demo OTP ${DEMO_OTP}).`);
+      render();
+      window.scrollTo(0, 0);
+    },
+    elig(form) {
+      const doc = currentDoctor();
+      if (!doc) return go('#/login/doctor');
+      const out = document.getElementById('elig-result');
+      out.innerHTML = '';
+      const sys = form.elements.system.value;
+      const raw = val(form, 'code');
+      if (!raw) return formError(form, sys === 'AYUSH' ? 'Enter the AYUSH treatment name.' : 'Enter an ICD code, for example E11 or N39.0.', 'code');
+      const code = sys === 'ICD' ? raw.toUpperCase() : raw;
+      if (sys === 'ICD' && !icdEdition(code)) return formError(form, icdFormatError(raw), 'code');
+      const entry = sys === 'AYUSH' ? { system: 'AYUSH', ayushSystem: form.elements.ayushSystem.value, code } : { system: 'ICD', code };
+      const abha = form.elements.patient.value;
+      let r, who = '';
+      if (abha) {
+        const p = PATIENTS.get(abha);
+        // Same rule as every other piece of medical data: assigned, or live QR / consent access.
+        if (!access(doc, p)) return formError(form, 'You can only check patients you are allowed to open (assigned, QR token or consent).', 'patient');
+        r = evaluateEligibility(entry, { policy: p.policy, date: now() });
+        logEligibility(p, doc, `Eligibility tool: ${resultText(r)}`);
+        who = `<p class="small">Patient: <strong>${esc(p.name)}</strong> · policy ${esc(r.policyStatus)} · this check is in their access log.</p>`;
+      } else {
+        r = evaluateEligibility(entry, { skipPolicy: true });
+      }
+      out.innerHTML = `<div style="margin-top:1rem">${eligBlock(r)}<p class="code-line">${esc(r.label)}</p>${abha ? who : `<p class="small">Policy: ${esc(r.policyStatus)}.</p>`}
+        <p class="small muted">${esc(INSURANCE_RULES.note)}</p></div>`;
+    },
+    note(form) {
+      const ctx = doctorWithAccess(form.dataset.abha);
+      if (!ctx) return;
+      const { doc, p } = ctx;
+      const kind = val(form, 'kind'), dx = val(form, 'diagnosis'), text = val(form, 'text');
+      if (kind === 'Diagnosis' && !dx) return formError(form, 'Enter the new diagnosis.', 'diagnosis');
+      if (!text) return formError(form, 'Add a short note.', 'text');
+      const coded = kind === 'Diagnosis' || kind === 'Treatment';
+      const read = coded ? readCoding(form) : { coding: {} };
+      if (read.error) return formError(form, read.error, read.field);
+      if (kind === 'Diagnosis') { p.diagnosis = dx; p.dxCode = { ...read.coding }; }
+      const title = kind === 'Diagnosis' ? `Diagnosis: ${dx}` : kind === 'Treatment' ? `Treatment: ${read.coding.code || 'not named'}` : kind === 'Visit' ? 'Visit' : 'Doctor note';
+      const entry = { id: uid('h'), date: now(), doctorId: doc.id, hospitalId: doc.hospitalId, type: kind, title, details: text, ...read.coding };
+      p.history.push(entry);
+      const linked = linkToDoctor(doc, p);
+      let elig = '';
+      if (coded) {
+        const r = checkInsuranceEligibility(p.abha, entry.id);
+        logEligibility(p, doc, resultText(r));
+        elig = ` Insurance: ${BADGE_TEXT[r.status][1]}.`;
+      }
+      flash(`Saved to ${p.name}'s history.${elig}${linked ? ` ${p.name} is now linked to you and ${HOSPITALS[doc.hospitalId].short}.` : ''}`);
+      render();
+      window.scrollTo(0, 0);
+    },
+    prescribe(form) {
+      const ctx = doctorWithAccess(form.dataset.abha);
+      if (!ctx) return;
+      const { doc, p } = ctx;
+      const brand = val(form, 'brand'), saltText = val(form, 'salt');
+      for (const [name, msg] of [['brand', 'Enter the brand name.'], ['salt', 'Enter the salt / composition.'], ['dose', 'Enter the dose.'], ['frequency', 'Enter how often.'], ['duration', 'Enter the duration.']]) {
+        if (!val(form, name)) return formError(form, msg, name);
+      }
+      const read = readCoding(form);
+      if (read.error) return formError(form, read.error, read.field);
+      const salts = parseSalts(saltText);
+      const warnings = prescriptionWarnings(p, salts);
+      if (warnings.length && !form.elements.ack.checked) return formError(form, 'Review the warnings above and tick the box to continue.', 'ack');
+      const key = catKey(brand);
+      const note = val(form, 'senote');
+      p.meds.push({ id: uid('m'), brand: key || brand, salts, dose: val(form, 'dose'), frequency: val(form, 'frequency'), duration: val(form, 'duration'),
+        start: now(), doctorId: doc.id, hospitalId: doc.hospitalId, status: 'active', isNew: true,
+        se: key ? CAT[key].se : note ? { common: [note], serious: [], contact: '' } : null, ...read.coding });
+      const entry = { id: uid('h'), date: now(), doctorId: doc.id, hospitalId: doc.hospitalId, type: 'Prescription', title: `${key || brand} prescribed`,
+        details: `${salts.map((s) => `${s.name} ${s.strength}`.trim()).join(' + ')}; ${val(form, 'dose')}, ${val(form, 'frequency')}, ${val(form, 'duration')}.${warnings.length ? ' Prescribed after reviewing: ' + warnings.join(' ') : ''}`, ...read.coding };
+      p.history.push(entry);
+      const linked = linkToDoctor(doc, p);
+      const r = checkInsuranceEligibility(p.abha, entry.id);
+      logEligibility(p, doc, resultText(r));
+      flash(`Prescription saved. Insurance: ${BADGE_TEXT[r.status][1]}.${linked ? ` ${p.name} is now linked to you and ${HOSPITALS[doc.hospitalId].short}.` : ''}`);
+      render();
+      window.scrollTo(0, 0);
+    },
+    upload(form) {
+      const p = currentPatient();
+      if (!p) return go('#/login/patient');
+      const file = form.elements.file.files[0];
+      const type = val(form, 'type'), date = val(form, 'date'), lab = val(form, 'lab');
+      if (!file) return formError(form, 'Choose a PDF or image file.', 'file');
+      if (!(file.type === 'application/pdf' || file.type.startsWith('image/'))) return formError(form, 'Only PDF or image files can be uploaded.', 'file');
+      if (file.size > MAX_UPLOAD) return formError(form, 'The file is larger than 5 MB.', 'file');
+      if (!type) return formError(form, 'Choose the report type.', 'type');
+      if (!date) return formError(form, 'Enter the report date.', 'date');
+      if (date > isoDay(Date.now())) return formError(form, 'The report date cannot be in the future.', 'date');
+      if (!lab) return formError(form, 'Enter the lab or hospital name.', 'lab');
+      const reader = new FileReader();
+      reader.onerror = () => formError(form, 'The file could not be read. Try another file.');
+      reader.onload = () => {
+        if (currentPatient() !== p) return;
+        const [y, m, d] = date.split('-').map(Number);
+        p.reports.push({ id: uid('r'), type, date: new Date(y, m - 1, d).getTime(), lab, fileName: file.name, mime: file.type, dataUrl: reader.result, uploadedBy: 'patient', uploadedAt: now() });
+        flash(`Uploaded "${file.name}".`);
+        render();
+        document.getElementById('p-reports').scrollIntoView();
+      };
+      reader.readAsDataURL(file);
+    },
+  };
+
+  /* ---------- click actions ---------- */
+  function reportFor(abha, id) {
+    // Patients reach only their own reports; doctors only with assignment or live QR / consent access.
+    const p = PATIENTS.get(abha);
+    if (!p) return null;
+    const allowed = (currentPatient() && currentPatient() === p) || access(currentDoctor(), p);
+    return allowed ? p.reports.find((r) => r.id === id) : null;
+  }
+  function openViewer(title, html) {
+    document.getElementById('viewer-title').textContent = title;
+    document.getElementById('viewer-body').innerHTML = html;
+    document.getElementById('viewer').showModal();
+  }
+  function dataUrlToBlobUrl(dataUrl) {
+    const [meta, data] = dataUrl.split(',');
+    const mime = meta.slice(5).split(';')[0];
+    const bytes = meta.includes(';base64') ? Uint8Array.from(atob(data), (c) => c.charCodeAt(0)) : new TextEncoder().encode(decodeURIComponent(data));
+    return URL.createObjectURL(new Blob([bytes], { type: mime }));
+  }
+
+  const ACTIONS = {
+    skip() { document.getElementById('main').focus(); },
+    theme() { theme = theme === 'dark' ? 'light' : 'dark'; document.documentElement.dataset.theme = theme; renderSession(); },
+    logout() { session = null; afterLogin = null; flash('You have signed out.'); flashBox.dataset.keep = '1'; go('#/'); },
+    fill(el) { prefill = { role: el.dataset.role, id: el.dataset.id, secret: el.dataset.secret }; go(`#/login/${el.dataset.role}`); },
+    jump(el) { const t = document.getElementById(el.dataset.target); if (t) { t.scrollIntoView(); t.tabIndex = -1; t.focus({ preventScroll: true }); } },
+    print() { window.print(); },
+    'cs-pick'(el) {
+      const ctx = doctorWithAccess(el.dataset.abha);
+      if (!ctx) return;
+      ctx.p.ayushDx = { code: el.dataset.code, display: el.dataset.display };
+      flash(`AYUSH diagnosis set to ${el.dataset.display} (${el.dataset.code}).`);
+      render();
+    },
+    'ins-more'(el) {
+      const box = el.closest('section');
+      const open = box.classList.toggle('ins-collapsed') === false;
+      el.setAttribute('aria-expanded', String(open));
+      el.textContent = open ? 'Show fewer' : `Show all ${box.querySelectorAll('tbody.ins-visit').length} visits`;
+    },
+    clock(el) {
+      if (!currentDoctor()) return;
+      clockOffset = Number(el.dataset.min) * MIN;
+      flash(clockOffset ? `Demo clock moved ${el.dataset.min} minutes ahead.` : 'Demo clock reset to real time.', 'info');
+      render();
+    },
+    'verify-token'(el) {
+      const doc = currentDoctor();
+      if (!doc) return go('#/login/doctor');
+      const p = [...PATIENTS.values()].find((x) => x.qrToken && x.qrToken === el.dataset.token);
+      if (!p) { flash('This token is no longer valid.', 'err'); return go('#/doctor'); }
+      if (!p.assigned.includes(doc.id)) grantAccess(doc, p, 'QR token');
+      go(`#/doctor/patient/${p.abha}`);
+    },
+    'qr-regenerate'() { const p = currentPatient(); if (!p) return; p.qrToken = randomToken(); flash('New token created. The old token no longer works.'); render(); },
+    'qr-revoke'() { const p = currentPatient(); if (!p) return; p.qrToken = null; flash('Token revoked. It no longer works.'); render(); },
+    'preview-report'(el) {
+      const r = reportFor(el.dataset.abha, el.dataset.id);
+      if (!r) return flash('You cannot open this report.', 'err');
+      if (viewerUrl) URL.revokeObjectURL(viewerUrl);
+      viewerUrl = dataUrlToBlobUrl(r.dataUrl);
+      const body = r.mime === 'application/pdf'
+        ? `<iframe src="${viewerUrl}" title="${esc(r.type)} (PDF)"></iframe><p class="small"><a href="${viewerUrl}" target="_blank" rel="noopener">Open the PDF in a new tab</a></p>`
+        : `<img src="${viewerUrl}" alt="${esc(r.type)} report from ${esc(r.lab)}, ${fmtDate(r.date)}">`;
+      openViewer(`${r.type} · ${fmtDate(r.date)}`, body);
+    },
+    'download-report'(el) {
+      const r = reportFor(el.dataset.abha, el.dataset.id);
+      if (!r) return flash('You cannot download this report.', 'err');
+      const a = document.createElement('a');
+      a.href = r.dataUrl;
+      a.download = r.fileName;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    },
+    'delete-report'(el) {
+      const p = currentPatient();
+      if (!p) return;
+      const r = p.reports.find((x) => x.id === el.dataset.id && x.uploadedBy === 'patient');
+      if (!r || !confirm(`Delete "${r.type}" (${r.fileName})? This cannot be undone.`)) return;
+      p.reports = p.reports.filter((x) => x !== r);
+      flash('Report deleted.');
+      render();
+    },
+    'stop-med'(el) {
+      const ctx = doctorWithAccess(el.dataset.abha);
+      if (!ctx || ctx.acc.kind !== 'assigned') return flash('Only an assigned doctor can stop a medicine.', 'err');
+      const m = ctx.p.meds.find((x) => x.id === el.dataset.id && x.status === 'active');
+      if (!m) return;
+      const reason = prompt(`Reason for stopping ${m.brand} (optional):`, '');
+      if (reason === null) return;
+      Object.assign(m, { status: 'stopped', stoppedAt: now(), stoppedBy: ctx.doc.id, stopReason: reason.trim() });
+      ctx.p.history.push({ id: uid('h'), date: now(), doctorId: ctx.doc.id, hospitalId: ctx.doc.hospitalId, type: 'Prescription', title: `${m.brand} stopped`, details: reason.trim() || 'Stopped by the doctor.' });
+      flash(`${m.brand} stopped.`);
+      render();
+    },
+    'save-final'(el) {
+      const ctx = doctorWithAccess(el.dataset.abha);
+      if (!ctx || ctx.acc.kind !== 'assigned') return flash('Link the patient to you before saving a final report.', 'err');
+      const { doc, p } = ctx;
+      const at = now();
+      p.history.push({ id: uid('h'), date: at, doctorId: doc.id, hospitalId: doc.hospitalId, type: 'Final report', title: `Final report issued by ${HOSPITALS[doc.hospitalId].short}`,
+        details: `Diagnosis: ${p.diagnosis}. ${p.meds.filter((m) => m.status === 'active').length} current medicines.`, snapshot: reportHtml(p, doc, at) });
+      flash('Final report saved to the patient timeline.');
+      render();
+    },
+    'view-final'(el) {
+      const p = PATIENTS.get(el.dataset.abha);
+      const allowed = p && ((currentPatient() && currentPatient() === p) || access(currentDoctor(), p));
+      const h = allowed && p.history.find((x) => x.id === el.dataset.id && x.snapshot);
+      if (!h) return flash('You cannot open this report.', 'err');
+      openViewer(h.title, `<div class="report">${h.snapshot}</div>`);
+    },
+    'close-viewer'() { document.getElementById('viewer').close(); },
+  };
+
+  // Shows the fields for the chosen system and refreshes the live eligibility badge.
+  function syncCoding(form, changed) {
+    const fs = form.querySelector('fieldset.coding');
+    if (form.elements.kind && fs) {
+      const kind = form.elements.kind.value;
+      fs.hidden = !(kind === 'Diagnosis' || kind === 'Treatment');
+      if (changed && changed.name === 'kind' && kind === 'Treatment') form.elements.system.value = 'AYUSH';
+    }
+    const sys = form.elements.system.value;
+    form.querySelectorAll('[data-for]').forEach((el) => { el.hidden = el.dataset.for !== sys; });
+    const live = form.querySelector('.elig-live');
+    const p = form.dataset.abha && PATIENTS.get(form.dataset.abha);
+    if (!live || !p) return;
+    const read = readCoding(form, { lenient: true });
+    live.innerHTML = read.error
+      ? `<div class="banner warn" style="margin:.5rem 0 0">${esc(read.error)}</div>`
+      : eligBlock(evaluateEligibility(read.coding, { policy: p.policy, date: now() }));
+  }
+
+  /* ---------- wiring ---------- */
+  // Activity resets the idle timer, unless the session has already timed out.
+  ['click', 'keydown', 'submit'].forEach((type) => document.addEventListener(type, (e) => {
+    if (session && Date.now() - lastActivity > IDLE_LIMIT) { e.preventDefault(); e.stopPropagation(); endSession(true); return; }
+    lastActivity = Date.now();
+  }, true));
+
+  document.addEventListener('click', (e) => {
+    const el = e.target.closest('[data-action]');
+    if (!el || !ACTIONS[el.dataset.action]) return;
+    e.preventDefault();
+    ACTIONS[el.dataset.action](el, e);
+  });
+  document.addEventListener('submit', (e) => {
+    const form = e.target.closest('form[data-form]');
+    if (!form || !FORMS[form.dataset.form]) return;
+    e.preventDefault();
+    const box = form.querySelector('.form-error');
+    if (box) box.hidden = true;
+    FORMS[form.dataset.form](form);
+  });
+  document.addEventListener('input', (e) => {
+    const t = e.target;
+    if (t.matches('[data-filter="mine"]')) {
+      const q = t.value.trim().toLowerCase();
+      let shown = 0;
+      document.querySelectorAll('#mine-list > li').forEach((li) => { const hit = li.dataset.search.includes(q); li.hidden = !hit; shown += hit; });
+      document.getElementById('mine-empty').hidden = shown > 0;
+    }
+    if (t.matches('[data-filter="hosp"]')) {
+      const q = t.value.trim().toLowerCase();
+      let shown = 0;
+      document.querySelectorAll('#hosp-rows > tr').forEach((tr) => { const hit = tr.dataset.search.includes(q); tr.hidden = !hit; shown += hit; });
+      document.getElementById('hosp-empty').hidden = shown > 0;
+    }
+    if (t.matches('[data-cs-search]')) {
+      const q = t.value.trim();
+      const out = t.closest('section').querySelector('.cs-results');
+      clearTimeout(t._timer);
+      if (q.length < 2) { out.innerHTML = ''; return; }
+      t._timer = setTimeout(() => {
+        api(`/search/autocomplete?q=${encodeURIComponent(q)}&limit=8`).then((res) => {
+          if (t.value.trim() !== q) return;
+          const hits = res.items.filter((s) => s.system.endsWith('namaste'));
+          out.innerHTML = hits.length
+            ? `<ul class="list">${hits.map((s) => `<li><button class="btn btn-ghost btn-sm" data-action="cs-pick" data-abha="${esc(t.dataset.csSearch)}" data-code="${esc(s.code)}" data-display="${esc(s.display)}">${esc(s.display)} <span class="mono">${esc(s.code)}</span>${s.devanagari ? ` ${esc(s.devanagari)}` : ''}</button></li>`).join('')}</ul>`
+            : '<p class="small muted">No NAMASTE term found.</p>';
+        }).catch(() => { out.innerHTML = '<p class="small muted">The NamaSetu API is not reachable.</p>'; });
+      }, 250);
+    }
+    const coded = t.closest('form');
+    if (coded && coded.elements.system) syncCoding(coded, t);
+    const form = t.closest('form[data-form="prescribe"]');
+    if (form) {
+      if (t.name === 'brand') {
+        const key = catKey(t.value);
+        if (key && (!form.elements.salt.value || form.elements.salt.dataset.auto)) {
+          form.elements.salt.value = CAT[key].salts.map(([n, s]) => `${n} ${s}`).join(' + ');
+          form.elements.salt.dataset.auto = '1';
+        }
+      }
+      if (t.name === 'salt') delete t.dataset.auto;
+      const p = PATIENTS.get(form.dataset.abha);
+      const salts = parseSalts(form.elements.salt.value);
+      const warnings = p && form.elements.salt.value.trim() ? prescriptionWarnings(p, salts) : [];
+      form.querySelector('.rx-warnings').innerHTML = warnings.length ? `<div class="banner warn" style="margin:1rem 0 0"><strong>Check before prescribing</strong><ul class="warn-list">${warnings.map((w) => `<li>${esc(w)}</li>`).join('')}</ul></div>` : '';
+      form.querySelector('.rx-ack').hidden = !warnings.length;
+      if (!warnings.length) form.elements.ack.checked = false;
+    }
+  });
+  document.getElementById('viewer').addEventListener('close', () => {
+    document.getElementById('viewer-body').innerHTML = '';
+    if (viewerUrl) { URL.revokeObjectURL(viewerUrl); viewerUrl = null; }
+  });
+
+  setInterval(() => {
+    if (session && Date.now() - lastActivity > IDLE_LIMIT) return endSession(true);
+    let expired = false;
+    document.querySelectorAll('[data-countdown]').forEach((el) => {
+      const left = Number(el.dataset.countdown) - now();
+      if (left <= 0) expired = true;
+      else el.textContent = `${Math.ceil(left / MIN)} min left`;
+    });
+    if (expired) render();
+  }, 15e3);
+
+  window.addEventListener('hashchange', () => render(true));
+  document.documentElement.dataset.theme = theme;
+  render(true);
+})();
+</script>
+</body>
+</html>

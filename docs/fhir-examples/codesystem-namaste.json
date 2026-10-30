@@ -1,0 +1,3185 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "namaste",
+  "url": "http://localhost:8000/fhir/CodeSystem/namaste",
+  "version": "SAMPLE-1",
+  "name": "NAMASTE",
+  "title": "NAMASTE — National Ayush Morbidity & Standardized Terminologies Electronic (SAMPLE)",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-10-30T12:04:01+00:00",
+  "publisher": "Team Byte Strong",
+  "description": "SAMPLE — illustrative, not official. Codes prefixed SAMPLE- are not real NAMASTE or WHO codes. Ayush diagnosis codes with IAST, Devanagari, English and Hinglish designations.",
+  "caseSensitive": true,
+  "hierarchyMeaning": "is-a",
+  "content": "complete",
+  "count": 64,
+  "property": [
+    {
+      "code": "parent",
+      "uri": "http://hl7.org/fhir/concept-properties#parent",
+      "type": "code",
+      "description": "Parent concept in the hierarchy"
+    },
+    {
+      "code": "entity-type",
+      "type": "string",
+      "description": "disorder | pattern | category"
+    },
+    {
+      "code": "discipline",
+      "type": "string",
+      "description": "ayurveda | siddha | unani | biomedicine"
+    }
+  ],
+  "concept": [
+    {
+      "code": "SAMPLE-AYU-0001",
+      "display": "Amavata",
+      "definition": "Disease in which vitiated vata carries ama to the joints, producing pain, swelling and stiffness.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Āmavāta"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "आमवात"
+        },
+        {
+          "language": "en",
+          "value": "Rheumatism with ama"
+        },
+        {
+          "language": "en",
+          "value": "rheumatism with ama"
+        },
+        {
+          "language": "en",
+          "value": "rheumatoid-like arthritis"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "aamvaat"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "amvaat"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "aamavaata"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G01"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0002",
+      "display": "Sandhivata",
+      "definition": "Vata disorder localised in the joints, with pain on movement and crepitus.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Sandhivāta"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "संधिवात"
+        },
+        {
+          "language": "en",
+          "value": "Degenerative joint disease"
+        },
+        {
+          "language": "en",
+          "value": "degenerative joint disease"
+        },
+        {
+          "language": "en",
+          "value": "joint vata"
+        },
+        {
+          "language": "sa-Latn",
+          "value": "Sandhigata Vāta"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "सन्धिवात"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "सन्धिगत वात"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "sandhivaat"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "sandhi vaat"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "sandhigat vaat"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G01"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0003",
+      "display": "Vatarakta",
+      "definition": "Disease of vitiated vata and rakta, beginning in the small joints of the feet.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Vātarakta"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "वातरक्त"
+        },
+        {
+          "language": "en",
+          "value": "Gout-like joint disease"
+        },
+        {
+          "language": "en",
+          "value": "gout-like joint disease"
+        },
+        {
+          "language": "sa-Latn",
+          "value": "Vātaśoṇita"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "वातशोणित"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "vaatrakt"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "vatrakt"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G01"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0004",
+      "display": "Gridhrasi",
+      "definition": "Pain radiating from the buttock along the back of the thigh and leg.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Gṛdhrasī"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "गृध्रसी"
+        },
+        {
+          "language": "en",
+          "value": "Sciatic pain"
+        },
+        {
+          "language": "en",
+          "value": "sciatic pain"
+        },
+        {
+          "language": "en",
+          "value": "sciatica-like pain"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "gridhrasi"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "gridhrasee"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "gradhrasi"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G01"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0005",
+      "display": "Katishula",
+      "definition": "Pain in the lumbar region.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Kaṭīśūla"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "कटीशूल"
+        },
+        {
+          "language": "en",
+          "value": "Low back pain"
+        },
+        {
+          "language": "en",
+          "value": "low back pain"
+        },
+        {
+          "language": "en",
+          "value": "lumbar pain"
+        },
+        {
+          "language": "en",
+          "value": "backache"
+        },
+        {
+          "language": "sa-Latn",
+          "value": "Kaṭigraha"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "कटिग्रह"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "kati shool"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "katishool"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "kamar dard"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G01"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0006",
+      "display": "Pakshaghata",
+      "definition": "Loss of function of one half of the body.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Pakṣāghāta"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "पक्षाघात"
+        },
+        {
+          "language": "en",
+          "value": "Hemiplegia"
+        },
+        {
+          "language": "en",
+          "value": "hemiplegia"
+        },
+        {
+          "language": "en",
+          "value": "paralysis of one side"
+        },
+        {
+          "language": "sa-Latn",
+          "value": "Pakṣavadha"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "पक्षवध"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "pakshaghaat"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "lakwa"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G01"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0007",
+      "display": "Ardita",
+      "definition": "Deviation of one half of the face.",
+      "designation": [
+        {
+          "language": "sa-Deva",
+          "value": "अर्दित"
+        },
+        {
+          "language": "en",
+          "value": "Facial palsy"
+        },
+        {
+          "language": "en",
+          "value": "facial palsy"
+        },
+        {
+          "language": "en",
+          "value": "facial paralysis"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "ardit"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "muh ka lakwa"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G01"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0008",
+      "display": "Manyastambha",
+      "definition": "Stiffness and restricted movement of the neck.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Manyāstambha"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "मन्यास्तम्भ"
+        },
+        {
+          "language": "en",
+          "value": "Neck stiffness"
+        },
+        {
+          "language": "en",
+          "value": "neck stiffness"
+        },
+        {
+          "language": "en",
+          "value": "stiff neck"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "manyastambh"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "gardan jakdan"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G01"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0009",
+      "display": "Amlapitta",
+      "definition": "Disorder of pitta with sour belching, heartburn and nausea.",
+      "designation": [
+        {
+          "language": "sa-Deva",
+          "value": "अम्लपित्त"
+        },
+        {
+          "language": "en",
+          "value": "Hyperacidity"
+        },
+        {
+          "language": "en",
+          "value": "hyperacidity"
+        },
+        {
+          "language": "en",
+          "value": "acid dyspepsia"
+        },
+        {
+          "language": "en",
+          "value": "heartburn"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "amlapitt"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "amla pitt"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "acidity"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G02"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0010",
+      "display": "Grahani",
+      "definition": "Disorder of the grahani with alternating loose and hard stools, due to weak agni.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Grahaṇī"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "ग्रहणी"
+        },
+        {
+          "language": "en",
+          "value": "Malabsorption disorder"
+        },
+        {
+          "language": "en",
+          "value": "malabsorption"
+        },
+        {
+          "language": "en",
+          "value": "irritable bowel"
+        },
+        {
+          "language": "sa-Latn",
+          "value": "Grahaṇī Roga"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "ग्रहणी रोग"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "grahni"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "sangrahani"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G02"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0011",
+      "display": "Atisara",
+      "definition": "Frequent passage of loose watery stools.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Atisāra"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "अतिसार"
+        },
+        {
+          "language": "en",
+          "value": "Diarrhoea"
+        },
+        {
+          "language": "en",
+          "value": "diarrhoea"
+        },
+        {
+          "language": "en",
+          "value": "diarrhea"
+        },
+        {
+          "language": "en",
+          "value": "loose stools"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "atisaar"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "dast"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G02"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0012",
+      "display": "Arsha",
+      "definition": "Fleshy growths in the anal canal that obstruct the passage.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Arśa"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "अर्श"
+        },
+        {
+          "language": "en",
+          "value": "Haemorrhoids"
+        },
+        {
+          "language": "en",
+          "value": "haemorrhoids"
+        },
+        {
+          "language": "en",
+          "value": "hemorrhoids"
+        },
+        {
+          "language": "en",
+          "value": "piles"
+        },
+        {
+          "language": "sa-Latn",
+          "value": "Arśas"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "अर्शस्"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "arsh"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "bawaseer"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "bavasir"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G02"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0013",
+      "display": "Ajirna",
+      "definition": "Incomplete digestion of ingested food.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Ajīrṇa"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "अजीर्ण"
+        },
+        {
+          "language": "en",
+          "value": "Indigestion"
+        },
+        {
+          "language": "en",
+          "value": "indigestion"
+        },
+        {
+          "language": "en",
+          "value": "dyspepsia"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "ajeern"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "ajirn"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "badhazmi"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G02"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0014",
+      "display": "Chhardi",
+      "definition": "Expulsion of stomach contents through the mouth.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Chardi"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "छर्दि"
+        },
+        {
+          "language": "en",
+          "value": "Vomiting"
+        },
+        {
+          "language": "en",
+          "value": "vomiting"
+        },
+        {
+          "language": "en",
+          "value": "emesis"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "chhardi"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "chardi"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "ulti"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G02"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0015",
+      "display": "Anaha",
+      "definition": "Distension of the abdomen with obstruction of faeces and flatus.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Ānāha"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "आनाह"
+        },
+        {
+          "language": "en",
+          "value": "Abdominal distension"
+        },
+        {
+          "language": "en",
+          "value": "abdominal distension"
+        },
+        {
+          "language": "en",
+          "value": "bloating with constipation"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "aanah"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "anaah"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "pet phoolna"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G02"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0016",
+      "display": "Krimi",
+      "definition": "Infestation by worms.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Kṛmi"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "कृमि"
+        },
+        {
+          "language": "en",
+          "value": "Worm infestation"
+        },
+        {
+          "language": "en",
+          "value": "worm infestation"
+        },
+        {
+          "language": "en",
+          "value": "helminthiasis"
+        },
+        {
+          "language": "sa-Latn",
+          "value": "Kṛmi Roga"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "कृमि रोग"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "krimi"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "kriminash"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "pet ke keede"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G02"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0017",
+      "display": "Kasa",
+      "definition": "Expulsion of air from the respiratory passage with a characteristic sound.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Kāsa"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "कास"
+        },
+        {
+          "language": "en",
+          "value": "Cough"
+        },
+        {
+          "language": "en",
+          "value": "cough"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "kaas"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "khansi"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G03"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0018",
+      "display": "Tamaka Shvasa",
+      "definition": "Episodic breathlessness with wheeze, worse at night and in cold weather.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Tamaka Śvāsa"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "तमक श्वास"
+        },
+        {
+          "language": "en",
+          "value": "Bronchial asthma-like breathlessness"
+        },
+        {
+          "language": "en",
+          "value": "bronchial asthma"
+        },
+        {
+          "language": "en",
+          "value": "wheezing breathlessness"
+        },
+        {
+          "language": "sa-Latn",
+          "value": "Tamakaśvāsa"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "तमकश्वास"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "tamak shwas"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "tamak swas"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "dama"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G03"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0019",
+      "display": "Pratishyaya",
+      "definition": "Nasal discharge with sneezing and heaviness of the head.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Pratiśyāya"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "प्रतिश्याय"
+        },
+        {
+          "language": "en",
+          "value": "Coryza"
+        },
+        {
+          "language": "en",
+          "value": "coryza"
+        },
+        {
+          "language": "en",
+          "value": "common cold"
+        },
+        {
+          "language": "en",
+          "value": "rhinitis"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "pratishyay"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "zukam"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "jukam"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G03"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0020",
+      "display": "Hikka",
+      "definition": "Repeated involuntary spasm of the diaphragm with a characteristic sound.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Hikkā"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "हिक्का"
+        },
+        {
+          "language": "en",
+          "value": "Hiccup"
+        },
+        {
+          "language": "en",
+          "value": "hiccup"
+        },
+        {
+          "language": "en",
+          "value": "hiccough"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "hikka"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "hichki"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G03"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0021",
+      "display": "Rajayakshma",
+      "definition": "Progressive wasting of the body tissues.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Rājayakṣmā"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "राजयक्ष्मा"
+        },
+        {
+          "language": "en",
+          "value": "Consumptive wasting disease"
+        },
+        {
+          "language": "en",
+          "value": "consumption"
+        },
+        {
+          "language": "en",
+          "value": "wasting disease"
+        },
+        {
+          "language": "sa-Latn",
+          "value": "Śoṣa"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "शोष"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "rajyakshma"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "rajayakshma"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "kshay rog"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G03"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0022",
+      "display": "Mutrakrichchhra",
+      "definition": "Painful and difficult urination.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Mūtrakṛcchra"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "मूत्रकृच्छ्र"
+        },
+        {
+          "language": "en",
+          "value": "Dysuria"
+        },
+        {
+          "language": "en",
+          "value": "dysuria"
+        },
+        {
+          "language": "en",
+          "value": "painful urination"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "mutrakrichh"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "mootrakrichha"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "peshab mein jalan"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G04"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0023",
+      "display": "Ashmari",
+      "definition": "Stone formation in the urinary tract.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Aśmarī"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "अश्मरी"
+        },
+        {
+          "language": "en",
+          "value": "Urinary calculus"
+        },
+        {
+          "language": "en",
+          "value": "urinary calculus"
+        },
+        {
+          "language": "en",
+          "value": "kidney stone"
+        },
+        {
+          "language": "en",
+          "value": "urolithiasis"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "ashmari"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "pathri"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G04"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0024",
+      "display": "Mutraghata",
+      "definition": "Obstruction to the flow of urine.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Mūtrāghāta"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "मूत्राघात"
+        },
+        {
+          "language": "en",
+          "value": "Urinary retention"
+        },
+        {
+          "language": "en",
+          "value": "urinary retention"
+        },
+        {
+          "language": "en",
+          "value": "urinary obstruction"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "mutraghat"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "mootraghaat"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G04"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0025",
+      "display": "Ekakushtha",
+      "definition": "Skin disease with large, dry, scaly patches resembling fish scales.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Ekakuṣṭha"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "एककुष्ठ"
+        },
+        {
+          "language": "en",
+          "value": "Psoriasis-like skin disease"
+        },
+        {
+          "language": "en",
+          "value": "psoriasis-like skin disease"
+        },
+        {
+          "language": "en",
+          "value": "scaly skin disease"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "ekkushth"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "ek kushtha"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G05"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0026",
+      "display": "Vicharchika",
+      "definition": "Itchy skin eruption with discharge and dark discolouration.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Vicarcikā"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "विचर्चिका"
+        },
+        {
+          "language": "en",
+          "value": "Eczema-like skin disease"
+        },
+        {
+          "language": "en",
+          "value": "eczema-like skin disease"
+        },
+        {
+          "language": "en",
+          "value": "weeping eczema"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "vicharchika"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "vicharchka"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G05"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0027",
+      "display": "Shvitra",
+      "definition": "White depigmented patches of the skin.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Śvitra"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "श्वित्र"
+        },
+        {
+          "language": "en",
+          "value": "Vitiligo-like depigmentation"
+        },
+        {
+          "language": "en",
+          "value": "vitiligo"
+        },
+        {
+          "language": "en",
+          "value": "leucoderma"
+        },
+        {
+          "language": "en",
+          "value": "white patches"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "shvitra"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "switra"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "safed daag"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G05"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0028",
+      "display": "Shitapitta",
+      "definition": "Sudden itchy wheals on the skin, often after exposure to cold wind.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Śītapitta"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "शीतपित्त"
+        },
+        {
+          "language": "en",
+          "value": "Urticaria"
+        },
+        {
+          "language": "en",
+          "value": "urticaria"
+        },
+        {
+          "language": "en",
+          "value": "hives"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "sheetpitt"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "shitpitta"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "pitti uchhalna"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G05"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0029",
+      "display": "Visarpa",
+      "definition": "Rapidly spreading inflammation of the skin.",
+      "designation": [
+        {
+          "language": "sa-Deva",
+          "value": "विसर्प"
+        },
+        {
+          "language": "en",
+          "value": "Spreading skin inflammation"
+        },
+        {
+          "language": "en",
+          "value": "erysipelas-like inflammation"
+        },
+        {
+          "language": "en",
+          "value": "spreading skin inflammation"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "visarp"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G05"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0030",
+      "display": "Pandu",
+      "definition": "Pallor of the skin with fatigue due to depletion of rakta.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Pāṇḍu"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "पाण्डु"
+        },
+        {
+          "language": "en",
+          "value": "Anaemia-like pallor"
+        },
+        {
+          "language": "en",
+          "value": "anaemia-like pallor"
+        },
+        {
+          "language": "en",
+          "value": "pallor"
+        },
+        {
+          "language": "sa-Latn",
+          "value": "Pāṇḍu Roga"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "पाण्डु रोग"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "paandu"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "pandu rog"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "khoon ki kami"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G06"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0031",
+      "display": "Kamala",
+      "definition": "Yellow discolouration of the eyes, skin and urine.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Kāmalā"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "कामला"
+        },
+        {
+          "language": "en",
+          "value": "Jaundice"
+        },
+        {
+          "language": "en",
+          "value": "jaundice"
+        },
+        {
+          "language": "en",
+          "value": "icterus"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "kaamla"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "piliya"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G06"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0032",
+      "display": "Raktapitta",
+      "definition": "Bleeding from the upper or lower passages due to vitiated pitta.",
+      "designation": [
+        {
+          "language": "sa-Deva",
+          "value": "रक्तपित्त"
+        },
+        {
+          "language": "en",
+          "value": "Bleeding disorder"
+        },
+        {
+          "language": "en",
+          "value": "bleeding disorder"
+        },
+        {
+          "language": "en",
+          "value": "haemorrhagic disorder"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "raktpitt"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "rakta pitta"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G06"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0033",
+      "display": "Unmada",
+      "definition": "Derangement of mind, intellect and behaviour.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Unmāda"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "उन्माद"
+        },
+        {
+          "language": "en",
+          "value": "Psychosis-like disorder"
+        },
+        {
+          "language": "en",
+          "value": "psychosis-like disorder"
+        },
+        {
+          "language": "en",
+          "value": "insanity"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "unmaad"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "unmad"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G07"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0034",
+      "display": "Apasmara",
+      "definition": "Episodic loss of consciousness with abnormal movements.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Apasmāra"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "अपस्मार"
+        },
+        {
+          "language": "en",
+          "value": "Epilepsy-like disorder"
+        },
+        {
+          "language": "en",
+          "value": "epilepsy-like disorder"
+        },
+        {
+          "language": "en",
+          "value": "seizures"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "apasmaar"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "mirgi"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G07"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0035",
+      "display": "Anidra",
+      "definition": "Inability to obtain adequate sleep.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Anidrā"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "अनिद्रा"
+        },
+        {
+          "language": "en",
+          "value": "Insomnia"
+        },
+        {
+          "language": "en",
+          "value": "insomnia"
+        },
+        {
+          "language": "en",
+          "value": "sleeplessness"
+        },
+        {
+          "language": "sa-Latn",
+          "value": "Nidrānāśa"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "निद्रानाश"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "anidraa"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "neend na aana"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G07"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0036",
+      "display": "Kashtartava",
+      "definition": "Painful menstruation.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Kaṣṭārtava"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "कष्टार्तव"
+        },
+        {
+          "language": "en",
+          "value": "Dysmenorrhoea"
+        },
+        {
+          "language": "en",
+          "value": "dysmenorrhoea"
+        },
+        {
+          "language": "en",
+          "value": "dysmenorrhea"
+        },
+        {
+          "language": "en",
+          "value": "painful periods"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "kashtartav"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "kasht artav"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G08"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0037",
+      "display": "Shvetapradara",
+      "definition": "White discharge per vaginum.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Śvetapradara"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "श्वेतप्रदर"
+        },
+        {
+          "language": "en",
+          "value": "Leucorrhoea"
+        },
+        {
+          "language": "en",
+          "value": "leucorrhoea"
+        },
+        {
+          "language": "en",
+          "value": "leukorrhea"
+        },
+        {
+          "language": "en",
+          "value": "white discharge"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "shwet pradar"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "safed pani"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G08"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0038",
+      "display": "Asrigdara",
+      "definition": "Excessive or prolonged menstrual bleeding.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Asṛgdara"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "असृग्दर"
+        },
+        {
+          "language": "en",
+          "value": "Menorrhagia"
+        },
+        {
+          "language": "en",
+          "value": "menorrhagia"
+        },
+        {
+          "language": "en",
+          "value": "heavy menstrual bleeding"
+        },
+        {
+          "language": "sa-Latn",
+          "value": "Raktapradara"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "रक्तप्रदर"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "asrigdar"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "rakt pradar"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G08"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0039",
+      "display": "Jvara",
+      "definition": "Raised body temperature with discomfort of body and mind.",
+      "designation": [
+        {
+          "language": "sa-Deva",
+          "value": "ज्वर"
+        },
+        {
+          "language": "en",
+          "value": "Fever"
+        },
+        {
+          "language": "en",
+          "value": "fever"
+        },
+        {
+          "language": "en",
+          "value": "pyrexia"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "jwar"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "jwara"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "bukhar"
+        }
+      ],
+      "property": [
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0040",
+      "display": "Vataja Jvara",
+      "definition": "Fever of vata type, with irregular onset, body ache and dryness.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Vātaja Jvara"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "वातज ज्वर"
+        },
+        {
+          "language": "en",
+          "value": "Vata-type fever"
+        },
+        {
+          "language": "en",
+          "value": "vata-type fever"
+        },
+        {
+          "language": "sa-Latn",
+          "value": "Vātajvara"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "वातज्वर"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "vaataj jwar"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "vatajwar"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-0039"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0041",
+      "display": "Pittaja Jvara",
+      "definition": "Fever of pitta type, with high temperature, burning and thirst.",
+      "designation": [
+        {
+          "language": "sa-Deva",
+          "value": "पित्तज ज्वर"
+        },
+        {
+          "language": "en",
+          "value": "Pitta-type fever"
+        },
+        {
+          "language": "en",
+          "value": "pitta-type fever"
+        },
+        {
+          "language": "sa-Latn",
+          "value": "Pittajvara"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "पित्तज्वर"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "pittaj jwar"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "pittajwar"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-0039"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0042",
+      "display": "Kaphaja Jvara",
+      "definition": "Fever of kapha type, with heaviness, mild temperature and loss of appetite.",
+      "designation": [
+        {
+          "language": "sa-Deva",
+          "value": "कफज ज्वर"
+        },
+        {
+          "language": "en",
+          "value": "Kapha-type fever"
+        },
+        {
+          "language": "en",
+          "value": "kapha-type fever"
+        },
+        {
+          "language": "sa-Latn",
+          "value": "Kaphajvara"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "कफज्वर"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "kaphaj jwar"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "kafaj jwar"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-0039"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0043",
+      "display": "Prameha",
+      "definition": "Group of disorders with excessive and turbid urination.",
+      "designation": [
+        {
+          "language": "sa-Deva",
+          "value": "प्रमेह"
+        },
+        {
+          "language": "en",
+          "value": "Polyuric disorder"
+        },
+        {
+          "language": "en",
+          "value": "polyuric disorder"
+        },
+        {
+          "language": "en",
+          "value": "urinary disorders"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "prameh"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "parmeh"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G09"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0044",
+      "display": "Madhumeha",
+      "definition": "Type of prameha in which the urine is sweet like honey.",
+      "designation": [
+        {
+          "language": "sa-Deva",
+          "value": "मधुमेह"
+        },
+        {
+          "language": "en",
+          "value": "Diabetes-like disorder"
+        },
+        {
+          "language": "en",
+          "value": "diabetes-like disorder"
+        },
+        {
+          "language": "en",
+          "value": "honey urine"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "madhumeh"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "sugar ki bimari"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-0043"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0045",
+      "display": "Sthaulya",
+      "definition": "Excessive accumulation of meda (fat) in the body.",
+      "designation": [
+        {
+          "language": "sa-Deva",
+          "value": "स्थौल्य"
+        },
+        {
+          "language": "en",
+          "value": "Obesity"
+        },
+        {
+          "language": "en",
+          "value": "obesity"
+        },
+        {
+          "language": "en",
+          "value": "overweight"
+        },
+        {
+          "language": "sa-Latn",
+          "value": "Medoroga"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "मेदोरोग"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "sthoulya"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "motapa"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G09"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0046",
+      "display": "Galaganda",
+      "definition": "Swelling in the front of the neck.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Galagaṇḍa"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "गलगण्ड"
+        },
+        {
+          "language": "en",
+          "value": "Goitre"
+        },
+        {
+          "language": "en",
+          "value": "goitre"
+        },
+        {
+          "language": "en",
+          "value": "goiter"
+        },
+        {
+          "language": "en",
+          "value": "neck swelling"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "galgand"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "ghenga"
+        }
+      ],
+      "property": [
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0047",
+      "display": "Shirahshula",
+      "definition": "Pain in the head.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Śiraḥśūla"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "शिरःशूल"
+        },
+        {
+          "language": "en",
+          "value": "Headache"
+        },
+        {
+          "language": "en",
+          "value": "headache"
+        },
+        {
+          "language": "en",
+          "value": "cephalalgia"
+        },
+        {
+          "language": "sa-Latn",
+          "value": "Śiroruk"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "शिरोरुक्"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "shirshool"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "sir dard"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G11"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-0048",
+      "display": "Ardhavabhedaka",
+      "definition": "Paroxysmal pain in one half of the head.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Ardhāvabhedaka"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "अर्धावभेदक"
+        },
+        {
+          "language": "en",
+          "value": "Migraine-like hemicrania"
+        },
+        {
+          "language": "en",
+          "value": "migraine-like hemicrania"
+        },
+        {
+          "language": "en",
+          "value": "one-sided headache"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "ardhavbhedak"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "aadhasisi"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G11"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "disorder"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-G01",
+      "display": "Vatavyadhi",
+      "definition": "Group of disorders caused predominantly by vitiated vata.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Vātavyādhi"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "वातव्याधि"
+        },
+        {
+          "language": "en",
+          "value": "Disorders of vata"
+        }
+      ],
+      "property": [
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-G02",
+      "display": "Mahasrotovikara",
+      "definition": "Group of disorders of the gastrointestinal channel.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Mahāsrotovikāra"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "महास्रोतोविकार"
+        },
+        {
+          "language": "en",
+          "value": "Digestive channel disorders"
+        }
+      ],
+      "property": [
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-G03",
+      "display": "Pranavahasrotovikara",
+      "definition": "Group of disorders of the respiratory channel.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Prāṇavahasrotovikāra"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "प्राणवहस्रोतोविकार"
+        },
+        {
+          "language": "en",
+          "value": "Respiratory channel disorders"
+        }
+      ],
+      "property": [
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-G04",
+      "display": "Mutravahasrotovikara",
+      "definition": "Group of disorders of the urinary channel.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Mūtravahasrotovikāra"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "मूत्रवहस्रोतोविकार"
+        },
+        {
+          "language": "en",
+          "value": "Urinary channel disorders"
+        }
+      ],
+      "property": [
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-G05",
+      "display": "Tvagvikara",
+      "definition": "Group of disorders of the skin.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Tvagvikāra"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "त्वग्विकार"
+        },
+        {
+          "language": "en",
+          "value": "Skin disorders"
+        }
+      ],
+      "property": [
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-G06",
+      "display": "Raktavahasrotovikara",
+      "definition": "Group of disorders of the blood-carrying channel.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Raktavahasrotovikāra"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "रक्तवहस्रोतोविकार"
+        },
+        {
+          "language": "en",
+          "value": "Blood channel disorders"
+        }
+      ],
+      "property": [
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-G07",
+      "display": "Manovahasrotovikara",
+      "definition": "Group of disorders of the mind-carrying channel.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Manovahasrotovikāra"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "मनोवहस्रोतोविकार"
+        },
+        {
+          "language": "en",
+          "value": "Mental disorders"
+        }
+      ],
+      "property": [
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-G08",
+      "display": "Artavavahasrotovikara",
+      "definition": "Group of disorders of the menstrual channel.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Ārtavavahasrotovikāra"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "आर्तववहस्रोतोविकार"
+        },
+        {
+          "language": "en",
+          "value": "Menstrual disorders"
+        }
+      ],
+      "property": [
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-G09",
+      "display": "Medovahasrotovikara",
+      "definition": "Group of disorders of the fat-carrying channel.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Medovahasrotovikāra"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "मेदोवहस्रोतोविकार"
+        },
+        {
+          "language": "en",
+          "value": "Metabolic disorders"
+        }
+      ],
+      "property": [
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-G10",
+      "display": "Doshavikriti",
+      "definition": "Group of patterns of dosha imbalance.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Doṣavikṛti"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "दोषविकृति"
+        },
+        {
+          "language": "en",
+          "value": "Dosha imbalance patterns"
+        }
+      ],
+      "property": [
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-G11",
+      "display": "Shiroroga",
+      "definition": "Group of disorders of the head.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Śiroroga"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "शिरोरोग"
+        },
+        {
+          "language": "en",
+          "value": "Head disorders"
+        }
+      ],
+      "property": [
+        {
+          "code": "entity-type",
+          "valueString": "category"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-P01",
+      "display": "Vatavriddhi",
+      "definition": "Pattern of increased vata, with dryness, roughness, pain and constipation.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Vātavṛddhi"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "वातवृद्धि"
+        },
+        {
+          "language": "en",
+          "value": "Aggravated vata pattern"
+        },
+        {
+          "language": "en",
+          "value": "aggravated vata"
+        },
+        {
+          "language": "en",
+          "value": "increased vata"
+        },
+        {
+          "language": "sa-Latn",
+          "value": "Vātaprakopa"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "वातप्रकोप"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "vaat vriddhi"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "vat prakop"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G10"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "pattern"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-P02",
+      "display": "Pittavriddhi",
+      "definition": "Pattern of increased pitta, with burning, yellowish discolouration and thirst.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Pittavṛddhi"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "पित्तवृद्धि"
+        },
+        {
+          "language": "en",
+          "value": "Aggravated pitta pattern"
+        },
+        {
+          "language": "en",
+          "value": "aggravated pitta"
+        },
+        {
+          "language": "en",
+          "value": "increased pitta"
+        },
+        {
+          "language": "sa-Latn",
+          "value": "Pittaprakopa"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "पित्तप्रकोप"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "pitt vriddhi"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "pitt prakop"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G10"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "pattern"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-P03",
+      "display": "Kaphavriddhi",
+      "definition": "Pattern of increased kapha, with heaviness, lethargy and excess mucus.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Kaphavṛddhi"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "कफवृद्धि"
+        },
+        {
+          "language": "en",
+          "value": "Aggravated kapha pattern"
+        },
+        {
+          "language": "en",
+          "value": "aggravated kapha"
+        },
+        {
+          "language": "en",
+          "value": "increased kapha"
+        },
+        {
+          "language": "sa-Latn",
+          "value": "Kaphaprakopa"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "कफप्रकोप"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "kaf vriddhi"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "kapha prakop"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G10"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "pattern"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-P04",
+      "display": "Sama Dosha",
+      "definition": "Pattern in which the doshas are associated with ama, with heaviness, coated tongue and anorexia.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Sāma Doṣa"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "साम दोष"
+        },
+        {
+          "language": "en",
+          "value": "Dosha with ama pattern"
+        },
+        {
+          "language": "en",
+          "value": "dosha with ama"
+        },
+        {
+          "language": "en",
+          "value": "ama state"
+        },
+        {
+          "language": "sa-Latn",
+          "value": "Sāmāvasthā"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "सामावस्था"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "saam dosh"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "sama dosh"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G10"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "pattern"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    },
+    {
+      "code": "SAMPLE-AYU-P05",
+      "display": "Agnimandya",
+      "definition": "Pattern of diminished digestive fire, with poor appetite and slow digestion.",
+      "designation": [
+        {
+          "language": "sa-Latn",
+          "value": "Agnimāndya"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "अग्निमान्द्य"
+        },
+        {
+          "language": "en",
+          "value": "Diminished digestive fire pattern"
+        },
+        {
+          "language": "en",
+          "value": "diminished digestive fire"
+        },
+        {
+          "language": "en",
+          "value": "poor digestion"
+        },
+        {
+          "language": "en",
+          "value": "low appetite"
+        },
+        {
+          "language": "sa-Latn",
+          "value": "Mandāgni"
+        },
+        {
+          "language": "sa-Deva",
+          "value": "मन्दाग्नि"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "agnimandya"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "mandagni"
+        },
+        {
+          "language": "hi-Latn",
+          "value": "bhookh na lagna"
+        }
+      ],
+      "property": [
+        {
+          "code": "parent",
+          "valueCode": "SAMPLE-AYU-G10"
+        },
+        {
+          "code": "entity-type",
+          "valueString": "pattern"
+        },
+        {
+          "code": "discipline",
+          "valueString": "ayurveda"
+        }
+      ]
+    }
+  ],
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>CodeSystem: NAMASTE — National Ayush Morbidity &amp; Standardized Terminologies Electronic (SAMPLE)</p></div>"
+  }
+}

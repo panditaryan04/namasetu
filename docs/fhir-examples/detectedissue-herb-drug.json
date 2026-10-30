@@ -1,0 +1,42 @@
+{
+  "resourceType": "DetectedIssue",
+  "id": "alert-1",
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "DRG",
+        "display": "Drug Interaction Alert"
+      }
+    ],
+    "text": "herb-drug: Curcumin × Glimepiride"
+  },
+  "severity": "moderate",
+  "patient": {
+    "reference": "Patient/test-patient-01"
+  },
+  "identifiedDateTime": "2026-10-30T12:04:01+00:00",
+  "implicated": [
+    {
+      "reference": "Medication/SAMPLE-MED-A008"
+    },
+    {
+      "display": "Glimepiride 1 mg tablet (Amaryl 1 OD)"
+    }
+  ],
+  "evidence": [
+    {
+      "detail": [
+        {
+          "display": "Herb–drug interaction review (SAMPLE transcription; verify against source) | interactions@SAMPLE-1 (row source SAMPLE-1)"
+        }
+      ]
+    }
+  ],
+  "detail": "Additive blood-glucose lowering reported in experimental studies. Path: Nisha Amalaki Churna → contains herb Haridra → constituent Curcumin × Glimepiride 1 mg tablet (Amaryl 1 OD) → salt Glimepiride. Evidence level: theoretical.",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>DetectedIssue: alert-1</p></div>"
+  }
+}

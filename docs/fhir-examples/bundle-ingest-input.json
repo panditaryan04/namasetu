@@ -1,0 +1,44 @@
+{
+  "resourceType": "Bundle",
+  "id": "example-encounter-problem-list",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "http://localhost:8000/fhir/Patient/test-patient-1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "test-patient-1",
+        "identifier": [
+          {
+            "system": "https://healthid.ndhm.gov.in",
+            "value": "91-TEST-0000-0001"
+          }
+        ],
+        "name": [
+          {
+            "text": "Test Patient (SYNTHETIC)"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://localhost:8000/fhir/Condition/problem-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "problem-1",
+        "code": {
+          "coding": [
+            {
+              "system": "http://localhost:8000/fhir/CodeSystem/namaste",
+              "code": "SAMPLE-AYU-0009",
+              "display": "Amlapitta"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/test-patient-1"
+        }
+      }
+    }
+  ]
+}

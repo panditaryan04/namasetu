@@ -1,0 +1,75 @@
+{
+  "resourceType": "Provenance",
+  "id": "16130ffaee9f406c9467ee629440a514",
+  "target": [
+    {
+      "reference": "Condition/ec5b7f9bade34842a3880585aec9c023"
+    }
+  ],
+  "recorded": "2026-10-30T12:04:01+00:00",
+  "activity": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-DataOperation",
+        "code": "CREATE"
+      }
+    ],
+    "text": "build"
+  },
+  "agent": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+            "code": "author"
+          }
+        ]
+      },
+      "who": {
+        "display": "clinician"
+      }
+    }
+  ],
+  "entity": [
+    {
+      "role": "source",
+      "what": {
+        "display": "Mapping/1"
+      }
+    },
+    {
+      "role": "source",
+      "what": {
+        "display": "namaste@SAMPLE-1"
+      }
+    },
+    {
+      "role": "source",
+      "what": {
+        "display": "icd11@SAMPLE-1"
+      }
+    },
+    {
+      "role": "source",
+      "what": {
+        "display": "synonyms@SAMPLE-1"
+      }
+    }
+  ],
+  "reason": [
+    {
+      "text": "purpose-of-use TREAT",
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+          "code": "TREAT"
+        }
+      ]
+    }
+  ],
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Provenance (build) for Condition/ec5b7f9bade34842a3880585aec9c023</p></div>"
+  }
+}

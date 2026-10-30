@@ -1,0 +1,151 @@
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "name",
+      "valueString": "NAMASTE"
+    },
+    {
+      "name": "version",
+      "valueString": "SAMPLE-1"
+    },
+    {
+      "name": "display",
+      "valueString": "Amavata"
+    },
+    {
+      "name": "definition",
+      "valueString": "Disease in which vitiated vata carries ama to the joints, producing pain, swelling and stiffness."
+    },
+    {
+      "name": "designation",
+      "part": [
+        {
+          "name": "language",
+          "valueCode": "sa-Latn"
+        },
+        {
+          "name": "value",
+          "valueString": "Āmavāta"
+        }
+      ]
+    },
+    {
+      "name": "designation",
+      "part": [
+        {
+          "name": "language",
+          "valueCode": "sa-Deva"
+        },
+        {
+          "name": "value",
+          "valueString": "आमवात"
+        }
+      ]
+    },
+    {
+      "name": "designation",
+      "part": [
+        {
+          "name": "language",
+          "valueCode": "en"
+        },
+        {
+          "name": "value",
+          "valueString": "Rheumatism with ama"
+        }
+      ]
+    },
+    {
+      "name": "designation",
+      "part": [
+        {
+          "name": "language",
+          "valueCode": "en"
+        },
+        {
+          "name": "value",
+          "valueString": "rheumatism with ama"
+        }
+      ]
+    },
+    {
+      "name": "designation",
+      "part": [
+        {
+          "name": "language",
+          "valueCode": "en"
+        },
+        {
+          "name": "value",
+          "valueString": "rheumatoid-like arthritis"
+        }
+      ]
+    },
+    {
+      "name": "designation",
+      "part": [
+        {
+          "name": "language",
+          "valueCode": "hi-Latn"
+        },
+        {
+          "name": "value",
+          "valueString": "aamvaat"
+        }
+      ]
+    },
+    {
+      "name": "designation",
+      "part": [
+        {
+          "name": "language",
+          "valueCode": "hi-Latn"
+        },
+        {
+          "name": "value",
+          "valueString": "amvaat"
+        }
+      ]
+    },
+    {
+      "name": "designation",
+      "part": [
+        {
+          "name": "language",
+          "valueCode": "hi-Latn"
+        },
+        {
+          "name": "value",
+          "valueString": "aamavaata"
+        }
+      ]
+    },
+    {
+      "name": "property",
+      "part": [
+        {
+          "name": "code",
+          "valueCode": "parent"
+        },
+        {
+          "name": "value",
+          "valueCode": "SAMPLE-AYU-G01"
+        }
+      ]
+    },
+    {
+      "name": "property",
+      "part": [
+        {
+          "name": "code",
+          "valueCode": "entity-type"
+        },
+        {
+          "name": "value",
+          "valueString": "disorder"
+        }
+      ]
+    }
+  ]
+}

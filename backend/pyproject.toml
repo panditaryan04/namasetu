@@ -1,0 +1,52 @@
+[project]
+name = "namasetu-backend"
+version = "0.1.0"
+requires-python = ">=3.11"
+
+[tool.black]
+line-length = 110
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "BLE", "S", "SIM", "RUF"]
+ignore = [
+    "S101",  # asserts are fine in tests
+    "RUF001",  # "×" and "→" are intentional in clinical path strings
+]
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/*" = ["S113"]
+"tests/*" = ["S105", "S106", "S603", "S608"]
+"tests/conftest.py" = ["E402"]
+"app/eval/report.py" = ["E501"]  # Markdown template strings
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+plugins = ["pydantic.mypy"]
+exclude = ["data/", "build/"]
+
+[[tool.mypy.overrides]]
+module = ["celery.*", "reportlab.*", "openpyxl.*", "sklearn.*", "scipy.*", "indic_transliteration.*", "faiss.*", "sentence_transformers.*"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["app.workflow.exports"]
+disallow_untyped_calls = false  # ReportLab ships no type hints
+
+[[tool.mypy.overrides]]
+module = ["app.workers.*"]
+disallow_untyped_decorators = false  # Celery ships no type hints
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = ["integration: needs external services (Postgres)"]
+filterwarnings = [
+    "ignore:The anyio.abc.BlockingPortal alias is deprecated:DeprecationWarning",
+    "ignore:ast.NameConstant is deprecated:DeprecationWarning:reportlab",
+]
