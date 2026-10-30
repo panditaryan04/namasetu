@@ -11,13 +11,11 @@ const MappingResult = lazy(() => import("./pages/MappingResult"));
 const MedicationSearch = lazy(() => import("./pages/MedicationSearch"));
 const SaltDetail = lazy(() => import("./pages/SaltDetail"));
 const Crosswalk = lazy(() => import("./pages/Crosswalk"));
-const ClinicalSummary = lazy(() => import("./pages/ClinicalSummary"));
 const ConditionBuilder = lazy(() => import("./pages/ConditionBuilder")); // opened from a Search result
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const navItems: { to: string; label: string; end?: boolean; permission: string }[] = [
   { to: "/", label: "Search", end: true, permission: "read" },
-  { to: "/summary", label: "Clinical summary", permission: "patient" },
   { to: "/medicines", label: "Medicines", permission: "read" },
   { to: "/crosswalk", label: "Mapping", permission: "read" },
 ];
@@ -134,9 +132,6 @@ export default function App() {
           <Route path="medicines" element={<MedicationSearch />} />
           <Route path="salts/:id" element={<SaltDetail />} />
           <Route path="crosswalk" element={<Crosswalk />} />
-        </Route>
-        <Route element={<RequireSession permission="patient" />}>
-          <Route path="summary" element={<ClinicalSummary />} />
         </Route>
         <Route element={<RequireSession permission="build_condition" />}>
           <Route path="condition" element={<ConditionBuilder />} />

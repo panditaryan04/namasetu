@@ -97,14 +97,13 @@ describe("App shell", () => {
     expect(urls.some((u) => u.endsWith("/auth/login"))).toBe(true);
   });
 
-  it("shows only Search, Clinical summary, Medicines, Mapping and a Login link to the Care portal", async () => {
+  it("shows only Search, Medicines, Mapping and a Login link to the Care portal", async () => {
     vi.spyOn(globalThis, "fetch").mockResolvedValue(new Response(JSON.stringify(health), { status: 200 }));
     signIn("clinician");
     renderAt("/");
     const nav = await screen.findByRole("navigation", { name: "Primary" });
     expect([...nav.querySelectorAll("a")].map((a) => a.textContent)).toEqual([
       "Search",
-      "Clinical summary",
       "Medicines",
       "Mapping",
     ]);
@@ -123,10 +122,10 @@ describe("App shell", () => {
       expect(screen.queryByRole("link", { name: gone })).not.toBeInTheDocument();
   });
 
-  it("no longer routes Consultation, Evaluation or Dashboard", async () => {
+  it("no longer routes Consultation, Evaluation, Dashboard or Clinical summary", async () => {
     vi.spyOn(globalThis, "fetch").mockResolvedValue(new Response(JSON.stringify(health), { status: 200 }));
     signIn("clinician");
-    for (const path of ["/consultation", "/evaluation", "/dashboard"]) {
+    for (const path of ["/consultation", "/evaluation", "/dashboard", "/summary"]) {
       const { unmount } = renderAt(path);
       expect(await screen.findByText(/not found/i)).toBeInTheDocument();
       unmount();
