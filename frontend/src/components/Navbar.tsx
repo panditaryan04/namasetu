@@ -37,14 +37,18 @@ export function Navbar({ items }: { items: NavItem[] }) {
         scrolled || open ? "border-med-border" : "border-transparent"
       }`}
     >
-      <div className="relative mx-auto flex max-w-6xl items-center gap-4 px-6 py-3">
+      <div className="relative mx-auto flex max-w-6xl items-center gap-3 px-4 py-3 sm:gap-6 sm:px-6 sm:py-4">
         <NavLink
           to="/"
-          className={`flex items-center gap-2 rounded-lg ${focusRing}`}
+          className={`group flex items-center gap-2.5 rounded-xl ${focusRing}`}
           aria-label="NamaSetu home"
         >
-          <img src="/favicon.svg" alt="" className="h-8 w-8" />
-          <span className="font-display text-xl font-extrabold tracking-tight text-med-heading">
+          <img
+            src="/favicon.svg"
+            alt=""
+            className="h-9 w-9 transition-transform duration-200 group-hover:scale-110 sm:h-11 sm:w-11"
+          />
+          <span className="font-display text-xl font-extrabold tracking-tight text-med-heading sm:text-2xl">
             Nama<span className="bg-brand-gradient-text bg-clip-text text-transparent">Setu</span>
           </span>
         </NavLink>
@@ -54,7 +58,7 @@ export function Navbar({ items }: { items: NavItem[] }) {
           aria-label="Primary"
           className={`${
             open ? "flex" : "hidden"
-          } absolute inset-x-0 top-full flex-col gap-1 border-b border-med-border bg-white p-4 shadow-glass-sm dark:bg-slate-950 md:static md:mx-auto md:flex md:flex-row md:border-0 md:bg-transparent md:p-0 md:shadow-none md:dark:bg-transparent`}
+          } absolute inset-x-0 top-full flex-col gap-2 border-b border-med-border bg-white p-4 shadow-glass-sm dark:bg-slate-950 md:static md:mx-auto md:flex md:flex-row md:border-0 md:bg-transparent md:p-0 md:shadow-none md:dark:bg-transparent`}
         >
           {items
             .filter((item) => !user || can(user, item.permission))
@@ -64,10 +68,10 @@ export function Navbar({ items }: { items: NavItem[] }) {
                 to={item.to}
                 end={item.end}
                 className={({ isActive }) =>
-                  `rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-200 ${focusRing} ${
+                  `rounded-full border px-5 py-2.5 text-base font-semibold transition duration-200 hover:-translate-y-0.5 hover:border-sky-300 hover:shadow-glow dark:hover:border-sky-700 ${focusRing} ${
                     isActive
-                      ? "bg-sky-100 text-med-primary-dark dark:bg-sky-950 dark:text-sky-200"
-                      : "text-med-body hover:bg-sky-50 hover:text-med-heading dark:hover:bg-slate-800"
+                      ? "border-sky-200 bg-sky-100 text-med-primary-dark dark:border-sky-900 dark:bg-sky-950 dark:text-sky-200"
+                      : "border-transparent text-med-body hover:bg-white hover:text-med-primary-dark dark:hover:bg-slate-900 dark:hover:text-sky-200"
                   }`
                 }
               >
@@ -76,18 +80,18 @@ export function Navbar({ items }: { items: NavItem[] }) {
             ))}
         </nav>
 
-        <div className="ml-auto flex items-center gap-2 md:ml-0">
+        <div className="ml-auto flex items-center gap-2 sm:gap-3 md:ml-0">
           <ThemeToggle />
           {/* The Care portal (public/care-portal.html): Hospital, Doctor and Patient sign-in. */}
           <a
             href="/care-portal.html"
-            className={`rounded-xl bg-brand-gradient-strong px-5 py-2 text-sm font-semibold text-white shadow-glass-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-lift ${focusRing}`}
+            className={`rounded-xl border-2 border-transparent bg-brand-gradient-strong px-4 py-2 text-sm font-semibold text-white shadow-glass-sm transition duration-200 hover:-translate-y-0.5 hover:border-sky-300 hover:shadow-lift sm:px-6 sm:py-2.5 sm:text-base ${focusRing}`}
           >
             Login
           </a>
           <button
             type="button"
-            className={`rounded-lg p-2 text-med-heading hover:bg-sky-50 dark:hover:bg-slate-800 md:hidden ${focusRing}`}
+            className={`rounded-xl border border-transparent p-2 text-med-heading transition duration-200 hover:border-sky-300 hover:bg-white hover:shadow-glow dark:hover:bg-slate-800 md:hidden ${focusRing}`}
             aria-expanded={open}
             aria-controls="primary-nav"
             aria-label={open ? "Close menu" : "Open menu"}

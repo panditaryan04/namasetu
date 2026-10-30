@@ -71,6 +71,8 @@ export default {
         glass: "0 20px 60px -15px rgba(14, 165, 233, 0.25)",
         "glass-sm": "0 8px 30px -12px rgba(14, 165, 233, 0.22)",
         lift: "0 12px 28px -10px rgba(3, 105, 161, 0.45)",
+        // Header links and icon buttons: a tight, visible glow around a small pill.
+        glow: "0 8px 24px -6px rgba(14, 165, 233, 0.5), 0 0 0 3px rgba(14, 165, 233, 0.12)",
       },
       keyframes: {
         orb: {
