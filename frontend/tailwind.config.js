@@ -31,6 +31,21 @@ export default {
           800: "#9d390f",
           900: "#7e3110",
         },
+        // Brand (medical sky blue) used for buttons, links and highlights site-wide. 700 = --primary-dark;
+        // white text needs 700 or darker for AA, and 600 is used only for non-text marks.
+        brand: {
+          50: "#f0f9ff",
+          100: "#e0f2fe",
+          200: "#bae6fd",
+          300: "#7dd3fc",
+          400: "#38bdf8",
+          500: "#0ea5e9",
+          600: "#0284c7",
+          700: "#0369a1",
+          800: "#075985",
+          900: "#0c4a6e",
+          950: "#082f49",
+        },
         // Light medical-blue theme; values live as CSS variables in index.css.
         med: {
           bg: "var(--bg)",

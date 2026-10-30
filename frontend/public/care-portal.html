@@ -10,12 +10,41 @@
         integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <style>
-:root{color-scheme:light;--bg:#f6f8f9;--surface:#fff;--text:#14212b;--muted:#4b5b67;--border:#dbe3e7;--accent:#0f766e;--accent-strong:#115e59;--accent-soft:#e7f4f2;--on-accent:#fff;--warn-bg:#fff6e5;--warn-ink:#73450a;--warn-line:#e9b45a;--err-bg:#fdeded;--err-ink:#9b1c1c;--ok-bg:#e9f6ef;--ok-ink:#14532d;--radius:18px}
-[data-theme=dark]{color-scheme:dark;--bg:#0c1316;--surface:#141f23;--text:#e6eef1;--muted:#a6b5bd;--border:#2a3a40;--accent:#2dd4bf;--accent-strong:#5eead4;--accent-soft:#11302d;--on-accent:#032420;--warn-bg:#2f240e;--warn-ink:#fcd58a;--warn-line:#7a5b1e;--err-bg:#3a1517;--err-ink:#fca5a5;--ok-bg:#11301f;--ok-ink:#86efac}
+/* Same self-hosted fonts as the main site (files in /fonts, SIL OFL licences alongside). */
+@font-face{font-family:"Inter Variable";font-style:normal;font-display:swap;font-weight:100 900;src:url(/fonts/inter-latin-wght-normal.woff2) format("woff2-variations");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter Variable";font-style:normal;font-display:swap;font-weight:100 900;src:url(/fonts/inter-latin-ext-wght-normal.woff2) format("woff2-variations");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Plus Jakarta Sans Variable";font-style:normal;font-display:swap;font-weight:200 800;src:url(/fonts/plus-jakarta-sans-latin-wght-normal.woff2) format("woff2-variations");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Plus Jakarta Sans Variable";font-style:normal;font-display:swap;font-weight:200 800;src:url(/fonts/plus-jakarta-sans-latin-ext-wght-normal.woff2) format("woff2-variations");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Noto Sans Devanagari";font-style:normal;font-display:swap;font-weight:400;src:url(/fonts/noto-sans-devanagari-devanagari-400-normal.woff2) format("woff2");unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09}
+@font-face{font-family:"Noto Sans Devanagari";font-style:normal;font-display:swap;font-weight:600;src:url(/fonts/noto-sans-devanagari-devanagari-600-normal.woff2) format("woff2");unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09}
+/* Light medical-blue theme, matching the main site. --accent is the AA-safe blue (white text on it is 5.9:1);
+   --glass is the frosted card surface over the particle background; --surface stays solid for fields and dialogs. */
+:root{color-scheme:light;--bg:#f5faff;--surface:#fff;--glass:rgba(255,255,255,.8);--text:#0b1e33;--muted:#475569;--border:#dceaf7;--accent:#0369a1;--accent-strong:#075985;--accent-soft:#e0f2fe;--on-accent:#fff;--grad:linear-gradient(135deg,#0369a1,#0f766e);--grad-text:linear-gradient(135deg,#0284c7,#0d9488);--glow:rgba(14,165,233,.35);--shadow:0 8px 30px -12px rgba(14,165,233,.22);--shadow-lg:0 20px 60px -15px rgba(14,165,233,.25);--warn-bg:#fff6e5;--warn-ink:#73450a;--warn-line:#e9b45a;--err-bg:#fdeded;--err-ink:#9b1c1c;--ok-bg:#e9f6ef;--ok-ink:#14532d;--radius:24px}
+[data-theme=dark]{color-scheme:dark;--bg:#07131f;--surface:#0f1b2a;--glass:rgba(15,23,42,.72);--text:#f1f7fd;--muted:#b6c4d4;--border:#1d3348;--accent:#38bdf8;--accent-strong:#7dd3fc;--accent-soft:#0c2a3f;--on-accent:#082f49;--grad-text:linear-gradient(135deg,#38bdf8,#2dd4bf);--glow:rgba(56,189,248,.45);--shadow:0 8px 30px -12px rgba(0,0,0,.5);--shadow-lg:0 20px 60px -15px rgba(0,0,0,.6);--warn-bg:#2f240e;--warn-ink:#fcd58a;--warn-line:#7a5b1e;--err-bg:#3a1517;--err-ink:#fca5a5;--ok-bg:#11301f;--ok-ink:#86efac}
 *{box-sizing:border-box}
-html{font-size:112.5%}
-body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif;line-height:1.55;background:var(--bg);color:var(--text);display:flex;flex-direction:column;min-height:100vh}
-h1,h2,h3{line-height:1.25;margin:0 0 .5rem}
+html{font-size:112.5%;scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:#7dd3fc transparent}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+::-webkit-scrollbar{width:8px;height:8px}::-webkit-scrollbar-thumb{background:#7dd3fc;border-radius:999px}::-webkit-scrollbar-track{background:transparent}
+body{margin:0;font-family:"Inter Variable",Inter,"Noto Sans Devanagari",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.55;background:var(--bg);color:var(--text);display:flex;flex-direction:column;min-height:100vh}
+h1,h2,h3,h4,.brand{font-family:"Plus Jakarta Sans Variable","Plus Jakarta Sans","Noto Sans Devanagari",system-ui,sans-serif}
+h1,h2,h3{line-height:1.25;margin:0 0 .5rem;letter-spacing:-.01em}
+/* Background: blurred colour orbs and a floating particle canvas (drawn by the script at the end of the page). */
+.bg-fx{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.bg-fx canvas{position:absolute;inset:0;width:100%;height:100%}
+.orb{position:absolute;border-radius:50%;filter:blur(64px);opacity:.15}
+.orb-1{left:-10vw;top:-15vh;width:60vh;height:60vh;background:#7dd3fc;animation:orb 28s ease-in-out infinite}
+.orb-2{right:-12vw;top:25vh;width:70vh;height:70vh;background:#5eead4;animation:orb 40s ease-in-out infinite reverse}
+.orb-3{left:30vw;bottom:-20vh;width:55vh;height:55vh;background:#bae6fd;animation:orb 28s ease-in-out infinite}
+@keyframes orb{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(6vw,-4vh,0) scale(1.08)}}
+@media (prefers-reduced-motion:reduce){.orb{animation:none}}
+/* Headings glow on hover, as on the main site (only where a real hover exists). */
+@media (hover:hover){
+  h1,h2,h3{transition:color .2s ease,text-shadow .2s ease}
+  main h1:hover,main h2:hover,main h3:hover{color:var(--accent);text-shadow:0 1px 0 rgba(255,255,255,.9),0 0 18px var(--glow)}
+  [data-theme=dark] main h1:hover,[data-theme=dark] main h2:hover,[data-theme=dark] main h3:hover{text-shadow:0 0 20px var(--glow)}
+  .lead,.muted{transition:color .2s ease,text-shadow .2s ease}
+  main .lead:hover{color:var(--text);text-shadow:0 0 12px rgba(255,255,255,.95),0 0 22px rgba(14,165,233,.25)}
+}
 h1{font-size:1.9rem;letter-spacing:-.01em}
 h2{font-size:1.25rem}
 h3{font-size:1.05rem}
@@ -26,21 +55,24 @@ a{color:var(--accent-strong)}
 .wrap{max-width:1120px;margin:0 auto;padding:0 1.25rem;width:100%}
 .skip{position:absolute;left:-999px;top:.5rem;z-index:10}
 .skip:focus{left:.5rem}
-.topbar{background:var(--surface);border-bottom:1px solid var(--border)}
+.topbar{position:sticky;top:0;z-index:5;background:var(--glass);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
 .topbar .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.25rem;padding-top:.8rem;padding-bottom:.8rem}
-.brand{font-weight:800;font-size:1.15rem;text-decoration:none;color:var(--text)}
-.brand span{color:var(--accent-strong)}
-[data-theme=dark] .brand span{color:var(--accent)}
+.brand{font-weight:800;font-size:1.15rem;letter-spacing:-.01em;text-decoration:none;color:var(--text)}
+.brand span{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+[data-theme=dark] .brand span{color:transparent}
 .demo-tag{font-size:.75rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:.2rem .6rem;border-radius:999px;background:var(--warn-bg);color:var(--warn-ink);border:1px solid var(--warn-line)}
 .session{margin-left:auto;display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;font-size:.9rem}
 main{flex:1;padding:2rem 0 3rem}
 main:focus,h1[tabindex="-1"]:focus,section[tabindex="-1"]:focus{outline:none}
-.site-footer{border-top:1px solid var(--border);padding:1.25rem 0;font-size:.85rem;color:var(--muted);text-align:center}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;min-height:48px;padding:.6rem 1.2rem;border-radius:12px;font:inherit;font-weight:650;cursor:pointer;border:2px solid transparent;text-decoration:none;line-height:1.2}
-.btn-primary{background:var(--accent);color:var(--on-accent)}
-.btn-primary:hover{background:var(--accent-strong)}
-.btn-ghost{background:transparent;color:var(--text);border-color:var(--border)}
-.btn-ghost:hover{border-color:var(--accent)}
+.site-footer{border-top:1px solid var(--border);padding:1.25rem 0;font-size:.85rem;color:var(--muted);text-align:center;background:var(--glass);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;min-height:48px;padding:.6rem 1.2rem;border-radius:12px;font:inherit;font-weight:650;cursor:pointer;border:2px solid transparent;text-decoration:none;line-height:1.2;transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease,border-color .2s ease}
+.btn:hover{transform:translateY(-2px)}
+@media (prefers-reduced-motion:reduce){.btn:hover{transform:none}}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:var(--shadow)}
+[data-theme=dark] .btn-primary{background:var(--accent);color:var(--on-accent)}
+.btn-primary:hover{box-shadow:0 12px 28px -10px rgba(3,105,161,.45)}
+.btn-ghost{background:var(--glass);color:var(--text);border-color:var(--border)}
+.btn-ghost:hover{border-color:var(--accent);background:var(--accent-soft);box-shadow:var(--shadow)}
 .btn-danger{background:transparent;color:var(--err-ink);border-color:currentColor}
 .btn-sm{min-height:40px;padding:.35rem .8rem;font-size:.9rem}
 .btn-block{width:100%}
@@ -56,20 +88,22 @@ main:focus,h1[tabindex="-1"]:focus,section[tabindex="-1"]:focus{outline:none}
 .stack{display:grid;gap:1.25rem;align-content:start}
 .grid > *,.stack > *{min-width:0}
 dl.kv dd{overflow-wrap:anywhere}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem 1.5rem}
+.card{background:var(--glass);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem 1.5rem;box-shadow:var(--shadow);transition:box-shadow .2s ease}
+.card:hover{box-shadow:var(--shadow-lg)}
 .card > h2{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem}
 .portal{display:flex;flex-direction:column;gap:.6rem}
 .portal .btn{margin-top:auto}
 .page-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:1.25rem}
 .narrow{max-width:520px;margin:0 auto}
-.banner{border-radius:14px;padding:.9rem 1.1rem;margin:0 0 1.25rem;border:1px solid var(--border);background:var(--surface)}
+.banner{border-radius:16px;padding:.9rem 1.1rem;margin:0 0 1.25rem;border:1px solid var(--border);background:var(--glass);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}
 .banner.ok{background:var(--ok-bg);color:var(--ok-ink);border-color:transparent}
 .banner.warn{background:var(--warn-bg);color:var(--warn-ink);border-color:var(--warn-line)}
 .banner.err{background:var(--err-bg);color:var(--err-ink);border-color:transparent}
 .banner.info{background:var(--accent-soft)}
 #flash:empty{display:none}
 label{display:block;font-weight:650;margin-top:1rem}
-input,select,textarea{display:block;width:100%;margin-top:.35rem;font:inherit;padding:.7rem .8rem;border:1.5px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text)}
+input,select,textarea{display:block;width:100%;margin-top:.35rem;font:inherit;padding:.7rem .8rem;border:1.5px solid var(--border);border-radius:14px;background:var(--surface);color:var(--text);transition:border-color .2s ease,box-shadow .2s ease}
+input:focus,select:focus,textarea:focus{outline:none;border-color:#0ea5e9;box-shadow:0 0 0 4px rgba(14,165,233,.25)}
 input[type=checkbox]{display:inline-block;width:1.2rem;height:1.2rem;margin:0 .5rem 0 0;vertical-align:-.2rem}
 input[aria-invalid=true],select[aria-invalid=true],textarea[aria-invalid=true]{border-color:var(--err-ink)}
 textarea{min-height:5.5rem;resize:vertical}
@@ -80,6 +114,8 @@ textarea{min-height:5.5rem;resize:vertical}
 @media(min-width:620px){.row2{grid-template-columns:1fr 1fr}}
 .tag{display:inline-block;padding:.1rem .6rem;border-radius:999px;font-size:.78rem;font-weight:650;border:1px solid var(--border);color:var(--muted);white-space:nowrap;vertical-align:.1rem}
 .tag-new{background:var(--accent);color:var(--on-accent);border-color:transparent}
+.eyebrow{color:var(--accent-strong)}
+[data-theme=dark] .eyebrow{color:var(--accent)}
 .tag-strong{color:var(--text)}
 dl.kv{display:grid;grid-template-columns:max-content 1fr;gap:.35rem 1.1rem;margin:.5rem 0 0}
 dl.kv dt{color:var(--muted)}
@@ -88,7 +124,7 @@ dl.kv dd{margin:0;font-weight:600}
 .list > li{padding:.85rem 0;border-top:1px solid var(--border)}
 .list > li:first-child{border-top:0}
 .row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem 1rem}
-.med{border:1px solid var(--border);border-radius:14px;padding:1rem 1.1rem;margin-top:.9rem}
+.med{border:1px solid var(--border);border-radius:16px;background:var(--surface);padding:1rem 1.1rem;margin-top:.9rem}
 .med.is-new{border-color:var(--accent);box-shadow:inset 5px 0 0 var(--accent)}
 .med .salt{font-weight:650}
 .med .meta{font-size:.88rem;color:var(--muted)}
@@ -103,7 +139,8 @@ table{width:100%;border-collapse:collapse;font-size:.92rem}
 th,td{text-align:left;padding:.55rem .5rem;border-bottom:1px solid var(--border);vertical-align:top}
 th{font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
 .chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.25rem}
-.chip{font:inherit;font-size:.9rem;font-weight:600;padding:.45rem .9rem;border-radius:999px;border:1.5px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;min-height:40px}
+.chip{font:inherit;font-size:.9rem;font-weight:600;padding:.45rem .9rem;border-radius:999px;border:1.5px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;min-height:40px;transition:transform .2s ease,background-color .2s ease,border-color .2s ease,box-shadow .2s ease}
+.chip:hover{transform:translateY(-2px);border-color:#7dd3fc;background:var(--accent-soft);box-shadow:var(--shadow)}
 .qr-box{display:flex;justify-content:center;padding:1rem;background:#fff;border-radius:14px;border:1px solid var(--border);margin:.75rem 0}
 code.token{display:block;word-break:break-all;font-size:.9rem;padding:.6rem .8rem;border-radius:10px;background:var(--bg);border:1px solid var(--border)}
 .empty{color:var(--muted);padding:.75rem 0}
@@ -168,7 +205,7 @@ fieldset.coding legend{font-weight:650;padding:0 .4rem}
 @media print{
   :root,[data-theme=dark]{--bg:#fff;--surface:#fff;--text:#000;--muted:#333;--border:#999;--accent:#0f766e;--accent-strong:#0f766e;--warn-bg:#fff;--warn-ink:#000;--warn-line:#999}
   html{font-size:11pt}
-  .topbar,.site-footer,.no-print,#flash{display:none!important}
+  .topbar,.site-footer,.no-print,#flash,.bg-fx{display:none!important}
   body{background:#fff}
   main{padding:0}
   .report{border:0!important;padding:0!important}
@@ -178,6 +215,7 @@ fieldset.coding legend{font-weight:650;padding:0 .4rem}
 </style>
 </head>
 <body>
+<div class="bg-fx" aria-hidden="true"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div><canvas id="fx"></canvas></div>
 <button class="skip btn btn-primary" data-action="skip">Skip to content</button>
 <header class="topbar">
   <div class="wrap">
@@ -1832,6 +1870,93 @@ fieldset.coding legend{font-weight:650;padding:0 .4rem}
   window.addEventListener('hashchange', () => render(true));
   document.documentElement.dataset.theme = theme;
   render(true);
+})();
+</script>
+<script>
+// Floating particle field: a light 2D-canvas take on the main site's 3D background. Dots drift upward
+// and bob as if weightless, ease away from the pointer and back, shift with depth for parallax, and
+// faint lines join near neighbours. Static under prefers-reduced-motion.
+(() => {
+  'use strict';
+  const canvas = document.getElementById('fx');
+  const ctx = canvas && canvas.getContext('2d');
+  if (!ctx) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const COLORS = ['14,165,233', '56,189,248', '20,184,166', '248,251,255'];
+  const LINK_DIST = 90, LINKED = 90, REPEL = 120, EASE = 0.06, PARALLAX = 14;
+  let W = 0, H = 0, pts = [], last = 0, raf = 0;
+  const mouse = { x: -1e4, y: -1e4, nx: 0, ny: 0 };
+
+  // One pre-rendered soft glow per colour, so each frame is cheap drawImage calls.
+  const sprites = COLORS.map((c) => {
+    const s = document.createElement('canvas');
+    s.width = s.height = 32;
+    const g = s.getContext('2d'), grad = g.createRadialGradient(16, 16, 0, 16, 16, 16);
+    grad.addColorStop(0, `rgba(${c},1)`); grad.addColorStop(0.35, `rgba(${c},.55)`); grad.addColorStop(1, `rgba(${c},0)`);
+    g.fillStyle = grad; g.fillRect(0, 0, 32, 32);
+    return s;
+  });
+
+  function setup() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    W = window.innerWidth; H = window.innerHeight;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const n = W < 768 ? 200 : 450;
+    pts = Array.from({ length: n }, () => ({
+      x: Math.random() * W, y: Math.random() * H, z: Math.random(), // z = depth: speed, size, parallax
+      r: 1 + Math.random() * 2, a: 0.3 + Math.random() * 0.6, s: Math.floor(Math.random() * COLORS.length),
+      vy: 8 + Math.random() * 22, vx: (Math.random() - 0.5) * 8,
+      p: Math.random() * 6.28, f: 0.2 + Math.random() * 0.5, ox: 0, oy: 0, sx: 0, sy: 0,
+    }));
+  }
+
+  function frame(t) {
+    const dt = last ? Math.min((t - last) / 1000, 0.05) : 0, sec = t / 1000, still = reduce.matches;
+    last = t;
+    ctx.clearRect(0, 0, W, H);
+    for (const p of pts) {
+      if (!still) {
+        p.y -= p.vy * dt * (0.5 + p.z);
+        p.x += p.vx * dt;
+        if (p.y < -12) { p.y = H + 12; p.x = Math.random() * W; }
+        if (p.x < -12) p.x = W + 12; else if (p.x > W + 12) p.x = -12;
+      }
+      const bx = still ? 0 : Math.sin(sec * p.f + p.p) * 6, by = still ? 0 : Math.cos(sec * p.f * 1.3 + p.p) * 6;
+      const px = p.x + bx - mouse.nx * PARALLAX * p.z, py = p.y + by - mouse.ny * PARALLAX * p.z;
+      let tx = 0, ty = 0;
+      const dx = px - mouse.x, dy = py - mouse.y, d = Math.hypot(dx, dy);
+      if (!still && d < REPEL && d > 0.01) { const push = (1 - d / REPEL) * 40; tx = (dx / d) * push; ty = (dy / d) * push; }
+      p.ox += (tx - p.ox) * EASE; p.oy += (ty - p.oy) * EASE;
+      p.sx = px + p.ox; p.sy = py + p.oy;
+      const size = p.r * (1.3 + p.z * 1.4);
+      ctx.globalAlpha = p.a * 0.85;
+      ctx.drawImage(sprites[p.s], p.sx - size, p.sy - size, size * 2, size * 2);
+    }
+    ctx.globalAlpha = 1;
+    ctx.lineWidth = 1;
+    for (let i = 0; i < LINKED; i++) {
+      for (let j = i + 1; j < LINKED; j++) {
+        const a = pts[i], b = pts[j], d = Math.hypot(a.sx - b.sx, a.sy - b.sy);
+        if (d < LINK_DIST) {
+          ctx.strokeStyle = `rgba(14,165,233,${(0.14 * (1 - d / LINK_DIST)).toFixed(3)})`;
+          ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.lineTo(b.sx, b.sy); ctx.stroke();
+        }
+      }
+    }
+    if (!still) raf = requestAnimationFrame(frame);
+  }
+
+  function start() { cancelAnimationFrame(raf); last = 0; raf = requestAnimationFrame(frame); }
+  window.addEventListener('pointermove', (e) => {
+    mouse.x = e.clientX; mouse.y = e.clientY;
+    mouse.nx = e.clientX / W * 2 - 1; mouse.ny = e.clientY / H * 2 - 1;
+  }, { passive: true });
+  document.addEventListener('pointerleave', () => { mouse.x = mouse.y = -1e4; });
+  let resizeTimer = 0;
+  window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { setup(); start(); }, 150); });
+  reduce.addEventListener?.('change', start);
+  setup(); start();
 })();
 </script>
 </body>

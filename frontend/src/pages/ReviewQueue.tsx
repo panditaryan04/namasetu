@@ -18,7 +18,7 @@ import { can } from "../services/auth";
 import { useAuth } from "../services/useAuth";
 
 const BAND_CHIP: Record<string, string> = {
-  high: "bg-teal-700 text-white",
+  high: "bg-brand-700 text-white",
   medium: "bg-saffron-500 text-slate-950",
   low: "bg-red-600 text-white",
 };
@@ -51,7 +51,7 @@ function Candidate({
   const [open, setOpen] = useState(false);
   return (
     <div
-      className={`rounded-xl border p-3 ${selected ? "border-teal-600 ring-2 ring-teal-600/20" : "border-slate-200 dark:border-slate-800"}`}
+      className={`rounded-xl border p-3 ${selected ? "border-brand-600 ring-2 ring-brand-600/20" : "border-slate-200 dark:border-slate-800"}`}
     >
       <div className="flex items-start gap-2">
         <input
@@ -85,7 +85,7 @@ function Candidate({
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
-        className="mt-2 text-sm font-medium text-teal-800 underline dark:text-teal-300"
+        className="mt-2 text-sm font-medium text-brand-800 underline dark:text-brand-300"
       >
         {open ? "Hide evidence" : "Evidence"}
       </button>
@@ -214,7 +214,7 @@ function Detail({ item, canReview, onDone }: { item: ReviewDetail; canReview: bo
                     type="button"
                     onClick={() => setManualCode(h)}
                     aria-pressed={manualCode?.code === h.code}
-                    className={`rounded-full px-3 py-1 text-sm ring-1 ring-inset ${manualCode?.code === h.code ? "bg-teal-700 text-white ring-teal-700" : "ring-slate-300 dark:ring-slate-600"}`}
+                    className={`rounded-full px-3 py-1 text-sm ring-1 ring-inset ${manualCode?.code === h.code ? "bg-brand-700 text-white ring-brand-700" : "ring-slate-300 dark:ring-slate-600"}`}
                   >
                     {h.display}
                   </button>
@@ -241,7 +241,7 @@ function Detail({ item, canReview, onDone }: { item: ReviewDetail; canReview: bo
             <button
               disabled={!canReview || decide.isPending}
               onClick={() => run("approve")}
-              className={`${btn} bg-teal-700 text-white hover:bg-teal-800`}
+              className={`${btn} bg-brand-700 text-white hover:bg-brand-800`}
             >
               Approve <kbd className="ml-1 text-xs opacity-75">a</kbd>
             </button>
@@ -371,7 +371,7 @@ export default function ReviewQueue() {
                   type="button"
                   onClick={() => setActiveId(i.id)}
                   aria-current={i.id === current}
-                  className={`w-full rounded-xl px-3 py-2 text-left text-sm ${i.id === current ? "bg-teal-50 ring-1 ring-teal-300 dark:bg-teal-950 dark:ring-teal-800" : "hover:bg-slate-100 dark:hover:bg-slate-900"}`}
+                  className={`w-full rounded-xl px-3 py-2 text-left text-sm ${i.id === current ? "bg-brand-50 ring-1 ring-brand-300 dark:bg-brand-950 dark:ring-brand-800" : "hover:bg-slate-100 dark:hover:bg-slate-900"}`}
                 >
                   <span className="flex items-center gap-2">
                     <span

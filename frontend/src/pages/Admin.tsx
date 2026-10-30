@@ -16,7 +16,7 @@ const card = "rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate
 const field =
   "mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-950";
 const btn =
-  "rounded-lg bg-teal-700 px-3 py-2 text-sm font-semibold text-white hover:bg-teal-800 disabled:opacity-50";
+  "rounded-lg bg-brand-700 px-3 py-2 text-sm font-semibold text-white hover:bg-brand-800 disabled:opacity-50";
 
 function Thresholds() {
   const qc = useQueryClient();

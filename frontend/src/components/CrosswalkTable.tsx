@@ -122,7 +122,7 @@ export function CrosswalkTable({
             {shown.map((r) => (
               <tr
                 key={r.namaste.code}
-                className={selected === r.namaste.code ? "bg-teal-50 dark:bg-teal-950/50" : undefined}
+                className={selected === r.namaste.code ? "bg-brand-50 dark:bg-brand-950/50" : undefined}
               >
                 <td className="px-3 py-2">
                   <span className={`${code} text-emerald-800 dark:text-emerald-300`}>{r.namaste.code}</span>
@@ -151,7 +151,7 @@ export function CrosswalkTable({
                     <button
                       type="button"
                       onClick={() => onPick(r)}
-                      className="rounded-lg px-2.5 py-1 text-xs font-semibold text-teal-800 ring-1 ring-inset ring-teal-200 hover:bg-teal-50 dark:text-teal-200 dark:ring-teal-800 dark:hover:bg-teal-950"
+                      className="rounded-lg px-2.5 py-1 text-xs font-semibold text-brand-800 ring-1 ring-inset ring-brand-200 hover:bg-brand-50 dark:text-brand-200 dark:ring-brand-800 dark:hover:bg-brand-950"
                     >
                       Use<span className="sr-only"> {r.namaste.display}</span>
                     </button>

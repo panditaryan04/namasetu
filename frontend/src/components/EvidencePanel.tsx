@@ -12,7 +12,7 @@ const STAGES: { key: keyof Explanation["scores"]; label: string; hint: string }[
 function Chips({ items, tone = "slate" }: { items: string[]; tone?: "slate" | "teal" | "saffron" }) {
   const cls = {
     slate: "bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-200",
-    teal: "bg-teal-50 text-teal-800 dark:bg-teal-950 dark:text-teal-200",
+    teal: "bg-brand-50 text-brand-800 dark:bg-brand-950 dark:text-brand-200",
     saffron: "bg-saffron-50 text-saffron-900 dark:bg-saffron-900/30 dark:text-saffron-100",
   }[tone];
   if (!items.length) return <span className="text-xs text-slate-500">none</span>;
@@ -48,7 +48,7 @@ export function EvidencePanel({ c, semanticMethod }: { c: Explanation; semanticM
                 </dt>
                 <dd className="h-1.5 rounded-full bg-slate-200 dark:bg-slate-800" aria-hidden="true">
                   <div
-                    className={`h-1.5 rounded-full ${hit ? "bg-teal-600" : "bg-slate-400"}`}
+                    className={`h-1.5 rounded-full ${hit ? "bg-brand-600" : "bg-slate-400"}`}
                     style={{ width: `${Math.round(v * 100)}%` }}
                   />
                 </dd>

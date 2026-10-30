@@ -13,6 +13,8 @@ const SaltDetail = lazy(() => import("./pages/SaltDetail"));
 const Crosswalk = lazy(() => import("./pages/Crosswalk"));
 const ConditionBuilder = lazy(() => import("./pages/ConditionBuilder")); // opened from a Search result
 const NotFound = lazy(() => import("./pages/NotFound"));
+// three.js loads in its own chunk after the page content, so it never delays first paint.
+const ParticleBackground = lazy(() => import("./components/ParticleBackground"));
 
 const navItems: NavItem[] = [
   { to: "/", label: "Search", end: true, permission: "read" },
@@ -59,8 +61,11 @@ function RequireSession({ permission = "read" }: { permission?: string }) {
 
 function Layout() {
   return (
-    // No background here: the page colour sits on <body> so the landing page's fixed 3D canvas shows through.
+    // No background here: the page colour sits on <body> so the fixed 3D canvas shows through on every page.
     <div className="flex min-h-screen flex-col text-slate-900 dark:text-slate-100">
+      <Suspense fallback={null}>
+        <ParticleBackground />
+      </Suspense>
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-50 focus:rounded focus:bg-white focus:px-3 focus:py-2 focus:text-med-primary-dark"

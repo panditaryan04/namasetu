@@ -41,7 +41,7 @@ export function SaltChip({ c }: { c: CompositionItem }) {
   return (
     <Link
       to={`/salts/${c.ingredient_id}`}
-      className="inline-flex items-center gap-1 rounded-full bg-teal-50 px-2.5 py-1 text-xs font-semibold text-teal-900 ring-1 ring-inset ring-teal-200 hover:bg-teal-100 dark:bg-teal-950 dark:text-teal-100 dark:ring-teal-800"
+      className="inline-flex items-center gap-1 rounded-full bg-brand-50 px-2.5 py-1 text-xs font-semibold text-brand-900 ring-1 ring-inset ring-brand-200 hover:bg-brand-100 dark:bg-brand-950 dark:text-brand-100 dark:ring-brand-800"
       title={c.printed_name !== c.canonical_name ? `Printed as ${c.printed_name}` : undefined}
     >
       {c.canonical_name}
@@ -145,7 +145,7 @@ export function MedicationCard({
             type="button"
             aria-expanded={open}
             onClick={() => setOpen((o) => !o)}
-            className="text-sm font-medium text-teal-800 underline dark:text-teal-300"
+            className="text-sm font-medium text-brand-800 underline dark:text-brand-300"
           >
             {open
               ? "Hide composition"
@@ -172,7 +172,7 @@ export function MedicationCard({
             <span
               className={
                 link.status_label === "approved"
-                  ? "font-semibold text-teal-700 dark:text-teal-300"
+                  ? "font-semibold text-brand-700 dark:text-brand-300"
                   : "font-semibold"
               }
             >

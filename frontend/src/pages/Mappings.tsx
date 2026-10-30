@@ -38,7 +38,7 @@ export default function Mappings() {
               {list.data?.items.map((m) => (
                 <tr
                   key={m.id}
-                  className={`border-t border-slate-100 dark:border-slate-800 ${m.id === selected ? "bg-teal-50 dark:bg-teal-950" : ""}`}
+                  className={`border-t border-slate-100 dark:border-slate-800 ${m.id === selected ? "bg-brand-50 dark:bg-brand-950" : ""}`}
                 >
                   <td className="px-3 py-2">
                     <button
@@ -93,7 +93,7 @@ export default function Mappings() {
             <h3 className="mt-4 text-xs font-semibold uppercase tracking-wider text-slate-500">
               Provenance timeline
             </h3>
-            <ol className="mt-2 space-y-2 border-l-2 border-teal-200 pl-4 dark:border-teal-900">
+            <ol className="mt-2 space-y-2 border-l-2 border-brand-200 pl-4 dark:border-brand-900">
               {detail.data.timeline.map((t, i) => (
                 <li key={i} className="text-sm">
                   <span className="font-mono text-xs text-slate-500">

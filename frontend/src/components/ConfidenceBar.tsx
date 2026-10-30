@@ -1,7 +1,7 @@
 import type { Band } from "../services/api";
 
 const BAND_COLOR: Record<Band, string> = {
-  high: "bg-teal-600",
+  high: "bg-brand-600",
   medium: "bg-saffron-500",
   low: "bg-red-500",
 };

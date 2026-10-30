@@ -7,7 +7,7 @@ export function InsuranceCheck({ bio }: { bio: Explanation["biomedicine"] }) {
     <p
       className={`inline-flex items-center gap-1.5 rounded-lg px-2 py-1 text-xs font-medium ${
         approved
-          ? "bg-teal-50 text-teal-800 dark:bg-teal-950 dark:text-teal-200"
+          ? "bg-brand-50 text-brand-800 dark:bg-brand-950 dark:text-brand-200"
           : "bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300"
       }`}
       title={

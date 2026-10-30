@@ -52,7 +52,7 @@ export default function AuditLedger() {
         <button
           type="button"
           onClick={() => verify.mutate()}
-          className="rounded-lg bg-teal-700 px-3 py-2 text-sm font-semibold text-white hover:bg-teal-800"
+          className="rounded-lg bg-brand-700 px-3 py-2 text-sm font-semibold text-white hover:bg-brand-800"
         >
           {verify.isPending ? "Verifying…" : "Verify chain"}
         </button>
@@ -60,7 +60,7 @@ export default function AuditLedger() {
       {verify.data && (
         <p
           role="status"
-          className={`rounded-xl px-4 py-3 text-sm font-medium ${verify.data.ok ? "bg-teal-50 text-teal-900 dark:bg-teal-950 dark:text-teal-100" : "bg-red-50 text-red-900 dark:bg-red-950 dark:text-red-100"}`}
+          className={`rounded-xl px-4 py-3 text-sm font-medium ${verify.data.ok ? "bg-brand-50 text-brand-900 dark:bg-brand-950 dark:text-brand-100" : "bg-red-50 text-red-900 dark:bg-red-950 dark:text-red-100"}`}
         >
           {verify.data.ok
             ? `Chain intact: ${verify.data.checked} events verified · head ${verify.data.head_hash?.slice(0, 16)}…`

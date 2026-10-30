@@ -36,7 +36,7 @@ export function ModeBadge() {
       <span
         className={`${chip} ${
           live
-            ? "bg-teal-50 text-teal-800 ring-teal-200 dark:bg-teal-950 dark:text-teal-200"
+            ? "bg-brand-50 text-brand-800 ring-brand-200 dark:bg-brand-950 dark:text-brand-200"
             : "bg-saffron-50 text-saffron-800 ring-saffron-200 dark:bg-saffron-900/40 dark:text-saffron-200"
         }`}
         title={`ICD-11: ${data.modes.ICD11_MODE}, ABHA: ${data.modes.ABHA_MODE}`}

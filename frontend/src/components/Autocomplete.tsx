@@ -140,7 +140,7 @@ export function Autocomplete({
           className={
             hero
               ? "h-16 w-full rounded-2xl border border-med-border bg-white pl-14 pr-32 text-lg text-med-heading shadow-sm transition duration-200 placeholder:text-slate-500 focus:border-med-primary focus:outline-none focus:ring-4 focus:ring-med-primary/25 focus:shadow-glass dark:bg-slate-900"
-              : "w-full rounded-2xl border border-slate-300 bg-white px-5 py-4 pr-28 text-lg shadow-sm placeholder:text-slate-500 focus:border-teal-600 focus:outline-none focus:ring-4 focus:ring-teal-600/15 dark:border-slate-700 dark:bg-slate-900"
+              : "w-full rounded-2xl border border-slate-300 bg-white px-5 py-4 pr-28 text-lg shadow-sm placeholder:text-slate-500 focus:border-brand-600 focus:outline-none focus:ring-4 focus:ring-brand-600/15 dark:border-slate-700 dark:bg-slate-900"
           }
         />
         {hero && (
@@ -163,7 +163,7 @@ export function Autocomplete({
           className={
             hero
               ? "group absolute right-2 top-2 flex h-12 items-center gap-2 rounded-xl bg-brand-gradient-strong px-5 text-sm font-semibold text-white shadow-glass-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-lift focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-med-primary-dark"
-              : "absolute right-2 top-2 rounded-xl bg-teal-700 px-4 py-2.5 text-sm font-semibold text-white hover:bg-teal-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+              : "absolute right-2 top-2 rounded-xl bg-brand-700 px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700"
           }
         >
           Map
@@ -202,7 +202,7 @@ export function Autocomplete({
               }}
               onMouseEnter={() => setActive(i)}
               className={`flex cursor-pointer items-center justify-between gap-3 rounded-xl px-3 py-2.5 ${
-                i === active ? "bg-teal-50 dark:bg-teal-950" : ""
+                i === active ? "bg-brand-50 dark:bg-brand-950" : ""
               }`}
             >
               <span className="min-w-0">

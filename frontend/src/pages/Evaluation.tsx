@@ -66,7 +66,7 @@ function RunButton() {
         type="button"
         disabled={running}
         onClick={() => start.mutate()}
-        className="rounded-lg bg-teal-700 px-3 py-2 text-sm font-semibold text-white disabled:opacity-50"
+        className="rounded-lg bg-brand-700 px-3 py-2 text-sm font-semibold text-white disabled:opacity-50"
       >
         {running ? "Running evaluation…" : "Run evaluation"}
       </button>

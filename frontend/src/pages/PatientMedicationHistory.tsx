@@ -29,7 +29,7 @@ export function PatientList() {
           <li key={p.id}>
             <Link
               to={`/patients/${p.id}`}
-              className="block rounded-xl px-4 py-3 ring-1 ring-inset ring-slate-200 hover:bg-teal-50 dark:ring-slate-700 dark:hover:bg-teal-950"
+              className="block rounded-xl px-4 py-3 ring-1 ring-inset ring-slate-200 hover:bg-brand-50 dark:ring-slate-700 dark:hover:bg-brand-950"
             >
               <span className="font-medium">{p.display}</span>
               <span className="block text-xs text-slate-500">
@@ -101,7 +101,7 @@ export default function PatientMedicationHistory() {
           </Link>
           <Link
             to="/condition"
-            className="rounded-lg bg-teal-700 px-3 py-2 text-sm font-semibold text-white hover:bg-teal-800"
+            className="rounded-lg bg-brand-700 px-3 py-2 text-sm font-semibold text-white hover:bg-brand-800"
           >
             Record a Condition
           </Link>
@@ -153,7 +153,7 @@ export default function PatientMedicationHistory() {
                     type="button"
                     aria-pressed={candidate?.code === h.ref}
                     onClick={() => setCandidate({ code: h.ref, name: h.name })}
-                    className={`rounded-full px-3 py-1 text-sm ring-1 ring-inset ${candidate?.code === h.ref ? "bg-teal-700 text-white ring-teal-700" : "ring-slate-300 dark:ring-slate-600"}`}
+                    className={`rounded-full px-3 py-1 text-sm ring-1 ring-inset ${candidate?.code === h.ref ? "bg-brand-700 text-white ring-brand-700" : "ring-slate-300 dark:ring-slate-600"}`}
                   >
                     {h.name}
                   </button>
@@ -194,7 +194,7 @@ export default function PatientMedicationHistory() {
             type="button"
             disabled={!text.trim() || importer.isPending}
             onClick={() => importer.mutate()}
-            className="mt-2 rounded-lg bg-teal-700 px-3 py-2 text-sm font-semibold text-white disabled:opacity-50"
+            className="mt-2 rounded-lg bg-brand-700 px-3 py-2 text-sm font-semibold text-white disabled:opacity-50"
           >
             Import as active
           </button>

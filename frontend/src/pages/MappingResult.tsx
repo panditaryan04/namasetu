@@ -6,7 +6,7 @@ import { mapTerm, type MapResult } from "../services/api";
 
 const STATUS_STYLE: Record<MapResult["status"], string> = {
   suggested:
-    "border-teal-300 bg-teal-50 text-teal-900 dark:border-teal-800 dark:bg-teal-950 dark:text-teal-100",
+    "border-brand-300 bg-brand-50 text-brand-900 dark:border-brand-800 dark:bg-brand-950 dark:text-brand-100",
   review:
     "border-saffron-300 bg-saffron-50 text-saffron-900 dark:border-saffron-700 dark:bg-saffron-900/30 dark:text-saffron-100",
   no_match:
@@ -118,7 +118,7 @@ export default function MappingResult() {
                   <Link
                     key={s.code}
                     to={`/map?code=${encodeURIComponent(s.code)}&q=${encodeURIComponent(s.display)}`}
-                    className="rounded-full bg-white px-3 py-1 font-medium text-teal-800 ring-1 ring-inset ring-teal-200 hover:bg-teal-50 dark:bg-slate-900 dark:text-teal-200 dark:ring-teal-800"
+                    className="rounded-full bg-white px-3 py-1 font-medium text-brand-800 ring-1 ring-inset ring-brand-200 hover:bg-brand-50 dark:bg-slate-900 dark:text-brand-200 dark:ring-brand-800"
                   >
                     {s.display}
                     {s.devanagari && <span className="ml-1 text-slate-500"> {s.devanagari}</span>}

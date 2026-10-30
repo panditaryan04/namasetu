@@ -3,7 +3,7 @@ import type { TimelineItem } from "../services/api";
 
 const DAY = 86_400_000;
 const BAR: Record<string, string> = {
-  active: "bg-teal-600",
+  active: "bg-brand-600",
   stopped: "bg-slate-400 dark:bg-slate-600",
   unknown: "bg-saffron-500",
 };
@@ -30,7 +30,9 @@ export function MedicationTimeline({ items, asOf }: { items: TimelineItem[]; asO
             {y}
           </span>
         ))}
-        <span className="absolute right-0 font-semibold text-teal-700 dark:text-teal-300">as of {asOf}</span>
+        <span className="absolute right-0 font-semibold text-brand-700 dark:text-brand-300">
+          as of {asOf}
+        </span>
       </div>
       {items.map((i) => {
         const left = ms(i.period_start, start);

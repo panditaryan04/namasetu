@@ -11,7 +11,7 @@ import { InsuranceCheck } from "./InsuranceCheck";
 import { MedicationPanel } from "./MedicationPanel";
 
 const BAND_CHIP: Record<Band, string> = {
-  high: "bg-teal-700 text-white",
+  high: "bg-brand-700 text-white",
   medium: "bg-saffron-500 text-slate-950",
   low: "bg-red-600 text-white",
 };
@@ -157,7 +157,7 @@ export function TriCodeCard({
               to={`/condition?namaste=${encodeURIComponent(c.namaste.code)}&tm2=${encodeURIComponent(c.tm2.code)}&basis=${
                 c.evidence.baseline ? "approved" : "suggestion"
               }`}
-              className="rounded-lg bg-teal-700 px-3 py-2 text-sm font-semibold text-white hover:bg-teal-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+              className="rounded-lg bg-brand-700 px-3 py-2 text-sm font-semibold text-white hover:bg-brand-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700"
             >
               Build FHIR Condition
             </Link>
@@ -173,7 +173,7 @@ export function TriCodeCard({
             aria-expanded={open}
             aria-controls={panelId}
             onClick={() => setOpen((o) => !o)}
-            className="rounded-lg px-3 py-2 text-sm font-semibold text-teal-800 ring-1 ring-inset ring-teal-200 hover:bg-teal-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-teal-600 dark:text-teal-200 dark:ring-teal-800 dark:hover:bg-teal-950"
+            className="rounded-lg px-3 py-2 text-sm font-semibold text-brand-800 ring-1 ring-inset ring-brand-200 hover:bg-brand-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-600 dark:text-brand-200 dark:ring-brand-800 dark:hover:bg-brand-950"
           >
             {open ? "Hide evidence" : "Why this match?"}
           </button>

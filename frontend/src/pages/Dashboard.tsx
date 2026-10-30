@@ -66,7 +66,7 @@ function Exports() {
           type="button"
           disabled={create.isPending}
           onClick={() => create.mutate()}
-          className="rounded-lg bg-teal-700 px-3 py-1.5 font-semibold text-white disabled:opacity-50"
+          className="rounded-lg bg-brand-700 px-3 py-1.5 font-semibold text-white disabled:opacity-50"
         >
           Create export
         </button>
@@ -88,7 +88,7 @@ function Exports() {
                 <button
                   type="button"
                   onClick={() => downloadFile(j.download_url!, j.filename ?? "export")}
-                  className="text-xs font-semibold text-teal-700 underline dark:text-teal-300"
+                  className="text-xs font-semibold text-brand-700 underline dark:text-brand-300"
                 >
                   Download
                 </button>
@@ -242,7 +242,7 @@ export default function DashboardPage() {
               </dl>
               <Link
                 to="/evaluation"
-                className="mt-3 inline-block text-sm font-semibold text-teal-700 underline dark:text-teal-300"
+                className="mt-3 inline-block text-sm font-semibold text-brand-700 underline dark:text-brand-300"
               >
                 Full evaluation →
               </Link>

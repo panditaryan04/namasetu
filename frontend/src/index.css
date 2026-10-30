@@ -34,6 +34,55 @@ body {
   background-color: var(--bg);
 }
 
+@layer base {
+  h1,
+  h2,
+  h3 {
+    font-family: theme("fontFamily.display");
+  }
+}
+
+/* Site-wide glass: white cards inside <main> become frosted panels over the particle field. Form fields
+   and the suggestion list stay solid so typed text and options keep full contrast. */
+main :is(.rounded-xl, .rounded-2xl, .rounded-3xl).bg-white:not(input, select, textarea, [role="listbox"]) {
+  background-color: rgb(255 255 255 / 0.8);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 30px -12px rgb(14 165 233 / 0.22);
+}
+.dark
+  main
+  :is(.rounded-xl, .rounded-2xl, .rounded-3xl).bg-white:not(input, select, textarea, [role="listbox"]) {
+  background-color: rgb(15 23 42 / 0.72);
+}
+main .border-slate-200 {
+  border-color: var(--border);
+}
+main .ring-slate-200 {
+  --tw-ring-color: var(--border);
+}
+
+/* Page titles and section headings on every page share the landing page's hover glow. */
+@media (hover: hover) {
+  main h1,
+  main h2 {
+    transition:
+      color 200ms ease,
+      text-shadow 200ms ease;
+  }
+  main h1:hover,
+  main h2:hover {
+    color: var(--primary-dark);
+    text-shadow:
+      0 1px 0 rgb(255 255 255 / 0.9),
+      0 0 18px rgb(14 165 233 / 0.35);
+  }
+  .dark main h1:hover,
+  .dark main h2:hover {
+    color: #7dd3fc;
+    text-shadow: 0 0 20px rgb(56 189 248 / 0.45);
+  }
+}
+
 /* Hover emphasis for text over the particle field: a colour shift plus a soft halo that lifts the glyphs
    off the dots. Headings go to medical blue; body text darkens to navy (higher contrast, not lower).
    Only on devices that really hover, so a tap on a phone doesn't leave text stuck highlighted. */

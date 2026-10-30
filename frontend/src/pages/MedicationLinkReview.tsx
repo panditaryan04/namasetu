@@ -72,7 +72,7 @@ export default function MedicationLinkReview() {
                   type="button"
                   disabled={!reviewer || decide.isPending}
                   onClick={() => decide.mutate({ id: link.id, action: "approve" })}
-                  className="rounded-lg bg-teal-700 px-3 py-2 text-sm font-semibold text-white hover:bg-teal-800 disabled:opacity-50"
+                  className="rounded-lg bg-brand-700 px-3 py-2 text-sm font-semibold text-white hover:bg-brand-800 disabled:opacity-50"
                 >
                   Approve link
                 </button>

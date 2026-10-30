@@ -7,7 +7,7 @@ function Row({ label, value, ok }: { label: string; value: string; ok?: boolean 
       <dt className="text-slate-600 dark:text-slate-400">{label}</dt>
       <dd className="flex items-center gap-2 font-mono text-xs text-slate-900 dark:text-slate-100">
         {ok !== undefined && (
-          <span aria-hidden="true" className={`h-2 w-2 rounded-full ${ok ? "bg-teal-500" : "bg-red-500"}`} />
+          <span aria-hidden="true" className={`h-2 w-2 rounded-full ${ok ? "bg-brand-500" : "bg-red-500"}`} />
         )}
         {value}
         {ok !== undefined && <span className="sr-only">{ok ? "(healthy)" : "(failing)"}</span>}

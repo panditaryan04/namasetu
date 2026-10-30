@@ -5,7 +5,7 @@ const SEVERITY_STYLE: Record<string, string> = {
   fatal: "text-red-700 dark:text-red-300",
   error: "text-red-700 dark:text-red-300",
   warning: "text-saffron-800 dark:text-saffron-200",
-  information: "text-teal-800 dark:text-teal-200",
+  information: "text-brand-800 dark:text-brand-200",
 };
 
 /** Pretty-printed FHIR JSON with Copy / Download / Validate (server-side $validate). */
@@ -38,7 +38,7 @@ export function FHIRViewer({ resource, filename }: { resource: unknown; filename
   };
 
   const btn =
-    "rounded-lg px-3 py-1.5 text-sm font-medium ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-teal-600 dark:ring-slate-600 dark:hover:bg-slate-800";
+    "rounded-lg px-3 py-1.5 text-sm font-medium ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-600 dark:ring-slate-600 dark:hover:bg-slate-800";
   return (
     <section
       aria-label="FHIR JSON"

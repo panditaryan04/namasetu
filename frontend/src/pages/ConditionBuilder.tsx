@@ -13,7 +13,7 @@ import {
 import { useSelectedPatient } from "../services/patientContext";
 
 const field =
-  "mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm focus:border-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-600/20 dark:border-slate-700 dark:bg-slate-950";
+  "mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-600/20 dark:border-slate-700 dark:bg-slate-950";
 const label = "block text-sm font-medium text-slate-700 dark:text-slate-300";
 
 export default function ConditionBuilder() {
@@ -179,7 +179,7 @@ export default function ConditionBuilder() {
           <button
             type="submit"
             disabled={build.isPending}
-            className="w-full rounded-xl bg-teal-700 px-4 py-2.5 font-semibold text-white hover:bg-teal-800 disabled:opacity-60"
+            className="w-full rounded-xl bg-brand-700 px-4 py-2.5 font-semibold text-white hover:bg-brand-800 disabled:opacity-60"
           >
             {build.isPending ? "Building…" : "Build Condition"}
           </button>

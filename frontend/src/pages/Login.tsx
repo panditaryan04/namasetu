@@ -19,7 +19,7 @@ const DEMO: { role: Role; password: string; hint: string }[] = [
 ];
 
 const field =
-  "mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 focus:border-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-600/20 dark:border-slate-700 dark:bg-slate-950";
+  "mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-600/20 dark:border-slate-700 dark:bg-slate-950";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -99,7 +99,7 @@ export default function Login() {
             </label>
             <button
               disabled={busy}
-              className="w-full rounded-xl bg-teal-700 px-4 py-2.5 font-semibold text-white hover:bg-teal-800 disabled:opacity-60"
+              className="w-full rounded-xl bg-brand-700 px-4 py-2.5 font-semibold text-white hover:bg-brand-800 disabled:opacity-60"
             >
               {busy ? "Signing in…" : "Sign in"}
             </button>
@@ -125,7 +125,7 @@ export default function Login() {
             </label>
             <button
               disabled={busy}
-              className="w-full rounded-xl bg-teal-700 px-4 py-2.5 font-semibold text-white hover:bg-teal-800 disabled:opacity-60"
+              className="w-full rounded-xl bg-brand-700 px-4 py-2.5 font-semibold text-white hover:bg-brand-800 disabled:opacity-60"
             >
               {busy ? "Verifying…" : "Verify ABHA"}
             </button>
@@ -159,7 +159,7 @@ export default function Login() {
                   setUsername(d.role);
                   setPassword(d.password);
                 }}
-                className="w-full rounded-xl px-3 py-2 text-left ring-1 ring-inset ring-slate-200 hover:bg-teal-50 dark:ring-slate-700 dark:hover:bg-teal-950"
+                className="w-full rounded-xl px-3 py-2 text-left ring-1 ring-inset ring-slate-200 hover:bg-brand-50 dark:ring-slate-700 dark:hover:bg-brand-950"
               >
                 <span className="font-medium">{ROLE_LABELS[d.role]}</span>
                 <span className="block text-xs text-slate-500">
