@@ -74,7 +74,7 @@ function SectionHeading({ id, children }: { id: string; children: ReactNode }) {
   return (
     <h2
       id={id}
-      className="text-center font-display text-3xl font-bold tracking-tight text-med-heading sm:text-4xl"
+      className="hover-heading text-center font-display text-3xl font-bold tracking-tight text-med-heading sm:text-4xl"
     >
       {children}
     </h2>
@@ -103,8 +103,8 @@ export function HowItWorks() {
                 0{i + 1}
               </span>
             </div>
-            <h3 className="mt-5 font-display text-lg font-bold text-med-heading">{s.title}</h3>
-            <p className="mt-1.5 text-med-body">{s.text}</p>
+            <h3 className="hover-heading mt-5 font-display text-lg font-bold text-med-heading">{s.title}</h3>
+            <p className="hover-body mt-1.5 text-med-body">{s.text}</p>
           </motion.li>
         ))}
       </motion.ul>
@@ -125,11 +125,11 @@ export function StandardsStrip() {
       >
         {STANDARDS.map((s) => (
           <motion.li key={s.name} variants={card} className={`${glass} p-5`}>
-            <h3 className="inline-flex items-center gap-2 font-display font-bold text-med-heading">
+            <h3 className="hover-heading inline-flex items-center gap-2 font-display font-bold text-med-heading">
               <span className="h-2 w-2 rounded-full bg-brand-gradient" aria-hidden="true" />
               {s.name}
             </h3>
-            <p className="mt-2 text-sm text-med-body">{s.text}</p>
+            <p className="hover-body mt-2 text-sm text-med-body">{s.text}</p>
           </motion.li>
         ))}
       </motion.ul>

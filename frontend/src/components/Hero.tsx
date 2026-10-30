@@ -31,14 +31,17 @@ export function Hero() {
       <motion.h1
         id="hero-heading"
         variants={item}
-        className="mt-6 font-display text-4xl font-extrabold tracking-tight text-med-heading sm:text-5xl md:text-6xl"
+        className="hover-heading mt-6 font-display text-4xl font-extrabold tracking-tight text-med-heading sm:text-5xl md:text-6xl"
       >
         One diagnosis,{" "}
         <span className="bg-brand-gradient-text bg-clip-text text-transparent">three code systems</span>,
         every step explained.
       </motion.h1>
 
-      <motion.p variants={item} className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-med-body">
+      <motion.p
+        variants={item}
+        className="hover-body mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-med-body"
+      >
         Search an Ayush diagnosis in English, IAST, Devanagari or Hinglish. NamaSetu finds the matching ICD-11
         Traditional Medicine Module 2 code and shows why it matched, then emits FHIR R4 that a clinician has
         validated.

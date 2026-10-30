@@ -34,6 +34,51 @@ body {
   background-color: var(--bg);
 }
 
+/* Hover emphasis for text over the particle field: a colour shift plus a soft halo that lifts the glyphs
+   off the dots. Headings go to medical blue; body text darkens to navy (higher contrast, not lower).
+   Only on devices that really hover, so a tap on a phone doesn't leave text stuck highlighted. */
+@layer components {
+  .hover-heading,
+  .hover-body {
+    transition:
+      color 200ms ease,
+      text-shadow 200ms ease,
+      filter 200ms ease;
+  }
+  /* Gradient text is transparent; a text-shadow would show through it, so it glows with drop-shadow. */
+  .hover-heading .bg-clip-text,
+  .hover-body .bg-clip-text {
+    text-shadow: none;
+    transition: filter 200ms ease;
+  }
+  @media (hover: hover) {
+    .hover-heading:hover {
+      color: var(--primary-dark);
+      text-shadow:
+        0 1px 0 rgb(255 255 255 / 0.9),
+        0 0 18px rgb(14 165 233 / 0.35);
+    }
+    .hover-body:hover {
+      color: var(--text-heading);
+      text-shadow:
+        0 0 1px rgb(255 255 255 / 0.9),
+        0 0 12px rgb(255 255 255 / 0.95),
+        0 0 22px rgb(14 165 233 / 0.25);
+    }
+    .hover-heading:hover .bg-clip-text {
+      filter: drop-shadow(0 0 14px rgb(14 165 233 / 0.4));
+    }
+    .dark .hover-heading:hover {
+      color: #7dd3fc;
+      text-shadow: 0 0 20px rgb(56 189 248 / 0.45);
+    }
+    .dark .hover-body:hover {
+      color: #f1f7fd;
+      text-shadow: 0 0 16px rgb(56 189 248 / 0.35);
+    }
+  }
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
