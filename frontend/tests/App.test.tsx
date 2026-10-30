@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter } from "react-router-dom";
 import { afterEach, describe, expect, it, vi } from "vitest";
@@ -92,7 +92,10 @@ describe("App shell", () => {
       return Promise.resolve(new Response(JSON.stringify(health), { status: 200 }));
     });
     renderAt("/");
-    expect(await screen.findByRole("heading", { level: 1 })).toHaveTextContent("three code systems");
+    // First test in the file: the lazy landing chunk (framer-motion) is transformed cold, so allow longer.
+    expect(await screen.findByRole("heading", { level: 1 }, { timeout: 5000 })).toHaveTextContent(
+      "three code systems",
+    );
     expect(screen.queryByRole("heading", { name: "Sign in" })).not.toBeInTheDocument();
     expect(urls.some((u) => u.endsWith("/auth/login"))).toBe(true);
   });
@@ -151,6 +154,25 @@ describe("App shell", () => {
     await screen.findByRole("heading", { level: 1 });
     expect(document.documentElement.classList.contains("dark")).toBe(false);
     expect(screen.getByRole("button", { name: "Switch to dark mode" })).toBeInTheDocument();
+  });
+
+  it("landing page: one H1, section headings, a Try chip fills the search box, Siddha is disabled", async () => {
+    signIn();
+    vi.spyOn(globalThis, "fetch").mockResolvedValue(
+      new Response(JSON.stringify({ items: [] }), { status: 200 }),
+    );
+    renderAt("/");
+    await screen.findByRole("heading", { level: 1 });
+    expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
+    expect(
+      screen.getByRole("heading", { level: 2, name: "How NamaSetu maps a diagnosis" }),
+    ).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 2, name: "Built on trusted standards" })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: /Fill the search with aamvaat/ }));
+    expect(screen.getByRole("combobox")).toHaveValue("aamvaat");
+    expect(screen.getByRole("combobox")).toHaveFocus();
+    expect(screen.getByRole("tab", { name: /Siddha/ })).toHaveAttribute("aria-disabled", "true");
+    expect(screen.getByRole("tab", { name: "Ayurveda" })).toHaveAttribute("aria-selected", "true");
   });
 
   it("always renders the clinical disclaimer", () => {

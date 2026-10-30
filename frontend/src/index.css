@@ -4,10 +4,52 @@
 
 :root {
   color-scheme: light;
+  --bg: #f5faff;
+  --primary: #0ea5e9;
+  --primary-dark: #0369a1;
+  --accent: #14b8a6;
+  --accent-dark: #0f766e;
+  /* Gradient text needs >= 3:1 on --bg at display size; the 600 steps of the same hues meet it. */
+  --primary-text: #0284c7;
+  --accent-text: #0d9488;
+  --text-heading: #0b1e33;
+  --text-body: #475569;
+  --border: #dceaf7;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #7dd3fc transparent;
 }
 
 .dark {
   color-scheme: dark;
+  --bg: #07131f;
+  --text-heading: #f1f7fd;
+  --text-body: #b6c4d4;
+  --border: #1d3348;
+  --primary-text: #38bdf8;
+  --accent-text: #2dd4bf;
+}
+
+body {
+  background-color: var(--bg);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #7dd3fc;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
 }
 
 /* slate-500 small print is below 4.5:1 on the dark page background; lift it to slate-400 unless the element

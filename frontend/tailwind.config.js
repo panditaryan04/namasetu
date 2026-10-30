@@ -31,9 +31,41 @@ export default {
           800: "#9d390f",
           900: "#7e3110",
         },
+        // Light medical-blue theme; values live as CSS variables in index.css.
+        med: {
+          bg: "var(--bg)",
+          primary: "var(--primary)",
+          "primary-dark": "var(--primary-dark)",
+          accent: "var(--accent)",
+          heading: "var(--text-heading)",
+          body: "var(--text-body)",
+          border: "var(--border)",
+        },
       },
       fontFamily: {
-        sans: ["Inter", "Noto Sans Devanagari", "system-ui", "sans-serif"],
+        sans: ["Inter Variable", "Inter", "Noto Sans Devanagari", "system-ui", "sans-serif"],
+        display: ["Plus Jakarta Sans Variable", "Plus Jakarta Sans", "Noto Sans Devanagari", "system-ui", "sans-serif"],
+      },
+      backgroundImage: {
+        // Decorative gradient (dots, rings) and the AA-safe darker steps used under white or as text.
+        "brand-gradient": "linear-gradient(135deg, var(--primary), var(--accent))",
+        "brand-gradient-strong": "linear-gradient(135deg, var(--primary-dark), var(--accent-dark))",
+        "brand-gradient-text": "linear-gradient(135deg, var(--primary-text), var(--accent-text))",
+      },
+      boxShadow: {
+        glass: "0 20px 60px -15px rgba(14, 165, 233, 0.25)",
+        "glass-sm": "0 8px 30px -12px rgba(14, 165, 233, 0.22)",
+        lift: "0 12px 28px -10px rgba(3, 105, 161, 0.45)",
+      },
+      keyframes: {
+        orb: {
+          "0%, 100%": { transform: "translate3d(0, 0, 0) scale(1)" },
+          "50%": { transform: "translate3d(6vw, -4vh, 0) scale(1.08)" },
+        },
+      },
+      animation: {
+        orb: "orb 28s ease-in-out infinite",
+        "orb-slow": "orb 40s ease-in-out infinite reverse",
       },
     },
   },
